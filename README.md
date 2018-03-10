@@ -5,7 +5,7 @@ Uses dynamic programming to reduce search time in exchange for using more memory
 
 ## How To Run
 Modify the scoring function at line 30 of `com.mromanak.loadoutoptimizer.LoadoutOptimizerCLI` to reflect the desired
-loadout, then invoke the main method to run the search and output the results to the command line as JSON.
+loadout, then invoke the main method to run the search and output the results to the standard out as JSON.
 
 Unmodified, the CLI will output a list of loadouts that best match the following criteria:
 * Skills:
