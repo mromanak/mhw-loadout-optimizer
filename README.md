@@ -12,7 +12,7 @@ Unmodified, the CLI will output a list of loadouts that best match the following
     * Earplugs 5
     * Tremor Resistance 3
     * Windproof 3
-* As many decoration slots as possible. Level 1 slots are considered half as desitable as level 2 or 3 slots.
+* As many decoration slots as possible. Level 1 slots are considered half as desirable as level 2 or 3 slots.
 * As few armor pieces as possible (although with these criteria, it will almost certainly use all 6 pieces.)
 
 ## To Do
