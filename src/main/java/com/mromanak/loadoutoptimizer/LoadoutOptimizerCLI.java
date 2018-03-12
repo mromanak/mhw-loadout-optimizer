@@ -38,21 +38,11 @@ public class LoadoutOptimizerCLI {
             build();
 
         Set<String> desiredSkills = scoringFunction.getSkillWieghtFunctions().keySet();
-        Pattern namesToExcludePattern = Pattern.compile("^$");
-        Predicate<ArmorPiece> filter = (ArmorPiece armorPiece) -> {
-            boolean hasDesiredSkill = !Sets.intersection(desiredSkills, armorPiece.getSkills().keySet()).isEmpty();
-            boolean excludeByName = namesToExcludePattern.matcher(armorPiece.getName()).matches();
-            return hasDesiredSkill && !excludeByName;
-        };
-        Set<ArmorPiece> skillArmorPieces = loadArmorPieces(filter);
+        Pattern namesToIgnorePattern = Pattern.compile("^$");
+        Predicate<ArmorPiece> filter = armorPiece -> !namesToIgnorePattern.matcher(armorPiece.getName()).matches();
 
-        Pattern namesToIncludePattern = Pattern.compile(".*Diablos.*");
-        filter = armorPiece -> namesToIncludePattern.matcher(armorPiece.getName()).matches();
-        Set<ArmorPiece> setBonusArmorPieces = loadArmorPieces(filter);
-
-        List<DisplayLoadout> loadouts = LoadoutOptimizer.
-            findBestLoadoutsWithSetBonus(setBonusArmorPieces, 4, skillArmorPieces, scoringFunction).
-            stream().
+        Set<ArmorPiece> armorPieces = loadArmorPieces(desiredSkills, filter);
+        List<DisplayLoadout> loadouts = LoadoutOptimizer.findBestLoadouts(armorPieces, scoringFunction).stream().
             map(LoadoutOptimizerCLI::toDisplayLoadout).
             collect(toList());
 
@@ -64,7 +54,7 @@ public class LoadoutOptimizerCLI {
         return LoadoutOptimizerCLI.class.getResourceAsStream("/armorPieces.tsv");
     }
 
-    private static Set<ArmorPiece> loadArmorPieces(Predicate<ArmorPiece> filter) throws IOException {
+    private static Set<ArmorPiece> loadArmorPieces(Set<String> desiredSkills, Predicate<ArmorPiece> filter) throws IOException {
         Set<ArmorPiece> armorPieces = new HashSet<>();
         CsvSchema schema = CsvSchema.builder().setUseHeader(true).setColumnSeparator('\t').build();
         CsvMapper csvMapper = new CsvMapper();
@@ -75,6 +65,10 @@ public class LoadoutOptimizerCLI {
         {
             iterator.forEachRemaining((CsvArmorPiece cap) -> {
                 ArmorPiece ap = CsvArmorPiece.inflate(cap);
+                if(Sets.intersection(desiredSkills, ap.getSkills().keySet()).isEmpty()) {
+                    return;
+                }
+
                 if(filter.test(ap)) {
                     armorPieces.add(ap);
                 }
