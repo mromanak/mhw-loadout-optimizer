@@ -20,6 +20,6 @@ public abstract class LoadoutScoringUtils {
     }
 
     public static Function<Integer, Double> preferSmallerLoadouts(double weight) {
-        return loadoutSize -> weight * (1.0 - (double) loadoutSize / ArmorType.values().length);
+        return loadoutSize -> loadoutSize == 0 ? 0.0 : weight * (1.0 - (double) loadoutSize / ArmorType.values().length);
     }
 }
