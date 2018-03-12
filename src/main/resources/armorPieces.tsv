@@ -44,7 +44,7 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Rathian Head Beta"	HEAD	"Health Boost:1,Poison Attack:1"	1	0	0
 "Shadow Shades"	HEAD	"Stun Resistance:1"	3	0	0
 "Shamos Head Alpha"	HEAD	Detector:1,Geologist:1	0	0	0
-"Specialist Head Alpha"	HEAD	"Critical Eye:2"	1	0	0
+"Strategist Head Alpha"	HEAD	"Critical Eye:2"	1	0	0
 "Tzitzi Head Alpha"	HEAD	"Blindsider:1,Stun Resistance:1"	0	0	0
 "Uragaan Head Alpha"	HEAD	"Thunder Resistance:2"	0	0	1
 "Uragaan Head Beta"	HEAD	"Thunder Resistance:1"	1	0	1
