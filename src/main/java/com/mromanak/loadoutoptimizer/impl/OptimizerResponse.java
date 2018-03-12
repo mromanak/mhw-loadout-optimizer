@@ -2,10 +2,12 @@ package com.mromanak.loadoutoptimizer.impl;
 
 import com.google.common.collect.ImmutableList;
 import com.mromanak.loadoutoptimizer.model.ArmorPiece;
+import com.mromanak.loadoutoptimizer.model.Loadout;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.BinaryOperator;
@@ -43,6 +45,17 @@ class OptimizerResponse {
     public static OptimizerResponse of(List<List<ArmorPiece>> armorPiecesToAdd, double score) {
         armorPiecesToAdd = (armorPiecesToAdd == null) ? ImmutableList.of() : ImmutableList.copyOf(armorPiecesToAdd);
         return new OptimizerResponse(armorPiecesToAdd, score);
+    }
+
+    public static OptimizerResponse ofLoadouts(List<Loadout> loadouts, double score) {
+        if(loadouts == null) {
+            return of(ImmutableList.of(), score);
+        }
+        List<List<ArmorPiece>> armorPiecesToAdd = loadouts.stream().
+            map(l -> l.getArmorPieces().values()).
+            map(ArrayList::new).
+            collect(toList());
+        return of(armorPiecesToAdd, score);
     }
 
     public static OptimizerResponse empty() {

@@ -34,6 +34,10 @@ public class Loadout {
         level3Slots = level3SlotsTmp;
     }
 
+    public static Loadout empty() {
+        return new Builder().build();
+    }
+
     public static Builder builder() {
         return new Builder();
     }
