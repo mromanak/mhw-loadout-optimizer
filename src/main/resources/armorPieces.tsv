@@ -51,6 +51,8 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Vespoid Head Alpha"	HEAD	"Paralysis Attack:1,Quick Sheath:1"	0	0	0
 "Vespoid Head Beta"	HEAD	"Quick Sheath:1"	1	0	0
 "Wiggler Head Alpha"	HEAD	Wide-Range:2	2	0	0
+"Zorah Head Alpha"	HEAD	"Blast Attack:1,Handicraft:1"	0	0	0
+"Zorah Head Beta"	HEAD	Handicraft:1	1	0	0
 "Alloy Arms Alpha"	ARMS	"Defense Boost:1,Speed Sharpening:1"	0	0	0
 "Anja Arms Alpha"	ARMS	"Fire Attack:1,Special Ammo Boost:1"	0	0	0
 "Barroth Arms Alpha"	ARMS	"Marathon Runner:1,Stamina Thief:1"	0	0	0
@@ -96,6 +98,8 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Tzitzi Arms Alpha"	ARMS	"Stun Resistance:2,Wide-Range:1"	0	0	0
 "Tzitzi Arms Beta"	ARMS	"Stun Resistance:2"	1	0	0
 "Xeno'Jiiva Arms Alpha"	ARMS	"Critical Boost:1,Flinch Free:1"	1	0	0
+"Zorah Arms Alpha"	ARMS	"Bombardier:1,Free Elem/Ammo Up:1"	0	0	0
+"Zorah Arms Beta"	ARMS	"Free Elem/Ammo Up:1"	1	0	0
 "Anja Body Alpha"	BODY	"Marathon Runner:1,Special Ammo Boost:1"	0	0	0
 "Anja Body Beta"	BODY	"Marathon Runner:1"	2	0	0
 "Bazel Body Alpha"	BODY	"Blast Resistance:2,Guard:2"	0	0	0
@@ -129,6 +133,8 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Odogaron Body Alpha"	BODY	"Bleeding Resistance:1,Speed Sharpening:2"	0	0	0
 "Odogaron Body Beta"	BODY	"Speed Sharpening:2"	1	0	0
 "Pukei Body Alpha"	BODY	"Botanist:1,Item Prolonger:1"	0	0	0
+"Rath Soul Body Alpha"	BODY	"Free Elem/Ammo Up:1,Intimidator:1"	1	0	0
+"Rath Soul Body Beta"	BODY	"Free Elem/Ammo Up:1"	0	1	0
 "Rathalos Body Alpha"	BODY	"Fire Attack:1,Weakness Exploit:2"	0	0	0
 "Rathalos Body Beta"	BODY	"Weakness Exploit:2"	1	0	0
 "Rathian Body Alpha"	BODY	"Botanist:2,Recovery Up:1"	0	0	0
@@ -136,6 +142,7 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Vespoid Body Alpha"	BODY	Windproof:1	0	0	0
 "Vespoid Body Beta"	BODY	Windproof:1	1	0	0
 "Zorah Body Alpha"	BODY	"Blast Attack:2,Windproof:1"	0	0	0
+"Zorah Body Beta"	BODY	"Blast Attack:2"	0	1	0
 "Alloy Waist Alpha"	WAIST	"Poison Resistance:1,Water Resistance:1"	0	0	0
 "Alloy Waist Beta"	WAIST	"Poison Resistance:1"	1	0	0
 "Anja Waist Alpha"	WAIST	"Artillery:1,Fire Resistance:2"	0	0	0
@@ -178,6 +185,7 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Vespoid Waist Alpha"	WAIST	"Paralysis Resistance:2"	0	0	0
 "Vespoid Waist Beta"	WAIST	"Paralysis Resistance:1"	1	0	0
 "Zorah Waist Alpha"	WAIST	"Fortify:1,Tremor Resistance:1"	0	0	0
+"Zorah Waist Beta"	WAIST	Fortify:1	0	1	0
 "Alloy Legs Alpha"	LEGS	"Speed Sharpening:2"	0	0	0
 "Alloy Legs Beta"	LEGS	"Speed Sharpening:1"	1	0	0
 "Barroth Legs Alpha"	LEGS	"Marathon Runner:1,Stun Resistance:2"	0	0	0
@@ -221,8 +229,10 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Rath Soul Legs Alpha"	LEGS	Cliffhanger:1,Focus:1	0	0	0
 "Rath Soul Legs Beta"	LEGS	Focus:1	1	0	0
 "Rathalos Legs Alpha"	LEGS	"Jump Master:1,Weakness Exploit:1"	0	0	0
+"Rathalos Legs Beta"	LEGS	"Jump Master:1"	0	0	1
 "Vespoid Legs Alpha"	LEGS	"Honey Hunter:1,Paralysis Resistance:1"	0	0	0
 "Zorah Legs Alpha"	LEGS	Bombardier:2,Earplugs:1	0	0	0
+"Zorah Legs Beta"	LEGS	Bombardier:2	0	1	0
 "Attack Charm I"	CHARM	"Attack Boost:1"	0	0	0
 "Attack Charm II"	CHARM	"Attack Boost:2"	0	0	0
 "Attack Charm III"	CHARM	"Attack Boost:3"	0	0	0
