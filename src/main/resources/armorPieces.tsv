@@ -42,6 +42,7 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Rathalos Head Beta"	HEAD	"Attack Boost:2"	1	0	0
 "Rathian Head Alpha"	HEAD	"Health Boost:2,Poison Attack:1"	0	0	0
 "Rathian Head Beta"	HEAD	"Health Boost:1,Poison Attack:1"	1	0	0
+"Shadow Shades"	HEAD	"Stun Resistance:1"	3	0	0
 "Shamos Head Alpha"	HEAD	Detector:1,Geologist:1	0	0	0
 "Specialist Head Alpha"	HEAD	"Critical Eye:2"	1	0	0
 "Tzitzi Head Alpha"	HEAD	"Blindsider:1,Stun Resistance:1"	0	0	0
@@ -49,6 +50,7 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Uragaan Head Beta"	HEAD	"Thunder Resistance:1"	1	0	1
 "Vespoid Head Alpha"	HEAD	"Paralysis Attack:1,Quick Sheath:1"	0	0	0
 "Vespoid Head Beta"	HEAD	"Quick Sheath:1"	1	0	0
+"Wiggler Head Alpha"	HEAD	Wide-Range:2	2	0	0
 "Alloy Arms Alpha"	ARMS	"Defense Boost:1,Speed Sharpening:1"	0	0	0
 "Anja Arms Alpha"	ARMS	"Fire Attack:1,Special Ammo Boost:1"	0	0	0
 "Barroth Arms Alpha"	ARMS	"Marathon Runner:1,Stamina Thief:1"	0	0	0
@@ -59,6 +61,8 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Damascus Arms Alpha"	ARMS	"Handicraft:1,Speed Sharpening:1"	0	0	0
 "Death Stench Arms Alpha"	ARMS	"Dragon Attack:1,Focus:2"	1	0	0
 "Death Stench Arms Beta"	ARMS	Focus:2	2	0	0
+"Diablos Arms Alpha"	ARMS	"Heroics:2,Tremor Resistance:1"	0	0	0
+"Diablos Arms Beta"	ARMS	Heroics:2	0	1	0
 "Diablos Nero Arms Alpha"	ARMS	"Focus:1,Marathon Runner:1"	0	0	0
 "Diablos Nero Arms Beta"	ARMS	Focus:1	1	1	0
 "Diabols Arms Alpha"	ARMS	"Heroics:2,Tremor Resistance:1"	0	0	0
@@ -99,6 +103,10 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Bone Body Beta"	BODY	"Attack Boost:1"	1	0	0
 "Damascus Body Alpha"	BODY	"Defense Boost:2,Focus:2"	1	0	0
 "Damascus Body Beta"	BODY	Focus:2	3	0	0
+"Diablos Body Alpha"	BODY	Heroics:1,Slugger:2	0	0	0
+"Diablos Body Beta"	BODY	Slugger:2	0	1	0
+"Diablos Nero Body Alpha"	BODY	Resentment:2	1	0	0
+"Diablos Nero Body Beta"	BODY	Resentment:1	1	1	0
 "Dober Body Alpha"	BODY	"Attack Boost:2,Mushroomancer:1"	1	0	0
 "Dober Body Beta"	BODY	"Attack Boost:2"	0	1	0
 "Girros Body Alpha"	BODY	"Paralysis Resistance:2"	0	0	0
@@ -140,6 +148,8 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Damascus Waist Alpha"	WAIST	"Focus:1,Iron Skin:2"	1	0	0
 "Damascus Waist Beta"	WAIST	Focus:1	3	0	0
 "Death Stench Waist Alpha"	WAIST	"Dragon Attack:1,Focus:1"	0	0	0
+"Diablos Nero Waist Alpha"	WAIST	"Partbreaker:1,Resentment:1"	0	0	0
+"Diablos Nero Waist Beta"	WAIST	Resentment:1	0	1	0
 "Diablos Waist Alpha"	WAIST	"Critical Draw:1,Marathon Runner:1"	0	0	0
 "Diablos Waist Beta"	WAIST	"Marathon Runner:2"	0	1	0
 "Dober Waist Alpha"	WAIST	"Attack Boost:1,Dragon Resistance:1"	0	1	0
@@ -181,6 +191,8 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Commission Legs Beta"	LEGS	Stealth:2	0	1	0
 "Diablos Legs Alpha"	LEGS	"Slugger:1,Tremor Resistance:2"	0	0	0
 "Diablos Legs Beta"	LEGS	"Tremor Resistance:2"	2	0	0
+"Diablos Nero Legs Alpha"	LEGS	"Heroics:1,Normal Shots:1"	1	0	0
+"Diablos Nero Legs Beta"	LEGS	"Normal Shots:1"	0	1	0
 "Dober Legs Alpha"	LEGS	"Attack Boost:2,Stamina Surge:1"	0	0	0
 "Dober Legs Beta"	LEGS	"Attack Boost:2"	1	0	0
 "Guild Cross Legs Alpha"	LEGS	"Airborne:1,Fire Resistance:2"	0	0	0
