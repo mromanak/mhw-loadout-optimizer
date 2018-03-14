@@ -1,298 +1,298 @@
 name	armorType	skills	level1Slots	level2Slots	level3Slots
-"Alloy Head Alpha"	HEAD	"Defense Boost:1,Windproof:1"	0	0	0
-"Alloy Head Beta"	HEAD	Windproof:1	1	0	0
-"Anja Head Alpha"	HEAD	"Fire Attack:2,Fire Resistance:1"	0	0	0
-"Anja Head Beta"	HEAD	"Fire Attack:2"	0	1	0
-"Baan Head Alpha"	HEAD	"Tremor Resistance:2"	0	0	0
-"Baan Head Beta"	HEAD	"Tremor Resistance:1"	0	1	0
-"Bazel Head Alpha"	HEAD	"Blast Attack:1,Earplugs:2"	0	1	0
-"Bazel Head Beta"	HEAD	Earplugs:2	1	0	1
-"Bone Head Alpha"	HEAD	"Entomologist:1,Health Boost:1"	0	0	0
-"Bone Head Beta"	HEAD	"Health Boost:1"	1	0	0
-"Damascus Head Alpha"	HEAD	"Defense Boost:2,Speed Sharpening:1"	1	0	0
-"Death Stench Head Alpha"	HEAD	"Critical Eye:1,Resuscitate:1"	0	1	0
-"Diablos Head Alpha"	HEAD	"Critical Draw:2,Heroics:1"	0	0	0
-"Diablos Head Beta"	HEAD	"Critical Draw:2"	0	1	0
-"Diablos Nero Head Alpha"	HEAD	Focus:2	1	0	0
-"Diablos Nero Head Beta"	HEAD	Focus:1	0	0	1
-"Dodogama Head Alpha"	HEAD	"Blast Resistance:2"	0	0	0
-"Dodogama Head Beta"	HEAD	"Blast Resistance:1"	1	0	0
-"Dragonking Head Alpha"	HEAD	"Weakness Exploit:2"	0	0	1
-"Gastrodon Head Alpha"	HEAD	"Blast Resistance:1,Flinch Free:1"	0	0	0
-"Girros Head Alpha"	HEAD	"Horn Maestro:1,Paralysis Resistance:1"	0	0	0
-"Guild Cross Head Alpha"	HEAD	"Divine Blessing:1,Thunder Resistance:2"	1	0	0
-"High Metal Head Alpha"	HEAD	"Earplugs:1,Ice Resistance:2"	0	0	0
-"Insect Head Alpha"	HEAD	"Botanist:1,Evade Window:2"	0	0	0
-"Kaiser Head Alpha"	HEAD	"Latent Power:2"	0	0	0
-"Kaiser Head Beta"	HEAD	"Latent Power:1"	0	1	0
-"Kirin Head Alpha"	HEAD	"Divine Blessing:1,Marathon Runner:2"	0	0	0
-"Kirin Head Beta"	HEAD	"Marathon Runner:2"	1	0	0
-"Kulu Head Alpha"	HEAD	"Fire Resistance:1,Weakness Exploit:1"	0	0	0
-"Kulu Head Beta"	HEAD	"Fire Resistance:1"	2	0	0
-"Lavasioth Head Alpha"	HEAD	"Fire Attack:2,Quick Sheath:1"	0	0	0
-"Lavasioth Head Beta"	HEAD	"Fire Attack:1,Quick Sheath:1"	2	0	0
-"Lumu Head Alpha"	HEAD	"Stamina Surge:2"	0	0	0
-"Lumu Head Beta"	HEAD	"Stamina Surge:1"	0	2	0
-"Nergigante Head Alpha"	HEAD	"Attack Boost:1,Maximum Might:2"	1	0	0
-"Nergigante Head Beta"	HEAD	"Maximum Might:2"	2	0	0
-"Odogaron Head Alpha"	HEAD	"Bleeding Resistance:2,Critical Eye:1"	0	0	0
-"Rath Soul Head Alpha"	HEAD	"Critical Boost:1,Intimidator:1"	0	0	0
-"Rath Soul Head Beta"	HEAD	"Critical Boost:1"	2	0	0
-"Rathalos Head Alpha"	HEAD	"Attack Boost:2,Fire Attack:1"	0	0	0
-"Rathalos Head Beta"	HEAD	"Attack Boost:2"	1	0	0
-"Rathian Head Alpha"	HEAD	"Health Boost:2,Poison Attack:1"	0	0	0
-"Rathian Head Beta"	HEAD	"Health Boost:1,Poison Attack:1"	1	0	0
-"Shadow Shades"	HEAD	"Stun Resistance:1"	3	0	0
-"Shamos Head Alpha"	HEAD	Detector:1,Geologist:1	0	0	0
-"Strategist Head Alpha"	HEAD	"Critical Eye:2"	1	0	0
-"Tzitzi Head Alpha"	HEAD	"Blindsider:1,Stun Resistance:1"	0	0	0
-"Uragaan Head Alpha"	HEAD	"Thunder Resistance:2"	0	0	1
-"Uragaan Head Beta"	HEAD	"Thunder Resistance:1"	1	0	1
-"Vespoid Head Alpha"	HEAD	"Paralysis Attack:1,Quick Sheath:1"	0	0	0
-"Vespoid Head Beta"	HEAD	"Quick Sheath:1"	1	0	0
-"Wiggler Head Alpha"	HEAD	Wide-Range:2	2	0	0
-"Zorah Head Alpha"	HEAD	"Blast Attack:1,Handicraft:1"	0	0	0
-"Zorah Head Beta"	HEAD	Handicraft:1	1	0	0
-"Alloy Arms Alpha"	ARMS	"Defense Boost:1,Speed Sharpening:1"	0	0	0
-"Anja Arms Alpha"	ARMS	"Fire Attack:1,Special Ammo Boost:1"	0	0	0
-"Barroth Arms Alpha"	ARMS	"Marathon Runner:1,Stamina Thief:1"	0	0	0
-"Barroth Arms Beta"	ARMS	"Marathon Runner:1"	1	0	0
-"Bazel Arms Alpha"	ARMS	"Critical Draw:2,Earplugs:1"	0	0	0
-"Bazel Arms Beta"	ARMS	"Critical Draw:2"	0	0	1
-"Bone Arms Alpha"	ARMS	"Attack Boost:1,Slugger:1"	0	0	0
-"Damascus Arms Alpha"	ARMS	"Handicraft:1,Speed Sharpening:1"	0	0	0
-"Death Stench Arms Alpha"	ARMS	"Dragon Attack:1,Focus:2"	1	0	0
-"Death Stench Arms Beta"	ARMS	Focus:2	2	0	0
-"Diablos Arms Alpha"	ARMS	"Heroics:2,Tremor Resistance:1"	0	0	0
-"Diablos Arms Beta"	ARMS	Heroics:2	0	1	0
-"Diablos Nero Arms Alpha"	ARMS	"Focus:1,Marathon Runner:1"	0	0	0
-"Diablos Nero Arms Beta"	ARMS	Focus:1	1	1	0
-"Diabols Arms Alpha"	ARMS	"Heroics:2,Tremor Resistance:1"	0	0	0
-"Dober Arms Alpha"	ARMS	"Mushroomancer:1,Stamina Surge:2"	0	0	0
-"Dober Arms Beta"	ARMS	"Mushroomancer:1,Stamina Surge:1"	2	0	0
-"Hunter Arms Alpha"	ARMS	Stealth:2	0	0	0
-"Hunter Arms Beta"	ARMS	Stealh:1	1	0	0
-"Ingot Arms Alpha"	ARMS	"Health Boost:2,Thunder Attack:1"	0	0	0
-"Ingot Arms Beta"	ARMS	"Health Boost:2"	1	0	0
-"Insect Arms Alpha"	ARMS	"Botanist:2,Leap of Faith:1"	0	0	0
-"Insect Arms Beta"	ARMS	Botanist:2	1	1	0
-"Kaiser Arms Alpha"	ARMS	"Weakness Exploit:2"	1	0	0
-"Kaiser Arms Beta"	ARMS	"Weakness Exploit:1"	0	0	1
-"Kestodon Arms Alpha"	ARMS	"Affinity Sliding:1,Focus:1"	0	0	0
-"Kestodon Arms Beta"	ARMS	"Affinity Sliding:1"	1	0	0
-"Kirin Arms Alpha"	ARMS	"Marathon Runner:1,Thunder Attack:2"	0	0	0
-"Kulu Arms Alpha"	ARMS	"Critical Eye:1,Pro Transporter:1"	0	0	0
-"Lavasioth Arms Alpha"	ARMS	"Affinity Sliding:1,Wide-Range:1"	0	1	0
-"Lavasioth Arms Beta"	ARMS	"Affinity Sliding:1"	0	0	1
-"Nergigante Arms Alpha"	ARMS	"Agitator:2,Attack Boost:1"	0	0	0
-"Nergigante Arms Beta"	ARMS	Agitator:2	1	0	0
-"Odogaron Arms Alpha"	ARMS	"Constitution:1,Critical Eye:1"	0	0	0
-"Pukei Arms Alpha"	ARMS	"Poison Attack:1,Poison Resistance:2"	0	0	0
-"Pukei Arms Beta"	ARMS	"Poison Resistance:1"	2	0	0
-"Rath Heart Arms Alpha"	ARMS	Windproof:2	0	0	0
-"Rath Heart Arms Beta"	ARMS	Windproof:1	0	1	0
-"Rath Soul Arms Alpha"	ARMS	Focus:1,Windproof:1	0	0	0
-"Rath Soul Arms Beta"	ARMS	Focus:1	0	1	0
-"Rathalos Arms Alpha"	ARMS	"Attack Boost:1,Fire Resistance:2"	0	0	0
-"Rathalos Arms Beta"	ARMS	"Fire Resistance:2"	1	0	0
-"Tzitzi Arms Alpha"	ARMS	"Stun Resistance:2,Wide-Range:1"	0	0	0
-"Tzitzi Arms Beta"	ARMS	"Stun Resistance:2"	1	0	0
-"Xeno'Jiiva Arms Alpha"	ARMS	"Critical Boost:1,Flinch Free:1"	1	0	0
-"Zorah Arms Alpha"	ARMS	"Bombardier:1,Free Elem/Ammo Up:1"	0	0	0
-"Zorah Arms Beta"	ARMS	"Free Elem/Ammo Up:1"	1	0	0
-"Anja Body Alpha"	BODY	"Marathon Runner:1,Special Ammo Boost:1"	0	0	0
-"Anja Body Beta"	BODY	"Marathon Runner:1"	2	0	0
-"Bazel Body Alpha"	BODY	"Blast Resistance:2,Guard:2"	0	0	0
-"Bone Body Alpha"	BODY	"Attack Boost:2"	0	0	0
-"Bone Body Beta"	BODY	"Attack Boost:1"	1	0	0
-"Damascus Body Alpha"	BODY	"Defense Boost:2,Focus:2"	1	0	0
-"Damascus Body Beta"	BODY	Focus:2	3	0	0
-"Diablos Body Alpha"	BODY	Heroics:1,Slugger:2	0	0	0
-"Diablos Body Beta"	BODY	Slugger:2	0	1	0
-"Diablos Nero Body Alpha"	BODY	Resentment:2	1	0	0
-"Diablos Nero Body Beta"	BODY	Resentment:1	1	1	0
-"Dober Body Alpha"	BODY	"Attack Boost:2,Mushroomancer:1"	1	0	0
-"Dober Body Beta"	BODY	"Attack Boost:2"	0	1	0
-"Girros Body Alpha"	BODY	"Paralysis Resistance:2"	0	0	0
-"Girros Body Beta"	BODY	"Paralysis Resistance:1"	1	0	0
-"High Metal Body Alpha"	BODY	"Earplugs:2,Ice Attack:1"	0	0	0
-"High Metal Body Beta"	BODY	"Earplugs:1,Ice Attack:1"	0	1	0
-"Ingot Body Alpha"	BODY	"Thunder Resistance:2"	0	0	0
-"Ingot Body Beta"	BODY	"Thunder Resistance:1"	1	0	0
-"Insect Body Alpha"	BODY	"Botanist:1,Quick Sheath:2"	0	0	0
-"Insect Body Beta"	BODY	"Quick Sheath:2"	1	0	0
-"Kaiser Body Alpha"	BODY	"Latent Power:1"	0	0	0
-"Kulu Body Alpha"	BODY	"Critical Eye:1,Stamina Surge:1"	0	0	0
-"Kulu Body Beta"	BODY	"Stamina Surge:1"	1	0	0
-"Kushala Body Alpha"	BODY	Focus:1,Handicraft:2	0	0	0
-"Lavasioth Body Alpha"	BODY	"Fire Attack:2,Heat Guard:1"	0	0	0
-"Lavasioth Body Beta"	BODY	"Fire Attack:2"	2	0	0
-"Leather Body Alpha"	BODY	"Fire Resistance:1"	0	0	0
-"Nergigante Body Alpha"	BODY	"Agitator:1,Stamina Surge:2"	1	0	0
-"Nergigante Body Beta"	BODY	"Stamina Surge:2"	1	1	0
-"Odogaron Body Alpha"	BODY	"Bleeding Resistance:1,Speed Sharpening:2"	0	0	0
-"Odogaron Body Beta"	BODY	"Speed Sharpening:2"	1	0	0
-"Pukei Body Alpha"	BODY	"Botanist:1,Item Prolonger:1"	0	0	0
-"Rath Soul Body Alpha"	BODY	"Free Elem/Ammo Up:1,Intimidator:1"	1	0	0
-"Rath Soul Body Beta"	BODY	"Free Elem/Ammo Up:1"	0	1	0
-"Rathalos Body Alpha"	BODY	"Fire Attack:1,Weakness Exploit:2"	0	0	0
-"Rathalos Body Beta"	BODY	"Weakness Exploit:2"	1	0	0
-"Rathian Body Alpha"	BODY	"Botanist:2,Recovery Up:1"	0	0	0
-"Rathian Body Beta"	BODY	"Botanist:1,Recovery Up:1"	1	0	0
-"Vespoid Body Alpha"	BODY	Windproof:1	0	0	0
-"Vespoid Body Beta"	BODY	Windproof:1	1	0	0
-"Zorah Body Alpha"	BODY	"Blast Attack:2,Windproof:1"	0	0	0
-"Zorah Body Beta"	BODY	"Blast Attack:2"	0	1	0
-"Alloy Waist Alpha"	WAIST	"Poison Resistance:1,Water Resistance:1"	0	0	0
-"Alloy Waist Beta"	WAIST	"Poison Resistance:1"	1	0	0
-"Anja Waist Alpha"	WAIST	"Artillery:1,Fire Resistance:2"	0	0	0
-"Anja Waist Beta"	WAIST	"Fire Resistance:2"	0	1	0
-"Bazel Waist Alpha"	WAIST	"Earplugs:2,Jump Master:1"	1	0	0
-"Bazel Waist Beta"	WAIST	Earplugs:2	0	0	1
-"Brigade Waist Alpha"	WAIST	"Geologist:2,Recovery Speed:1"	0	0	0
-"Brigade Waist Beta"	WAIST	Geologist:2	1	0	0
-"Chainmail Waist Alpha"	WAIST	"Quick Sheath:1"	0	0	0
-"Damascus Waist Alpha"	WAIST	"Focus:1,Iron Skin:2"	1	0	0
-"Damascus Waist Beta"	WAIST	Focus:1	3	0	0
-"Death Stench Waist Alpha"	WAIST	"Dragon Attack:1,Focus:1"	0	0	0
-"Diablos Nero Waist Alpha"	WAIST	"Partbreaker:1,Resentment:1"	0	0	0
-"Diablos Nero Waist Beta"	WAIST	Resentment:1	0	1	0
-"Diablos Waist Alpha"	WAIST	"Critical Draw:1,Marathon Runner:1"	0	0	0
-"Diablos Waist Beta"	WAIST	"Marathon Runner:2"	0	1	0
-"Dober Waist Alpha"	WAIST	"Attack Boost:1,Dragon Resistance:1"	0	1	0
-"Hunter Waist Alpha"	WAIST	"Master Gatherer:1,Stealth:1"	0	0	0
-"Ingot Waist Alpha"	WAIST	Windproof:2	0	0	0
-"Ingot Waist Beta"	WAIST	Windproof:1	0	0	1
-"Insect Waist Alpha"	WAIST	"Honey Hunter:1,Quick Sheath:1"	0	0	0
-"Kadachi Waist Alpha"	WAIST	"Thunder Attack:2,Thunder Resistance:1"	0	0	0
-"Kaiser Waist Alpha"	WAIST	"Blast Attack:1,Weakness Exploit:1"	0	0	0
-"Lavasioth Waist Alpha"	WAIST	"Quick Sheath:2,Recovery Up:1"	0	0	0
-"Lavasioth Waist Beta"	WAIST	"Quick Sheath:2"	1	0	0
-"Leather Waist Alpha"	WAIST	"Stamina Surge:1"	0	0	0
-"Legiana Waist Alpha"	WAIST	"Ice Attack:2,Windproof:1"	0	0	0
-"Nergigante Waist Alpha"	WAIST	"Attack Boost:2,Stamina Surge:1"	0	0	0
-"Nergigante Waist Beta"	WAIST	"Attack Boost:2"	0	1	0
-"Odogaron Waist Alpha"	WAIST	"Critical Eye:2,Speed Sharpening:1"	0	0	0
-"Odogaron Waist Beta"	WAIST	"Critical Eye:2"	0	1	0
-"Rath Heart Waist Alpha"	WAIST	"Handicraft:1,Poison Resistance:1"	0	0	0
-"Rath Soul Waist Alpha"	WAIST	"Piercing Shots:1,Windproof:2"	0	0	0
-"Rath Soul Waist Beta"	WAIST	Windproof:1	0	0	1
-"Rathalos Waist Alpha"	WAIST	"Fire Attack:2,Focus:1"	0	0	0
-"Rathalos Waist Beta"	WAIST	"Fire Attack:2"	0	1	0
-"Rathian Waist Alpha"	WAIST	"Health Boost:1,Poison Resistance:2"	0	0	0
-"Rathian Waist Beta"	WAIST	"Health Boost:1,Poison Resistance:1"	1	0	0
-"Uragaan Waist Alpha"	WAIST	"Partbreaker:1,Thunder Resistance:1"	2	0	0
-"Vespoid Waist Alpha"	WAIST	"Paralysis Resistance:2"	0	0	0
-"Vespoid Waist Beta"	WAIST	"Paralysis Resistance:1"	1	0	0
-"Zorah Waist Alpha"	WAIST	"Fortify:1,Tremor Resistance:1"	0	0	0
-"Zorah Waist Beta"	WAIST	Fortify:1	0	1	0
-"Alloy Legs Alpha"	LEGS	"Speed Sharpening:2"	0	0	0
-"Alloy Legs Beta"	LEGS	"Speed Sharpening:1"	1	0	0
-"Barroth Legs Alpha"	LEGS	"Marathon Runner:1,Stun Resistance:2"	0	0	0
-"Barroth Legs Beta"	LEGS	"Stun Resistance:1"	1	1	0
-"Bazel Legs Alpha"	LEGS	"Bombardier:2,Critical Draw:1"	1	0	0
-"Bone Legs Alphs"	LEGS	Entomologist:2	0	0	0
-"Bone Legs Beta"	LEGS	Entomologist:1	1	0	0
-"Brigade Legs Alpha"	LEGS	Geologist:1,Scholar:1	1	0	0
-"Comission Legs Alpha"	LEGS	"Affinity Sliding:1,Stealth:2"	0	0	0
-"Commission Legs Alpha"	LEGS	"Affinity Sliding:1,Stealth:2"	0	0	0
-"Commission Legs Beta"	LEGS	Stealth:2	0	1	0
-"Diablos Legs Alpha"	LEGS	"Slugger:1,Tremor Resistance:2"	0	0	0
-"Diablos Legs Beta"	LEGS	"Tremor Resistance:2"	2	0	0
-"Diablos Nero Legs Alpha"	LEGS	"Heroics:1,Normal Shots:1"	1	0	0
-"Diablos Nero Legs Beta"	LEGS	"Normal Shots:1"	0	1	0
-"Dober Legs Alpha"	LEGS	"Attack Boost:2,Stamina Surge:1"	0	0	0
-"Dober Legs Beta"	LEGS	"Attack Boost:2"	1	0	0
-"Guild Cross Legs Alpha"	LEGS	"Airborne:1,Fire Resistance:2"	0	0	0
-"Ingot Legs Alpha"	LEGS	"Defense Boost:2,Windproof:1"	0	0	0
-"Insect Legs Alpha"	LEGS	"Evade Window:1,Forager's Luck:1"	0	0	0
-"Insect Legs Beta"	LEGS	"Forager's Luck:1"	1	1	0
-"Jyura Legs Alpha"	LEGS	Focus:2	0	0	0
-"Jyura Legs Beta"	LEGS	Focus:1	0	1	0
-"Kadachi Legs Alpha"	LEGS	"Constitution:1,Thunder Resistance:2"	0	0	0
-"Kadachi Legs Beta"	LEGS	"Thunder Resistance:1"	2	0	0
-"Kaiser Legs Alpha"	LEGS	"Blast Attack:1,Latent Power:2"	0	0	0
-"Kaiser Legs Beta"	LEGS	"Latent Power:2"	1	0	0
-"Kirin Legs Alpha"	LEGS	"Free Elem/Ammo Up:2,Thunder Resistance:2"	0	0	0
-"Kulu Legs Alpha"	LEGS	"Critical Eye:1,Item Prolonger:1"	0	0	0
-"Kulu Legs Beta"	LEGS	"Critical Eye:1"	1	0	0
-"Lavasioth Legs Alpha"	LEGS	"Fire Attack:1,Spread/Power Shots:1"	1	0	0
-"Legiana Legs Alpha"	LEGS	"Critical Draw:1,Ice Resistance:2"	0	0	0
-"Lumu Legs Alpha"	LEGS	"Stamina Surge:1,Windproof:1"	0	0	0
-"Nergigante Legs Alpha"	LEGS	"Agitator:1,Maximum Might:1"	1	0	0
-"Nergigante Legs Beta"	LEGS	"Maximum Might:1"	0	1	0
-"Odogaron Legs Alpha"	LEGS	"Critical Eye:1,Quick Sheath:1"	0	0	0
-"Odogaron Legs Beta"	LEGS	"Quick Sheath:1"	1	0	0
-"Pukei Legs Alpha"	LEGS	"Botanist:2,Sporepuff Expert:1"	0	0	0
-"Pukei Legs Beta"	LEGS	Botanist:1	0	1	0
-"Rath Heart Legs Alpha"	LEGS	"Tool Specialist:1,Windproof:1"	0	0	0
-"Rath Soul Legs Alpha"	LEGS	Cliffhanger:1,Focus:1	0	0	0
-"Rath Soul Legs Beta"	LEGS	Focus:1	1	0	0
-"Rathalos Legs Alpha"	LEGS	"Jump Master:1,Weakness Exploit:1"	0	0	0
-"Rathalos Legs Beta"	LEGS	"Jump Master:1"	0	0	1
-"Vespoid Legs Alpha"	LEGS	"Honey Hunter:1,Paralysis Resistance:1"	0	0	0
-"Zorah Legs Alpha"	LEGS	Bombardier:2,Earplugs:1	0	0	0
-"Zorah Legs Beta"	LEGS	Bombardier:2	0	1	0
-"Attack Charm I"	CHARM	"Attack Boost:1"	0	0	0
-"Attack Charm II"	CHARM	"Attack Boost:2"	0	0	0
-"Attack Charm III"	CHARM	"Attack Boost:3"	0	0	0
-"Blast Charm III"	CHARM	"Blast Resistance:3"	0	0	0
-"Blaze Charm I"	CHARM	"Fire Attack:1"	0	0	0
-"Blaze Charm II"	CHARM	"Fire Attack:2"	0	0	0
-"Blaze Charm III"	CHARM	"Fire Attack:3"	0	0	0
-"Botany Charm I"	CHARM	Botanist:1	0	0	0
-"Botany Charm II"	CHARM	Botanist:2	0	0	0
-"Botany Charm III"	CHARM	Botanist:3	0	0	0
-"Challenger Charm I"	CHARM	Agitator:1	0	0	0
-"Challenger Charm II"	CHARM	Agitator:2	0	0	0
-"Critical Charm I"	CHARM	"Critical Boost:1"	0	0	0
-"Draw Charm I"	CHARM	"Critical Draw:1"	0	0	0
-"Draw Charm II"	CHARM	"Critical Draw:2"	0	0	0
-"Earplugs Charm I"	CHARM	Earplugs:1	0	0	0
-"Earplugs Charm II"	CHARM	Earplugs:2	0	0	0
-"Earplugs Charm III"	CHARM	Earplugs:3	0	0	0
-"Exploiter Charm I"	CHARM	"Weakness Exploit:1"	0	0	0
-"Exploiter Charm II"	CHARM	"Weakness Exploit:2"	0	0	0
-"Fire Charm III"	CHARM	"Fire Resistance:3"	0	0	0
-"Focus Charm I"	CHARM	Focus:1	0	0	0
-"Focus Charm II"	CHARM	Focus:2	0	0	0
-"Gale Charm I"	CHARM	"Affinity Sliding:1,Airborne:1"	0	0	0
-"Geology Charm I"	CHARM	Geologist:1	0	0	0
-"Geology Charm II"	CHARM	Geologist:2	0	0	0
-"Geology Charm III"	CHARM	Geologist:3	0	0	0
-"Geomancy Charm"	CHARM	"Detector:1,Forager's Luck:1"	0	0	0
-"Health Charm I"	CHARM	"Health Boost:1"	0	0	0
-"Health Charm II"	CHARM	"Health Boost:2"	0	0	0
-"Health Charm III"	CHARM	"Health Boost:3"	0	0	0
-"Insect Charm I"	CHARM	Entymologist:1	0	0	0
-"Insect Charm II"	CHARM	Entymologist:2	0	0	0
-"Marathon Charm I"	CHARM	"Marathon Runner:1"	0	0	0
-"Marathon Charm II"	CHARM	"Marathon Runner:2"	0	0	0
-"Master's Charm I"	CHARM	"Critical Eye:1"	0	0	0
-"Master's Charm II"	CHARM	"Critical Eye:2"	0	0	0
-"Master's Charm III"	CHARM	"Critical Eye:3"	0	0	0
-"Mighty Charm I"	CHARM	"Maximum Might:1"	0	0	0
-"Mighty Charm II"	CHARM	"Maximum Might:2"	0	0	0
-"Paralysis Charm III"	CHARM	"Paralysis Resistance:3"	0	0	0
-"Poison Charm I"	CHARM	"Poison Resistance:1"	0	0	0
-"Poison Charm II"	CHARM	"Poison Resistance:2"	0	0	0
-"Poison Charm III"	CHARM	"Poison Resistance:3"	0	0	0
-"Power Charm I"	CHARM	"Latent Power:1"	0	0	0
-"Power Charm II"	CHARM	"Latent Power:2"	0	0	0
-"Sheath Charm I"	CHARM	"Quick Sheath:1"	0	0	0
-"Sheath Charm II"	CHARM	"Quick Sheath:2"	0	0	0
-"Sheath Charm III"	CHARM	"Quick Sheath:3"	0	0	0
-"Stealth Charm I"	CHARM	Stealth:1	0	0	0
-"Stealth Charm II"	CHARM	Stealth:2	0	0	0
-"Stealth Charm III"	CHARM	Stealth:3	0	0	0
-"Stun Charm I"	CHARM	"Stun Resistance:1"	0	0	0
-"Stun Charm II"	CHARM	"Stun Resistance:2"	0	0	0
-"Stun Charm III"	CHARM	"Stun Resistance:3"	0	0	0
-"Surge Charm I"	CHARM	"Stamina Surge:1"	0	0	0
-"Surge Charm II"	CHARM	"Stamina Surge:2"	0	0	0
-"Thunder Charm III"	CHARM	"Thunder Resistance:3"	0	0	0
-"Tremor Charm II"	CHARM	"Tremor Resistance:2"	0	0	0
-"Whetstone Charm I"	CHARM	"Speed Sharpening:1"	0	0	0
-"Whetstone Charm II"	CHARM	"Speed Sharpening:2"	0	0	0
-"Whetstone Charm III"	CHARM	"Speed Sharpening:3"	0	0	0
-"Windproof Charm III"	CHARM	Windproof:3	0	0	0
+"Alloy Head Alpha"	head	"Defense Boost:1,Windproof:1"	0	0	0
+"Alloy Head Beta"	head	Windproof:1	1	0	0
+"Anja Head Alpha"	head	"Fire Attack:2,Fire Resistance:1"	0	0	0
+"Anja Head Beta"	head	"Fire Attack:2"	0	1	0
+"Baan Head Alpha"	head	"Tremor Resistance:2"	0	0	0
+"Baan Head Beta"	head	"Tremor Resistance:1"	0	1	0
+"Bazel Head Alpha"	head	"Blast Attack:1,Earplugs:2"	0	1	0
+"Bazel Head Beta"	head	Earplugs:2	1	0	1
+"Bone Head Alpha"	head	"Entomologist:1,Health Boost:1"	0	0	0
+"Bone Head Beta"	head	"Health Boost:1"	1	0	0
+"Damascus Head Alpha"	head	"Defense Boost:2,Speed Sharpening:1"	1	0	0
+"Death Stench Head Alpha"	head	"Critical Eye:1,Resuscitate:1"	0	1	0
+"Diablos Head Alpha"	head	"Critical Draw:2,Heroics:1"	0	0	0
+"Diablos Head Beta"	head	"Critical Draw:2"	0	1	0
+"Diablos Nero Head Alpha"	head	Focus:2	1	0	0
+"Diablos Nero Head Beta"	head	Focus:1	0	0	1
+"Dodogama Head Alpha"	head	"Blast Resistance:2"	0	0	0
+"Dodogama Head Beta"	head	"Blast Resistance:1"	1	0	0
+"Dragonking Head Alpha"	head	"Weakness Exploit:2"	0	0	1
+"Gastrodon Head Alpha"	head	"Blast Resistance:1,Flinch Free:1"	0	0	0
+"Girros Head Alpha"	head	"Horn Maestro:1,Paralysis Resistance:1"	0	0	0
+"Guild Cross Head Alpha"	head	"Divine Blessing:1,Thunder Resistance:2"	1	0	0
+"High Metal Head Alpha"	head	"Earplugs:1,Ice Resistance:2"	0	0	0
+"Insect Head Alpha"	head	"Botanist:1,Evade Window:2"	0	0	0
+"Kaiser Head Alpha"	head	"Latent Power:2"	0	0	0
+"Kaiser Head Beta"	head	"Latent Power:1"	0	1	0
+"Kirin Head Alpha"	head	"Divine Blessing:1,Marathon Runner:2"	0	0	0
+"Kirin Head Beta"	head	"Marathon Runner:2"	1	0	0
+"Kulu Head Alpha"	head	"Fire Resistance:1,Weakness Exploit:1"	0	0	0
+"Kulu Head Beta"	head	"Fire Resistance:1"	2	0	0
+"Lavasioth Head Alpha"	head	"Fire Attack:2,Quick Sheath:1"	0	0	0
+"Lavasioth Head Beta"	head	"Fire Attack:1,Quick Sheath:1"	2	0	0
+"Lumu Head Alpha"	head	"Stamina Surge:2"	0	0	0
+"Lumu Head Beta"	head	"Stamina Surge:1"	0	2	0
+"Nergigante Head Alpha"	head	"Attack Boost:1,Maximum Might:2"	1	0	0
+"Nergigante Head Beta"	head	"Maximum Might:2"	2	0	0
+"Odogaron Head Alpha"	head	"Bleeding Resistance:2,Critical Eye:1"	0	0	0
+"Rath Soul Head Alpha"	head	"Critical Boost:1,Intimidator:1"	0	0	0
+"Rath Soul Head Beta"	head	"Critical Boost:1"	2	0	0
+"Rathalos Head Alpha"	head	"Attack Boost:2,Fire Attack:1"	0	0	0
+"Rathalos Head Beta"	head	"Attack Boost:2"	1	0	0
+"Rathian Head Alpha"	head	"Health Boost:2,Poison Attack:1"	0	0	0
+"Rathian Head Beta"	head	"Health Boost:1,Poison Attack:1"	1	0	0
+"Shadow Shades"	head	"Stun Resistance:1"	3	0	0
+"Shamos Head Alpha"	head	Detector:1,Geologist:1	0	0	0
+"Strategist Head Alpha"	head	"Critical Eye:2"	1	0	0
+"Tzitzi Head Alpha"	head	"Blindsider:1,Stun Resistance:1"	0	0	0
+"Uragaan Head Alpha"	head	"Thunder Resistance:2"	0	0	1
+"Uragaan Head Beta"	head	"Thunder Resistance:1"	1	0	1
+"Vespoid Head Alpha"	head	"Paralysis Attack:1,Quick Sheath:1"	0	0	0
+"Vespoid Head Beta"	head	"Quick Sheath:1"	1	0	0
+"Wiggler Head Alpha"	head	Wide-Range:2	2	0	0
+"Zorah Head Alpha"	head	"Blast Attack:1,Handicraft:1"	0	0	0
+"Zorah Head Beta"	head	Handicraft:1	1	0	0
+"Alloy Arms Alpha"	arms	"Defense Boost:1,Speed Sharpening:1"	0	0	0
+"Anja Arms Alpha"	arms	"Fire Attack:1,Special Ammo Boost:1"	0	0	0
+"Barroth Arms Alpha"	arms	"Marathon Runner:1,Stamina Thief:1"	0	0	0
+"Barroth Arms Beta"	arms	"Marathon Runner:1"	1	0	0
+"Bazel Arms Alpha"	arms	"Critical Draw:2,Earplugs:1"	0	0	0
+"Bazel Arms Beta"	arms	"Critical Draw:2"	0	0	1
+"Bone Arms Alpha"	arms	"Attack Boost:1,Slugger:1"	0	0	0
+"Damascus Arms Alpha"	arms	"Handicraft:1,Speed Sharpening:1"	0	0	0
+"Death Stench Arms Alpha"	arms	"Dragon Attack:1,Focus:2"	1	0	0
+"Death Stench Arms Beta"	arms	Focus:2	2	0	0
+"Diablos Arms Alpha"	arms	"Heroics:2,Tremor Resistance:1"	0	0	0
+"Diablos Arms Beta"	arms	Heroics:2	0	1	0
+"Diablos Nero Arms Alpha"	arms	"Focus:1,Marathon Runner:1"	0	0	0
+"Diablos Nero Arms Beta"	arms	Focus:1	1	1	0
+"Diabols Arms Alpha"	arms	"Heroics:2,Tremor Resistance:1"	0	0	0
+"Dober Arms Alpha"	arms	"Mushroomancer:1,Stamina Surge:2"	0	0	0
+"Dober Arms Beta"	arms	"Mushroomancer:1,Stamina Surge:1"	2	0	0
+"Hunter Arms Alpha"	arms	Stealth:2	0	0	0
+"Hunter Arms Beta"	arms	Stealh:1	1	0	0
+"Ingot Arms Alpha"	arms	"Health Boost:2,Thunder Attack:1"	0	0	0
+"Ingot Arms Beta"	arms	"Health Boost:2"	1	0	0
+"Insect Arms Alpha"	arms	"Botanist:2,Leap of Faith:1"	0	0	0
+"Insect Arms Beta"	arms	Botanist:2	1	1	0
+"Kaiser Arms Alpha"	arms	"Weakness Exploit:2"	1	0	0
+"Kaiser Arms Beta"	arms	"Weakness Exploit:1"	0	0	1
+"Kestodon Arms Alpha"	arms	"Affinity Sliding:1,Focus:1"	0	0	0
+"Kestodon Arms Beta"	arms	"Affinity Sliding:1"	1	0	0
+"Kirin Arms Alpha"	arms	"Marathon Runner:1,Thunder Attack:2"	0	0	0
+"Kulu Arms Alpha"	arms	"Critical Eye:1,Pro Transporter:1"	0	0	0
+"Lavasioth Arms Alpha"	arms	"Affinity Sliding:1,Wide-Range:1"	0	1	0
+"Lavasioth Arms Beta"	arms	"Affinity Sliding:1"	0	0	1
+"Nergigante Arms Alpha"	arms	"Agitator:2,Attack Boost:1"	0	0	0
+"Nergigante Arms Beta"	arms	Agitator:2	1	0	0
+"Odogaron Arms Alpha"	arms	"Constitution:1,Critical Eye:1"	0	0	0
+"Pukei Arms Alpha"	arms	"Poison Attack:1,Poison Resistance:2"	0	0	0
+"Pukei Arms Beta"	arms	"Poison Resistance:1"	2	0	0
+"Rath Heart Arms Alpha"	arms	Windproof:2	0	0	0
+"Rath Heart Arms Beta"	arms	Windproof:1	0	1	0
+"Rath Soul Arms Alpha"	arms	Focus:1,Windproof:1	0	0	0
+"Rath Soul Arms Beta"	arms	Focus:1	0	1	0
+"Rathalos Arms Alpha"	arms	"Attack Boost:1,Fire Resistance:2"	0	0	0
+"Rathalos Arms Beta"	arms	"Fire Resistance:2"	1	0	0
+"Tzitzi Arms Alpha"	arms	"Stun Resistance:2,Wide-Range:1"	0	0	0
+"Tzitzi Arms Beta"	arms	"Stun Resistance:2"	1	0	0
+"Xeno'Jiiva Arms Alpha"	arms	"Critical Boost:1,Flinch Free:1"	1	0	0
+"Zorah Arms Alpha"	arms	"Bombardier:1,Free Elem/Ammo Up:1"	0	0	0
+"Zorah Arms Beta"	arms	"Free Elem/Ammo Up:1"	1	0	0
+"Anja Body Alpha"	body	"Marathon Runner:1,Special Ammo Boost:1"	0	0	0
+"Anja Body Beta"	body	"Marathon Runner:1"	2	0	0
+"Bazel Body Alpha"	body	"Blast Resistance:2,Guard:2"	0	0	0
+"Bone Body Alpha"	body	"Attack Boost:2"	0	0	0
+"Bone Body Beta"	body	"Attack Boost:1"	1	0	0
+"Damascus Body Alpha"	body	"Defense Boost:2,Focus:2"	1	0	0
+"Damascus Body Beta"	body	Focus:2	3	0	0
+"Diablos Body Alpha"	body	Heroics:1,Slugger:2	0	0	0
+"Diablos Body Beta"	body	Slugger:2	0	1	0
+"Diablos Nero Body Alpha"	body	Resentment:2	1	0	0
+"Diablos Nero Body Beta"	body	Resentment:1	1	1	0
+"Dober Body Alpha"	body	"Attack Boost:2,Mushroomancer:1"	1	0	0
+"Dober Body Beta"	body	"Attack Boost:2"	0	1	0
+"Girros Body Alpha"	body	"Paralysis Resistance:2"	0	0	0
+"Girros Body Beta"	body	"Paralysis Resistance:1"	1	0	0
+"High Metal Body Alpha"	body	"Earplugs:2,Ice Attack:1"	0	0	0
+"High Metal Body Beta"	body	"Earplugs:1,Ice Attack:1"	0	1	0
+"Ingot Body Alpha"	body	"Thunder Resistance:2"	0	0	0
+"Ingot Body Beta"	body	"Thunder Resistance:1"	1	0	0
+"Insect Body Alpha"	body	"Botanist:1,Quick Sheath:2"	0	0	0
+"Insect Body Beta"	body	"Quick Sheath:2"	1	0	0
+"Kaiser Body Alpha"	body	"Latent Power:1"	0	0	0
+"Kulu Body Alpha"	body	"Critical Eye:1,Stamina Surge:1"	0	0	0
+"Kulu Body Beta"	body	"Stamina Surge:1"	1	0	0
+"Kushala Body Alpha"	body	Focus:1,Handicraft:2	0	0	0
+"Lavasioth Body Alpha"	body	"Fire Attack:2,Heat Guard:1"	0	0	0
+"Lavasioth Body Beta"	body	"Fire Attack:2"	2	0	0
+"Leather Body Alpha"	body	"Fire Resistance:1"	0	0	0
+"Nergigante Body Alpha"	body	"Agitator:1,Stamina Surge:2"	1	0	0
+"Nergigante Body Beta"	body	"Stamina Surge:2"	1	1	0
+"Odogaron Body Alpha"	body	"Bleeding Resistance:1,Speed Sharpening:2"	0	0	0
+"Odogaron Body Beta"	body	"Speed Sharpening:2"	1	0	0
+"Pukei Body Alpha"	body	"Botanist:1,Item Prolonger:1"	0	0	0
+"Rath Soul Body Alpha"	body	"Free Elem/Ammo Up:1,Intimidator:1"	1	0	0
+"Rath Soul Body Beta"	body	"Free Elem/Ammo Up:1"	0	1	0
+"Rathalos Body Alpha"	body	"Fire Attack:1,Weakness Exploit:2"	0	0	0
+"Rathalos Body Beta"	body	"Weakness Exploit:2"	1	0	0
+"Rathian Body Alpha"	body	"Botanist:2,Recovery Up:1"	0	0	0
+"Rathian Body Beta"	body	"Botanist:1,Recovery Up:1"	1	0	0
+"Vespoid Body Alpha"	body	Windproof:1	0	0	0
+"Vespoid Body Beta"	body	Windproof:1	1	0	0
+"Zorah Body Alpha"	body	"Blast Attack:2,Windproof:1"	0	0	0
+"Zorah Body Beta"	body	"Blast Attack:2"	0	1	0
+"Alloy Waist Alpha"	waist	"Poison Resistance:1,Water Resistance:1"	0	0	0
+"Alloy Waist Beta"	waist	"Poison Resistance:1"	1	0	0
+"Anja Waist Alpha"	waist	"Artillery:1,Fire Resistance:2"	0	0	0
+"Anja Waist Beta"	waist	"Fire Resistance:2"	0	1	0
+"Bazel Waist Alpha"	waist	"Earplugs:2,Jump Master:1"	1	0	0
+"Bazel Waist Beta"	waist	Earplugs:2	0	0	1
+"Brigade Waist Alpha"	waist	"Geologist:2,Recovery Speed:1"	0	0	0
+"Brigade Waist Beta"	waist	Geologist:2	1	0	0
+"Chainmail Waist Alpha"	waist	"Quick Sheath:1"	0	0	0
+"Damascus Waist Alpha"	waist	"Focus:1,Iron Skin:2"	1	0	0
+"Damascus Waist Beta"	waist	Focus:1	3	0	0
+"Death Stench Waist Alpha"	waist	"Dragon Attack:1,Focus:1"	0	0	0
+"Diablos Nero Waist Alpha"	waist	"Partbreaker:1,Resentment:1"	0	0	0
+"Diablos Nero Waist Beta"	waist	Resentment:1	0	1	0
+"Diablos Waist Alpha"	waist	"Critical Draw:1,Marathon Runner:1"	0	0	0
+"Diablos Waist Beta"	waist	"Marathon Runner:2"	0	1	0
+"Dober Waist Alpha"	waist	"Attack Boost:1,Dragon Resistance:1"	0	1	0
+"Hunter Waist Alpha"	waist	"Master Gatherer:1,Stealth:1"	0	0	0
+"Ingot Waist Alpha"	waist	Windproof:2	0	0	0
+"Ingot Waist Beta"	waist	Windproof:1	0	0	1
+"Insect Waist Alpha"	waist	"Honey Hunter:1,Quick Sheath:1"	0	0	0
+"Kadachi Waist Alpha"	waist	"Thunder Attack:2,Thunder Resistance:1"	0	0	0
+"Kaiser Waist Alpha"	waist	"Blast Attack:1,Weakness Exploit:1"	0	0	0
+"Lavasioth Waist Alpha"	waist	"Quick Sheath:2,Recovery Up:1"	0	0	0
+"Lavasioth Waist Beta"	waist	"Quick Sheath:2"	1	0	0
+"Leather Waist Alpha"	waist	"Stamina Surge:1"	0	0	0
+"Legiana Waist Alpha"	waist	"Ice Attack:2,Windproof:1"	0	0	0
+"Nergigante Waist Alpha"	waist	"Attack Boost:2,Stamina Surge:1"	0	0	0
+"Nergigante Waist Beta"	waist	"Attack Boost:2"	0	1	0
+"Odogaron Waist Alpha"	waist	"Critical Eye:2,Speed Sharpening:1"	0	0	0
+"Odogaron Waist Beta"	waist	"Critical Eye:2"	0	1	0
+"Rath Heart Waist Alpha"	waist	"Handicraft:1,Poison Resistance:1"	0	0	0
+"Rath Soul Waist Alpha"	waist	"Piercing Shots:1,Windproof:2"	0	0	0
+"Rath Soul Waist Beta"	waist	Windproof:1	0	0	1
+"Rathalos Waist Alpha"	waist	"Fire Attack:2,Focus:1"	0	0	0
+"Rathalos Waist Beta"	waist	"Fire Attack:2"	0	1	0
+"Rathian Waist Alpha"	waist	"Health Boost:1,Poison Resistance:2"	0	0	0
+"Rathian Waist Beta"	waist	"Health Boost:1,Poison Resistance:1"	1	0	0
+"Uragaan Waist Alpha"	waist	"Partbreaker:1,Thunder Resistance:1"	2	0	0
+"Vespoid Waist Alpha"	waist	"Paralysis Resistance:2"	0	0	0
+"Vespoid Waist Beta"	waist	"Paralysis Resistance:1"	1	0	0
+"Zorah Waist Alpha"	waist	"Fortify:1,Tremor Resistance:1"	0	0	0
+"Zorah Waist Beta"	waist	Fortify:1	0	1	0
+"Alloy Legs Alpha"	legs	"Speed Sharpening:2"	0	0	0
+"Alloy Legs Beta"	legs	"Speed Sharpening:1"	1	0	0
+"Barroth Legs Alpha"	legs	"Marathon Runner:1,Stun Resistance:2"	0	0	0
+"Barroth Legs Beta"	legs	"Stun Resistance:1"	1	1	0
+"Bazel Legs Alpha"	legs	"Bombardier:2,Critical Draw:1"	1	0	0
+"Bone Legs Alphs"	legs	Entomologist:2	0	0	0
+"Bone Legs Beta"	legs	Entomologist:1	1	0	0
+"Brigade Legs Alpha"	legs	Geologist:1,Scholar:1	1	0	0
+"Comission Legs Alpha"	legs	"Affinity Sliding:1,Stealth:2"	0	0	0
+"Commission Legs Alpha"	legs	"Affinity Sliding:1,Stealth:2"	0	0	0
+"Commission Legs Beta"	legs	Stealth:2	0	1	0
+"Diablos Legs Alpha"	legs	"Slugger:1,Tremor Resistance:2"	0	0	0
+"Diablos Legs Beta"	legs	"Tremor Resistance:2"	2	0	0
+"Diablos Nero Legs Alpha"	legs	"Heroics:1,Normal Shots:1"	1	0	0
+"Diablos Nero Legs Beta"	legs	"Normal Shots:1"	0	1	0
+"Dober Legs Alpha"	legs	"Attack Boost:2,Stamina Surge:1"	0	0	0
+"Dober Legs Beta"	legs	"Attack Boost:2"	1	0	0
+"Guild Cross Legs Alpha"	legs	"Airborne:1,Fire Resistance:2"	0	0	0
+"Ingot Legs Alpha"	legs	"Defense Boost:2,Windproof:1"	0	0	0
+"Insect Legs Alpha"	legs	"Evade Window:1,Forager's Luck:1"	0	0	0
+"Insect Legs Beta"	legs	"Forager's Luck:1"	1	1	0
+"Jyura Legs Alpha"	legs	Focus:2	0	0	0
+"Jyura Legs Beta"	legs	Focus:1	0	1	0
+"Kadachi Legs Alpha"	legs	"Constitution:1,Thunder Resistance:2"	0	0	0
+"Kadachi Legs Beta"	legs	"Thunder Resistance:1"	2	0	0
+"Kaiser Legs Alpha"	legs	"Blast Attack:1,Latent Power:2"	0	0	0
+"Kaiser Legs Beta"	legs	"Latent Power:2"	1	0	0
+"Kirin Legs Alpha"	legs	"Free Elem/Ammo Up:2,Thunder Resistance:2"	0	0	0
+"Kulu Legs Alpha"	legs	"Critical Eye:1,Item Prolonger:1"	0	0	0
+"Kulu Legs Beta"	legs	"Critical Eye:1"	1	0	0
+"Lavasioth Legs Alpha"	legs	"Fire Attack:1,Spread/Power Shots:1"	1	0	0
+"Legiana Legs Alpha"	legs	"Critical Draw:1,Ice Resistance:2"	0	0	0
+"Lumu Legs Alpha"	legs	"Stamina Surge:1,Windproof:1"	0	0	0
+"Nergigante Legs Alpha"	legs	"Agitator:1,Maximum Might:1"	1	0	0
+"Nergigante Legs Beta"	legs	"Maximum Might:1"	0	1	0
+"Odogaron Legs Alpha"	legs	"Critical Eye:1,Quick Sheath:1"	0	0	0
+"Odogaron Legs Beta"	legs	"Quick Sheath:1"	1	0	0
+"Pukei Legs Alpha"	legs	"Botanist:2,Sporepuff Expert:1"	0	0	0
+"Pukei Legs Beta"	legs	Botanist:1	0	1	0
+"Rath Heart Legs Alpha"	legs	"Tool Specialist:1,Windproof:1"	0	0	0
+"Rath Soul Legs Alpha"	legs	Cliffhanger:1,Focus:1	0	0	0
+"Rath Soul Legs Beta"	legs	Focus:1	1	0	0
+"Rathalos Legs Alpha"	legs	"Jump Master:1,Weakness Exploit:1"	0	0	0
+"Rathalos Legs Beta"	legs	"Jump Master:1"	0	0	1
+"Vespoid Legs Alpha"	legs	"Honey Hunter:1,Paralysis Resistance:1"	0	0	0
+"Zorah Legs Alpha"	legs	Bombardier:2,Earplugs:1	0	0	0
+"Zorah Legs Beta"	legs	Bombardier:2	0	1	0
+"Attack Charm I"	charm	"Attack Boost:1"	0	0	0
+"Attack Charm II"	charm	"Attack Boost:2"	0	0	0
+"Attack Charm III"	charm	"Attack Boost:3"	0	0	0
+"Blast Charm III"	charm	"Blast Resistance:3"	0	0	0
+"Blaze Charm I"	charm	"Fire Attack:1"	0	0	0
+"Blaze Charm II"	charm	"Fire Attack:2"	0	0	0
+"Blaze Charm III"	charm	"Fire Attack:3"	0	0	0
+"Botany Charm I"	charm	Botanist:1	0	0	0
+"Botany Charm II"	charm	Botanist:2	0	0	0
+"Botany Charm III"	charm	Botanist:3	0	0	0
+"Challenger Charm I"	charm	Agitator:1	0	0	0
+"Challenger Charm II"	charm	Agitator:2	0	0	0
+"Critical Charm I"	charm	"Critical Boost:1"	0	0	0
+"Draw Charm I"	charm	"Critical Draw:1"	0	0	0
+"Draw Charm II"	charm	"Critical Draw:2"	0	0	0
+"Earplugs Charm I"	charm	Earplugs:1	0	0	0
+"Earplugs Charm II"	charm	Earplugs:2	0	0	0
+"Earplugs Charm III"	charm	Earplugs:3	0	0	0
+"Exploiter Charm I"	charm	"Weakness Exploit:1"	0	0	0
+"Exploiter Charm II"	charm	"Weakness Exploit:2"	0	0	0
+"Fire Charm III"	charm	"Fire Resistance:3"	0	0	0
+"Focus Charm I"	charm	Focus:1	0	0	0
+"Focus Charm II"	charm	Focus:2	0	0	0
+"Gale Charm I"	charm	"Affinity Sliding:1,Airborne:1"	0	0	0
+"Geology Charm I"	charm	Geologist:1	0	0	0
+"Geology Charm II"	charm	Geologist:2	0	0	0
+"Geology Charm III"	charm	Geologist:3	0	0	0
+"Geomancy Charm"	charm	"Detector:1,Forager's Luck:1"	0	0	0
+"Health Charm I"	charm	"Health Boost:1"	0	0	0
+"Health Charm II"	charm	"Health Boost:2"	0	0	0
+"Health Charm III"	charm	"Health Boost:3"	0	0	0
+"Insect Charm I"	charm	Entymologist:1	0	0	0
+"Insect Charm II"	charm	Entymologist:2	0	0	0
+"Marathon Charm I"	charm	"Marathon Runner:1"	0	0	0
+"Marathon Charm II"	charm	"Marathon Runner:2"	0	0	0
+"Master's Charm I"	charm	"Critical Eye:1"	0	0	0
+"Master's Charm II"	charm	"Critical Eye:2"	0	0	0
+"Master's Charm III"	charm	"Critical Eye:3"	0	0	0
+"Mighty Charm I"	charm	"Maximum Might:1"	0	0	0
+"Mighty Charm II"	charm	"Maximum Might:2"	0	0	0
+"Paralysis Charm III"	charm	"Paralysis Resistance:3"	0	0	0
+"Poison Charm I"	charm	"Poison Resistance:1"	0	0	0
+"Poison Charm II"	charm	"Poison Resistance:2"	0	0	0
+"Poison Charm III"	charm	"Poison Resistance:3"	0	0	0
+"Power Charm I"	charm	"Latent Power:1"	0	0	0
+"Power Charm II"	charm	"Latent Power:2"	0	0	0
+"Sheath Charm I"	charm	"Quick Sheath:1"	0	0	0
+"Sheath Charm II"	charm	"Quick Sheath:2"	0	0	0
+"Sheath Charm III"	charm	"Quick Sheath:3"	0	0	0
+"Stealth Charm I"	charm	Stealth:1	0	0	0
+"Stealth Charm II"	charm	Stealth:2	0	0	0
+"Stealth Charm III"	charm	Stealth:3	0	0	0
+"Stun Charm I"	charm	"Stun Resistance:1"	0	0	0
+"Stun Charm II"	charm	"Stun Resistance:2"	0	0	0
+"Stun Charm III"	charm	"Stun Resistance:3"	0	0	0
+"Surge Charm I"	charm	"Stamina Surge:1"	0	0	0
+"Surge Charm II"	charm	"Stamina Surge:2"	0	0	0
+"Thunder Charm III"	charm	"Thunder Resistance:3"	0	0	0
+"Tremor Charm II"	charm	"Tremor Resistance:2"	0	0	0
+"Whetstone Charm I"	charm	"Speed Sharpening:1"	0	0	0
+"Whetstone Charm II"	charm	"Speed Sharpening:2"	0	0	0
+"Whetstone Charm III"	charm	"Speed Sharpening:3"	0	0	0
+"Windproof Charm III"	charm	Windproof:3	0	0	0
