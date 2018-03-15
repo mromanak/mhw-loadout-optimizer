@@ -11,6 +11,7 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+import static java.util.Collections.emptyList;
 import static springfox.documentation.builders.PathSelectors.regex;
 
 @Configuration
@@ -19,10 +20,24 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
 
     @Bean
     public Docket productApi() {
-        return new Docket(DocumentationType.SWAGGER_2)
-            .select()
-            .apis(RequestHandlerSelectors.basePackage("com.mromanak"))
-            .build();
+        return new Docket(DocumentationType.SWAGGER_2).
+            select().
+            apis(RequestHandlerSelectors.basePackage("com.mromanak")).
+            build().
+            apiInfo(createApiInfo());
+    }
+
+    private ApiInfo createApiInfo() {
+        return new ApiInfo(
+            "MHW Loadout Optimizer",
+            "A simple API for obtaining optimized loadouts for Monster Hunter: World",
+            "1.0",
+            null,
+            new Contact("Mark Romanak", null, "mroma102@gmail.com"),
+            null,
+            null,
+            emptyList()
+        );
     }
 
     @Override

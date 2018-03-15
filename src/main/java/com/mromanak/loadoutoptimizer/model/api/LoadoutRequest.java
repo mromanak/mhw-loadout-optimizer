@@ -1,6 +1,7 @@
 package com.mromanak.loadoutoptimizer.model.api;
 
 import com.mromanak.loadoutoptimizer.model.ArmorType;
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
@@ -8,6 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Data
+@ApiModel(description = "A request for optimized loadouts")
 public class LoadoutRequest {
 
     @ApiModelProperty(
@@ -16,8 +18,8 @@ public class LoadoutRequest {
     private Map<String, SkillWeight> skillWeights = new HashMap<>();
 
     @ApiModelProperty(
-        notes = "A map of armor peices that must be included in the resulting loadouts. (This functionality is not " +
-            "yet implemented, so this property is ignored)")
+        notes = "A map of armor slots to the name of an armor piece that must be included in the returned loadouts. " +
+            "(This functionality is not  yet implemented)")
     private Map<ArmorType, String> requiredArmorPieces = new HashMap<>();
 
     @ApiModelProperty(notes = "The relative value of a level 1 decoration slot")
