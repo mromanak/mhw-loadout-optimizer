@@ -1,8 +1,10 @@
-package com.mromanak.loadoutoptimizer.model;
+package com.mromanak.loadoutoptimizer.model.serialization;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.google.common.base.Joiner;
 import com.google.common.base.Splitter;
+import com.mromanak.loadoutoptimizer.model.ArmorPiece;
+import com.mromanak.loadoutoptimizer.model.ArmorType;
 import lombok.Data;
 
 import java.util.Map;

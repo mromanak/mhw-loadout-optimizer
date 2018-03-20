@@ -6,7 +6,7 @@ import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 import com.google.common.collect.ImmutableSet;
 import com.mromanak.loadoutoptimizer.model.ArmorPiece;
-import com.mromanak.loadoutoptimizer.model.CsvArmorPiece;
+import com.mromanak.loadoutoptimizer.model.serialization.CsvArmorPiece;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;

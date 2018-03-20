@@ -9,8 +9,13 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
+import static com.mromanak.loadoutoptimizer.model.ArmorType.hasNextArmorType;
+import static com.mromanak.loadoutoptimizer.model.ArmorType.nextArmorType;
 import static java.util.Collections.emptyList;
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toMap;
@@ -29,7 +34,7 @@ public class LoadoutOptimizer {
         return findBestLoadoutsGiven(Loadout.empty(), armorPieces, scoringFunction);
     }
 
-    public static List<Loadout> findBestLoadoutsGiven(Loadout startingLoadout, Collection<ArmorPiece> armorPieces,
+    private static List<Loadout> findBestLoadoutsGiven(Loadout startingLoadout, Collection<ArmorPiece> armorPieces,
         LoadoutScoringFunction scoringFunction)
     {
         if(armorPieces == null || armorPieces.isEmpty()) {
@@ -50,11 +55,10 @@ public class LoadoutOptimizer {
             collect(toList());
     }
 
-    public static List<Loadout> findBestLoadoutsWithSetBonus(Collection<ArmorPiece> setArmorPieces, int minimumPieces,
+    public static List<Loadout> findBestLoadoutsGiven(List<Loadout> startingLoadouts,
         Collection<ArmorPiece> otherArmorPieces, LoadoutScoringFunction scoringFunction)
     {
-        List<Loadout> combinationsForSetBonus = findCombinations(setArmorPieces, minimumPieces);
-        return combinationsForSetBonus.stream().
+        return startingLoadouts.stream().
             map(startingLoadout -> findBestLoadoutsGiven(startingLoadout, otherArmorPieces, scoringFunction)).
             map((List<Loadout> loadouts) -> {
                 if(loadouts.isEmpty()) {
@@ -68,51 +72,6 @@ public class LoadoutOptimizer {
             stream().
             map(r -> Loadout.builder().withArmorPieces(r).build()).
             collect(toList());
-    }
-
-    private static List<Loadout> findCombinations(Collection<ArmorPiece> armorPieces, int minimumPieces) {
-        Map<ArmorType, List<ArmorPiece>> armorPiecesMap = armorPieces.stream().
-            collect(toMap(
-                ArmorPiece::getArmorType,
-                ImmutableList::of,
-                (l1, l2) -> ImmutableList.<ArmorPiece>builder().addAll(l1).addAll(l2).build()
-            ));
-
-        return findCombinations(Loadout.empty(), armorPiecesMap, nextArmorType(null)).stream().
-            filter(l -> l.getArmorPieces().size() >= minimumPieces).
-            collect(toList());
-    }
-
-    private static List<Loadout> findCombinations(Loadout currentLoadout,
-        Map<ArmorType, List<ArmorPiece>> armorPiecesMap, ArmorType armorType)
-    {
-        if(hasNextArmorType(armorType)) {
-            List<ArmorPiece> currentArmorPieces = armorPiecesMap.getOrDefault(armorType, emptyList());
-            if(currentArmorPieces.isEmpty()) {
-                return findCombinations(currentLoadout, armorPiecesMap, nextArmorType(armorType));
-            }
-
-            List<Loadout> loadoutsWithNextPiece = findCombinations(currentLoadout, armorPiecesMap, nextArmorType(armorType));
-            List<Loadout> loadoutsToReturn = new ArrayList<>(loadoutsWithNextPiece);
-            for (Loadout loadoutWithNextPiece : loadoutsWithNextPiece) {
-                for (ArmorPiece armorPiece : currentArmorPieces) {
-                    loadoutsToReturn.add(Loadout.builder(loadoutWithNextPiece).
-                        withArmorPiece(armorPiece).
-                        build());
-                }
-            }
-            return loadoutsToReturn;
-        } else {
-            List<ArmorPiece> currentArmorPieces = armorPiecesMap.getOrDefault(armorType, emptyList());
-            List<Loadout> loadoutsToReturn = new ArrayList<>();
-            loadoutsToReturn.add(currentLoadout);
-            for (ArmorPiece armorPiece : currentArmorPieces) {
-                loadoutsToReturn.add(Loadout.builder().
-                    withArmorPiece(armorPiece).
-                    build());
-            }
-            return loadoutsToReturn;
-        }
     }
 
     private OptimizerResponse findBestLoadoutsGiven(Loadout currentLoadout, ArmorType armorType) {
@@ -180,31 +139,5 @@ public class LoadoutOptimizer {
         Loadout resultingLoadout = Loadout.builder(currentLoadout).withArmorPiece(armorPiece).build();
         double score = scoringFunction.apply(resultingLoadout);
         return OptimizerResponse.of(ImmutableList.of(armorPiecesToAdd), score);
-    }
-
-    private static boolean hasNextArmorType(ArmorType armorType) {
-        return armorType != ArmorType.CHARM;
-    }
-
-    private static ArmorType nextArmorType(ArmorType armorType) {
-        if(armorType == null) {
-            return ArmorType.HEAD;
-        }
-
-        switch(armorType) {
-            case HEAD:
-                return ArmorType.ARMS;
-            case ARMS:
-                return ArmorType.BODY;
-            case BODY:
-                return ArmorType.WAIST;
-            case WAIST:
-                return ArmorType.LEGS;
-            case LEGS:
-                return ArmorType.CHARM;
-            case CHARM:
-            default:
-                throw new NoSuchElementException();
-        }
     }
 }

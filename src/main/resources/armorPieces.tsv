@@ -9,6 +9,8 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Bazel Head Beta"	head	Earplugs:2	1	0	1
 "Bone Head Alpha"	head	"Entomologist:1,Health Boost:1"	0	0	0
 "Bone Head Beta"	head	"Health Boost:1"	1	0	0
+"Commission Head Alpha"	head	"Master Gatherer:1,Tool Specialist:1"	1	0	0
+"Commission Head Beta"	head	"Tool Specialist:1"	0	1	0
 "Damascus Head Alpha"	head	"Defense Boost:2,Speed Sharpening:1"	1	0	0
 "Death Stench Head Alpha"	head	"Critical Eye:1,Resuscitate:1"	0	1	0
 "Diablos Head Alpha"	head	"Critical Draw:2,Heroics:1"	0	0	0
@@ -21,6 +23,7 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Gastrodon Head Alpha"	head	"Blast Resistance:1,Flinch Free:1"	0	0	0
 "Girros Head Alpha"	head	"Horn Maestro:1,Paralysis Resistance:1"	0	0	0
 "Guild Cross Head Alpha"	head	"Divine Blessing:1,Thunder Resistance:2"	1	0	0
+"Guild Cross Head Beta"	head	"Divine Blessing:2"	3	0	0
 "High Metal Head Alpha"	head	"Earplugs:1,Ice Resistance:2"	0	0	0
 "Insect Head Alpha"	head	"Botanist:1,Evade Window:2"	0	0	0
 "Kaiser Head Alpha"	head	"Latent Power:2"	0	0	0
@@ -29,13 +32,20 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Kirin Head Beta"	head	"Marathon Runner:2"	1	0	0
 "Kulu Head Alpha"	head	"Fire Resistance:1,Weakness Exploit:1"	0	0	0
 "Kulu Head Beta"	head	"Fire Resistance:1"	2	0	0
+"Kushala Head Alpha"	head	"Handicraft:1,Ice Attack:2"	0	0	0
+"Kushala Head Beta"	head	"Ice Attack:2"	3	0	0
 "Lavasioth Head Alpha"	head	"Fire Attack:2,Quick Sheath:1"	0	0	0
 "Lavasioth Head Beta"	head	"Fire Attack:1,Quick Sheath:1"	2	0	0
+"Legiana Head Alpha"	head	"Divine Blessing:2,Ice Attack:1"	0	0	0
+"Legiana Head Beta"	head	"Divine Blessing:2"	1	0	0
 "Lumu Head Alpha"	head	"Stamina Surge:2"	0	0	0
 "Lumu Head Beta"	head	"Stamina Surge:1"	0	2	0
 "Nergigante Head Alpha"	head	"Attack Boost:1,Maximum Might:2"	1	0	0
 "Nergigante Head Beta"	head	"Maximum Might:2"	2	0	0
 "Odogaron Head Alpha"	head	"Bleeding Resistance:2,Critical Eye:1"	0	0	0
+"Odogaron Head Beta"	head	"Bleeding Resistance:2"	0	1	0
+"Rath Heart Head Alpha"	head	"Evade Extender:1,Poison Attack:1"	0	0	0
+"Rath Heart Head Beta"	head	"Evade Extender:1"	0	1	0
 "Rath Soul Head Alpha"	head	"Critical Boost:1,Intimidator:1"	0	0	0
 "Rath Soul Head Beta"	head	"Critical Boost:1"	2	0	0
 "Rathalos Head Alpha"	head	"Attack Boost:2,Fire Attack:1"	0	0	0
@@ -48,18 +58,25 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Tzitzi Head Alpha"	head	"Blindsider:1,Stun Resistance:1"	0	0	0
 "Uragaan Head Alpha"	head	"Thunder Resistance:2"	0	0	1
 "Uragaan Head Beta"	head	"Thunder Resistance:1"	1	0	1
+"Vaal Hazak Head Alpha"	head	"Dragon Attack:2,Peak Performance:1"	0	0	0
+"Vaal Hazak Head Beta"	head	"Peak Performance:1"	1	0	0
 "Vespoid Head Alpha"	head	"Paralysis Attack:1,Quick Sheath:1"	0	0	0
 "Vespoid Head Beta"	head	"Quick Sheath:1"	1	0	0
 "Wiggler Head Alpha"	head	Wide-Range:2	2	0	0
+"Xeno'Jiiva Head Alpha"	head	"Flinch Free:1,Special Ammo Boost:1"	1	0	0
+"Xeno'Jiiva Head Beta"	head	"Flinch Free:1"	0	1	0
 "Zorah Head Alpha"	head	"Blast Attack:1,Handicraft:1"	0	0	0
 "Zorah Head Beta"	head	Handicraft:1	1	0	0
 "Alloy Arms Alpha"	arms	"Defense Boost:1,Speed Sharpening:1"	0	0	0
 "Anja Arms Alpha"	arms	"Fire Attack:1,Special Ammo Boost:1"	0	0	0
+"Anja Arms Beta"	arms	"Special Ammo Boost:1"	1	0	0
 "Barroth Arms Alpha"	arms	"Marathon Runner:1,Stamina Thief:1"	0	0	0
 "Barroth Arms Beta"	arms	"Marathon Runner:1"	1	0	0
 "Bazel Arms Alpha"	arms	"Critical Draw:2,Earplugs:1"	0	0	0
 "Bazel Arms Beta"	arms	"Critical Draw:2"	0	0	1
 "Bone Arms Alpha"	arms	"Attack Boost:1,Slugger:1"	0	0	0
+"Commission Arms Alpha"	arms	"Blindsider:1,Carving Pro:1"	1	0	0
+"Commission Arms Beta"	arms	Blindsider:1	0	1	0
 "Damascus Arms Alpha"	arms	"Handicraft:1,Speed Sharpening:1"	0	0	0
 "Death Stench Arms Alpha"	arms	"Dragon Attack:1,Focus:2"	1	0	0
 "Death Stench Arms Beta"	arms	Focus:2	2	0	0
@@ -69,6 +86,8 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Diablos Nero Arms Beta"	arms	Focus:1	1	1	0
 "Dober Arms Alpha"	arms	"Mushroomancer:1,Stamina Surge:2"	0	0	0
 "Dober Arms Beta"	arms	"Mushroomancer:1,Stamina Surge:1"	2	0	0
+"Guild Cross Arms Alpha"	arms	"Tool Specialist:1,Water Resistance:2"	1	0	0
+"Guild Cross Arms Beta"	arms	"Tool Specialist:1"	0	0	1
 "Hunter Arms Alpha"	arms	Stealth:2	0	0	0
 "Hunter Arms Beta"	arms	Stealh:1	1	0	0
 "Ingot Arms Alpha"	arms	"Health Boost:2,Thunder Attack:1"	0	0	0
@@ -80,12 +99,18 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Kestodon Arms Alpha"	arms	"Affinity Sliding:1,Focus:1"	0	0	0
 "Kestodon Arms Beta"	arms	"Affinity Sliding:1"	1	0	0
 "Kirin Arms Alpha"	arms	"Marathon Runner:1,Thunder Attack:2"	0	0	0
+"Kirin Arms Beta"	arms	"Thunder Attack:2"	2	0	0
 "Kulu Arms Alpha"	arms	"Critical Eye:1,Pro Transporter:1"	0	0	0
+"Kushala Arms Alpha"	arms	"Evade Window:2,Handicraft:1"	0	0	0
+"Kushala Arms Beta"	arms	"Evade Window:2"	0	0	1
 "Lavasioth Arms Alpha"	arms	"Affinity Sliding:1,Wide-Range:1"	0	1	0
 "Lavasioth Arms Beta"	arms	"Affinity Sliding:1"	0	0	1
+"Legiana Arms Alpha"	arms	"Airborne:1,Evade Window:1"	0	0	0
+"Legiana Arms Beta"	arms	Airborne:1	0	0	1
 "Nergigante Arms Alpha"	arms	"Agitator:2,Attack Boost:1"	0	0	0
 "Nergigante Arms Beta"	arms	Agitator:2	1	0	0
 "Odogaron Arms Alpha"	arms	"Constitution:1,Critical Eye:1"	0	0	0
+"Odogaron Arms Beta"	arms	Constitution:1	1	0	0
 "Pukei Arms Alpha"	arms	"Poison Attack:1,Poison Resistance:2"	0	0	0
 "Pukei Arms Beta"	arms	"Poison Resistance:1"	2	0	0
 "Rath Heart Arms Alpha"	arms	Windproof:2	0	0	0
@@ -96,14 +121,22 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Rathalos Arms Beta"	arms	"Fire Resistance:2"	1	0	0
 "Tzitzi Arms Alpha"	arms	"Stun Resistance:2,Wide-Range:1"	0	0	0
 "Tzitzi Arms Beta"	arms	"Stun Resistance:2"	1	0	0
+"Uragaan Arms Alpha"	arms	"Defense Boost:1,Guard:1"	1	0	0
+"Uragaan Arms Beta"	arms	Guard:1	0	1	0
+"Vaal Hazak Arms Alpha"	arms	"Peak Performance:1,Recovery Speed:1"	1	0	0
+"Vaal Hazak Arms Beta"	arms	"Peak Performance:1"	3	0	0
 "Xeno'Jiiva Arms Alpha"	arms	"Critical Boost:1,Flinch Free:1"	1	0	0
+"Xeno'Jiiva Arms Beta"	arms	"Flinch Free:1"	0	0	1
 "Zorah Arms Alpha"	arms	"Bombardier:1,Free Elem/Ammo Up:1"	0	0	0
 "Zorah Arms Beta"	arms	"Free Elem/Ammo Up:1"	1	0	0
 "Anja Body Alpha"	body	"Marathon Runner:1,Special Ammo Boost:1"	0	0	0
 "Anja Body Beta"	body	"Marathon Runner:1"	2	0	0
 "Bazel Body Alpha"	body	"Blast Resistance:2,Guard:2"	0	0	0
+"Bazel Body Beta"	body	Guard:2	2	0	0
 "Bone Body Alpha"	body	"Attack Boost:2"	0	0	0
 "Bone Body Beta"	body	"Attack Boost:1"	1	0	0
+"Commission Body Alpha"	body	"Cliffhanger:1,Wide-Range:2"	0	0	0
+"Commission Body Beta"	body	Wide-Range:2	1	0	0
 "Damascus Body Alpha"	body	"Defense Boost:2,Focus:2"	1	0	0
 "Damascus Body Beta"	body	Focus:2	3	0	0
 "Diablos Body Alpha"	body	Heroics:1,Slugger:2	0	0	0
@@ -114,6 +147,8 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Dober Body Beta"	body	"Attack Boost:2"	0	1	0
 "Girros Body Alpha"	body	"Paralysis Resistance:2"	0	0	0
 "Girros Body Beta"	body	"Paralysis Resistance:1"	1	0	0
+"Guild Cross Body Alpha"	body	"Ice Resistance:2,Resuscitate:1"	1	0	0
+"Guild Cross Body Beta"	body	Resuscitate:1	0	0	1
 "High Metal Body Alpha"	body	"Earplugs:2,Ice Attack:1"	0	0	0
 "High Metal Body Beta"	body	"Earplugs:1,Ice Attack:1"	0	1	0
 "Ingot Body Alpha"	body	"Thunder Resistance:2"	0	0	0
@@ -121,25 +156,39 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Insect Body Alpha"	body	"Botanist:1,Quick Sheath:2"	0	0	0
 "Insect Body Beta"	body	"Quick Sheath:2"	1	0	0
 "Kaiser Body Alpha"	body	"Latent Power:1"	0	0	0
+"Kaiser Body Beta"	body	"Special Ammo Boost:2"	2	0	0
+"Kirin Body Alpha"	body	"Divine Blessing:2,Thunder Attack:1"	0	0	0
+"Kirin Body Beta"	body	"Divine Blessing:2"	1	0	0
 "Kulu Body Alpha"	body	"Critical Eye:1,Stamina Surge:1"	0	0	0
 "Kulu Body Beta"	body	"Stamina Surge:1"	1	0	0
 "Kushala Body Alpha"	body	Focus:1,Handicraft:2	0	0	0
+"Kushala Body Beta"	body	Handicraft:2	0	1	0
 "Lavasioth Body Alpha"	body	"Fire Attack:2,Heat Guard:1"	0	0	0
 "Lavasioth Body Beta"	body	"Fire Attack:2"	2	0	0
 "Leather Body Alpha"	body	"Fire Resistance:1"	0	0	0
+"Legiana Body Alpha"	body	"Divine Blessing:1,Evade Window:2"	0	0	0
+"Legiana Body Beta"	body	"Evade Window:2"	1	0	0
 "Nergigante Body Alpha"	body	"Agitator:1,Stamina Surge:2"	1	0	0
 "Nergigante Body Beta"	body	"Stamina Surge:2"	1	1	0
 "Odogaron Body Alpha"	body	"Bleeding Resistance:1,Speed Sharpening:2"	0	0	0
 "Odogaron Body Beta"	body	"Speed Sharpening:2"	1	0	0
 "Pukei Body Alpha"	body	"Botanist:1,Item Prolonger:1"	0	0	0
+"Rath Heart Body Alpha"	body	"Tool Specialist:2"	0	0	0
+"Rath Heart Body Beta"	body	"Tool Specialist:1"	2	0	0
 "Rath Soul Body Alpha"	body	"Free Elem/Ammo Up:1,Intimidator:1"	1	0	0
 "Rath Soul Body Beta"	body	"Free Elem/Ammo Up:1"	0	1	0
 "Rathalos Body Alpha"	body	"Fire Attack:1,Weakness Exploit:2"	0	0	0
 "Rathalos Body Beta"	body	"Weakness Exploit:2"	1	0	0
 "Rathian Body Alpha"	body	"Botanist:2,Recovery Up:1"	0	0	0
 "Rathian Body Beta"	body	"Botanist:1,Recovery Up:1"	1	0	0
+"Uragaan Body Alpha"	body	Partbreaker:2	1	0	0
+"Uragaan Body Beta"	body	Partbreaker:1	0	0	1
+"Vaal Hazak Body Alpha"	body	"Dragon Attack:1,Recovery Speed:2"	1	0	0
+"Vaal Hazak Body Beta"	body	"Recovery Speed:2"	2	0	0
 "Vespoid Body Alpha"	body	Windproof:1	0	0	0
 "Vespoid Body Beta"	body	Windproof:1	1	0	0
+"Xeno'Jiiva Body Alpha"	body	"Blight Resistance:1,Power Prolonger:2"	1	0	0
+"Xeno'Jiiva Body Beta"	body	"Power Prolonger:2"	2	0	0
 "Zorah Body Alpha"	body	"Blast Attack:2,Windproof:1"	0	0	0
 "Zorah Body Beta"	body	"Blast Attack:2"	0	1	0
 "Alloy Waist Alpha"	waist	"Poison Resistance:1,Water Resistance:1"	0	0	0
@@ -151,6 +200,8 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Brigade Waist Alpha"	waist	"Geologist:2,Recovery Speed:1"	0	0	0
 "Brigade Waist Beta"	waist	Geologist:2	1	0	0
 "Chainmail Waist Alpha"	waist	"Quick Sheath:1"	0	0	0
+"Commission Waist Alpha"	waist	"Mushroomancer:1,Pro Transporter:1"	1	0	0
+"Commission Waist Beta"	waist	Mushroomancer:1	0	1	0
 "Damascus Waist Alpha"	waist	"Focus:1,Iron Skin:2"	1	0	0
 "Damascus Waist Beta"	waist	Focus:1	3	0	0
 "Death Stench Waist Alpha"	waist	"Dragon Attack:1,Focus:1"	0	0	0
@@ -159,21 +210,30 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Diablos Waist Alpha"	waist	"Critical Draw:1,Marathon Runner:1"	0	0	0
 "Diablos Waist Beta"	waist	"Marathon Runner:2"	0	1	0
 "Dober Waist Alpha"	waist	"Attack Boost:1,Dragon Resistance:1"	0	1	0
+"Guild Cross Waist Alpha"	waist	"Dragon Resistance:2,Fortify:1"	1	0	0
+"Guild Cross Waist Beta"	waist	Fortify:1	3	0	0
 "Hunter Waist Alpha"	waist	"Master Gatherer:1,Stealth:1"	0	0	0
 "Ingot Waist Alpha"	waist	Windproof:2	0	0	0
 "Ingot Waist Beta"	waist	Windproof:1	0	0	1
 "Insect Waist Alpha"	waist	"Honey Hunter:1,Quick Sheath:1"	0	0	0
 "Kadachi Waist Alpha"	waist	"Thunder Attack:2,Thunder Resistance:1"	0	0	0
 "Kaiser Waist Alpha"	waist	"Blast Attack:1,Weakness Exploit:1"	0	0	0
+"Kaiser Waist Beta"	waist	"Blast Attack:2"	0	1	0
+"Kirin Waist Alpha"	waist	"Blight Resistance:1,Free Elem/Ammo Up:1"	0	0	0
+"Kirin Waist Beta"	waist	"Blight Resistance:1"	3	0	0
+"Kushala Waist Alpha"	waist	"Evade Extender:1,Ice Attack:2"	0	0	0
+"Kushala Waist Beta"	waist	"Ice Attack:2"	2	0	0
 "Lavasioth Waist Alpha"	waist	"Quick Sheath:2,Recovery Up:1"	0	0	0
 "Lavasioth Waist Beta"	waist	"Quick Sheath:2"	1	0	0
 "Leather Waist Alpha"	waist	"Stamina Surge:1"	0	0	0
 "Legiana Waist Alpha"	waist	"Ice Attack:2,Windproof:1"	0	0	0
+"Legiana Waist Beta"	waist	"Ice Attack:2"	0	1	0
 "Nergigante Waist Alpha"	waist	"Attack Boost:2,Stamina Surge:1"	0	0	0
 "Nergigante Waist Beta"	waist	"Attack Boost:2"	0	1	0
 "Odogaron Waist Alpha"	waist	"Critical Eye:2,Speed Sharpening:1"	0	0	0
 "Odogaron Waist Beta"	waist	"Critical Eye:2"	0	1	0
 "Rath Heart Waist Alpha"	waist	"Handicraft:1,Poison Resistance:1"	0	0	0
+"Rath Heart Waist Beta"	waist	Handicraft:1	1	0	0
 "Rath Soul Waist Alpha"	waist	"Piercing Shots:1,Windproof:2"	0	0	0
 "Rath Soul Waist Beta"	waist	Windproof:1	0	0	1
 "Rathalos Waist Alpha"	waist	"Fire Attack:2,Focus:1"	0	0	0
@@ -181,15 +241,23 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Rathian Waist Alpha"	waist	"Health Boost:1,Poison Resistance:2"	0	0	0
 "Rathian Waist Beta"	waist	"Health Boost:1,Poison Resistance:1"	1	0	0
 "Uragaan Waist Alpha"	waist	"Partbreaker:1,Thunder Resistance:1"	2	0	0
+"Uragaan Waist Beta"	waist	Partbreaker:1	1	1	0
+"Vaal Hazak Waist Alpha"	waist	"Effluvia Resistance:1,Peak Performance:1"	1	0	0
+"Vaal Hazak Waist Beta"	waist	"Peak Performance:1"	2	0	0
 "Vespoid Waist Alpha"	waist	"Paralysis Resistance:2"	0	0	0
 "Vespoid Waist Beta"	waist	"Paralysis Resistance:1"	1	0	0
+"Xeno'Jiiva Waist Alpha"	waist	"Blight Resistance:2,Special Ammo Boost:1"	0	0	1
+"Xeno'Jiiva Waist Beta"	waist	"Blight Resistance:2"	1	1	0
 "Zorah Waist Alpha"	waist	"Fortify:1,Tremor Resistance:1"	0	0	0
 "Zorah Waist Beta"	waist	Fortify:1	0	1	0
 "Alloy Legs Alpha"	legs	"Speed Sharpening:2"	0	0	0
 "Alloy Legs Beta"	legs	"Speed Sharpening:1"	1	0	0
+"Anja Legs Alpha"	legs	Artillery:2	0	0	0
+"Anja Legs Beta"	legs	Artillery:1	1	0	0
 "Barroth Legs Alpha"	legs	"Marathon Runner:1,Stun Resistance:2"	0	0	0
 "Barroth Legs Beta"	legs	"Stun Resistance:1"	1	1	0
 "Bazel Legs Alpha"	legs	"Bombardier:2,Critical Draw:1"	1	0	0
+"Bazel Legs Beta"	legs	Bombardier:2	0	0	1
 "Bone Legs Alphs"	legs	Entomologist:2	0	0	0
 "Bone Legs Beta"	legs	Entomologist:1	1	0	0
 "Brigade Legs Alpha"	legs	Geologist:1,Scholar:1	1	0	0
@@ -203,6 +271,7 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Dober Legs Alpha"	legs	"Attack Boost:2,Stamina Surge:1"	0	0	0
 "Dober Legs Beta"	legs	"Attack Boost:2"	1	0	0
 "Guild Cross Legs Alpha"	legs	"Airborne:1,Fire Resistance:2"	0	0	0
+"Guild Cross Legs Beta"	legs	Airborne:1	0	0	1
 "Ingot Legs Alpha"	legs	"Defense Boost:2,Windproof:1"	0	0	0
 "Insect Legs Alpha"	legs	"Evade Window:1,Forager's Luck:1"	0	0	0
 "Insect Legs Beta"	legs	"Forager's Luck:1"	1	1	0
@@ -213,10 +282,14 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Kaiser Legs Alpha"	legs	"Blast Attack:1,Latent Power:2"	0	0	0
 "Kaiser Legs Beta"	legs	"Latent Power:2"	1	0	0
 "Kirin Legs Alpha"	legs	"Free Elem/Ammo Up:2,Thunder Resistance:2"	0	0	0
+"Kirin Legs Beta"	legs	"Free Elem/Ammo Up:2"	2	0	0
 "Kulu Legs Alpha"	legs	"Critical Eye:1,Item Prolonger:1"	0	0	0
 "Kulu Legs Beta"	legs	"Critical Eye:1"	1	0	0
+"Kushala Legs Alpha"	legs	"Evade Extender:2,Handicraft:1"	0	0	0
+"Kushala Legs Beta"	legs	"Evade Extender:2"	0	0	1
 "Lavasioth Legs Alpha"	legs	"Fire Attack:1,Spread/Power Shots:1"	1	0	0
 "Legiana Legs Alpha"	legs	"Critical Draw:1,Ice Resistance:2"	0	0	0
+"Legiana Legs Beta"	legs	"Ice Resistance:2"	0	0	3
 "Lumu Legs Alpha"	legs	"Stamina Surge:1,Windproof:1"	0	0	0
 "Nergigante Legs Alpha"	legs	"Agitator:1,Maximum Might:1"	1	0	0
 "Nergigante Legs Beta"	legs	"Maximum Might:1"	0	1	0
@@ -225,11 +298,18 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Pukei Legs Alpha"	legs	"Botanist:2,Sporepuff Expert:1"	0	0	0
 "Pukei Legs Beta"	legs	Botanist:1	0	1	0
 "Rath Heart Legs Alpha"	legs	"Tool Specialist:1,Windproof:1"	0	0	0
+"Rath Heart Legs Beta"	legs	"Tool Specialist:1"	0	1	0
 "Rath Soul Legs Alpha"	legs	Cliffhanger:1,Focus:1	0	0	0
 "Rath Soul Legs Beta"	legs	Focus:1	1	0	0
 "Rathalos Legs Alpha"	legs	"Jump Master:1,Weakness Exploit:1"	0	0	0
 "Rathalos Legs Beta"	legs	"Jump Master:1"	0	0	1
+"Uragaan Legs Alpha"	legs	Guard:2	1	0	0
+"Uragaan Legs Beta"	legs	Guard:1	0	0	1
+"Vaal Hazak Legs Alpha"	legs	"Dragon Attack:1,Effluvia Resistance:2"	1	0	0
+"Vaal Hazak Legs Beta"	legs	"Effluvia Resistance:2"	2	0	0
 "Vespoid Legs Alpha"	legs	"Honey Hunter:1,Paralysis Resistance:1"	0	0	0
+"Xeno'Jiiva Legs Alpha"	legs	"Flinch Free:1,Power Prolonger:1"	1	0	0
+"Xeno'Jiiva Legs Beta"	legs	"Flinch Free:1"	2	0	0
 "Zorah Legs Alpha"	legs	Bombardier:2,Earplugs:1	0	0	0
 "Zorah Legs Beta"	legs	Bombardier:2	0	1	0
 "Attack Charm I"	charm	"Attack Boost:1"	0	0	0
