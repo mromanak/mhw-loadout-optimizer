@@ -6,11 +6,14 @@ import com.google.common.base.Splitter;
 import com.mromanak.loadoutoptimizer.model.ArmorPiece;
 import com.mromanak.loadoutoptimizer.model.ArmorType;
 import lombok.Data;
+import org.apache.commons.lang3.StringUtils;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
 import static java.util.stream.Collectors.toMap;
+import static org.apache.commons.lang3.StringUtils.isNotBlank;
 
 @Data
 @JsonPropertyOrder({"name", "armorType", "skills", "level1Slots", "level2Slots", "level3Slots"})
@@ -46,10 +49,16 @@ public class CsvArmorPiece {
             return null;
         }
 
-        Map<String, Integer> skills = SKILLS_SPLITTER.split(csvArmorPiece.getSkills()).
-            entrySet().
-            stream().
-            collect(toMap(Map.Entry::getKey, e -> Integer.valueOf(e.getValue()), (s1, s2) -> s1 + s2, TreeMap::new));
+        Map<String, Integer> skills;
+        if(isNotBlank(csvArmorPiece.getSkills())) {
+            skills = SKILLS_SPLITTER.split(csvArmorPiece.getSkills()).
+                entrySet().
+                stream().
+                collect(
+                    toMap(Map.Entry::getKey, e -> Integer.valueOf(e.getValue()), (s1, s2) -> s1 + s2, TreeMap::new));
+        } else {
+            skills = new HashMap<>();
+        }
 
         return ArmorPiece.builder().
             withName(csvArmorPiece.name).
