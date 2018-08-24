@@ -5,9 +5,7 @@ import com.fasterxml.jackson.databind.ObjectReader;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 import com.google.common.collect.ImmutableSet;
-import com.mromanak.loadoutoptimizer.model.ArmorPiece;
 import com.mromanak.loadoutoptimizer.model.SetBonus;
-import com.mromanak.loadoutoptimizer.model.serialization.CsvArmorPiece;
 import com.mromanak.loadoutoptimizer.model.serialization.CsvSetBonus;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
@@ -16,8 +14,9 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Optional;
 import java.util.Set;
+
+import static java.util.stream.Collectors.toList;
 
 @Service
 public class SetBonusService {
@@ -51,9 +50,9 @@ public class SetBonusService {
         return setBonuses;
     }
 
-    public Optional<SetBonus> findSetBonus(String skillName) {
+    public List<SetBonus> findSetBonus(String skillName) {
         return setBonuses.stream().
             filter(sb -> sb.getBonusRequirements().keySet().contains(skillName)).
-            findAny();
+            collect(toList());
     }
 }

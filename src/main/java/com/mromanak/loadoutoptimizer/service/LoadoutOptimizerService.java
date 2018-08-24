@@ -109,27 +109,31 @@ public class LoadoutOptimizerService {
     }
 
     public List<Loadout> generateStartingLoadoutsForSetBonus(String bonusName) {
-        Optional<SetBonus> setBonusOpt = setBonusService.findSetBonus(bonusName);
-        if(!setBonusOpt.isPresent()) {
+        List<SetBonus> setBonusOpt = setBonusService.findSetBonus(bonusName);
+        if(setBonusOpt.isEmpty()) {
             throw new IllegalArgumentException("Could not find a set bonus that provides skill " + bonusName);
         }
 
-        SetBonus setBonus = setBonusOpt.get();
-        Set<String> armorPieceNames = setBonus.getArmorPieces();
-        Set<ArmorPiece> armorPieces = armorPieceService.getArmorPieces(ap -> armorPieceNames.contains(ap.getName()));
-        int minimumPieces = setBonus.getBonusRequirements().get(bonusName);
+        List<Loadout> loadouts = new ArrayList<>();
 
-        if(armorPieceNames.size() != armorPieces.size()) {
-            Set<String> loadedArmorPieceNames = armorPieces.stream().
-                map(ArmorPiece::getName).
-                collect(toSet());
-            Set<String> missingArmorPieceNames = Sets.difference(armorPieceNames, loadedArmorPieceNames);
-            throw new IllegalStateException(
-                missingArmorPieceNames.size() + " armor pieces for set bonus " + bonusName + " (" + setBonus.getName() +
-                    ") were not found: " + missingArmorPieceNames);
+        for(SetBonus setBonus : setBonusOpt) {
+            Set<String> armorPieceNames = setBonus.getArmorPieces();
+            Set<ArmorPiece> armorPieces = armorPieceService.getArmorPieces(ap -> armorPieceNames.contains(ap.getName()));
+            int minimumPieces = setBonus.getBonusRequirements().get(bonusName);
+
+            if (armorPieceNames.size() != armorPieces.size()) {
+                Set<String> loadedArmorPieceNames = armorPieces.stream().
+                    map(ArmorPiece::getName).
+                    collect(toSet());
+                Set<String> missingArmorPieceNames = Sets.difference(armorPieceNames, loadedArmorPieceNames);
+                throw new IllegalStateException(
+                    missingArmorPieceNames.size() + " armor pieces for set bonus " + bonusName + " (" + setBonus.getName() +
+                        ") were not found: " + missingArmorPieceNames);
+            }
+            loadouts.addAll(generateCombinations (armorPieces, minimumPieces));
         }
 
-        return generateCombinations(armorPieces, minimumPieces);
+        return loadouts;
     }
 
     private List<Loadout> generateCombinations(Set<ArmorPiece> armorPieces, int minimumPieces) {
