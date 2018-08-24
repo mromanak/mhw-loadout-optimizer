@@ -6,6 +6,7 @@ import lombok.Data;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 import java.util.function.Function;
 
 import static com.mromanak.loadoutoptimizer.scoring.LoadoutScoringUtils.zeroWeightFunction;
@@ -39,6 +40,11 @@ public class SimpleLoadoutScoringFunction implements LoadoutScoringFunction {
         builder.level3SlotWeight = copy.level3SlotWeight;
         builder.loadoutSizeWeightFunction = copy.loadoutSizeWeightFunction;
         return builder;
+    }
+
+    @Override
+    public Set<String> getDesiredSkills() {
+        return skillWieghtFunctions.keySet();
     }
 
     @Override

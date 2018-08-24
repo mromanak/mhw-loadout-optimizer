@@ -83,7 +83,9 @@ public class LoadoutOptimizer {
             }
         }
 
-        OptimizerRequest request = OptimizerRequest.forLoadout(currentLoadout, armorType);
+        OptimizerRequest request = OptimizerRequest.builderForLoadout(currentLoadout, armorType).
+            retainSkills(scoringFunction.getDesiredSkills()).
+            build();
         if(solutionCache.containsKey(request)) {
             return solutionCache.get(request);
         } else if(hasNextArmorType(armorType)) {
