@@ -44,6 +44,7 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Girros Head Beta"	head	"Horm Maestro:1"	1	0	0
 "Guild Cross Head Alpha"	head	"Divine Blessing:1,Thunder Resistance:2"	1	0	0
 "Guild Cross Head Beta"	head	"Divine Blessing:2"	3	0	0
+"Harvest Alpha Head"	head	"Tremor Resistance:1"	1	1	0
 "High Metal Head Alpha"	head	"Earplugs:1,Ice Resistance:2"	0	0	0
 "High Metal Head Beta"	head	"Ice Resistance:2"	0	1	0
 "Hornetaur Head Alpha"	head	"Dragon Attack:1,Dungmaster:1"	0	0	0
@@ -161,6 +162,7 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Girros Arms Beta"	arms	"Palico Rally:1"	1	0	0
 "Guild Cross Arms Alpha"	arms	"Tool Specialist:1,Water Resistance:2"	1	0	0
 "Guild Cross Arms Beta"	arms	"Tool Specialist:1"	0	0	1
+"Harvest Alpha Arms"	arms	Resentment:1	1	1	0
 "High Metal Arms Alpha"	arms	"Defense Boost:2,Ice Attack:1"	0	0	0
 "High Metal Arms Beta"	arms	"Defense Boost:2"	1	0	0
 "Hornetaur Arms Alpha"	arms	"Free Meal:1,Hunger Reisistance:1"	0	0	0
@@ -272,6 +274,7 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Girros Body Beta"	body	"Paralysis Resistance:1"	1	0	0
 "Guild Cross Body Alpha"	body	"Ice Resistance:2,Resuscitate:1"	1	0	0
 "Guild Cross Body Beta"	body	Resuscitate:1	0	0	1
+"Harvest Alpha Body"	body	Focus:1	1	1	0
 "High Metal Body Alpha"	body	"Earplugs:2,Ice Attack:1"	0	0	0
 "High Metal Body Beta"	body	"Earplugs:1,Ice Attack:1"	0	1	0
 "Hornetaur Body Alpha"	body	"Effluvial Expert:1,Hunger Resistance:1"	0	0	0
@@ -379,6 +382,7 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Girros Waist Beta"	waist	"Effluvial Expert:1"	1	0	0
 "Guild Cross Waist Alpha"	waist	"Dragon Resistance:2,Fortify:1"	1	0	0
 "Guild Cross Waist Beta"	waist	Fortify:1	3	0	0
+"Harvest Alpha Waist"	waist	Constitution:1	1	1	0
 "High Metal Waist Alpha"	waist	"Capacity Boost:1,Defense Boost:1"	0	0	0
 "High Metal Waist Beta"	waist	"Capacity Boost:1"	1	0	0
 "Hornetaur Waist Aplha"	waist	"Carving Pro:1,Hunger Resistance:1"	0	0	0
@@ -489,6 +493,7 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Girros Legs Beta"	legs	"Paralysis Attack:1"	1	0	0
 "Guild Cross Legs Alpha"	legs	"Airborne:1,Fire Resistance:2"	0	0	0
 "Guild Cross Legs Beta"	legs	Airborne:1	0	0	1
+"Harvest Alpha Legs"	legs	Mushroomancer:1	1	1	0
 "High Metal Legs Alpha"	legs	"Heavy Artillery:1,Ice Resistance:1"	0	0	0
 "High Metal Legs Beta"	legs	"Heavy Artillery:1"	1	0	0
 "Hornetaur Legs Alpha"	legs	"Dragon Attack:1,Handicraft:1"	0	0	0
@@ -523,7 +528,7 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Legiana Legs Beta"	legs	"Ice Resistance:2"	0	0	1
 "Lumu Legs Alpha"	legs	"Stamina Surge:1,Windproof:1"	0	0	0
 "Lumu Legs Beta"	legs	Windproof:1	2	0	0
-"Lunastra Legs Alpha"	legs	"Health Boost:2,Wide-Range:2"	1	1	0
+"Lunastra Legs Alpha"	legs	"Health Boost:2,Wide Range:2"	1	1	0
 "Lunastra Legs Beta"	legs	"Health Boost:2"	0	2	0
 "Nergigante Legs Alpha"	legs	"Agitator:1,Maximum Might:1"	1	0	0
 "Nergigante Legs Beta"	legs	"Maximum Might:1"	0	1	0
