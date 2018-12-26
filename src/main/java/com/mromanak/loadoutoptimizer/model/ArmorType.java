@@ -11,8 +11,8 @@ import static java.util.Arrays.asList;
 
 public enum ArmorType {
     HEAD("head"),
-    ARMS("arms"),
     BODY("body"),
+    ARMS("arms"),
     WAIST("waist"),
     LEGS("legs"),
     CHARM("charm");
@@ -59,10 +59,10 @@ public enum ArmorType {
 
         switch(armorType) {
             case HEAD:
-                return ArmorType.ARMS;
-            case ARMS:
                 return ArmorType.BODY;
             case BODY:
+                return ArmorType.ARMS;
+            case ARMS:
                 return ArmorType.WAIST;
             case WAIST:
                 return ArmorType.LEGS;
