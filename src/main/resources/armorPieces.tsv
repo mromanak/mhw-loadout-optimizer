@@ -69,6 +69,7 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Kulu-Ya-Ku Head Alpha"	head	"Pro Transporter:1"	1	0	1
 "Kulve Taroth Head Alpha"	head	"Agitator:2,Free Elem/Ammo Up:1"	1	0	0
 "Kulve Taroth Head Beta"	head	"Agitator:1,Free Elem/Ammo Up:1"	1	1	0
+"Kulve Taroth Head Gamma"	head	"Power Prolonger:1,Stun Resistance:1"	2	0	1
 "Kushala Head Alpha"	head	"Handicraft:1,Ice Attack:2"	0	0	0
 "Kushala Head Beta"	head	"Ice Attack:2"	3	0	0
 "Kushala Head Gamma"	head	Handicraft:2	0	1	0
@@ -82,11 +83,13 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Lumu Head Beta"	head	"Stamina Surge:1"	0	2	0
 "Lunastra Head Alpha"	head	"Evade Extender:2,Tool Specialist:1"	1	0	1
 "Lunastra Head Beta"	head	"Evade Extender:2"	0	1	1
+"Lunastra Head Gamma"	head	"Peak Performance:1,Wide-Range:2"	3	0	0
 "Mosswine Head Alpha"	head	Mushroomancer:2	0	0	0
 "Nergigante Head Alpha"	head	"Attack Boost:1,Maximum Might:2"	1	0	0
 "Nergigante Head Beta"	head	"Maximum Might:2"	2	0	0
 "Odogaron Head Alpha"	head	"Bleeding Resistance:2,Critical Eye:1"	0	0	0
 "Odogaron Head Beta"	head	"Bleeding Resistance:2"	0	1	0
+"Orion Head Alpha"	head	"Recovery Up:1"	1	0	1
 "Pukei Head Alpha"	head	"Sporepuff Expert:2"	0	0	0
 "Pukei Head Beta"	head	"Sporepuff Expert:1"	2	0	0
 "Pulverizing Head Alpha"	head	Bombardier:3	0	0	0
@@ -121,118 +124,10 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Wiggler Head Alpha"	head	Wide-Range:2	2	0	0
 "Xeno'Jiiva Head Alpha"	head	"Flinch Free:1,Special Ammo Boost:1"	1	0	0
 "Xeno'Jiiva Head Beta"	head	"Flinch Free:1"	0	1	0
+"Xeno'jiiva Head Gamma"	head	"Blight Resistance:2,Power Prolonger:1"	2	1	0
 "Zorah Head Alpha"	head	"Blast Attack:1,Handicraft:1"	0	0	0
 "Zorah Head Beta"	head	Handicraft:1	1	0	0
-"Alloy Arms Alpha"	arms	"Defense Boost:1,Speed Sharpening:1"	0	0	0
-"Alloy Arms Beta"	arms	"Defense Boost:1"	1	0	0
-"Anja Arms Alpha"	arms	"Fire Attack:1,Special Ammo Boost:1"	0	0	0
-"Anja Arms Beta"	arms	"Special Ammo Boost:1"	1	0	0
-"Azure Starlord Arms Alpha"	arms	"Recovery Up:2"	0	0	1
-"Baan Arms Alpha"	arms	"Guard:1,Sleep Attack:2"	0	0	0
-"Baan Arms Beta"	arms	"Guard:1,Sleep Attack:1"	1	0	0
-"Barroth Arms Alpha"	arms	"Marathon Runner:1,Stamina Thief:1"	0	0	0
-"Barroth Arms Beta"	arms	"Marathon Runner:1"	1	0	0
-"Bazel Arms Alpha"	arms	"Critical Draw:2,Earplugs:1"	0	0	0
-"Bazel Arms Beta"	arms	"Critical Draw:2"	0	0	1
-"Behemoth Arms Alpha"	arms	"Attack Boost:1,Critical Eye:2"	0	2	0
-"Blossom Arms Alpha"	arms	"Paralysis Resistance:1"	2	0	0
-"Bone Arms Alpha"	arms	"Attack Boost:1,Slugger:1"	0	0	0
-"Bone Arms Beta"	arms	Slugger:1	1	0	0
-"Brigade Arms Alpha"	arms	"Divine Blessing:1,Heavy Artillery:2"	0	0	0
-"Brigade Arms Beta"	arms	"Heavy Artillery:2"	1	0	0
-"Chainmail Arms Alpha"	arms	"Recovery Speed:1"	0	0	0
-"Chainmail Arms Beta"	arms		1	0	0
-"Commission Arms Alpha"	arms	"Blindsider:1,Carving Pro:1"	1	0	0
-"Commission Arms Beta"	arms	Blindsider:1	0	1	0
-"Damascus Arms Alpha"	arms	"Handicraft:1,Speed Sharpening:1"	0	0	0
-"Damascus Arms Beta"	arms	Handicraft:1	1	0	0
-"Dante Arms Alpha"	arms	"Evade Window:1,Special Ammo Boost:1"	0	0	1
-"Death Stench Arms Alpha"	arms	"Dragon Attack:1,Focus:2"	1	0	0
-"Death Stench Arms Beta"	arms	Focus:2	2	0	0
-"Diablos Arms Alpha"	arms	"Heroics:2,Tremor Resistance:1"	0	0	0
-"Diablos Arms Beta"	arms	Heroics:2	0	1	0
-"Diablos Nero Arms Alpha"	arms	"Focus:1,Marathon Runner:1"	0	0	0
-"Diablos Nero Arms Beta"	arms	Focus:1	1	1	0
-"Diver Arms Alpha"	arms	"Quick Sheath:1"	0	1	0
-"Dober Arms Alpha"	arms	"Mushroomancer:1,Stamina Surge:2"	0	0	0
-"Dober Arms Beta"	arms	"Mushroomancer:1,Stamina Surge:1"	2	0	0
-"Dodogama Arms Alpha"	arms	Bombardier:2	0	0	0
-"Dodogama Arms Beta"	arms	Bombardier:1	1	0	0
-"Girros Arms Alpha"	arms	"Palico Rally:2"	0	0	0
-"Girros Arms Beta"	arms	"Palico Rally:1"	1	0	0
-"Guild Cross Arms Alpha"	arms	"Tool Specialist:1,Water Resistance:2"	1	0	0
-"Guild Cross Arms Beta"	arms	"Tool Specialist:1"	0	0	1
-"Harvest Alpha Arms"	arms	Resentment:1	1	1	0
-"High Metal Arms Alpha"	arms	"Defense Boost:2,Ice Attack:1"	0	0	0
-"High Metal Arms Beta"	arms	"Defense Boost:2"	1	0	0
-"Hornetaur Arms Alpha"	arms	"Free Meal:1,Hunger Reisistance:1"	0	0	0
-"Hornetaur Arms Beta"	arms	"Free Meal:1"	1	0	0
-"Hunter's Arms Alpha"	arms	Stealth:2	0	0	0
-"Hunter's Arms Beta"	arms	Stealh:1	1	0	0
-"Ingot Arms Alpha"	arms	"Health Boost:2,Thunder Attack:1"	0	0	0
-"Ingot Arms Beta"	arms	"Health Boost:2"	1	0	0
-"Insect Arms Alpha"	arms	"Botanist:2,Leap of Faith:1"	0	0	0
-"Insect Arms Beta"	arms	Botanist:2	1	1	0
-"Jagras Arms Alpha"	arms	"Intimidator:1,Palico Rally:1"	0	0	0
-"Jagras Arms Beta"	arms	"Palico Rally:1"	1	0	0
-"Jyura Arms Alpha"	arms	"Aquatic Expert:1,Water Attack:2"	0	0	0
-"Jyura Arms Beta"	arms	"Water Attack:2"	1	0	0
-"Kadachi Arms Alpha"	arms	"Evade Extender:2"	0	0	0
-"Kadachi Arms Beta"	arms	"Evade Extender:1"	0	1	0
-"Kestodon Arms Alpha"	arms	"Affinity Sliding:1,Focus:1"	0	0	0
-"Kestodon Arms Beta"	arms	"Affinity Sliding:1"	1	0	0
-"Kirin Arms Alpha"	arms	"Marathon Runner:1,Thunder Attack:2"	0	0	0
-"Kirin Arms Beta"	arms	"Thunder Attack:2"	2	0	0
-"Kirin Arms Gamma"	arms	"Blight Resistance:1,Free Elem/Ammo Up:1"	0	2	0
-"Kulu Arms Alpha"	arms	"Critical Eye:1,Pro Transporter:1"	0	0	0
-"Kulu Arms Beta"	arms	"Pro Transporter:1"	0	1	0
-"Kulve Taroth Arms Alpha"	arms	"Free Elem/Ammo Up:1,Power Prolonger:2"	1	0	0
-"Kulve Taroth Arms Beta"	arms	"Free Elem/Ammo Up:1,Power Prolonger:1"	1	0	1
-"Kushala Arms Alpha"	arms	"Evade Window:2,Handicraft:1"	0	0	0
-"Kushala Arms Beta"	arms	"Evade Window:2"	0	0	1
-"Kushala Arms Gamma"	arms	Focus:2	3	0	0
-"Lavasioth Arms Alpha"	arms	"Affinity Sliding:1,Wide-Range:1"	0	1	0
-"Lavasioth Arms Beta"	arms	"Affinity Sliding:1"	0	0	1
-"Leather Arms Alpha"	arms	"Recovery Speed:1"	0	0	0
-"Leather Arms Beta"	arms		1	0	0
-"Legiana Arms Alpha"	arms	"Airborne:1,Evade Window:1"	0	0	0
-"Legiana Arms Beta"	arms	Airborne:1	0	0	1
-"Lumu Arms Alpha"	arms	Artillery:2	0	0	0
-"Lumu Arms Beta"	arms	Artillery:1	1	0	0
-"Lunastra Arms Alpha"	arms	"Blast Attack:2,Wide-Range:2"	0	0	1
-"Lunastra Arms Beta"	arms	Wide-Range:2	0	1	1
-"Nergigante Arms Alpha"	arms	"Agitator:2,Attack Boost:1"	0	0	0
-"Nergigante Arms Beta"	arms	Agitator:2	1	0	0
-"Odogaron Arms Alpha"	arms	"Constitution:1,Critical Eye:1"	0	0	0
-"Odogaron Arms Beta"	arms	Constitution:1	1	0	0
-"Pukei Arms Alpha"	arms	"Poison Attack:1,Poison Resistance:2"	0	0	0
-"Pukei Arms Beta"	arms	"Poison Resistance:1"	2	0	0
-"Rath Heart Arms Alpha"	arms	Windproof:2	0	0	0
-"Rath Heart Arms Beta"	arms	Windproof:1	0	1	0
-"Rath Soul Arms Alpha"	arms	Focus:1,Windproof:1	0	0	0
-"Rath Soul Arms Beta"	arms	Focus:1	0	1	0
-"Rathalos Arms Alpha"	arms	"Attack Boost:1,Fire Resistance:2"	0	0	0
-"Rathalos Arms Beta"	arms	"Fire Resistance:2"	1	0	0
-"Rathian Arms Alpha"	arms	"Poison Attack:2"	0	0	0
-"Rathian Arms Beta"	arms	"Poison Attack:1"	1	0	0
-"Teostra Arms Alpha"	arms	"Weakness Exploit:2"	1	0	0
-"Teostra Arms Beta"	arms	"Weakness Exploit:1"	0	0	1
-"Teostra Arms Gamma"	arms	"Critical Eye:3"	0	0	1
-"Tzitzi Arms Alpha"	arms	"Stun Resistance:2,Wide-Range:1"	0	0	0
-"Tzitzi Arms Beta"	arms	"Stun Resistance:2"	1	0	0
-"Uragaan Arms Alpha"	arms	"Defense Boost:1,Guard:1"	1	0	0
-"Uragaan Arms Beta"	arms	Guard:1	0	1	0
-"Vaal Hazak Arms Alpha"	arms	"Peak Performance:1,Recovery Speed:1"	1	0	0
-"Vaal Hazak Arms Beta"	arms	"Peak Performance:1"	3	0	0
-"Vaal Hazak Arms Gamma"	arms	"Dragon Attack:3"	0	1	1
-"Vangis Arms Alpha"	arms	"Latent Power:2,Partbreaker:1"	0	0	0
-"Vangis Arms Beta"	arms	"Latent Power:2"	0	1	0
-"Vespoid Arms Alpha"	arms	"Paralysis Attack:2"	0	0	0
-"Vespoid Arms Beta"	arms	"Paralysis Attack:1"	1	0	0
-"Xeno'Jiiva Arms Alpha"	arms	"Critical Boost:1,Flinch Free:1"	1	0	0
-"Xeno'Jiiva Arms Beta"	arms	"Flinch Free:1"	0	0	1
-"Zorah Arms Alpha"	arms	"Bombardier:1,Free Elem/Ammo Up:1"	0	0	0
-"Zorah Arms Beta"	arms	"Free Elem/Ammo Up:1"	1	0	0
+"Zorah Head Gamma"	head	"Critical Eye:2,Windproof:2"	0	1	0
 "Alloy Body Alpha"	body	"Water Resistance:2"	0	0	0
 "Alloy Body Beta"	body	"Water Resistance:1"	1	0	0
 "Anja Body Alpha"	body	"Marathon Runner:1,Special Ammo Boost:1"	0	0	0
@@ -298,6 +193,7 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Kulu Body Beta"	body	"Stamina Surge:1"	1	0	0
 "Kulve Taroth Body Alpha"	body	"Critical Boost:2,Stun Resistance:2"	1	0	0
 "Kulve Taroth Body Beta"	body	"Critical Boost:1,Stun Resistance:2"	1	0	1
+"Kulve Taroth Body Gamma"	body	Agitator:1,Handicraft:2	1	0	0
 "Kushala Body Alpha"	body	Focus:1,Handicraft:2	0	0	0
 "Kushala Body Beta"	body	Handicraft:2	0	1	0
 "Kushala Body Gamma"	body	"Evade Extender:1,Ice Attack:3"	0	1	0
@@ -311,10 +207,12 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Lumu Body Beta"	body	"Master Mounter:1"	1	0	0
 "Lunastra Body Alpha"	body	"Health Boost:1,Peak Performance:2"	2	0	0
 "Lunastra Body Beta"	body	"Peak Performance:2"	3	0	0
+"Lunastra Body Gamma"	body	"Earplugs:2,Tool Specialist:1"	0	0	1
 "Nergigante Body Alpha"	body	"Agitator:1,Stamina Surge:2"	1	0	0
 "Nergigante Body Beta"	body	"Stamina Surge:2"	1	1	0
 "Odogaron Body Alpha"	body	"Bleeding Resistance:1,Speed Sharpening:2"	0	0	0
 "Odogaron Body Beta"	body	"Speed Sharpening:2"	1	0	0
+"Orion Body Alpha"	body	"Flinch Free:1"	0	0	1
 "Pukei Body Alpha"	body	"Botanist:1,Item Prolonger:1"	0	0	0
 "Pukei Body Beta"	body	"Item Prolonger:1"	1	0	0
 "Rath Heart Body Alpha"	body	"Tool Specialist:2"	0	0	0
@@ -341,8 +239,125 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Vespoid Body Beta"	body	Windproof:1	1	0	0
 "Xeno'Jiiva Body Alpha"	body	"Blight Resistance:1,Power Prolonger:2"	1	0	0
 "Xeno'Jiiva Body Beta"	body	"Power Prolonger:2"	2	0	0
+"Xeno'jiiva Body Gamma"	body	"Flinch Free:2"	2	0	0
 "Zorah Body Alpha"	body	"Blast Attack:2,Windproof:1"	0	0	0
 "Zorah Body Beta"	body	"Blast Attack:2"	0	1	0
+"Zorah Body Gamma"	body	"Tremor Resistance:2"	3	0	0
+"Alloy Arms Alpha"	arms	"Defense Boost:1,Speed Sharpening:1"	0	0	0
+"Alloy Arms Beta"	arms	"Defense Boost:1"	1	0	0
+"Anja Arms Alpha"	arms	"Fire Attack:1,Special Ammo Boost:1"	0	0	0
+"Anja Arms Beta"	arms	"Special Ammo Boost:1"	1	0	0
+"Azure Starlord Arms Alpha"	arms	"Recovery Up:2"	0	0	1
+"Baan Arms Alpha"	arms	"Guard:1,Sleep Attack:2"	0	0	0
+"Baan Arms Beta"	arms	"Guard:1,Sleep Attack:1"	1	0	0
+"Barroth Arms Alpha"	arms	"Marathon Runner:1,Stamina Thief:1"	0	0	0
+"Barroth Arms Beta"	arms	"Marathon Runner:1"	1	0	0
+"Bazel Arms Alpha"	arms	"Critical Draw:2,Earplugs:1"	0	0	0
+"Bazel Arms Beta"	arms	"Critical Draw:2"	0	0	1
+"Behemoth Arms Alpha"	arms	"Attack Boost:1,Critical Eye:2"	0	2	0
+"Blossom Arms Alpha"	arms	"Paralysis Resistance:1"	2	0	0
+"Bone Arms Alpha"	arms	"Attack Boost:1,Slugger:1"	0	0	0
+"Bone Arms Beta"	arms	Slugger:1	1	0	0
+"Brigade Arms Alpha"	arms	"Divine Blessing:1,Heavy Artillery:2"	0	0	0
+"Brigade Arms Beta"	arms	"Heavy Artillery:2"	1	0	0
+"Chainmail Arms Alpha"	arms	"Recovery Speed:1"	0	0	0
+"Chainmail Arms Beta"	arms		1	0	0
+"Commission Arms Alpha"	arms	"Blindsider:1,Carving Pro:1"	1	0	0
+"Commission Arms Beta"	arms	Blindsider:1	0	1	0
+"Damascus Arms Alpha"	arms	"Handicraft:1,Speed Sharpening:1"	0	0	0
+"Damascus Arms Beta"	arms	Handicraft:1	1	0	0
+"Dante Arms Alpha"	arms	"Evade Window:1,Special Ammo Boost:1"	0	0	1
+"Death Stench Arms Alpha"	arms	"Dragon Attack:1,Focus:2"	1	0	0
+"Death Stench Arms Beta"	arms	Focus:2	2	0	0
+"Diablos Arms Alpha"	arms	"Heroics:2,Tremor Resistance:1"	0	0	0
+"Diablos Arms Beta"	arms	Heroics:2	0	1	0
+"Diablos Nero Arms Alpha"	arms	"Focus:1,Marathon Runner:1"	0	0	0
+"Diablos Nero Arms Beta"	arms	Focus:1	1	1	0
+"Diver Arms Alpha"	arms	"Quick Sheath:1"	0	1	0
+"Dober Arms Alpha"	arms	"Mushroomancer:1,Stamina Surge:2"	0	0	0
+"Dober Arms Beta"	arms	"Mushroomancer:1,Stamina Surge:1"	2	0	0
+"Dodogama Arms Alpha"	arms	Bombardier:2	0	0	0
+"Dodogama Arms Beta"	arms	Bombardier:1	1	0	0
+"Girros Arms Alpha"	arms	"Palico Rally:2"	0	0	0
+"Girros Arms Beta"	arms	"Palico Rally:1"	1	0	0
+"Guild Cross Arms Alpha"	arms	"Tool Specialist:1,Water Resistance:2"	1	0	0
+"Guild Cross Arms Beta"	arms	"Tool Specialist:1"	0	0	1
+"Harvest Alpha Arms"	arms	Resentment:1	1	1	0
+"High Metal Arms Alpha"	arms	"Defense Boost:2,Ice Attack:1"	0	0	0
+"High Metal Arms Beta"	arms	"Defense Boost:2"	1	0	0
+"Hornetaur Arms Alpha"	arms	"Free Meal:1,Hunger Reisistance:1"	0	0	0
+"Hornetaur Arms Beta"	arms	"Free Meal:1"	1	0	0
+"Hunter's Arms Alpha"	arms	Stealth:2	0	0	0
+"Hunter's Arms Beta"	arms	Stealh:1	1	0	0
+"Ingot Arms Alpha"	arms	"Health Boost:2,Thunder Attack:1"	0	0	0
+"Ingot Arms Beta"	arms	"Health Boost:2"	1	0	0
+"Insect Arms Alpha"	arms	"Botanist:2,Leap of Faith:1"	0	0	0
+"Insect Arms Beta"	arms	Botanist:2	1	1	0
+"Jagras Arms Alpha"	arms	"Intimidator:1,Palico Rally:1"	0	0	0
+"Jagras Arms Beta"	arms	"Palico Rally:1"	1	0	0
+"Jyura Arms Alpha"	arms	"Aquatic Expert:1,Water Attack:2"	0	0	0
+"Jyura Arms Beta"	arms	"Water Attack:2"	1	0	0
+"Kadachi Arms Alpha"	arms	"Evade Extender:2"	0	0	0
+"Kadachi Arms Beta"	arms	"Evade Extender:1"	0	1	0
+"Kestodon Arms Alpha"	arms	"Affinity Sliding:1,Focus:1"	0	0	0
+"Kestodon Arms Beta"	arms	"Affinity Sliding:1"	1	0	0
+"Kirin Arms Alpha"	arms	"Marathon Runner:1,Thunder Attack:2"	0	0	0
+"Kirin Arms Beta"	arms	"Thunder Attack:2"	2	0	0
+"Kirin Arms Gamma"	arms	"Blight Resistance:1,Free Elem/Ammo Up:1"	0	2	0
+"Kulu Arms Alpha"	arms	"Critical Eye:1,Pro Transporter:1"	0	0	0
+"Kulu Arms Beta"	arms	"Pro Transporter:1"	0	1	0
+"Kulve Taroth Arms Alpha"	arms	"Free Elem/Ammo Up:1,Power Prolonger:2"	1	0	0
+"Kulve Taroth Arms Beta"	arms	"Free Elem/Ammo Up:1,Power Prolonger:1"	1	0	1
+"Kulve Taroth Arms Gamma"	arms	"Constitution:1,Handicraft:2"	1	0	0
+"Kushala Arms Alpha"	arms	"Evade Window:2,Handicraft:1"	0	0	0
+"Kushala Arms Beta"	arms	"Evade Window:2"	0	0	1
+"Kushala Arms Gamma"	arms	Focus:2	3	0	0
+"Lavasioth Arms Alpha"	arms	"Affinity Sliding:1,Wide-Range:1"	0	1	0
+"Lavasioth Arms Beta"	arms	"Affinity Sliding:1"	0	0	1
+"Leather Arms Alpha"	arms	"Recovery Speed:1"	0	0	0
+"Leather Arms Beta"	arms		1	0	0
+"Legiana Arms Alpha"	arms	"Airborne:1,Evade Window:1"	0	0	0
+"Legiana Arms Beta"	arms	Airborne:1	0	0	1
+"Lumu Arms Alpha"	arms	Artillery:2	0	0	0
+"Lumu Arms Beta"	arms	Artillery:1	1	0	0
+"Lunastra Arms Alpha"	arms	"Blast Attack:2,Wide-Range:2"	0	0	1
+"Lunastra Arms Beta"	arms	Wide-Range:2	0	1	1
+"Lunastra Arms Gamma"	arms	"Agitator:2,Evade Extender:1"	1	0	1
+"Nergigante Arms Alpha"	arms	"Agitator:2,Attack Boost:1"	0	0	0
+"Nergigante Arms Beta"	arms	Agitator:2	1	0	0
+"Odogaron Arms Alpha"	arms	"Constitution:1,Critical Eye:1"	0	0	0
+"Odogaron Arms Beta"	arms	Constitution:1	1	0	0
+"Orion Arms Alpha"	arms	Windproof:1	1	0	1
+"Pukei Arms Alpha"	arms	"Poison Attack:1,Poison Resistance:2"	0	0	0
+"Pukei Arms Beta"	arms	"Poison Resistance:1"	2	0	0
+"Rath Heart Arms Alpha"	arms	Windproof:2	0	0	0
+"Rath Heart Arms Beta"	arms	Windproof:1	0	1	0
+"Rath Soul Arms Alpha"	arms	Focus:1,Windproof:1	0	0	0
+"Rath Soul Arms Beta"	arms	Focus:1	0	1	0
+"Rathalos Arms Alpha"	arms	"Attack Boost:1,Fire Resistance:2"	0	0	0
+"Rathalos Arms Beta"	arms	"Fire Resistance:2"	1	0	0
+"Rathian Arms Alpha"	arms	"Poison Attack:2"	0	0	0
+"Rathian Arms Beta"	arms	"Poison Attack:1"	1	0	0
+"Teostra Arms Alpha"	arms	"Weakness Exploit:2"	1	0	0
+"Teostra Arms Beta"	arms	"Weakness Exploit:1"	0	0	1
+"Teostra Arms Gamma"	arms	"Critical Eye:3"	0	0	1
+"Tzitzi Arms Alpha"	arms	"Stun Resistance:2,Wide-Range:1"	0	0	0
+"Tzitzi Arms Beta"	arms	"Stun Resistance:2"	1	0	0
+"Uragaan Arms Alpha"	arms	"Defense Boost:1,Guard:1"	1	0	0
+"Uragaan Arms Beta"	arms	Guard:1	0	1	0
+"Vaal Hazak Arms Alpha"	arms	"Peak Performance:1,Recovery Speed:1"	1	0	0
+"Vaal Hazak Arms Beta"	arms	"Peak Performance:1"	3	0	0
+"Vaal Hazak Arms Gamma"	arms	"Dragon Attack:3"	0	1	1
+"Vangis Arms Alpha"	arms	"Latent Power:2,Partbreaker:1"	0	0	0
+"Vangis Arms Beta"	arms	"Latent Power:2"	0	1	0
+"Vespoid Arms Alpha"	arms	"Paralysis Attack:2"	0	0	0
+"Vespoid Arms Beta"	arms	"Paralysis Attack:1"	1	0	0
+"Xeno'Jiiva Arms Alpha"	arms	"Critical Boost:1,Flinch Free:1"	1	0	0
+"Xeno'Jiiva Arms Beta"	arms	"Flinch Free:1"	0	0	1
+"Xeno'jiiva Arms Gamma"	arms	"Power Prolonger:1,Special Ammo Boost:1"	1	2	0
+"Zorah Arms Alpha"	arms	"Bombardier:1,Free Elem/Ammo Up:1"	0	0	0
+"Zorah Arms Beta"	arms	"Free Elem/Ammo Up:1"	1	0	0
+"Zorah Arms Gamma"	arms	Earplugs:2	1	0	1
 "Alloy Waist Alpha"	waist	"Poison Resistance:1,Water Resistance:1"	0	0	0
 "Alloy Waist Beta"	waist	"Poison Resistance:1"	1	0	0
 "Anja Waist Alpha"	waist	"Artillery:1,Fire Resistance:2"	0	0	0
@@ -406,6 +421,7 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Kulu Waist Beta"	waist	"Item Prolonger:1"	0	1	0
 "Kulve Taroth Waist Alpha"	waist	"Free Elem/Ammo Up:1,Handicraft:2"	1	0	0
 "Kulve Taroth Waist Beta"	waist	"Free Elem/Ammo Up:1,Handicraft:1"	1	0	1
+"Kulve Taroth Waist Gamma"	waist	"Critical Boost:1,Weakness Exploit:1"	0	0	1
 "Kushala Waist Alpha"	waist	"Evade Extender:1,Ice Attack:2"	0	0	0
 "Kushala Waist Beta"	waist	"Ice Attack:2"	2	0	0
 "Kushala Waist Gamma"	waist	Handicraft:2	2	0	0
@@ -419,10 +435,12 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Lumu Waist Beta"	waist	"Divine Blessing:1"	1	0	0
 "Lunastra Waist Alpha"	waist	"Blast Attack:1,Tool Specialist:2"	1	0	1
 "Lunastra Waist Beta"	waist	"Tool Specialist:2"	0	2	0
+"Lunastra Waist Gamma"	waist	"Evade Window:2,Health Boost:2"	0	0	1
 "Nergigante Waist Alpha"	waist	"Attack Boost:2,Stamina Surge:1"	0	0	0
 "Nergigante Waist Beta"	waist	"Attack Boost:2"	0	1	0
 "Odogaron Waist Alpha"	waist	"Critical Eye:2,Speed Sharpening:1"	0	0	0
 "Odogaron Waist Beta"	waist	"Critical Eye:2"	0	1	0
+"Orion Waist Alpha"	waist	"Health Boost:1"	1	0	1
 "Pukei Waist Alpha"	waist	"Poison Attack:2"	0	0	0
 "Pukei Waist Beta"	waist	"Poison Attack:1"	1	0	0
 "Rath Heart Waist Alpha"	waist	"Handicraft:1,Poison Resistance:1"	0	0	0
@@ -449,8 +467,10 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Vespoid Waist Beta"	waist	"Paralysis Resistance:1"	1	0	0
 "Xeno'Jiiva Waist Alpha"	waist	"Blight Resistance:2,Special Ammo Boost:1"	0	0	1
 "Xeno'Jiiva Waist Beta"	waist	"Blight Resistance:2"	1	1	0
+"Xeno'jiiva Waist Gamma"	waist	"Critical Boost:1"	1	0	1
 "Zorah Waist Alpha"	waist	"Fortify:1,Tremor Resistance:1"	0	0	0
 "Zorah Waist Beta"	waist	Fortify:1	0	1	0
+"Zorah Waist Gamma"	waist	"Bombardier:2,Critical Eye:1"	0	1	1
 "Alloy Legs Alpha"	legs	"Speed Sharpening:2"	0	0	0
 "Alloy Legs Beta"	legs	"Speed Sharpening:1"	1	0	0
 "Anja Legs Alpha"	legs	Artillery:2	0	0	0
@@ -517,6 +537,7 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Kulu Legs Beta"	legs	"Critical Eye:1"	1	0	0
 "Kulve Taroth Legs Alpha"	legs	"Peak Performance:2,Wide-Range:2"	1	0	0
 "Kulve Taroth Legs Beta"	legs	"Peak Performance:1,Wide-Range:2"	1	1	0
+"Kulve Taroth Legs Gamma"	legs	"Agitator:2,Heat Guard:1"	1	0	1
 "Kushala Legs Alpha"	legs	"Evade Extender:2,Handicraft:1"	0	0	0
 "Kushala Legs Beta"	legs	"Evade Extender:2"	0	0	1
 "Kushala Legs Gamma"	legs	"Evade Window:2"	0	0	1
@@ -530,10 +551,12 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Lumu Legs Beta"	legs	Windproof:1	2	0	0
 "Lunastra Legs Alpha"	legs	"Health Boost:2,Wide Range:2"	1	1	0
 "Lunastra Legs Beta"	legs	"Health Boost:2"	0	2	0
+"Lunastra Legs Gamma"	legs	Agitator:1,Earplugs:2	0	0	1
 "Nergigante Legs Alpha"	legs	"Agitator:1,Maximum Might:1"	1	0	0
 "Nergigante Legs Beta"	legs	"Maximum Might:1"	0	1	0
 "Odogaron Legs Alpha"	legs	"Critical Eye:1,Quick Sheath:1"	0	0	0
 "Odogaron Legs Beta"	legs	"Quick Sheath:1"	1	0	0
+"Orion Legs Alpha"	legs	Heroics:1	1	0	1
 "Pukei Legs Alpha"	legs	"Botanist:2,Sporepuff Expert:1"	0	0	0
 "Pukei Legs Beta"	legs	Botanist:1	0	1	0
 "Rath Heart Legs Alpha"	legs	"Tool Specialist:1,Windproof:1"	0	0	0
@@ -560,8 +583,10 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Vespoid Legs Beta"	legs	"Honey Hunter:1"	1	0	0
 "Xeno'Jiiva Legs Alpha"	legs	"Flinch Free:1,Power Prolonger:1"	1	0	0
 "Xeno'Jiiva Legs Beta"	legs	"Flinch Free:1"	2	0	0
+"Xeno'jiiva Legs Gamma"	legs	"Critical Boost:1"	1	0	1
 "Zorah Legs Alpha"	legs	Bombardier:2,Earplugs:1	0	0	0
 "Zorah Legs Beta"	legs	Bombardier:2	0	1	0
+"Zorah Legs Gamma"	legs	"Blast Attack:2,Critical Eye:1"	0	1	1
 "Artillery Charm I"	charm	Artillery:1	0	0	0
 "Artillery Charm II"	charm	Artillery:2	0	0	0
 "Artillery Charm III"	charm	Artillery:3	0	0	0
