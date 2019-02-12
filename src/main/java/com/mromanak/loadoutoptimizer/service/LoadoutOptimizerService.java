@@ -54,10 +54,11 @@ public class LoadoutOptimizerService {
         SimpleLoadoutScoringFunction scoringFunction = scoringFunctionFor(loadoutRequest);
 
         Set<String> desiredSkills = scoringFunction.getSkillWieghtFunctions().keySet();
-        Pattern namesToIgnorePattern = Pattern.compile("^$");
+        List<Pattern> excludePatterns = loadoutRequest.getExcludePatterns();
         Predicate<ArmorPiece> filter = (ArmorPiece armorPiece) -> {
             boolean hasDesiredSkill = !Sets.intersection(desiredSkills, armorPiece.getSkills().keySet()).isEmpty();
-            boolean isIgnored = namesToIgnorePattern.matcher(armorPiece.getName()).matches();
+            boolean isIgnored = excludePatterns.stream().
+                anyMatch((excludePattern) -> excludePattern.matcher(armorPiece.getName()).matches());
             return hasDesiredSkill && !isIgnored;
         };
 
