@@ -37,6 +37,7 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Dragonking Head Alpha"	head	"Weakness Exploit:2"	0	0	1
 "Dragonseal Head Alpha"	head	"Elderseal Boost:1"	0	0	0
 "Faux Felyne Head Alpha"	head	"Palico Rally:3"	0	0	0
+"Gala Head Alpha"	head	"Critical Boost:1"	2	0	1
 "Gastodon Head Alpha"	head	"Blast Resistance:1,Flinch Free:1"	0	0	0
 "Gastodon Head Beta"	head	"Flinch Free:1"	1	0	0
 "Gastrodon Head Alpha"	head	"Blast Resistance:1,Flinch Free:1"	0	0	0
@@ -165,6 +166,7 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Dober Body Beta"	body	"Attack Boost:2"	0	1	0
 "Dodogama Body Alpha"	body	"Blast Attack:2"	0	0	0
 "Dodogama Body Beta"	body	"Blast Attack:1"	1	0	0
+"Gala Body Alpha"	body	"Critical Draw:1"	2	0	1
 "Girros Body Alpha"	body	"Paralysis Resistance:2"	0	0	0
 "Girros Body Beta"	body	"Paralysis Resistance:1"	1	0	0
 "Guild Cross Body Alpha"	body	"Ice Resistance:2,Resuscitate:1"	1	0	0
@@ -278,6 +280,7 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Dober Arms Beta"	arms	"Mushroomancer:1,Stamina Surge:1"	2	0	0
 "Dodogama Arms Alpha"	arms	Bombardier:2	0	0	0
 "Dodogama Arms Beta"	arms	Bombardier:1	1	0	0
+"Gala Arms Alpha"	arms	"Maximum Might:1"	2	0	1
 "Girros Arms Alpha"	arms	"Palico Rally:2"	0	0	0
 "Girros Arms Beta"	arms	"Palico Rally:1"	1	0	0
 "Guild Cross Arms Alpha"	arms	"Tool Specialist:1,Water Resistance:2"	1	0	0
@@ -393,6 +396,7 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Dober Waist Beta"	waist	"Dragon Resistance:2"	0	0	1
 "Dodogama Waist Alpha"	waist	"Artillery:2,Blast Resistance:1"	0	0	0
 "Dodogama Waist Beta"	waist	Artillery:2	1	0	0
+"Gala Waist Alpha"	waist	"Slinger Capacity:1"	2	0	1
 "Girros Waist Alpha"	waist	"Effluvial Expert:1,Paralysis Attack:1"	0	0	0
 "Girros Waist Beta"	waist	"Effluvial Expert:1"	1	0	0
 "Guild Cross Waist Alpha"	waist	"Dragon Resistance:2,Fortify:1"	1	0	0
@@ -509,6 +513,7 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Dodogama Legs Beta"	legs	"Capacity Boost:1"	1	0	0
 "Gajau Legs Alpha"	legs	"Aquatic Expert:2,Water Attack:1"	0	0	0
 "Gajau Legs Beta"	legs	"Aquatic Expert:1,Water Attack:1"	1	0	0
+"Gala Legs Alpha"	legs	"Divine Blessing:1"	2	0	1
 "Girros Legs Alpha"	legs	"Paralysis Attack:2"	0	0	0
 "Girros Legs Beta"	legs	"Paralysis Attack:1"	1	0	0
 "Guild Cross Legs Alpha"	legs	"Airborne:1,Fire Resistance:2"	0	0	0
@@ -549,7 +554,7 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Legiana Legs Beta"	legs	"Ice Resistance:2"	0	0	1
 "Lumu Legs Alpha"	legs	"Stamina Surge:1,Windproof:1"	0	0	0
 "Lumu Legs Beta"	legs	Windproof:1	2	0	0
-"Lunastra Legs Alpha"	legs	"Health Boost:2,Wide-Range:2"	1	1	0
+"Lunastra Legs Alpha"	legs	"Health Boost:2,Wide Range:2"	1	1	0
 "Lunastra Legs Beta"	legs	"Health Boost:2"	0	2	0
 "Lunastra Legs Gamma"	legs	Agitator:1,Earplugs:2	0	0	1
 "Nergigante Legs Alpha"	legs	"Agitator:1,Maximum Might:1"	1	0	0
