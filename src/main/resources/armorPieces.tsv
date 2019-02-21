@@ -784,6 +784,8 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Smoke Charm I"	charm	"Sporepuff Expert:1"	0	0	0
 "Smoke Charm II"	charm	"Sporepuff Expert:2"	0	0	0
 "Smoke Charm III"	charm	"Sporepuff Expert:3"	0	0	0
+"Special Shot Charm Charm I"	charm	"Special Ammo Boost:1"	0	0	0
+"Special Shot Charm Charm II"	charm	"Special Ammo Boost:2"	0	0	0
 "Speed Heal Charm I"	charm	"Recovery Speed:1"	0	0	0
 "Speed Heal Charm II"	charm	"Recovery Speed:2"	0	0	0
 "Speed Heal Charm III"	charm	"Recovery Speed:3"	0	0	0
@@ -806,8 +808,6 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Tremor Charm I"	charm	"Tremor Resistance:1"	0	0	0
 "Tremor Charm II"	charm	"Tremor Resistance:2"	0	0	0
 "Trickshot Charm"	charm	"Blindsider:1,Dungmaster:1"	0	0	0
-"Trickshot Charm I"	charm	"Special Ammo Boost:1"	0	0	0
-"Trickshot Charm II"	charm	"Special Ammo Boost:2"	0	0	0
 "Unscathed Charm I"	charm	"Peak Performance:1"	0	0	0
 "Unscathed Charm II"	charm	"Peak Performance:2"	0	0	0
 "Venom Charm I"	charm	"Poison Attack:1"	0	0	0
