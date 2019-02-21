@@ -65,7 +65,7 @@ public class LoadoutOptimizerService {
         Set<ArmorPiece> armorPieces = armorPieceService.getArmorPieces(filter);
 
         if(loadoutRequest.getSetBonus() != null) {
-            List<Loadout> startingLoadouts = generateStartingLoadoutsForSetBonus(loadoutRequest.getSetBonus());
+            List<Loadout> startingLoadouts = generateStartingLoadoutsForSetBonus(loadoutRequest.getSetBonus(), loadoutRequest.getExcludePatterns());
             return LoadoutOptimizer.findBestLoadoutsGiven(startingLoadouts, armorPieces, scoringFunction);
         } else {
             return LoadoutOptimizer.findBestLoadouts(armorPieces, scoringFunction);
@@ -109,7 +109,7 @@ public class LoadoutOptimizerService {
         }
     }
 
-    public List<Loadout> generateStartingLoadoutsForSetBonus(String bonusName) {
+    private List<Loadout> generateStartingLoadoutsForSetBonus(String bonusName, List<Pattern> excludePatterns) {
         List<SetBonus> setBonusOpt = setBonusService.findSetBonus(bonusName);
         if(setBonusOpt.isEmpty()) {
             throw new IllegalArgumentException("Could not find a set bonus that provides skill " + bonusName);
@@ -118,7 +118,9 @@ public class LoadoutOptimizerService {
         List<Loadout> loadouts = new ArrayList<>();
 
         for(SetBonus setBonus : setBonusOpt) {
-            Set<String> armorPieceNames = setBonus.getArmorPieces();
+            Set<String> armorPieceNames = setBonus.getArmorPieces().stream().
+                filter((armorPieceName) -> excludePatterns.stream().noneMatch((pattern) -> pattern.matcher(armorPieceName).matches())).
+                collect(toSet());
             Set<ArmorPiece> armorPieces = armorPieceService.getArmorPieces(ap -> armorPieceNames.contains(ap.getName()));
             int minimumPieces = setBonus.getBonusRequirements().get(bonusName);
 

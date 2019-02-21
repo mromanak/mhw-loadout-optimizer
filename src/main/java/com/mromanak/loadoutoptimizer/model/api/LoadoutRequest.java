@@ -41,10 +41,7 @@ public class LoadoutRequest {
 
     @ApiModelProperty(
         notes = "A list of regular expressions that match the names of armor pieces that should not be included in " +
-            "the final loadout. If setBonus is also defined, the API may use armor whose name matches an exclude " +
-            "pattern (e.g. if excludePatterns excludes all Kushala Daora armor pieces, but setBonus specifies Nullify" +
-            " Wind Pressure, the API may return a loadout containing the minimum number of pieces of Kushala Daora " +
-            "armor required to obtain the set bonus.)")
+            "the final loadout.")
     private List<Pattern> excludePatterns = new ArrayList<>();
 
     public void setSkillWeights(Map<String, SkillWeight> skillWeights) {
