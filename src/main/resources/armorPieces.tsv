@@ -554,7 +554,7 @@ name	armorType	skills	level1Slots	level2Slots	level3Slots
 "Legiana Legs Beta"	legs	"Ice Resistance:2"	0	0	1
 "Lumu Legs Alpha"	legs	"Stamina Surge:1,Windproof:1"	0	0	0
 "Lumu Legs Beta"	legs	Windproof:1	2	0	0
-"Lunastra Legs Alpha"	legs	"Health Boost:2,Wide Range:2"	1	1	0
+"Lunastra Legs Alpha"	legs	"Health Boost:2,Wide-Range:2"	1	1	0
 "Lunastra Legs Beta"	legs	"Health Boost:2"	0	2	0
 "Lunastra Legs Gamma"	legs	Agitator:1,Earplugs:2	0	0	1
 "Nergigante Legs Alpha"	legs	"Agitator:1,Maximum Might:1"	1	0	0
