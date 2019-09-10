@@ -1,9 +1,9 @@
 package com.mromanak.loadoutoptimizer.repository;
 
-import com.mromanak.loadoutoptimizer.model.jpa.Jewel;
+import com.mromanak.loadoutoptimizer.model.jpa.Skill;
 import org.springframework.data.repository.CrudRepository;
 
-public interface SkillRepository extends CrudRepository<Jewel, Long> {
+public interface SkillRepository extends CrudRepository<Skill, Long> {
 
-    Jewel findByName(String name);
+    Skill findByName(String name);
 }

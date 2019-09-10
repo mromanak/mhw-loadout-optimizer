@@ -7,13 +7,21 @@ import javax.validation.Valid;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.Set;
 
 @Data
+@Entity
+@Table(
+    uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"name"})
+    }
+)
 public class Skill {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "skill_id_generator")
+    @SequenceGenerator(name = "skill_id_generator", sequenceName = "skill_id_seq")
     private Long id;
 
     @NotBlank(message = "Name must be non-blank")
@@ -28,20 +36,21 @@ public class Skill {
     private Integer maxUncappedLevel;
 
     @Valid
-    @OneToOne(fetch = FetchType.LAZY)
+    //@OneToOne(fetch = FetchType.LAZY)
+    @OneToOne
     @JoinTable(
         name = "uncapping_skills",
-        joinColumns = @JoinColumn(referencedColumnName = "uncapping_skill_id"),
-        inverseJoinColumns = @JoinColumn(referencedColumnName = "uncapped_skill_id")
+        joinColumns = @JoinColumn(referencedColumnName = "id"),
+        inverseJoinColumns = @JoinColumn(referencedColumnName = "id")
     )
     private Skill uncappedBy;
 
     @Valid
-    @ElementCollection
+    @Size(min = 1, message = "Skill must provide at least one effect")
+    @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(
         name = "skill_effects",
-        joinColumns = @JoinColumn(referencedColumnName = "skill_id")
+        joinColumns = @JoinColumn(referencedColumnName = "id")
     )
-    @OneToMany(fetch = FetchType.LAZY)
     private Set<SkillEffect> providedEffects;
 }

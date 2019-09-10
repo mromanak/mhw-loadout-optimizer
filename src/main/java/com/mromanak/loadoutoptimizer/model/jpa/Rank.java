@@ -30,12 +30,12 @@ public enum Rank {
     }
 
     @JsonValue
-    private String getName() {
+    public String getName() {
         return name;
     }
 
     @JsonCreator
-    private Rank forName(String name) {
+    public Rank forName(String name) {
         Rank rank = nameToValueMap.get(name);
         if(rank == null) {
             throw new IllegalArgumentException(

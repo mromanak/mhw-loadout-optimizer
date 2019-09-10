@@ -9,10 +9,16 @@ import java.util.Set;
 
 @Data
 @Entity
+@Table(
+    uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"name"})
+    }
+)
 public class Jewel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "jewel_id_generator")
+    @SequenceGenerator(name = "jewel_id_generator", sequenceName = "jewel_id_seq")
     private Long id;
 
     @NotBlank(message = "Name must be non-blank")
@@ -25,11 +31,10 @@ public class Jewel {
     private Integer jewelLevel;
 
     @Valid
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(
         name = "jewel_provided_skills",
-        joinColumns = @JoinColumn(referencedColumnName = "jewel_id")
+        joinColumns = @JoinColumn(referencedColumnName = "id")
     )
-    @OneToMany(fetch = FetchType.LAZY)
     Set<ProvidedSkill> providedSkills;
 }

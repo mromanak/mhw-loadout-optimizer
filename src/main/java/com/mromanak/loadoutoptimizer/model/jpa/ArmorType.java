@@ -34,12 +34,12 @@ public enum ArmorType {
     }
 
     @JsonValue
-    private String getName() {
+    public String getName() {
         return name;
     }
 
     @JsonCreator
-    private ArmorType forName(String name) {
+    public ArmorType forName(String name) {
         ArmorType armorType = nameToValueMap.get(name);
         if(armorType == null) {
             throw new IllegalArgumentException(

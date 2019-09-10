@@ -38,12 +38,12 @@ public enum SetType {
     }
 
     @JsonValue
-    private String getName() {
+    public String getName() {
         return name;
     }
 
     @JsonCreator
-    private SetType forName(String name) {
+    public SetType forName(String name) {
         SetType setType = nameToValueMap.get(name);
         if(setType == null) {
             throw new IllegalArgumentException(
