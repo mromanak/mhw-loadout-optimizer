@@ -19,17 +19,17 @@ public class SetBonus {
     private Long id;
 
     @NotBlank(message = "Name must be non-blank")
+    @Column(nullable = false)
     private String name;
 
     @Valid
-    private List<Jewel> jewels;
-
-    @Valid
+    @Size(min = 1, message = "Set bonus must provide at least one skill")
     @ElementCollection
     @CollectionTable(
-        name = "jewel_provided_skills",
-        joinColumns = @JoinColumn(referencedColumnName = "jewel_id")
+        name = "set_bonus_skills",
+        joinColumns = @JoinColumn(referencedColumnName = "set_bonus_id")
     )
-    @OneToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.LAZY)
+    @Column(nullable = false)
     Set<SetBonusSkill> skills;
 }

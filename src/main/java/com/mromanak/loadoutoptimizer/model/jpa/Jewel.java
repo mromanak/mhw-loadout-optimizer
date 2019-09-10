@@ -16,10 +16,12 @@ public class Jewel {
     private Long id;
 
     @NotBlank(message = "Name must be non-blank")
+    @Column(nullable = false)
     private String name;
 
     @Min(value = 1, message = "Jewel level must be at least 1")
     @Max(value = 4, message = "Jewel level must be at most 4")
+    @Column(nullable = false)
     private Integer jewelLevel;
 
     @Valid

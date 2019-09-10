@@ -11,10 +11,12 @@ import javax.validation.constraints.NotNull;
 public class ProvidedSkill {
 
     @NotNull(message = "Skill must be non-null")
-    @OneToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(referencedColumnName = "id")
+    @Column(nullable = false)
     private Skill skill;
 
     @Min(value = 1, message = "Skill level must be at least one")
+    @Column(nullable = false)
     private Integer skillLevel;
 }

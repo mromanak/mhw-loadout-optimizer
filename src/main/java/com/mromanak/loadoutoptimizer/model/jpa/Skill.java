@@ -4,11 +4,10 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.Valid;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-import java.util.List;
+import java.util.Set;
 
 @Data
 public class Skill {
@@ -18,9 +17,12 @@ public class Skill {
     private Long id;
 
     @NotBlank(message = "Name must be non-blank")
+    @Column(nullable = false)
     private String name;
 
     @Min(value = 1, message = "Max level must be at least 1")
+    @Max(value = 7, message = "Max level must be at most 7")
+    @Column(nullable = false)
     private Integer maxLevel;
 
     private Integer maxUncappedLevel;
@@ -28,7 +30,7 @@ public class Skill {
     @Valid
     @OneToOne(fetch = FetchType.LAZY)
     @JoinTable(
-        name = "uncap_skills",
+        name = "uncapping_skills",
         joinColumns = @JoinColumn(referencedColumnName = "uncapping_skill_id"),
         inverseJoinColumns = @JoinColumn(referencedColumnName = "uncapped_skill_id")
     )
@@ -41,5 +43,5 @@ public class Skill {
         joinColumns = @JoinColumn(referencedColumnName = "skill_id")
     )
     @OneToMany(fetch = FetchType.LAZY)
-    private List<SkillEffect> providedEffects;
+    private Set<SkillEffect> providedEffects;
 }
