@@ -1,9 +1,13 @@
 package com.mromanak.loadoutoptimizer.repository;
 
 import com.mromanak.loadoutoptimizer.model.jpa.Skill;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
-public interface SkillRepository extends CrudRepository<Skill, Long> {
+import javax.transaction.Transactional;
+import java.util.Optional;
 
-    Skill findByName(String name);
+public interface SkillRepository extends PagingAndSortingRepository<Skill, String> {
 }

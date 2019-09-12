@@ -17,7 +17,12 @@ public enum SetType {
     GAMMA("γ", HIGH_RANK),
     ALPHA_PLUS("α +", MASTER_RANK),
     BETA_PLUS("β +", MASTER_RANK),
-    GAMMA_PLUS("γ +", MASTER_RANK);
+    GAMMA_PLUS("γ +", MASTER_RANK),
+    CHARM_1("I", HIGH_RANK),
+    CHARM_2("II", HIGH_RANK),
+    CHARM_3("III", HIGH_RANK),
+    CHARM_4("IV", MASTER_RANK),
+    CHARM_5("V", MASTER_RANK);
 
     private final String name;
     private final Rank rank;
@@ -42,8 +47,12 @@ public enum SetType {
         return name;
     }
 
+    public Rank getRank() {
+        return rank;
+    }
+
     @JsonCreator
-    public SetType forName(String name) {
+    public static SetType forName(String name) {
         SetType setType = nameToValueMap.get(name);
         if(setType == null) {
             throw new IllegalArgumentException(

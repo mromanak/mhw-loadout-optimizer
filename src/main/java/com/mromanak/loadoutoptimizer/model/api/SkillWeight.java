@@ -10,12 +10,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @ApiModel(
-    description = "A specification of the desired level and relative worth of a skill")
+    description = "A specification of the desired requiredPieces and relative worth of a skill")
 public class SkillWeight {
 
     @ApiModelProperty(notes = "The maximum number of levels of the skill that the returned loadouts should contain.")
     int maximum = 0;
 
-    @ApiModelProperty(notes = "The relative value of a level of the skill.")
+    @ApiModelProperty(notes = "The relative value of a requiredPieces of the skill.")
     double weight = 0.0;
 }

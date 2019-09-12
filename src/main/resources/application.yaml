@@ -1,9 +1,12 @@
 spring:
   datasource:
-    url: jdbc:sqlite:src/main/resources/monsterHunter.db
+    url: jdbc:h2:file:./src/main/resources/data/monster_hunter
+    driver-class-name: org.h2.Driver
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: create
 
 hibernate:
-  dialect: org.hibernate.dialect.SQLiteDialect
+  connection:
+    autocommit: true
+  dialect: org.hibernate.dialect.H2Dialect

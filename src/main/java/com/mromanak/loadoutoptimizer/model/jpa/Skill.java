@@ -1,43 +1,49 @@
 package com.mromanak.loadoutoptimizer.model.jpa;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.mromanak.loadoutoptimizer.utils.NameUtils;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Setter;
+import org.hibernate.annotations.CollectionId;
+import org.hibernate.annotations.SortComparator;
+import org.hibernate.annotations.SortNatural;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import javax.validation.Valid;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
-import java.util.Set;
+import javax.validation.constraints.*;
+import java.util.*;
 
 @Data
 @Entity
-@Table(
-    uniqueConstraints = {
-        @UniqueConstraint(columnNames = {"name"})
-    }
-)
 public class Skill {
 
+    @Setter(AccessLevel.NONE)
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE, generator = "skill_id_generator")
-    @SequenceGenerator(name = "skill_id_generator", sequenceName = "skill_id_seq")
-    private Long id;
+    @Column(columnDefinition = "varchar")
+    private String id;
 
     @NotBlank(message = "Name must be non-blank")
-    @Column(nullable = false)
+    @Column(columnDefinition = "varchar", nullable = false)
     private String name;
 
-    @Min(value = 1, message = "Max level must be at least 1")
-    @Max(value = 7, message = "Max level must be at most 7")
+    @NotNull(message = "Max requiredPieces must be non-null")
+    @Min(value = 1, message = "Max requiredPieces must be at least 1")
+    @Max(value = 7, message = "Max requiredPieces must be at most 7")
     @Column(nullable = false)
     private Integer maxLevel;
 
+    // TODO Validate that this is greater than maxLevel
+
+    @Min(value = 1, message = "Max uncapped requiredPieces must be at least 1")
+    @Max(value = 7, message = "Max uncapped requiredPieces must be at most 7")
     private Integer maxUncappedLevel;
 
     @Valid
-    //@OneToOne(fetch = FetchType.LAZY)
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(
         name = "uncapping_skills",
         joinColumns = @JoinColumn(referencedColumnName = "id"),
@@ -45,12 +51,37 @@ public class Skill {
     )
     private Skill uncappedBy;
 
+    @NotBlank(message = "Description must be non-blank")
+    @Column(columnDefinition = "varchar", nullable = false)
+    private String description;
+
+    // TODO Validate that this has the expected number of entries
     @Valid
-    @Size(min = 1, message = "Skill must provide at least one effect")
+    @NotNull(message = "Effects must be non-null")
+    @Size(min = 1, max = 7, message = "Effects must contain between 1 and 7, inclusive, entries")
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(
-        name = "skill_effects",
+        name = "skill_effect",
         joinColumns = @JoinColumn(referencedColumnName = "id")
     )
-    private Set<SkillEffect> providedEffects;
+    @MapKeyColumn(name = "skill_level")
+    @Column(name = "effect", nullable = false, columnDefinition = "varchar")
+    private Map<Integer, String> effects;
+
+    @Valid
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    List<ArmorPieceSkill> armorPieces;
+
+    @Valid
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    List<JewelSkill> jewels;
+
+    @Valid
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    List<SetBonusSkill> setBonuses;
+
+    public void setName(String name) {
+        this.id = NameUtils.toSlug(name);
+        this.name = name;
+    }
 }
