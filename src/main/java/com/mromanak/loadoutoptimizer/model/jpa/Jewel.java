@@ -8,6 +8,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -29,11 +30,19 @@ public class Jewel {
     private Integer jewelLevel;
 
     @Valid
+    @Size(min = 1, message = "Skills must contain at least 1 element")
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "jewel")
-    private List<JewelSkill> skills;
+    private List<JewelSkill> skills = new ArrayList<>();
 
     public void setName(String name) {
         this.id = NameUtils.toSlug(name);
         this.name = name;
+    }
+
+    public void setSkills(List<JewelSkill> skills) {
+        this.skills.clear();
+        if (skills != null) {
+            this.skills.addAll(skills);
+        }
     }
 }

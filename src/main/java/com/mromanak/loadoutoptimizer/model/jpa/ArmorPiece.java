@@ -11,6 +11,7 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -63,7 +64,7 @@ public class ArmorPiece {
 
     @Valid
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "armorPiece")
-    private List<ArmorPieceSkill> skills;
+    private List<ArmorPieceSkill> skills = new ArrayList<>();
 
     @Valid
     @ManyToOne(fetch = FetchType.LAZY)
@@ -84,5 +85,12 @@ public class ArmorPiece {
     public void setSetType(SetType setType) {
         this.id = NameUtils.toSlug(setName, armorType, setType);
         this.setType = setType;
+    }
+
+    public void setSkills(List<ArmorPieceSkill> skills) {
+        this.skills.clear();
+        if (skills != null) {
+            this.skills.addAll(skills);
+        }
     }
 }

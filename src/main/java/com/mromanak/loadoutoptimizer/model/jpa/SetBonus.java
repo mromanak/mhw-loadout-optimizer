@@ -9,6 +9,7 @@ import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -25,17 +26,22 @@ public class SetBonus {
     private String name;
 
     @Valid
-    @Size(min = 1, message = "Set bonus must provide at least one skill")
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "setBonus")
-    private List<SetBonusSkill> skills;
+    private List<SetBonusSkill> skills = new ArrayList<>();
 
     @Valid
-    @Size(min = 1, message = "Set bonus must provide at least one skill")
     @OneToMany(fetch = FetchType.LAZY)
     private List<ArmorPiece> armorPieces;
 
     public void setName(String name) {
         this.id = NameUtils.toSlug(name);
         this.name = name;
+    }
+
+    public void setSkills(List<SetBonusSkill> skills) {
+        this.skills.clear();
+        if (skills != null) {
+            this.skills.addAll(skills);
+        }
     }
 }

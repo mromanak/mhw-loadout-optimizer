@@ -70,18 +70,39 @@ public class Skill {
 
     @Valid
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "skill")
-    private List<ArmorPieceSkill> armorPieces;
+    private List<ArmorPieceSkill> armorPieces = new ArrayList<>();
 
     @Valid
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "skill")
-    private List<JewelSkill> jewels;
+    private List<JewelSkill> jewels = new ArrayList<>();
 
     @Valid
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "skill")
-    private List<SetBonusSkill> setBonuses;
+    private List<SetBonusSkill> setBonuses = new ArrayList<>();
 
     public void setName(String name) {
         this.id = NameUtils.toSlug(name);
         this.name = name;
+    }
+
+    public void setArmorPieces(List<ArmorPieceSkill> armorPieces) {
+        this.armorPieces.clear();
+        if (armorPieces != null) {
+            this.armorPieces.addAll(armorPieces);
+        }
+    }
+
+    public void setJewels(List<JewelSkill> jewels) {
+        this.jewels.clear();
+        if (jewels != null) {
+            this.jewels.addAll(jewels);
+        }
+    }
+
+    public void setSetBonuses(List<SetBonusSkill> setBonuses) {
+        this.setBonuses.clear();
+        if (setBonuses != null) {
+            this.setBonuses.addAll(setBonuses);
+        }
     }
 }
