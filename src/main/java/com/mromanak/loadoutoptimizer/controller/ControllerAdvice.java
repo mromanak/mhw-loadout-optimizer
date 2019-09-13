@@ -1,8 +1,6 @@
 package com.mromanak.loadoutoptimizer.controller;
 
-import net.bytebuddy.implementation.bytecode.Throw;
 import org.springframework.core.NestedRuntimeException;
-import org.springframework.transaction.TransactionSystemException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @org.springframework.web.bind.annotation.ControllerAdvice

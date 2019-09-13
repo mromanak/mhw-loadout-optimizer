@@ -1,10 +1,7 @@
 package com.mromanak.loadoutoptimizer.model.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.mromanak.loadoutoptimizer.model.jpa.ArmorType;
-import com.mromanak.loadoutoptimizer.model.jpa.SetBonusSkill;
 import com.mromanak.loadoutoptimizer.model.jpa.SetType;
 import com.mromanak.loadoutoptimizer.utils.NameUtils;
 import lombok.AccessLevel;
@@ -19,7 +16,7 @@ import javax.validation.constraints.NotNull;
 import java.util.SortedSet;
 
 @Data
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class ArmorPieceDto {
 
     @Setter(AccessLevel.NONE)

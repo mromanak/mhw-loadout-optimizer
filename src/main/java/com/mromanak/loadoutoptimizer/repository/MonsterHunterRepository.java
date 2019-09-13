@@ -1,7 +1,6 @@
 package com.mromanak.loadoutoptimizer.repository;
 
 import com.google.common.collect.ImmutableList;
-import com.mromanak.loadoutoptimizer.model.jpa.ArmorPiece;
 import com.mromanak.loadoutoptimizer.model.jpa.Skill;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

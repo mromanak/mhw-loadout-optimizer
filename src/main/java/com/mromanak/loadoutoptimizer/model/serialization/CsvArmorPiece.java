@@ -6,7 +6,6 @@ import com.google.common.base.Splitter;
 import com.mromanak.loadoutoptimizer.model.ArmorPiece;
 import com.mromanak.loadoutoptimizer.model.ArmorType;
 import lombok.Data;
-import org.apache.commons.lang3.StringUtils;
 
 import java.util.HashMap;
 import java.util.Map;

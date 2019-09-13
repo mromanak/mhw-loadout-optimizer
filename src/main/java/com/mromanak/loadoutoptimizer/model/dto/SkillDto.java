@@ -12,7 +12,7 @@ import javax.validation.constraints.*;
 import java.util.SortedSet;
 
 @Data
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class SkillDto {
 
     @Setter(AccessLevel.NONE)

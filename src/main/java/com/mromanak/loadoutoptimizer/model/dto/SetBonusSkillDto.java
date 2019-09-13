@@ -14,7 +14,7 @@ import java.util.Comparator;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class SetBonusSkillDto implements Comparable<SetBonusSkillDto> {
 
     private static final Comparator<SetBonusSkillDto> COMPARATOR = Comparator.

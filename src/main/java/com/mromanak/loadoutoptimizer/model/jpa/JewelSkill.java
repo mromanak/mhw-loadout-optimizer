@@ -3,7 +3,6 @@ package com.mromanak.loadoutoptimizer.model.jpa;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.dialect.H2Dialect;
 
 import javax.persistence.*;
 import javax.validation.constraints.Max;

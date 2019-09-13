@@ -1,8 +1,6 @@
 package com.mromanak.loadoutoptimizer.model.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.mromanak.loadoutoptimizer.model.jpa.Skill;
-import io.swagger.annotations.ApiModel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,7 +10,7 @@ import java.util.Comparator;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class SkillEffectDto implements Comparable<SkillEffectDto> {
 
     private static final Comparator<SkillEffectDto> COMPARATOR = Comparator.comparingInt(SkillEffectDto::getLevel);

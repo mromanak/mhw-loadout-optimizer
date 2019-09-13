@@ -1,13 +1,9 @@
 package com.mromanak.loadoutoptimizer.controller;
 
 import com.mromanak.loadoutoptimizer.model.dto.SkillDto;
-import com.mromanak.loadoutoptimizer.model.exception.BadRepositoryApiRequestException;
 import com.mromanak.loadoutoptimizer.model.exception.EntityNotFoundException;
-import com.mromanak.loadoutoptimizer.model.jpa.Skill;
-import com.mromanak.loadoutoptimizer.repository.MonsterHunterRepository;
 import com.mromanak.loadoutoptimizer.repository.SkillRepository;
 import com.mromanak.loadoutoptimizer.service.DtoService;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -17,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
 import javax.validation.Valid;
-import java.util.Optional;
 
 @Controller
 @RequestMapping("/repository/skill")

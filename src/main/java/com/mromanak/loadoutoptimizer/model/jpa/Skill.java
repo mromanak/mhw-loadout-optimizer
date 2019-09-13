@@ -1,21 +1,16 @@
 package com.mromanak.loadoutoptimizer.model.jpa;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mromanak.loadoutoptimizer.utils.NameUtils;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.Setter;
-import org.hibernate.annotations.CollectionId;
-import org.hibernate.annotations.SortComparator;
-import org.hibernate.annotations.SortNatural;
-import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 @Data
 @Entity
