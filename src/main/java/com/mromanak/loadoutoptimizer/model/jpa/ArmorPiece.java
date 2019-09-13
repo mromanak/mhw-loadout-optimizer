@@ -47,19 +47,19 @@ public class ArmorPiece {
     // TODO Validate there aren't more than 3 slots total
     @Min(value = 0, message = "Number of requiredPieces 1 slots must be at least 0")
     @Max(value = 3, message = "Number of requiredPieces 1 slots must be at most 3")
-    private Integer level1Slots;
+    private Integer level1Slots = 0;
 
     @Min(value = 0, message = "Number of requiredPieces 2 slots must be at least 0")
     @Max(value = 3, message = "Number of requiredPieces 2 slots must be at most 3")
-    private Integer level2Slots;
+    private Integer level2Slots = 0;
 
     @Min(value = 0, message = "Number of requiredPieces 3 slots must be at least 0")
     @Max(value = 3, message = "Number of requiredPieces 3 slots must be at most 3")
-    private Integer level3Slots;
+    private Integer level3Slots = 0;
 
     @Min(value = 0, message = "Number of requiredPieces 4 slots must be at least 0")
     @Max(value = 3, message = "Number of requiredPieces 4 slots must be at most 3")
-    private Integer level4Slots;
+    private Integer level4Slots = 0;
 
     @Valid
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "armorPiece")

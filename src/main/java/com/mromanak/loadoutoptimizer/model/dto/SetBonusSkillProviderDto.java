@@ -11,14 +11,20 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.Comparator;
 
+import static java.util.Comparator.comparing;
+import static java.util.Comparator.naturalOrder;
+import static java.util.Comparator.nullsFirst;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class SetBonusSkillProviderDto implements Comparable<SetBonusSkillProviderDto> {
 
-    private static final Comparator<SetBonusSkillProviderDto> COMPARATOR = Comparator.comparingInt(SetBonusSkillProviderDto::getRequiredPieces).
-        thenComparing(SetBonusSkillProviderDto::getSourceId);
+    private static final Comparator<SetBonusSkillProviderDto> COMPARATOR =
+        comparing(SetBonusSkillProviderDto::getLevel, nullsFirst(naturalOrder())).
+        thenComparing(SetBonusSkillProviderDto::getRequiredPieces, nullsFirst(naturalOrder())).
+        thenComparing(SetBonusSkillProviderDto::getSourceId, nullsFirst(naturalOrder()));
 
     @NotBlank(message = "Source ID must be non-blank")
     private String sourceId;

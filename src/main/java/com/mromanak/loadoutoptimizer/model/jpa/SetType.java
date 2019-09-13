@@ -11,7 +11,7 @@ import static java.util.Arrays.asList;
 
 public enum SetType {
 
-    NONE("(LR)", LOW_RANK),
+    NONE("LR", LOW_RANK),
     ALPHA("α", HIGH_RANK),
     BETA("β", HIGH_RANK),
     GAMMA("γ", HIGH_RANK),

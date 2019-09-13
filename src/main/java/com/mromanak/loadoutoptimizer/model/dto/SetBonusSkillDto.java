@@ -11,15 +11,19 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.Comparator;
 
+import static java.util.Comparator.comparing;
+import static java.util.Comparator.naturalOrder;
+import static java.util.Comparator.nullsFirst;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class SetBonusSkillDto implements Comparable<SetBonusSkillDto> {
 
-    private static final Comparator<SetBonusSkillDto> COMPARATOR = Comparator.
-        comparingInt(SetBonusSkillDto::getLevel).
-        thenComparing(SetBonusSkillDto::getSkillId);
+    private static final Comparator<SetBonusSkillDto> COMPARATOR =
+        comparing(SetBonusSkillDto::getRequiredPieces, nullsFirst(naturalOrder())).
+        thenComparing(SetBonusSkillDto::getSkillId, nullsFirst(naturalOrder()));
 
     @NotBlank(message = "Skill must be non-null")
     private String skillId;

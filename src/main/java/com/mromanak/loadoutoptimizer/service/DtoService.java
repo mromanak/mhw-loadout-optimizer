@@ -58,12 +58,20 @@ public class DtoService {
     }
 
     private TreeSet<SkillEffectDto> getEffectDtos(Skill skill) {
+        if (skill == null) {
+            return null;
+        }
+
         return skill.getEffects().entrySet().stream().
             map((entry) -> new SkillEffectDto(entry.getKey(), entry.getValue())).
             collect(toCollection(TreeSet::new));
     }
 
     private TreeSet<SkillProviderDto> getArmorPieceDtos(Skill skill) {
+        if (skill == null) {
+            return null;
+        }
+
         return skill.getArmorPieces().stream().
             map((ArmorPieceSkill mapping) -> {
                 return new SkillProviderDto(mapping.getPrimaryKey().getArmorPieceId(), mapping.getSkillLevel());
@@ -72,6 +80,10 @@ public class DtoService {
     }
 
     private TreeSet<SkillProviderDto> getJewelDtos(Skill skill) {
+        if (skill == null) {
+            return null;
+        }
+
         return skill.getJewels().stream().
             map((JewelSkill mapping) -> {
                 return new SkillProviderDto(mapping.getPrimaryKey().getJewelId(), mapping.getSkillLevel());
@@ -80,6 +92,10 @@ public class DtoService {
     }
 
     private TreeSet<SetBonusSkillProviderDto> getSetBonusDtos(Skill skill) {
+        if (skill == null) {
+            return null;
+        }
+
         return skill.getSetBonuses().stream().
             map((SetBonusSkill mapping) -> {
                 return new SetBonusSkillProviderDto(mapping.getPrimaryKey().getSetBonusId(),
@@ -133,6 +149,10 @@ public class DtoService {
     }
 
     private List<ArmorPieceSkill> getArmorPieceSkills(Skill skill, Collection<SkillProviderDto> armorPieces) {
+        if (armorPieces == null) {
+            return null;
+        }
+
         return armorPieces.stream().
             map((SkillProviderDto spd) -> {
                 ArmorPiece armorPiece = armorPieceRepository.findById(spd.getSourceId()).
@@ -143,6 +163,10 @@ public class DtoService {
     }
 
     private List<JewelSkill> getJewelSkills(Skill skill, Collection<SkillProviderDto> jewels) {
+        if (jewels == null) {
+            return null;
+        }
+
         return jewels.stream().
             map((SkillProviderDto spd) -> {
                 Jewel jewel = jewelRepository.findById(spd.getSourceId()).
@@ -153,6 +177,10 @@ public class DtoService {
     }
 
     private List<SetBonusSkill> getSetBonusSkills(Skill skill, Collection<SetBonusSkillProviderDto> setBonuses) {
+        if (setBonuses == null) {
+            return null;
+        }
+
         return setBonuses.stream().
             map((SetBonusSkillProviderDto sbspd) -> {
                 SetBonus setBonus = setBonusRepository.findById(sbspd.getSourceId()).
@@ -175,6 +203,10 @@ public class DtoService {
     }
 
     private SortedSet<ProvidedSkillDto> getJewelSkillDtos(List<JewelSkill> jewelSkills) {
+        if (jewelSkills == null) {
+            return null;
+        }
+
         return jewelSkills.stream().
             map((js) -> new ProvidedSkillDto(js.getPrimaryKey().getSkillId(), js.getSkillLevel())).
             collect(toCollection(TreeSet::new));
@@ -201,6 +233,10 @@ public class DtoService {
     }
 
     private List<JewelSkill> getJewelSkills(Jewel jewel, SortedSet<ProvidedSkillDto> skills) {
+        if (skills == null) {
+            return null;
+        }
+
         return skills.stream().
             map((ProvidedSkillDto psd) -> {
                 Skill skill = skillRepository.findById(psd.getSkillId()).
@@ -232,6 +268,10 @@ public class DtoService {
     }
 
     private SortedSet<ProvidedSkillDto> getArmorPieceSkillDtos(List<ArmorPieceSkill> armorPieceSkills) {
+        if (armorPieceSkills == null) {
+            return null;
+        }
+
         return armorPieceSkills.stream().
             map((aps) -> new ProvidedSkillDto(aps.getPrimaryKey().getSkillId(), aps.getSkillLevel())).
             collect(toCollection(TreeSet::new));
@@ -269,6 +309,10 @@ public class DtoService {
     }
 
     private List<ArmorPieceSkill> getArmorPieceSkills(ArmorPiece armorPiece, SortedSet<ProvidedSkillDto> skills) {
+        if (skills == null) {
+            return null;
+        }
+
         return skills.stream().
             map((ProvidedSkillDto psd) -> {
                 Skill skill = skillRepository.findById(psd.getSkillId()).
@@ -296,6 +340,10 @@ public class DtoService {
     }
 
     private SortedSet<SetBonusSkillDto> getSetBonusSkillDtos(List<SetBonusSkill> setBonusSkills) {
+        if (setBonusSkills == null) {
+            return null;
+        }
+
         return setBonusSkills.stream().
             map((sbs) -> {
                 return new SetBonusSkillDto(sbs.getPrimaryKey().getSkillId(), sbs.getRequiredPieces(),
@@ -305,6 +353,10 @@ public class DtoService {
     }
 
     private SortedSet<String> getSetBonusArmorPieceDtos(List<ArmorPiece> armorPieces) {
+        if (armorPieces == null) {
+            return null;
+        }
+
         return armorPieces.stream().
             map(ArmorPiece::getId).
             collect(toCollection(TreeSet::new));
@@ -318,11 +370,15 @@ public class DtoService {
         SetBonus setBonus = setBonusRepository.findById(dto.getId()).orElseGet(SetBonus::new);
         setBonus.setName(dto.getName());
         setBonus.setSkills(getSetBonusSkills(setBonus, dto.getSkills()));
-        setBonus.setArmorPieces(getSetBonusArmorPieces(setBonus, dto.getArmorPieces()));
+        setBonus.setArmorPieces(getSetBonusArmorPieces(dto.getArmorPieces()));
         return setBonus;
     }
 
     private List<SetBonusSkill> getSetBonusSkills(SetBonus setBonus, SortedSet<SetBonusSkillDto> skills) {
+        if (skills == null) {
+            return null;
+        }
+
         return skills.stream().
             map((SetBonusSkillDto sbsd) -> {
                 Skill skill = skillRepository.findById(sbsd.getSkillId()).
@@ -332,7 +388,11 @@ public class DtoService {
             collect(toList());
     }
 
-    private List<ArmorPiece> getSetBonusArmorPieces(SetBonus setBonus, SortedSet<String> armorPieces) {
+    private List<ArmorPiece> getSetBonusArmorPieces(SortedSet<String> armorPieces) {
+        if (armorPieces == null) {
+            return null;
+        }
+
         return armorPieces.stream().
             map((String armorPieceId) -> {
                 ArmorPiece armorPiece = armorPieceRepository.findById(armorPieceId).
