@@ -27,6 +27,10 @@ public class MonsterHunterRepository {
         this.skillRepository = skillRepository;
     }
 
+    public void saveSkill(Skill skill) {
+        skillRepository.save(skill);
+    }
+
     public Optional<Skill> findSkill(String skillId) {
         return skillRepository.findById(skillId);
     }
@@ -37,10 +41,6 @@ public class MonsterHunterRepository {
 
     public Page<Skill> findAllSkills(Pageable pageable) {
         return skillRepository.findAll(pageable);
-    }
-
-    public void saveSkill(Skill skill) {
-        skillRepository.save(skill);
     }
 
     public void deleteSkill(String skillId) {

@@ -1,36 +1,33 @@
-package com.mromanak.loadoutoptimizer.model.jpa;
+package com.mromanak.loadoutoptimizer.model.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.mromanak.loadoutoptimizer.utils.NameUtils;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.Setter;
 
-import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
-import java.util.List;
+import java.util.SortedSet;
 
 @Data
-@Entity
-public class Jewel {
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class JewelDto {
 
     @Setter(AccessLevel.NONE)
-    @Id
-    @Column(columnDefinition = "varchar")
     private String id;
 
     @NotBlank(message = "Name must be non-blank")
-    @Column(columnDefinition = "varchar", nullable = false)
     private String name;
 
+    @NotNull
     @Min(value = 1, message = "Jewel requiredPieces must be at least 1")
     @Max(value = 4, message = "Jewel requiredPieces must be at most 4")
-    @Column(nullable = false)
     private Integer jewelLevel;
 
     @Valid
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "jewel")
-    private List<JewelSkill> skills;
+    @Size(min = 1, message = "Skills must contain at least one element")
+    SortedSet<ProvidedSkillDto> skills;
 
     public void setName(String name) {
         this.id = NameUtils.toSlug(name);

@@ -49,7 +49,7 @@ public class Skill {
         joinColumns = @JoinColumn(referencedColumnName = "id"),
         inverseJoinColumns = @JoinColumn(referencedColumnName = "id")
     )
-    private Skill uncappedBy;
+    private Skill uncappingSkill;
 
     @NotBlank(message = "Description must be non-blank")
     @Column(columnDefinition = "varchar", nullable = false)
@@ -69,16 +69,16 @@ public class Skill {
     private Map<Integer, String> effects;
 
     @Valid
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
-    List<ArmorPieceSkill> armorPieces;
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "skill")
+    private List<ArmorPieceSkill> armorPieces;
 
     @Valid
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
-    List<JewelSkill> jewels;
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "skill")
+    private List<JewelSkill> jewels;
 
     @Valid
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
-    List<SetBonusSkill> setBonuses;
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "skill")
+    private List<SetBonusSkill> setBonuses;
 
     public void setName(String name) {
         this.id = NameUtils.toSlug(name);

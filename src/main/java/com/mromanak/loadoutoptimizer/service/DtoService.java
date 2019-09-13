@@ -1,9 +1,6 @@
 package com.mromanak.loadoutoptimizer.service;
 
-import com.mromanak.loadoutoptimizer.model.dto.BonusSkillProviderDto;
-import com.mromanak.loadoutoptimizer.model.dto.SkillDto;
-import com.mromanak.loadoutoptimizer.model.dto.SkillEffectDto;
-import com.mromanak.loadoutoptimizer.model.dto.SkillLevelProviderDto;
+import com.mromanak.loadoutoptimizer.model.dto.*;
 import com.mromanak.loadoutoptimizer.model.exception.EntityNotFoundException;
 import com.mromanak.loadoutoptimizer.model.jpa.*;
 import com.mromanak.loadoutoptimizer.repository.ArmorPieceRepository;
@@ -43,8 +40,8 @@ public class DtoService {
         dto.setName(skill.getName());
         dto.setMaxLevel(skill.getMaxLevel());
         dto.setMaxUncappedLevel(skill.getMaxUncappedLevel());
-        if (skill.getUncappedBy() != null) {
-            dto.setUncappedBy(skill.getUncappedBy().getId());
+        if (skill.getUncappingSkill() != null) {
+            dto.setUncappingSkillId(skill.getUncappingSkill().getId());
         }
         dto.setDescription(skill.getDescription());
         dto.setEffects(getEffectDtos(skill));
@@ -66,26 +63,27 @@ public class DtoService {
             collect(toCollection(TreeSet::new));
     }
 
-    private TreeSet<SkillLevelProviderDto> getArmorPieceDtos(Skill skill) {
+    private TreeSet<SkillProviderDto> getArmorPieceDtos(Skill skill) {
         return skill.getArmorPieces().stream().
             map((ArmorPieceSkill mapping) -> {
-                return new SkillLevelProviderDto(mapping.getPrimaryKey().getArmorPieceId(), mapping.getSkillLevel());
+                return new SkillProviderDto(mapping.getPrimaryKey().getArmorPieceId(), mapping.getSkillLevel());
             }).
             collect(toCollection(TreeSet::new));
     }
 
-    private TreeSet<SkillLevelProviderDto> getJewelDtos(Skill skill) {
+    private TreeSet<SkillProviderDto> getJewelDtos(Skill skill) {
         return skill.getJewels().stream().
             map((JewelSkill mapping) -> {
-                return new SkillLevelProviderDto(mapping.getPrimaryKey().getJewelId(), mapping.getSkillLevel());
+                return new SkillProviderDto(mapping.getPrimaryKey().getJewelId(), mapping.getSkillLevel());
             }).
             collect(toCollection(TreeSet::new));
     }
 
-    private TreeSet<BonusSkillProviderDto> getSetBonusDtos(Skill skill) {
+    private TreeSet<SetBonusSkillProviderDto> getSetBonusDtos(Skill skill) {
         return skill.getSetBonuses().stream().
             map((SetBonusSkill mapping) -> {
-                return new BonusSkillProviderDto(mapping.getPrimaryKey().getSetBonusId(), mapping.getRequiredPieces());
+                return new SetBonusSkillProviderDto(mapping.getPrimaryKey().getSetBonusId(),
+                    mapping.getRequiredPieces(), mapping.getSkillLevel());
             }).
             collect(toCollection(TreeSet::new));
     }
@@ -108,8 +106,8 @@ public class DtoService {
         skill.setEffects(getEffects(dto));
 
         if (!preserveRelationships) {
-            if (dto.getUncappedBy() != null) {
-                skill.setUncappedBy(getUncappingSkill(dto.getUncappedBy()));
+            if (dto.getUncappingSkillId() != null) {
+                skill.setUncappingSkill(getUncappingSkill(dto.getUncappingSkillId()));
             }
             if (dto.getArmorPieces() != null) {
                 skill.setArmorPieces(getArmorPieceSkills(skill, dto.getArmorPieces()));
@@ -134,32 +132,212 @@ public class DtoService {
             orElseThrow(() -> new EntityNotFoundException("No skill found with ID " + uncappedBy));
     }
 
-    private List<ArmorPieceSkill> getArmorPieceSkills(Skill skill, Collection<SkillLevelProviderDto> armorPieces) {
+    private List<ArmorPieceSkill> getArmorPieceSkills(Skill skill, Collection<SkillProviderDto> armorPieces) {
         return armorPieces.stream().
-            map((SkillLevelProviderDto slpd) -> {
-                ArmorPiece armorPiece = armorPieceRepository.findById(slpd.getSource()).
-                    orElseThrow(() -> new EntityNotFoundException("No armor piece found with ID " + slpd.getSource()));
-                return new ArmorPieceSkill(armorPiece, skill, slpd.getLevel());
+            map((SkillProviderDto spd) -> {
+                ArmorPiece armorPiece = armorPieceRepository.findById(spd.getSourceId()).
+                    orElseThrow(() -> new EntityNotFoundException("No armor piece found with ID " + spd.getSourceId()));
+                return new ArmorPieceSkill(armorPiece, skill, spd.getLevel());
             }).
             collect(toList());
     }
 
-    private List<JewelSkill> getJewelSkills(Skill skill, Collection<SkillLevelProviderDto> jewels) {
+    private List<JewelSkill> getJewelSkills(Skill skill, Collection<SkillProviderDto> jewels) {
         return jewels.stream().
-            map((SkillLevelProviderDto slpd) -> {
-                Jewel jewel = jewelRepository.findById(slpd.getSource()).
-                    orElseThrow(() -> new EntityNotFoundException("No jewel found with ID " + slpd.getSource()));
-                return new JewelSkill(jewel, skill, slpd.getLevel());
+            map((SkillProviderDto spd) -> {
+                Jewel jewel = jewelRepository.findById(spd.getSourceId()).
+                    orElseThrow(() -> new EntityNotFoundException("No jewel found with ID " + spd.getSourceId()));
+                return new JewelSkill(jewel, skill, spd.getLevel());
             }).
             collect(toList());
     }
 
-    private List<SetBonusSkill> getSetBonusSkills(Skill skill, Collection<BonusSkillProviderDto> setBonuses) {
+    private List<SetBonusSkill> getSetBonusSkills(Skill skill, Collection<SetBonusSkillProviderDto> setBonuses) {
         return setBonuses.stream().
-            map((BonusSkillProviderDto bspd) -> {
-                SetBonus setBonus = setBonusRepository.findById(bspd.getSource()).
-                    orElseThrow(() -> new EntityNotFoundException("No set bonus found with ID " + bspd.getSource()));
-                return new SetBonusSkill(setBonus, skill, bspd.getRequiredPieces());
+            map((SetBonusSkillProviderDto sbspd) -> {
+                SetBonus setBonus = setBonusRepository.findById(sbspd.getSourceId()).
+                    orElseThrow(() -> new EntityNotFoundException("No set bonus found with ID " + sbspd.getSourceId()));
+                return new SetBonusSkill(setBonus, skill, sbspd.getRequiredPieces(), sbspd.getLevel());
+            }).
+            collect(toList());
+    }
+
+    public JewelDto toDto(Jewel jewel) {
+        if (jewel == null) {
+            return null;
+        }
+
+        JewelDto dto = new JewelDto();
+        dto.setName(jewel.getName());
+        dto.setJewelLevel(jewel.getJewelLevel());
+        dto.setSkills(this.getJewelSkillDtos(jewel.getSkills()));
+        return dto;
+    }
+
+    private SortedSet<ProvidedSkillDto> getJewelSkillDtos(List<JewelSkill> jewelSkills) {
+        return jewelSkills.stream().
+            map((js) -> new ProvidedSkillDto(js.getPrimaryKey().getSkillId(), js.getSkillLevel())).
+            collect(toCollection(TreeSet::new));
+    }
+
+    public Jewel fromDto(JewelDto dto, boolean preserveRelationships) {
+        if (dto == null) {
+            return null;
+        }
+
+        Jewel jewel;
+        if (preserveRelationships) {
+            jewel = jewelRepository.findById(dto.getId()).orElseGet(Jewel::new);
+        } else {
+            jewel = new Jewel();
+        }
+        jewel.setName(dto.getName());
+        jewel.setJewelLevel(dto.getJewelLevel());
+
+        if (!preserveRelationships) {
+            jewel.setSkills(getJewelSkills(jewel, dto.getSkills()));
+        }
+        return jewel;
+    }
+
+    private List<JewelSkill> getJewelSkills(Jewel jewel, SortedSet<ProvidedSkillDto> skills) {
+        return skills.stream().
+            map((ProvidedSkillDto psd) -> {
+                Skill skill = skillRepository.findById(psd.getSkillId()).
+                    orElseThrow(() -> new EntityNotFoundException("No skill found with ID " + psd.getSkillId()));
+                return new JewelSkill(jewel, skill, psd.getLevel());
+            }).
+            collect(toList());
+    }
+
+    public ArmorPieceDto toDto(ArmorPiece armorPiece) {
+        if (armorPiece == null) {
+            return null;
+        }
+
+        ArmorPieceDto dto = new ArmorPieceDto();
+        dto.setName(armorPiece.getName());
+        dto.setSetName(armorPiece.getSetName());
+        dto.setArmorType(armorPiece.getArmorType());
+        dto.setSetType(armorPiece.getSetType());
+        dto.setLevel1Slots(armorPiece.getLevel1Slots());
+        dto.setLevel2Slots(armorPiece.getLevel2Slots());
+        dto.setLevel3Slots(armorPiece.getLevel3Slots());
+        dto.setLevel4Slots(armorPiece.getLevel4Slots());
+        dto.setSkills(getArmorPieceSkillDtos(armorPiece.getSkills()));
+        if (armorPiece.getSetBonus() != null) {
+            dto.setSetBonusId(armorPiece.getSetBonus().getId());
+        }
+        return dto;
+    }
+
+    private SortedSet<ProvidedSkillDto> getArmorPieceSkillDtos(List<ArmorPieceSkill> armorPieceSkills) {
+        return armorPieceSkills.stream().
+            map((aps) -> new ProvidedSkillDto(aps.getPrimaryKey().getSkillId(), aps.getSkillLevel())).
+            collect(toCollection(TreeSet::new));
+    }
+
+    public ArmorPiece fromDto(ArmorPieceDto dto, boolean preserveRelationships) {
+        if (dto == null) {
+            return null;
+        }
+
+        ArmorPiece armorPiece;
+        if (preserveRelationships) {
+            armorPiece = armorPieceRepository.findById(dto.getId()).orElseGet(ArmorPiece::new);
+        } else {
+            armorPiece = new ArmorPiece();
+        }
+        armorPiece.setName(dto.getName());
+        armorPiece.setSetName(dto.getSetName());
+        armorPiece.setArmorType(dto.getArmorType());
+        armorPiece.setSetType(dto.getSetType());
+        armorPiece.setLevel1Slots(dto.getLevel1Slots());
+        armorPiece.setLevel2Slots(dto.getLevel2Slots());
+        armorPiece.setLevel3Slots(dto.getLevel3Slots());
+        armorPiece.setLevel4Slots(dto.getLevel4Slots());
+
+        if (!preserveRelationships) {
+            armorPiece.setSkills(getArmorPieceSkills(armorPiece, dto.getSkills()));
+
+            if (dto.getSetBonusId() != null) {
+                armorPiece.setSetBonus(getArmorPieceSetBonus(dto.getSetBonusId()));
+            }
+
+        }
+        return armorPiece;
+    }
+
+    private List<ArmorPieceSkill> getArmorPieceSkills(ArmorPiece armorPiece, SortedSet<ProvidedSkillDto> skills) {
+        return skills.stream().
+            map((ProvidedSkillDto psd) -> {
+                Skill skill = skillRepository.findById(psd.getSkillId()).
+                    orElseThrow(() -> new EntityNotFoundException("No skill found with ID " + psd.getSkillId()));
+                return new ArmorPieceSkill(armorPiece, skill, psd.getLevel());
+            }).
+            collect(toList());
+    }
+
+    private SetBonus getArmorPieceSetBonus(String setBonusId) {
+        return setBonusRepository.findById(setBonusId).
+            orElseThrow(() -> new EntityNotFoundException("No set bonus found with ID " + setBonusId));
+    }
+
+    public SetBonusDto toDto(SetBonus setBonus) {
+        if (setBonus == null) {
+            return null;
+        }
+
+        SetBonusDto dto = new SetBonusDto();
+        dto.setName(setBonus.getName());
+        dto.setSkills(getSetBonusSkillDtos(setBonus.getSkills()));
+        dto.setArmorPieces(getSetBonusArmorPieceDtos(setBonus.getArmorPieces()));
+        return dto;
+    }
+
+    private SortedSet<SetBonusSkillDto> getSetBonusSkillDtos(List<SetBonusSkill> setBonusSkills) {
+        return setBonusSkills.stream().
+            map((sbs) -> {
+                return new SetBonusSkillDto(sbs.getPrimaryKey().getSkillId(), sbs.getRequiredPieces(),
+                    sbs.getSkillLevel());
+            }).
+            collect(toCollection(TreeSet::new));
+    }
+
+    private SortedSet<String> getSetBonusArmorPieceDtos(List<ArmorPiece> armorPieces) {
+        return armorPieces.stream().
+            map(ArmorPiece::getId).
+            collect(toCollection(TreeSet::new));
+    }
+
+    public SetBonus fromDto(SetBonusDto dto) {
+        if (dto == null) {
+            return null;
+        }
+
+        SetBonus setBonus = setBonusRepository.findById(dto.getId()).orElseGet(SetBonus::new);
+        setBonus.setName(dto.getName());
+        setBonus.setSkills(getSetBonusSkills(setBonus, dto.getSkills()));
+        setBonus.setArmorPieces(getSetBonusArmorPieces(setBonus, dto.getArmorPieces()));
+        return setBonus;
+    }
+
+    private List<SetBonusSkill> getSetBonusSkills(SetBonus setBonus, SortedSet<SetBonusSkillDto> skills) {
+        return skills.stream().
+            map((SetBonusSkillDto sbsd) -> {
+                Skill skill = skillRepository.findById(sbsd.getSkillId()).
+                    orElseThrow(() -> new EntityNotFoundException("No skill found with ID " + sbsd.getSkillId()));
+                return new SetBonusSkill(setBonus, skill, sbsd.getRequiredPieces(), sbsd.getLevel());
+            }).
+            collect(toList());
+    }
+
+    private List<ArmorPiece> getSetBonusArmorPieces(SetBonus setBonus, SortedSet<String> armorPieces) {
+        return armorPieces.stream().
+            map((String armorPieceId) -> {
+                ArmorPiece armorPiece = armorPieceRepository.findById(armorPieceId).
+                    orElseThrow(() -> new EntityNotFoundException("No armor piece found with ID " + armorPieceId));
+                return armorPiece;
             }).
             collect(toList());
     }

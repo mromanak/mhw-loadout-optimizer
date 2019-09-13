@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -29,8 +30,8 @@ public class ArmorPieceSkill {
     private Skill skill;
 
     @NotNull(message = "Skill requiredPieces must be non-null")
-    @Min(value = 1, message = "Skill requiredPieces must be at least 1")
-    @Min(value = 7, message = "Skill requiredPieces must be at most 7")
+    @Min(value = 1, message = "Skill level must be at least 1")
+    @Max(value = 7, message = "Skill level must be at most 7")
     @Column(nullable = false)
     private Integer skillLevel;
 

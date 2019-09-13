@@ -1,6 +1,7 @@
 package com.mromanak.loadoutoptimizer.model.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.mromanak.loadoutoptimizer.utils.NameUtils;
 import lombok.AccessLevel;
 import lombok.Data;
@@ -11,6 +12,7 @@ import javax.validation.constraints.*;
 import java.util.SortedSet;
 
 @Data
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class SkillDto {
 
     @Setter(AccessLevel.NONE)
@@ -29,7 +31,7 @@ public class SkillDto {
     @Max(value = 7, message = "Max uncapped requiredPieces must be at most 7")
     private Integer maxUncappedLevel;
 
-    private String uncappedBy;
+    private String uncappingSkillId;
 
     @NotBlank(message = "Description must be non-blank")
     private String description;
@@ -40,11 +42,11 @@ public class SkillDto {
     @Size(min = 1, max = 7, message = "Effects must contain between 1 and 7, inclusive, entries")
     private SortedSet<SkillEffectDto> effects;
 
-    private SortedSet<SkillLevelProviderDto> armorPieces;
+    private SortedSet<SkillProviderDto> armorPieces;
 
-    private SortedSet<SkillLevelProviderDto> jewels;
+    private SortedSet<SkillProviderDto> jewels;
 
-    private SortedSet<BonusSkillProviderDto> setBonuses;
+    private SortedSet<SetBonusSkillProviderDto> setBonuses;
 
     public void setName(String name) {
         this.id = NameUtils.toSlug(name);

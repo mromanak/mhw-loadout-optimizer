@@ -1,38 +1,33 @@
-package com.mromanak.loadoutoptimizer.model.jpa;
+package com.mromanak.loadoutoptimizer.model.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.mromanak.loadoutoptimizer.utils.NameUtils;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.Setter;
 
-import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-import java.util.List;
+import java.util.SortedSet;
 
 @Data
-@Entity
-public class SetBonus {
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class SetBonusDto {
 
     @Setter(AccessLevel.NONE)
-    @Id
-    @Column(columnDefinition = "varchar")
     private String id;
 
     @NotBlank(message = "Name must be non-blank")
-    @Column(columnDefinition = "varchar", nullable = false)
     private String name;
 
     @Valid
     @Size(min = 1, message = "Set bonus must provide at least one skill")
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "setBonus")
-    private List<SetBonusSkill> skills;
+    SortedSet<SetBonusSkillDto> skills;
 
     @Valid
-    @Size(min = 1, message = "Set bonus must provide at least one skill")
-    @OneToMany(fetch = FetchType.LAZY)
-    private List<ArmorPiece> armorPieces;
+    @Size(min = 1, message = "Set bonus must contain at least one armor piece")
+    SortedSet<String> armorPieces;
 
     public void setName(String name) {
         this.id = NameUtils.toSlug(name);

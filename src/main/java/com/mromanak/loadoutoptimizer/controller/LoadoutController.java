@@ -30,7 +30,6 @@ public class LoadoutController {
 
     private final LoadoutOptimizerService loadoutOptimizerService;
 
-    @Autowired
     public LoadoutController(LoadoutOptimizerService loadoutOptimizerService) {
         this.loadoutOptimizerService = loadoutOptimizerService;
     }

@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -21,7 +22,7 @@ public class SetBonusSkill {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("setBonusId")
-    private SetBonus setBonusId;
+    private SetBonus setBonus;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("skillId")
@@ -29,12 +30,18 @@ public class SetBonusSkill {
 
     @NotNull(message = "Required pieces must be non-null")
     @Min(value = 1, message = "Required pieces must be at least 1")
-    @Min(value = 5, message = "Required pieces must be at most 5")
+    @Max(value = 5, message = "Required pieces must be at most 5")
     @Column(nullable = false)
     private Integer requiredPieces;
 
-    public SetBonusSkill(SetBonus setBonus, Skill skill, Integer requiredPieces) {
-        this(new PrimaryKey(setBonus.getId(), skill.getId()), setBonus, skill, requiredPieces);
+    @NotNull(message = "Required pieces must be non-null")
+    @Min(value = 1, message = "Skill level must be at least 1")
+    @Max(value = 7, message = "Skill level must be at most 7")
+    @Column(nullable = false)
+    private Integer skillLevel;
+
+    public SetBonusSkill(SetBonus setBonus, Skill skill, Integer requiredPieces, Integer skillLevel) {
+        this(new PrimaryKey(setBonus.getId(), skill.getId()), setBonus, skill, requiredPieces, skillLevel);
     }
 
     @Data

@@ -19,11 +19,11 @@ public class NameUtils {
     public static String toSlug(String name) {
         Objects.requireNonNull(name, "Name must be non-null");
 
-        String noSeparators = SEPARATORS.matcher(name).replaceAll("-");
+        String symbolsExpanded = StringUtils.
+            replaceEach(name, new String[]{"α", "β", "γ", "+"}, new String[]{"alpha", "beta", "gamma", "plus"});
+        String noSeparators = SEPARATORS.matcher(symbolsExpanded).replaceAll("-");
         String normalized = Normalizer.normalize(noSeparators, Normalizer.Form.NFD);
-        String slug = StringUtils.
-            replaceEach(normalized, new String[]{"α", "β", "γ"}, new String[]{"alpha", "beta", "gamma"});
-        slug = NONLATIN.matcher(slug).replaceAll("");
+        String slug = NONLATIN.matcher(normalized).replaceAll("");
         return slug.toLowerCase(Locale.ENGLISH).replaceAll("-{2,}", "-").replaceAll("^-|-$", "");
     }
 
