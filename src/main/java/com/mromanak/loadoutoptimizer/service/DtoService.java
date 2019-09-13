@@ -110,12 +110,15 @@ public class DtoService {
                 skill.setUncappingSkill(getUncappingSkill(dto.getUncappingSkillId()));
             }
             if (dto.getArmorPieces() != null) {
+                skill.getArmorPieces().clear();
                 skill.setArmorPieces(getArmorPieceSkills(skill, dto.getArmorPieces()));
             }
             if (dto.getJewels() != null) {
+                skill.getJewels().clear();
                 skill.setJewels(getJewelSkills(skill, dto.getJewels()));
             }
             if (dto.getSetBonuses() != null) {
+                skill.getSetBonuses().clear();
                 skill.setSetBonuses(getSetBonusSkills(skill, dto.getSetBonuses()));
             }
         }
@@ -195,6 +198,7 @@ public class DtoService {
         jewel.setJewelLevel(dto.getJewelLevel());
 
         if (!preserveRelationships) {
+            jewel.getSkills().clear();
             jewel.setSkills(getJewelSkills(jewel, dto.getSkills()));
         }
         return jewel;
@@ -258,6 +262,7 @@ public class DtoService {
         armorPiece.setLevel4Slots(dto.getLevel4Slots());
 
         if (!preserveRelationships) {
+            armorPiece.getSkills().clear();
             armorPiece.setSkills(getArmorPieceSkills(armorPiece, dto.getSkills()));
 
             if (dto.getSetBonusId() != null) {
@@ -317,7 +322,9 @@ public class DtoService {
 
         SetBonus setBonus = setBonusRepository.findById(dto.getId()).orElseGet(SetBonus::new);
         setBonus.setName(dto.getName());
+        setBonus.getSkills().clear();
         setBonus.setSkills(getSetBonusSkills(setBonus, dto.getSkills()));
+        setBonus.getArmorPieces().clear();
         setBonus.setArmorPieces(getSetBonusArmorPieces(setBonus, dto.getArmorPieces()));
         return setBonus;
     }
