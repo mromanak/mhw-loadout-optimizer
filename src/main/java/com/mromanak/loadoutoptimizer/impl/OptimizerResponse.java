@@ -1,8 +1,8 @@
 package com.mromanak.loadoutoptimizer.impl;
 
 import com.google.common.collect.ImmutableList;
-import com.mromanak.loadoutoptimizer.model.ArmorPiece;
 import com.mromanak.loadoutoptimizer.model.Loadout;
+import com.mromanak.loadoutoptimizer.model.jpa.ArmorPiece;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;

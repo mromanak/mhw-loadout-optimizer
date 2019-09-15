@@ -5,13 +5,15 @@ import com.mromanak.loadoutoptimizer.model.jpa.ArmorType;
 import com.mromanak.loadoutoptimizer.model.jpa.SetType;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
-import java.util.List;
+import java.util.Set;
 
 public interface ArmorPieceRepository extends PagingAndSortingRepository<ArmorPiece, String> {
 
     ArmorPiece findBySetNameAndArmorTypeAndSetType(String setName, ArmorType armorType, SetType setType);
 
-    List<ArmorPiece> findBySetName(String setName);
+    Set<ArmorPiece> findAllByNameIn(Set<String> names);
 
-    List<ArmorPiece> findBySetNameAndSetType(String setName, SetType setType);
+    Set<ArmorPiece> findBySetName(String setName);
+
+    Set<ArmorPiece> findBySetNameAndSetType(String setName, SetType setType);
 }

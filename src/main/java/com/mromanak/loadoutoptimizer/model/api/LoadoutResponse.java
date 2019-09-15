@@ -1,6 +1,6 @@
 package com.mromanak.loadoutoptimizer.model.api;
 
-import com.mromanak.loadoutoptimizer.model.ArmorType;
+import com.mromanak.loadoutoptimizer.model.jpa.ArmorType;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -25,4 +25,7 @@ public class LoadoutResponse {
 
     @ApiModelProperty(notes = "The number of unused level 3 decoration slots granted by the loadout")
     private int level3Slots;
+
+    @ApiModelProperty(notes = "The number of unused level 3 decoration slots granted by the loadout")
+    private int level4Slots;
 }

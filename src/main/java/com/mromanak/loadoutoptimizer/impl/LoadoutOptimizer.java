@@ -1,9 +1,9 @@
 package com.mromanak.loadoutoptimizer.impl;
 
 import com.google.common.collect.ImmutableList;
-import com.mromanak.loadoutoptimizer.model.ArmorPiece;
-import com.mromanak.loadoutoptimizer.model.ArmorType;
 import com.mromanak.loadoutoptimizer.model.Loadout;
+import com.mromanak.loadoutoptimizer.model.jpa.ArmorPiece;
+import com.mromanak.loadoutoptimizer.model.jpa.ArmorType;
 import com.mromanak.loadoutoptimizer.scoring.LoadoutScoringFunction;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -14,8 +14,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.mromanak.loadoutoptimizer.model.ArmorType.hasNextArmorType;
-import static com.mromanak.loadoutoptimizer.model.ArmorType.nextArmorType;
+import static com.mromanak.loadoutoptimizer.model.jpa.ArmorType.hasNextArmorType;
+import static com.mromanak.loadoutoptimizer.model.jpa.ArmorType.nextArmorType;
 import static java.util.Collections.emptyList;
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toMap;

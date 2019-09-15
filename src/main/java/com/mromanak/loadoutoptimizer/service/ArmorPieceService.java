@@ -1,58 +1,73 @@
 package com.mromanak.loadoutoptimizer.service;
 
-import com.fasterxml.jackson.databind.MappingIterator;
-import com.fasterxml.jackson.databind.ObjectReader;
-import com.fasterxml.jackson.dataformat.csv.CsvMapper;
-import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 import com.google.common.collect.ImmutableSet;
-import com.mromanak.loadoutoptimizer.model.ArmorPiece;
-import com.mromanak.loadoutoptimizer.model.serialization.CsvArmorPiece;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
+import com.mromanak.loadoutoptimizer.model.jpa.ArmorPiece;
+import com.mromanak.loadoutoptimizer.model.jpa.ArmorPieceSkill;
+import com.mromanak.loadoutoptimizer.model.jpa.Skill;
+import com.mromanak.loadoutoptimizer.repository.ArmorPieceRepository;
+import com.mromanak.loadoutoptimizer.repository.SkillRepository;
+import com.mromanak.loadoutoptimizer.utils.NameUtils;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
-import java.util.HashSet;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
 import java.util.function.Predicate;
+import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
 
 import static java.util.stream.Collectors.toSet;
 
 @Service
 public class ArmorPieceService {
 
-    private final Set<ArmorPiece> armorPieces;
+    private final ArmorPieceRepository armorPieceRepository;
+    private final SkillRepository skillRepository;
 
-    public ArmorPieceService() throws IOException {
-        armorPieces = loadArmorPieces();
-    }
-
-    private Set<ArmorPiece> loadArmorPieces() throws IOException {
-        Set<ArmorPiece> armorPieces = new HashSet<>();
-        CsvSchema schema = CsvSchema.builder().setUseHeader(true).setColumnSeparator('\t').build();
-        CsvMapper csvMapper = new CsvMapper();
-        ObjectReader objectReader = csvMapper.reader().
-            forType(CsvArmorPiece.class).
-            with(schema);
-
-        Resource armorPiecesResource = new ClassPathResource("/armorPieces.tsv");
-        try (MappingIterator<CsvArmorPiece> iterator = objectReader.readValues(armorPiecesResource.getInputStream())) {
-
-            iterator.forEachRemaining((CsvArmorPiece cap) -> {
-                ArmorPiece ap = CsvArmorPiece.inflate(cap);
-                armorPieces.add(ap);
-            });
-        }
-        return ImmutableSet.copyOf(armorPieces);
+    public ArmorPieceService(ArmorPieceRepository armorPieceRepository, SkillRepository skillRepository) {
+        this.armorPieceRepository = armorPieceRepository;
+        this.skillRepository = skillRepository;
     }
 
     public Set<ArmorPiece> getArmorPieces() {
-        return armorPieces;
+        return ImmutableSet.copyOf(armorPieceRepository.findAll());
+    }
+
+    public Set<ArmorPiece> getArmorPiecesWithNames(Set<String> armorPieceNames) {
+        return ImmutableSet.copyOf(armorPieceRepository.findAllByNameIn(armorPieceNames));
     }
 
     public Set<ArmorPiece> getArmorPieces(Predicate<ArmorPiece> filter) {
-        return ImmutableSet.copyOf(armorPieces.stream().
+        return ImmutableSet.copyOf(StreamSupport.stream(armorPieceRepository.findAll().spliterator(), false).
             filter(filter).
             collect(toSet()));
+    }
+
+    public Set<ArmorPiece> getArmorPiecesWithSkillsNamed(Set<String> skillNames) {
+        return streamArmorPiecesWithSkillsNamed(skillNames).
+            collect(toSet());
+    }
+
+    public Set<ArmorPiece> getArmorPiecesWithSkillsNamed(Set<String> skillNames, Predicate<ArmorPiece> predicate) {
+        return streamArmorPiecesWithSkillsNamed(skillNames).
+            filter(predicate).
+            collect(toSet());
+    }
+
+    private Stream<ArmorPiece> streamArmorPiecesWithSkillsNamed(Set<String> skillNames) {
+        if (skillNames == null) {
+            return Stream.of();
+        }
+
+        return skillNames.stream().
+            map(NameUtils::toSlug).
+            map(skillRepository::findById).
+            filter(Optional::isPresent).
+            map(Optional::get).
+            map(Skill::getArmorPieces).
+            filter(Objects::nonNull).
+            flatMap(List::stream).
+            map(ArmorPieceSkill::getArmorPiece);
     }
 }

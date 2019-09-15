@@ -1,58 +1,45 @@
 package com.mromanak.loadoutoptimizer.service;
 
-import com.fasterxml.jackson.databind.MappingIterator;
-import com.fasterxml.jackson.databind.ObjectReader;
-import com.fasterxml.jackson.dataformat.csv.CsvMapper;
-import com.fasterxml.jackson.dataformat.csv.CsvSchema;
-import com.google.common.collect.ImmutableSet;
-import com.mromanak.loadoutoptimizer.model.SetBonus;
-import com.mromanak.loadoutoptimizer.model.serialization.CsvSetBonus;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
+import com.mromanak.loadoutoptimizer.model.jpa.SetBonusSkill;
+import com.mromanak.loadoutoptimizer.model.jpa.Skill;
+import com.mromanak.loadoutoptimizer.repository.SkillRepository;
+import com.mromanak.loadoutoptimizer.utils.NameUtils;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
-import java.util.HashSet;
 import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Stream;
 
-import static java.util.stream.Collectors.toList;
+import static java.util.stream.Collectors.toSet;
 
 @Service
 public class SetBonusService {
 
-    private final Set<SetBonus> setBonuses;
+    private final SkillRepository skillRepository;
 
-    public SetBonusService() throws IOException {
-        setBonuses = loadSetBonuses();
+    public SetBonusService(SkillRepository skillRepository) {
+        this.skillRepository = skillRepository;
     }
 
-    private Set<SetBonus> loadSetBonuses() throws IOException {
-        Set<SetBonus> setBonuses = new HashSet<>();
-        CsvSchema schema = CsvSchema.builder().setUseHeader(true).setColumnSeparator('\t').build();
-        CsvMapper csvMapper = new CsvMapper();
-        ObjectReader objectReader = csvMapper.reader().
-            forType(CsvSetBonus.class).
-            with(schema);
+    public Set<SetBonusSkill> getSetBonusSkillsWithSkillsNamed(String skillName) {
+        return streamArmorPiecesWithSkillNamed(skillName).
+            collect(toSet());
+    }
 
-        Resource armorPiecesResource = new ClassPathResource("/setBonuses.tsv");
-        try (MappingIterator<CsvSetBonus> iterator = objectReader.readValues(armorPiecesResource.getInputStream())) {
-
-            iterator.forEachRemaining((CsvSetBonus csvSetBonus) -> {
-                SetBonus setBonus = CsvSetBonus.inflate(csvSetBonus);
-                setBonuses.add(setBonus);
-            });
+    private Stream<SetBonusSkill> streamArmorPiecesWithSkillNamed(String skillName) {
+        if (skillName == null) {
+            return Stream.of();
         }
-        return ImmutableSet.copyOf(setBonuses);
-    }
 
-    public Set<SetBonus> getSetBonuses() {
-        return setBonuses;
-    }
-
-    public List<SetBonus> findSetBonus(String skillName) {
-        return setBonuses.stream().
-            filter(sb -> sb.getBonusRequirements().keySet().contains(skillName)).
-            collect(toList());
+        return Stream.of(skillName).
+            map(NameUtils::toSlug).
+            map(skillRepository::findById).
+            filter(Optional::isPresent).
+            map(Optional::get).
+            map(Skill::getSetBonuses).
+            filter(Objects::nonNull).
+            flatMap(List::stream);
     }
 }

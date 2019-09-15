@@ -2,28 +2,30 @@ package com.mromanak.loadoutoptimizer.controller;
 
 import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableMap;
+import com.mromanak.loadoutoptimizer.model.dto.ArmorSetDto;
 import com.mromanak.loadoutoptimizer.model.exception.BadRepositoryApiRequestException;
 import com.mromanak.loadoutoptimizer.model.jpa.ArmorPiece;
-import com.mromanak.loadoutoptimizer.model.dto.ArmorSetDto;
 import com.mromanak.loadoutoptimizer.model.jpa.SetType;
 import com.mromanak.loadoutoptimizer.repository.ArmorPieceRepository;
 import com.mromanak.loadoutoptimizer.service.DtoService;
 import com.mromanak.loadoutoptimizer.utils.NameUtils;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import static java.util.Comparator.comparing;
 import static java.util.function.Function.identity;
-import static java.util.stream.Collectors.groupingBy;
-import static java.util.stream.Collectors.toList;
-import static java.util.stream.Collectors.toMap;
+import static java.util.stream.Collectors.*;
 
 @Controller
 @RequestMapping("/repository/armorSet")
@@ -56,7 +58,7 @@ public class ArmorSetController {
     }
 
     private ResponseEntity<ArmorSetDto> getArmorSet(String setName, SetType setType) {
-        List<ArmorPiece> armorPieces = repository.findBySetNameAndSetType(setName, setType);
+        Set<ArmorPiece> armorPieces = repository.findBySetNameAndSetType(setName, setType);
         return ResponseEntity.ok(dtoService.toArmorSetDto(armorPieces));
     }
 

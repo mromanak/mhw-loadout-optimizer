@@ -1,6 +1,9 @@
 package com.mromanak.loadoutoptimizer.model;
 
 import com.google.common.collect.ImmutableMap;
+import com.mromanak.loadoutoptimizer.model.jpa.ArmorPiece;
+import com.mromanak.loadoutoptimizer.model.jpa.ArmorPieceSkill;
+import com.mromanak.loadoutoptimizer.model.jpa.ArmorType;
 import lombok.Data;
 
 import java.util.Map;
@@ -13,6 +16,7 @@ public class Loadout {
     private final int level1Slots;
     private final int level2Slots;
     private final int level3Slots;
+    private final int level4Slots;
 
     private Loadout(Builder builder) {
         armorPieces = builder.armorPieces;
@@ -20,18 +24,21 @@ public class Loadout {
         int level1SlotsTmp = 0;
         int level2SlotsTmp = 0;
         int level3SlotsTmp = 0;
+        int level4SlotsTmp = 0;
         for(ArmorPiece armorPiece : armorPieces.values()) {
-            for(Map.Entry<String, Integer> skillEntry : armorPiece.getSkills().entrySet()) {
-                skillsTmp.merge(skillEntry.getKey(), skillEntry.getValue(), (x, y) -> x + y);
+            for(ArmorPieceSkill skillMapping : armorPiece.getSkills()) {
+                skillsTmp.merge(skillMapping.getSkill().getName(), skillMapping.getSkillLevel(), (x, y) -> x + y);
             }
             level1SlotsTmp += armorPiece.getLevel1Slots();
             level2SlotsTmp += armorPiece.getLevel2Slots();
             level3SlotsTmp += armorPiece.getLevel3Slots();
+            level4SlotsTmp += armorPiece.getLevel4Slots();
         }
         skills = ImmutableMap.copyOf(skillsTmp);
         level1Slots = level1SlotsTmp;
         level2Slots = level2SlotsTmp;
         level3Slots = level3SlotsTmp;
+        level4Slots = level4SlotsTmp;
     }
 
     public static Loadout empty() {

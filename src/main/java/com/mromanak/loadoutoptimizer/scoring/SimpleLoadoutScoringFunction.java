@@ -18,6 +18,7 @@ public class SimpleLoadoutScoringFunction implements LoadoutScoringFunction {
     private final double level1SlotWeight;
     private final double level2SlotWeight;
     private final double level3SlotWeight;
+    private final double level4SlotWeight;
     private final Function<Integer, Double> loadoutSizeWeightFunction;
 
     private SimpleLoadoutScoringFunction(Builder builder) {
@@ -25,6 +26,7 @@ public class SimpleLoadoutScoringFunction implements LoadoutScoringFunction {
         level1SlotWeight = builder.level1SlotWeight;
         level2SlotWeight = builder.level2SlotWeight;
         level3SlotWeight = builder.level3SlotWeight;
+        level4SlotWeight = builder.level4SlotWeight;
         loadoutSizeWeightFunction = builder.loadoutSizeWeightFunction;
     }
 
@@ -38,6 +40,7 @@ public class SimpleLoadoutScoringFunction implements LoadoutScoringFunction {
         builder.level1SlotWeight = copy.level1SlotWeight;
         builder.level2SlotWeight = copy.level2SlotWeight;
         builder.level3SlotWeight = copy.level3SlotWeight;
+        builder.level4SlotWeight = copy.level4SlotWeight;
         builder.loadoutSizeWeightFunction = copy.loadoutSizeWeightFunction;
         return builder;
     }
@@ -64,6 +67,7 @@ public class SimpleLoadoutScoringFunction implements LoadoutScoringFunction {
         score += level1SlotWeight * loadout.getLevel1Slots();
         score += level2SlotWeight * loadout.getLevel2Slots();
         score += level3SlotWeight * loadout.getLevel3Slots();
+        score += level4SlotWeight * loadout.getLevel4Slots();
 
         score += loadoutSizeWeightFunction.apply(loadout.getArmorPieces().size());
 
@@ -75,6 +79,7 @@ public class SimpleLoadoutScoringFunction implements LoadoutScoringFunction {
         private double level1SlotWeight = 0.0;
         private double level2SlotWeight = 0.0;
         private double level3SlotWeight = 0.0;
+        private double level4SlotWeight = 0.0;
         private Function<Integer, Double> loadoutSizeWeightFunction = zeroWeightFunction();
 
         private Builder() {
@@ -110,6 +115,11 @@ public class SimpleLoadoutScoringFunction implements LoadoutScoringFunction {
         }
 
         public Builder withLevel3SlotWeight(double val) {
+            level3SlotWeight = val;
+            return this;
+        }
+
+        public Builder withLevel4SlotWeight(double val) {
             level3SlotWeight = val;
             return this;
         }

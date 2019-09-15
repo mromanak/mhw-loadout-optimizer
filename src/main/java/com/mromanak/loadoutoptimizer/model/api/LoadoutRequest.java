@@ -34,6 +34,9 @@ public class LoadoutRequest {
     @ApiModelProperty(notes = "The relative value of a level 3 decoration slot.")
     private double level3SlotWeight = 0.0;
 
+    @ApiModelProperty(notes = "The relative value of a level 4 decoration slot.")
+    private double level4SlotWeight = 0.0;
+
     @ApiModelProperty(
         notes = "The relative value of including a piece of armor in a loadout. In most cases, this should be a " +
             "small, negative number to encourage the optimizer to use as few pieces of armor as possible.")

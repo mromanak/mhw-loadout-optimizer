@@ -3,12 +3,12 @@ package com.mromanak.loadoutoptimizer.service;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Sets;
 import com.mromanak.loadoutoptimizer.impl.LoadoutOptimizer;
-import com.mromanak.loadoutoptimizer.model.ArmorPiece;
-import com.mromanak.loadoutoptimizer.model.ArmorType;
 import com.mromanak.loadoutoptimizer.model.Loadout;
-import com.mromanak.loadoutoptimizer.model.SetBonus;
 import com.mromanak.loadoutoptimizer.model.api.LoadoutRequest;
 import com.mromanak.loadoutoptimizer.model.api.SkillWeight;
+import com.mromanak.loadoutoptimizer.model.jpa.ArmorPiece;
+import com.mromanak.loadoutoptimizer.model.jpa.ArmorType;
+import com.mromanak.loadoutoptimizer.model.jpa.SetBonusSkill;
 import com.mromanak.loadoutoptimizer.scoring.SimpleLoadoutScoringFunction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,8 +17,8 @@ import java.util.*;
 import java.util.function.Predicate;
 import java.util.regex.Pattern;
 
-import static com.mromanak.loadoutoptimizer.model.ArmorType.hasNextArmorType;
-import static com.mromanak.loadoutoptimizer.model.ArmorType.nextArmorType;
+import static com.mromanak.loadoutoptimizer.model.jpa.ArmorType.hasNextArmorType;
+import static com.mromanak.loadoutoptimizer.model.jpa.ArmorType.nextArmorType;
 import static com.mromanak.loadoutoptimizer.scoring.LoadoutScoringUtils.simpleSkillWeightFunction;
 import static java.util.Collections.emptyList;
 import static java.util.stream.Collectors.*;
@@ -46,6 +46,7 @@ public class LoadoutOptimizerService {
         request.setLevel1SlotWeight(0.25);
         request.setLevel2SlotWeight(0.5);
         request.setLevel3SlotWeight(0.5);
+        request.setLevel4SlotWeight(0.5);
         request.setLoadoutSizeWeight(-0.25);
         return request;
     }
@@ -56,13 +57,12 @@ public class LoadoutOptimizerService {
         Set<String> desiredSkills = scoringFunction.getSkillWieghtFunctions().keySet();
         List<Pattern> excludePatterns = loadoutRequest.getExcludePatterns();
         Predicate<ArmorPiece> filter = (ArmorPiece armorPiece) -> {
-            boolean hasDesiredSkill = !Sets.intersection(desiredSkills, armorPiece.getSkills().keySet()).isEmpty();
             boolean isIgnored = excludePatterns.stream().
                 anyMatch((excludePattern) -> excludePattern.matcher(armorPiece.getName()).matches());
-            return hasDesiredSkill && !isIgnored;
+            return !isIgnored;
         };
 
-        Set<ArmorPiece> armorPieces = armorPieceService.getArmorPieces(filter);
+        Set<ArmorPiece> armorPieces = armorPieceService.getArmorPiecesWithSkillsNamed(desiredSkills, filter);
 
         if(loadoutRequest.getSetBonus() != null) {
             List<Loadout> startingLoadouts = generateStartingLoadoutsForSetBonus(loadoutRequest.getSetBonus(), loadoutRequest.getExcludePatterns());
@@ -89,6 +89,7 @@ public class LoadoutOptimizerService {
             withLevel1SlotWeight(loadoutRequest.getLevel1SlotWeight()).
             withLevel2SlotWeight(loadoutRequest.getLevel2SlotWeight()).
             withLevel3SlotWeight(loadoutRequest.getLevel3SlotWeight()).
+            withLevel4SlotWeight(loadoutRequest.getLevel4SlotWeight()).
             withLoadoutSizeWeightFunction(size -> loadoutSizeWeight * size).
             build();
     }
@@ -110,30 +111,37 @@ public class LoadoutOptimizerService {
     }
 
     private List<Loadout> generateStartingLoadoutsForSetBonus(String bonusName, List<Pattern> excludePatterns) {
-        List<SetBonus> setBonusOpt = setBonusService.findSetBonus(bonusName);
-        if(setBonusOpt.isEmpty()) {
+        Set<SetBonusSkill> setBonusSkills = setBonusService.getSetBonusSkillsWithSkillsNamed(bonusName);
+        if(setBonusSkills.isEmpty()) {
             throw new IllegalArgumentException("Could not find a set bonus that provides skill " + bonusName);
         }
 
         List<Loadout> loadouts = new ArrayList<>();
 
-        for(SetBonus setBonus : setBonusOpt) {
-            Set<String> armorPieceNames = setBonus.getArmorPieces().stream().
-                filter((armorPieceName) -> excludePatterns.stream().noneMatch((pattern) -> pattern.matcher(armorPieceName).matches())).
+        for(SetBonusSkill setBonusSkill : setBonusSkills) {
+            Set<ArmorPiece> armorPieces = setBonusSkill.getSetBonus().getArmorPieces().stream().
+                filter((ArmorPiece armorPiece) -> {
+                    return excludePatterns.stream().noneMatch((Pattern pattern) -> {
+                        return pattern.matcher(armorPiece.getName()).matches();
+                    });
+                }).
                 collect(toSet());
-            Set<ArmorPiece> armorPieces = armorPieceService.getArmorPieces(ap -> armorPieceNames.contains(ap.getName()));
-            int minimumPieces = setBonus.getBonusRequirements().get(bonusName);
+            Set<String> armorPieceNames = armorPieces.stream().
+                map(ArmorPiece::getName).
+                collect(toSet());
+            int minimumPieces = setBonusSkill.getRequiredPieces();
 
             if (armorPieceNames.size() != armorPieces.size()) {
                 Set<String> loadedArmorPieceNames = armorPieces.stream().
                     map(ArmorPiece::getName).
                     collect(toSet());
                 Set<String> missingArmorPieceNames = Sets.difference(armorPieceNames, loadedArmorPieceNames);
+                int missingPiecesCount = armorPieces.size() - missingArmorPieceNames.size();
                 throw new IllegalStateException(
-                    missingArmorPieceNames.size() + " armor pieces for set bonus " + bonusName + " (" + setBonus.getName() +
-                        ") were not found: " + missingArmorPieceNames);
+                    missingPiecesCount + " armor pieces for set bonus " + bonusName + " (" +
+                        setBonusSkill.getSetBonus().getName() + ") were not found: " + missingArmorPieceNames);
             }
-            loadouts.addAll(generateCombinations (armorPieces, minimumPieces));
+            loadouts.addAll(generateCombinations(armorPieces, minimumPieces));
         }
 
         return loadouts;
