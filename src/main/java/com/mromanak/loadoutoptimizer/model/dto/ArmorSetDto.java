@@ -52,6 +52,7 @@ public class ArmorSetDto {
     @JsonIgnore
     public List<ArmorSetComponentDto> getArmorSetComponents() {
         return Stream.of(head, body, arms, legs, waist).
+            filter(Objects::nonNull).
             collect(toList());
     }
 

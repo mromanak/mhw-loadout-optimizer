@@ -17,7 +17,7 @@ CREATE CACHED TABLE "PUBLIC"."ARMOR_PIECE"(
     "SET_BONUS_ID" VARCHAR
 );     
 ALTER TABLE "PUBLIC"."ARMOR_PIECE" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_4" PRIMARY KEY("ID");   
--- 617 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE;            
+-- 632 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE;            
 INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('diablos-head-alpha-plus', 0, 0, 1, 0, 0, STRINGDECODE('Diablos Helm \u03b1 +'), 'Diablos', '4', 'diablos-ambition'),
 ('ko-charm-i', 5, NULL, NULL, NULL, NULL, 'KO Charm I', 'KO', '7', NULL),
@@ -653,7 +653,22 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('zorah-magdaros-arms-beta-plus', 2, 1, 0, 0, 1, STRINGDECODE('Zorah Claws \u03b2 +'), 'Zorah Magdaros', '5', 'zorah-magdaros-essence'),
 ('zorah-magdaros-waist-beta-plus', 3, 0, 0, 1, 1, STRINGDECODE('Zorah Spine \u03b2 +'), 'Zorah Magdaros', '5', 'zorah-magdaros-essence');              
 INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
-('zorah-magdaros-legs-beta-plus', 4, 0, 0, 1, 1, STRINGDECODE('Zorah Spurs \u03b2 +'), 'Zorah Magdaros', '5', 'zorah-magdaros-essence');             
+('zorah-magdaros-legs-beta-plus', 4, 0, 0, 1, 1, STRINGDECODE('Zorah Spurs \u03b2 +'), 'Zorah Magdaros', '5', 'zorah-magdaros-essence'),
+('kestodon-arms-alpha-plus', 2, 2, 0, 0, 0, STRINGDECODE('Kestodon Guards \u03b1 +'), 'Kestodon', '4', NULL),
+('kestodon-arms-beta-plus', 2, 1, 0, 0, 1, STRINGDECODE('Kestodon Guards \u03b2 +'), 'Kestodon', '5', NULL),
+('barnos-body-alpha-plus', 1, 0, 2, 0, 0, STRINGDECODE('Barnos Jacket \u03b1 +'), 'Barnos', '4', NULL),
+('barnos-body-beta-plus', 1, 0, 1, 0, 1, STRINGDECODE('Barnos Jacket \u03b2 +'), 'Barnos', '5', NULL),
+('wulg-head-alpha-plus', 0, 1, 1, 0, 0, STRINGDECODE('Wulg Scarf \u03b1 +'), 'Wulg', '4', NULL),
+('wulg-head-beta-plus', 0, 1, 0, 0, 1, STRINGDECODE('Wulg Scarf \u03b2 +'), 'Wulg', '5', NULL),
+('cortos-body-alpha-plus', 1, 2, 0, 0, 0, STRINGDECODE('Cortos Cape \u03b1 +'), 'Cortos', '4', NULL),
+('cortos-body-beta-plus', 1, 0, 0, 0, 1, STRINGDECODE('Cortos Cape \u03b2 +'), 'Cortos', '5', NULL),
+('gajau-legs-alpha-plus', 4, 1, 1, 0, 0, STRINGDECODE('Gajau Boots \u03b1 +'), 'Gajau', '4', NULL),
+('gajau-legs-beta-plus', 4, 1, 0, 0, 1, STRINGDECODE('Gajau Boots \u03b2 +'), 'Gajau', '5', NULL),
+('shamos-head-beta-plus', 0, 0, 1, 0, 1, STRINGDECODE('Shamos Goggles \u03b2 +'), 'Shamos', '5', NULL),
+('shamos-head-alpha-plus', 0, 1, 1, 0, 0, STRINGDECODE('Shamos Goggles \u03b1 +'), 'Shamos', '4', NULL),
+('gastodon-head-alpha-plus', 0, 1, 0, 0, 0, STRINGDECODE('Gastodon Horn \u03b1 +'), 'Gastodon', '4', NULL),
+('gastodon-head-beta-plus', 0, 1, 0, 0, 1, STRINGDECODE('Gastodon Horn \u03b2 +'), 'Gastodon', '5', NULL),
+('pearlspring-head-alpha-plus', 0, 1, 1, 0, 0, STRINGDECODE('Pearlspring \u03b1 +'), 'Pearlspring', '4', NULL);        
 CREATE CACHED TABLE "PUBLIC"."ARMOR_PIECE_SKILL"(
     "SKILL_LEVEL" INTEGER NOT NULL CHECK (("SKILL_LEVEL" <= 7)
     AND ("SKILL_LEVEL" >= 1)),
@@ -661,7 +676,7 @@ CREATE CACHED TABLE "PUBLIC"."ARMOR_PIECE_SKILL"(
     "SKILL_ID" VARCHAR NOT NULL
 );      
 ALTER TABLE "PUBLIC"."ARMOR_PIECE_SKILL" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_F" PRIMARY KEY("ARMOR_PIECE_ID", "SKILL_ID");     
--- 1037 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE_SKILL;     
+-- 1066 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE_SKILL;     
 INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'diablos-head-alpha-plus', 'slugger'),
 (1, 'ko-charm-i', 'slugger'),
@@ -1711,7 +1726,37 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (2, 'zorah-magdaros-body-beta-plus', 'tremor-resistance'),
 (2, 'zorah-magdaros-arms-beta-plus', 'flinch-free'),
 (1, 'zorah-magdaros-waist-beta-plus', 'tremor-resistance'),
-(1, 'zorah-magdaros-legs-beta-plus', 'earplugs');           
+(1, 'zorah-magdaros-legs-beta-plus', 'earplugs'),
+(1, 'kestodon-arms-alpha-plus', 'affinity-sliding'),
+(2, 'kestodon-arms-alpha-plus', 'focus'),
+(1, 'kestodon-arms-beta-plus', 'affinity-sliding'),
+(1, 'kestodon-arms-beta-plus', 'focus'),
+(1, 'barnos-body-alpha-plus', 'heat-guard'),
+(2, 'barnos-body-alpha-plus', 'iron-skin'),
+(1, 'barnos-body-beta-plus', 'heat-guard'),
+(1, 'barnos-body-beta-plus', 'iron-skin'),
+(1, 'wulg-head-alpha-plus', 'master-mounter');
+INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
+(2, 'wulg-head-alpha-plus', 'ice-resistance'),
+(1, 'wulg-head-beta-plus', 'ice-resistance'),
+(1, 'wulg-head-beta-plus', 'master-mounter'),
+(1, 'cortos-body-alpha-plus', 'jump-master'),
+(2, 'cortos-body-alpha-plus', 'hunger-resistance'),
+(1, 'cortos-body-beta-plus', 'hunger-resistance'),
+(1, 'cortos-body-beta-plus', 'jump-master'),
+(2, 'gajau-legs-alpha-plus', 'aquatic-polar-mobility'),
+(2, 'gajau-legs-alpha-plus', 'water-attack'),
+(1, 'gajau-legs-beta-plus', 'aquatic-polar-mobility'),
+(1, 'gajau-legs-beta-plus', 'water-attack'),
+(1, 'shamos-head-beta-plus', 'detector'),
+(1, 'shamos-head-beta-plus', 'geologist'),
+(1, 'shamos-head-alpha-plus', 'detector'),
+(2, 'shamos-head-alpha-plus', 'geologist'),
+(1, 'gastodon-head-alpha-plus', 'blast-resistance'),
+(2, 'gastodon-head-alpha-plus', 'flinch-free'),
+(1, 'gastodon-head-beta-plus', 'blast-resistance'),
+(1, 'gastodon-head-beta-plus', 'flinch-free'),
+(2, 'pearlspring-head-alpha-plus', 'recovery-up');  
 CREATE CACHED TABLE "PUBLIC"."JEWEL"(
     "ID" VARCHAR NOT NULL,
     "JEWEL_LEVEL" INTEGER NOT NULL CHECK (("JEWEL_LEVEL" >= 1)
