@@ -4,12 +4,62 @@ A [Spring Boot](https://projects.spring.io/spring-boot/) application that attemp
 loadout(s) according to a user-provided scoring function. Uses dynamic programming to reduce search time in exchange for
 using more memory.
 
-## How To Run
-From the root of the Git checkout:
-1. Build the Spring Boot jar by running `mvn package`.
-2. Start the Spring Boot application by running `java -jar target/mhw-loadout-optimizer-1.0-SNAPSHOT.jar`.
+## Running the Application
+From the root of the Git project:
+1. Package the Spring Boot jar by running `mvn package`.
+1. Start the Spring Boot application by running `java -jar target/mhw-loadout-optimizer-1.0-SNAPSHOT.jar`.
 
 By default, the application will come up at `localhost:8080`
+
+## Editing Data
+By default, the application runs with a H2 in-memory database, with schema and data loaded from a SQL file which is
+added to the classpath when the jar is packaged (`src/main/resources/schema.sql`). In this mode, changes made via the
+API will only persist until the application shuts down, at which point they will be lost.
+
+### Running in File Mode
+File mode will cause the application to read from and write to an H2 database file instead of an in-memory database.
+This will allow changes made by the API to persist across application restarts, but the database file will exist outside
+of the jar, and therefore the application must be told where to find it.
+
+To run in file mode from the root of the Git project, follow the instructions above, but add
+`--spring.profiles.active=fileMode` to the end of the `java` command. The default settings will point to the existing
+database.
+
+If running from somewhere other than the root of the project, the following properties must also be added to to specify
+the location of the database file:
+* `--com.mromanak.dbDirectory` is used to specify the directory that contains the database file. Defaults to `./data`.
+* `--com.mromanak.dbName` is used to specify the base name (i.e. the name of the database file minus any file
+extensions) of the database file. Defaults to `monster_hunter`.
+
+### Updating the Embedded SQL File
+If you've made updates to database in file mode, from the root directory, the following commands will:
+* Copy the H2 jar used by the project to a temporary directory in the project
+* Use the H2 jar to create a SQL dump of `/data/monster_hunter.mv.db` overwriting `src/main/resources/schema.sql`
+* Delete the temporary directory
+* Re-package the jar to include the modified initialization SQL 
+
+```bash
+mvn dependency:copy@copy-h2-local
+java -cp ./tmp/h2*.jar org.h2.tools.Script \
+	-url jdbc:h2:file:./data/monster_hunter \
+	-user sa \
+	-script ./src/main/resources/schema.sql
+mvn clean:clean@delete-h2-local package
+```
+
+#### Using the H2 Jar
+I've added a maven task
+
+If you have the H2 jar downloaded to the local filesystem, you can use it to generate the SQL dump file using the
+following command (which assumes that you are in the root of the Git project and dumping `/data/monster_hunter.mv.db`):
+```bash
+java -cp <path_to_h2_jar> org.h2.tools.Script \
+	-url jdbc:h2:file:./data/monster_hunter \
+	-user sa \
+	-script <path_to_output_file>
+```
+This  will write the SQL dump file to the specified location on the filesystem. Overwrite
+`src/main/resources/schema.sql` with the generated file and repackage the jar.
 
 ## Requesting Loadouts
 The application supports Swagger 2.0 documentation, both as JSON (at `/v2/api-docs`) and as a UI (at
@@ -21,7 +71,7 @@ criteria:
 * Level 3 Windproof
 * Level 3 Tremor Resistance
 * As many decoration slots as possible
-    * Level 2 and 3 decoration slots are considered 0.5 times as valuable as a point in the desired skill
+    * Level 2, 3, and 4 decoration slots are considered 0.5 times as valuable as a point in the desired skill
     * Level 1 decoration slots are considered 0.25 times as valuable as a point in the desired skill
 * As few armor pieces as possible
 
@@ -45,15 +95,19 @@ To manually request loadouts using the same criteria as the GET request POST the
   "level1SlotWeight": 0.25,
   "level2SlotWeight": 0.5,
   "level3SlotWeight": 0.5,
+  "level4SlotWeight": 0.5,
   "loadoutSizeWeight": -0.25
 }
 ```
 
 ## To Do
 * **Add a GUI**.
-* **Complete the data.** The armor piece data is stored in a tab-separated value file on the classpath. It is not
-complete; I've simply been transcribing data from [Kiranico](https://mhworld.kiranico.com/) based on the skills I was
-interested in using at a given moment. The names used for armor pieces do not match the in-game names.
+* **Complete the data.** I haven't loaded Low Rank armor into the database because I don't think that would be a
+worthwhile time investment. For High Rank armor, the names may not match the ones displayed in-game, and the setName
+field may not align perfectly with the Master Rank equivalents.
+* **Make the process for updating the embedded SQL file less cumbersome.** 
+* **Add the ability to request multiple set bonuses.**  The API currently supports requesting 1 skill via a set
+bonus, but I'd ultimately like to support the ability to request multiple and account for decorations that can provide
+set bonus skills.
+* **Display when set bonuses will apply to a loadout.**
 * **Add the ability to recommend decorations for loadouts.**
-* **Add the ability to account for set bonuses.**  The groundwork has been laid, but set bonuses cannot yet be requested
-from the `/loadout` endpoint.

@@ -1,4 +1,5 @@
 .idea
 *.iml
 target/
-src/main/resources/data/monster_hunter.trace.db
+data/monster_hunter.trace.db
+tmp
