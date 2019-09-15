@@ -20,7 +20,6 @@ ALTER TABLE "PUBLIC"."ARMOR_PIECE" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_4" PRIMAR
 -- 632 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE;            
 INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('diablos-head-alpha-plus', 0, 0, 1, 0, 0, STRINGDECODE('Diablos Helm \u03b1 +'), 'Diablos', '4', 'diablos-ambition'),
-('ko-charm-i', 5, NULL, NULL, NULL, NULL, 'KO Charm I', 'KO', '7', NULL),
 ('kestodon-arms-lr', 2, 0, 0, 0, 0, 'Kestodon Guards', 'Kestodon', '0', NULL),
 ('kestodon-arms-alpha', 2, 0, 0, 0, 0, STRINGDECODE('Kestodon Guards \u03b1'), 'Kestodon', '1', NULL),
 ('lavasioth-arms-alpha', 2, 0, 1, 0, 0, STRINGDECODE('Lavasioth Vambraces \u03b1'), 'Lavasioth', '1', NULL),
@@ -57,7 +56,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('alloy-arms-beta-plus', 2, 1, 0, 0, 1, STRINGDECODE('Alloy Vambraces \u03b2 +'), 'Alloy', '5', NULL),
 ('alloy-waist-beta-plus', 3, 0, 0, 0, 1, STRINGDECODE('Alloy Coil \u03b2 +'), 'Alloy', '5', NULL),
 ('alloy-legs-beta-plus', 4, 0, 0, 0, 1, STRINGDECODE('Alloy Greaves \u03b2 +'), 'Alloy', '5', NULL),
-('vespoid-head-alpha-plus', 0, 0, 0, 1, 0, STRINGDECODE('Vespoid Helm \u03b1 +'), 'Vespoid', '4', NULL);      
+('vespoid-head-alpha-plus', 0, 0, 0, 1, 0, STRINGDECODE('Vespoid Helm \u03b1 +'), 'Vespoid', '4', NULL);
 INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('vespoid-body-alpha-plus', 1, 1, 1, 0, 0, STRINGDECODE('Vespoid Mail \u03b1 +'), 'Vespoid', '4', NULL),
 ('vespoid-arms-alpha-plus', 2, 0, 0, 1, 0, STRINGDECODE('Vespoid Vambraces \u03b1 +'), 'Vespoid', '4', NULL),
@@ -668,7 +667,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('shamos-head-alpha-plus', 0, 1, 1, 0, 0, STRINGDECODE('Shamos Goggles \u03b1 +'), 'Shamos', '4', NULL),
 ('gastodon-head-alpha-plus', 0, 1, 0, 0, 0, STRINGDECODE('Gastodon Horn \u03b1 +'), 'Gastodon', '4', NULL),
 ('gastodon-head-beta-plus', 0, 1, 0, 0, 1, STRINGDECODE('Gastodon Horn \u03b2 +'), 'Gastodon', '5', NULL),
-('pearlspring-head-alpha-plus', 0, 1, 1, 0, 0, STRINGDECODE('Pearlspring \u03b1 +'), 'Pearlspring', '4', NULL);        
+('pearlspring-head-alpha-plus', 0, 1, 1, 0, 0, STRINGDECODE('Pearlspring \u03b1 +'), 'Pearlspring', '4', NULL),
+('ko-charm-i', 5, 0, 0, 0, 0, 'KO Charm I', 'KO', '7', NULL);          
 CREATE CACHED TABLE "PUBLIC"."ARMOR_PIECE_SKILL"(
     "SKILL_LEVEL" INTEGER NOT NULL CHECK (("SKILL_LEVEL" <= 7)
     AND ("SKILL_LEVEL" >= 1)),

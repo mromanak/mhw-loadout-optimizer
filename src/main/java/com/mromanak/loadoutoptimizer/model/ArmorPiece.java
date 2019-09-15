@@ -1,14 +1,12 @@
 package com.mromanak.loadoutoptimizer.model;
 
 import com.google.common.collect.ImmutableMap;
-import com.mromanak.loadoutoptimizer.annotations.MaxTotalSlots;
 import lombok.Data;
 
 import java.util.Map;
 import java.util.TreeMap;
 
 @Data
-@MaxTotalSlots(value = 3, message = "Armor piece must have at most 3 jewel slots")
 public class ArmorPiece {
     private final String name;
     private final ArmorType armorType;

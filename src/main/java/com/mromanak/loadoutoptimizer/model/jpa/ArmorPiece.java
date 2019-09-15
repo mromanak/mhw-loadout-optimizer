@@ -1,5 +1,6 @@
 package com.mromanak.loadoutoptimizer.model.jpa;
 
+import com.mromanak.loadoutoptimizer.annotations.MaxTotalSlots;
 import com.mromanak.loadoutoptimizer.utils.NameUtils;
 import lombok.AccessLevel;
 import lombok.Data;
@@ -21,6 +22,7 @@ import java.util.List;
         @UniqueConstraint(columnNames = {"setName", "armorType", "setType"})
     }
 )
+@MaxTotalSlots(value = 3, message = "Armor piece must have at most 3 jewel slots")
 public class ArmorPiece {
 
     @Setter(AccessLevel.NONE)
@@ -44,21 +46,24 @@ public class ArmorPiece {
     @Column(columnDefinition = "varchar", nullable = false)
     private SetType setType;
 
-    // TODO Validate there aren't more than 3 slots total
-    @Min(value = 0, message = "Number of requiredPieces 1 slots must be at least 0")
-    @Max(value = 3, message = "Number of requiredPieces 1 slots must be at most 3")
+    @NotNull(message = "Number of level 1 slots must be non-null")
+    @Min(value = 0, message = "Number of level 1 slots must be at least 0")
+    @Max(value = 3, message = "Number of level 1 slots must be at most 3")
     private Integer level1Slots = 0;
 
-    @Min(value = 0, message = "Number of requiredPieces 2 slots must be at least 0")
-    @Max(value = 3, message = "Number of requiredPieces 2 slots must be at most 3")
+    @NotNull(message = "Number of level 2 slots must be non-null")
+    @Min(value = 0, message = "Number of level 2 slots must be at least 0")
+    @Max(value = 3, message = "Number of level 2 slots must be at most 3")
     private Integer level2Slots = 0;
 
-    @Min(value = 0, message = "Number of requiredPieces 3 slots must be at least 0")
-    @Max(value = 3, message = "Number of requiredPieces 3 slots must be at most 3")
+    @NotNull(message = "Number of level 3 slots must be non-null")
+    @Min(value = 0, message = "Number of level 3 slots must be at least 0")
+    @Max(value = 3, message = "Number of level 3 slots must be at most 3")
     private Integer level3Slots = 0;
 
-    @Min(value = 0, message = "Number of requiredPieces 4 slots must be at least 0")
-    @Max(value = 3, message = "Number of requiredPieces 4 slots must be at most 3")
+    @NotNull(message = "Number of level 4 slots must be non-null")
+    @Min(value = 0, message = "Number of level 4 slots must be at least 0")
+    @Max(value = 3, message = "Number of level 4 slots must be at most 3")
     private Integer level4Slots = 0;
 
     @Valid
