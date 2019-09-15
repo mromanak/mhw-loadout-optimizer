@@ -29,7 +29,7 @@ public class SetBonus {
     private List<SetBonusSkill> skills = new ArrayList<>();
 
     @Valid
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "setBonus")
     private List<ArmorPiece> armorPieces;
 
     public void setName(String name) {

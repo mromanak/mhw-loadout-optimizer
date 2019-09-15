@@ -1,6 +1,7 @@
 package com.mromanak.loadoutoptimizer.service;
 
 import com.mromanak.loadoutoptimizer.model.dto.*;
+import com.mromanak.loadoutoptimizer.model.exception.BadRepositoryApiRequestException;
 import com.mromanak.loadoutoptimizer.model.exception.EntityNotFoundException;
 import com.mromanak.loadoutoptimizer.model.jpa.*;
 import com.mromanak.loadoutoptimizer.repository.ArmorPieceRepository;
@@ -11,9 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.*;
 
-import static java.util.stream.Collectors.toCollection;
-import static java.util.stream.Collectors.toList;
-import static java.util.stream.Collectors.toMap;
+import static java.util.stream.Collectors.*;
 
 @Service
 public class DtoService {
@@ -202,7 +201,7 @@ public class DtoService {
         return dto;
     }
 
-    private SortedSet<ProvidedSkillDto> getJewelSkillDtos(List<JewelSkill> jewelSkills) {
+    private SortedSet<ProvidedSkillDto> getJewelSkillDtos(Collection<JewelSkill> jewelSkills) {
         if (jewelSkills == null) {
             return null;
         }
@@ -267,7 +266,7 @@ public class DtoService {
         return dto;
     }
 
-    private SortedSet<ProvidedSkillDto> getArmorPieceSkillDtos(List<ArmorPieceSkill> armorPieceSkills) {
+    private SortedSet<ProvidedSkillDto> getArmorPieceSkillDtos(Collection<ArmorPieceSkill> armorPieceSkills) {
         if (armorPieceSkills == null) {
             return null;
         }
@@ -339,7 +338,7 @@ public class DtoService {
         return dto;
     }
 
-    private SortedSet<SetBonusSkillDto> getSetBonusSkillDtos(List<SetBonusSkill> setBonusSkills) {
+    private SortedSet<SetBonusSkillDto> getSetBonusSkillDtos(Collection<SetBonusSkill> setBonusSkills) {
         if (setBonusSkills == null) {
             return null;
         }
@@ -352,7 +351,7 @@ public class DtoService {
             collect(toCollection(TreeSet::new));
     }
 
-    private SortedSet<String> getSetBonusArmorPieceDtos(List<ArmorPiece> armorPieces) {
+    private SortedSet<String> getSetBonusArmorPieceDtos(Collection<ArmorPiece> armorPieces) {
         if (armorPieces == null) {
             return null;
         }
@@ -400,5 +399,142 @@ public class DtoService {
                 return armorPiece;
             }).
             collect(toList());
+    }
+
+    public ArmorSetDto toArmorSetDto(Collection<ArmorPiece> armorPieces) {
+        if (armorPieces == null) {
+            return null;
+        }
+
+        ArmorSetDto dto = mergeCommonFields(armorPieces);
+        Map<ArmorType, ArmorSetComponentDto> armorPieceMap = mapArmorSetComponentDtos(armorPieces);
+        dto.setHead(armorPieceMap.get(ArmorType.HEAD));
+        dto.setBody(armorPieceMap.get(ArmorType.BODY));
+        dto.setArms(armorPieceMap.get(ArmorType.ARMS));
+        dto.setWaist(armorPieceMap.get(ArmorType.WAIST));
+        dto.setLegs(armorPieceMap.get(ArmorType.LEGS));
+        return dto;
+    }
+
+    private ArmorSetDto mergeCommonFields(Collection<ArmorPiece> armorPieces) {
+        ArmorSetDto dto = new ArmorSetDto();
+        Set<ArmorType> usedArmorTypes = new HashSet<>();
+        String setName = null;
+        SetType setType = null;
+        String setBonusId = null;
+
+        for (ArmorPiece armorPiece : armorPieces) {
+            if (usedArmorTypes.contains(armorPiece.getArmorType())) {
+                throw new BadRepositoryApiRequestException(
+                    "An armor set cannot contain more than one armor piece with type " +
+                        armorPiece.getArmorType().getName());
+            } else {
+                usedArmorTypes.add(armorPiece.getArmorType());
+            }
+
+            if (setName == null) {
+                setName = armorPiece.getSetName();
+            } else if (!Objects.equals(setName, armorPiece.getSetName())) {
+                throw new BadRepositoryApiRequestException(
+                    "An armor set must contain only armor pieces with the same set name.");
+            }
+
+            if (setType == null) {
+                setType = armorPiece.getSetType();
+            } else if (!Objects.equals(setType, armorPiece.getSetType())) {
+                throw new BadRepositoryApiRequestException(
+                    "An armor set must contain only armor pieces with the same set type.");
+            }
+
+            if (armorPiece.getSetBonus() != null) {
+                String otherSetBonusId = armorPiece.getSetBonus().getId();
+                if (setBonusId == null) {
+                    setBonusId = otherSetBonusId;
+                } else if (!Objects.equals(setBonusId, otherSetBonusId)) {
+                    throw new BadRepositoryApiRequestException(
+                        "An armor set must contain only armor pieces with the same set bonus.");
+                }
+            }
+        }
+        dto.setSetName(setName);
+        dto.setSetType(setType);
+        dto.setSetBonusId(setBonusId);
+
+        return dto;
+    }
+
+    private Map<ArmorType, ArmorSetComponentDto> mapArmorSetComponentDtos(Collection<ArmorPiece> armorPieces) {
+        Map<ArmorType, ArmorSetComponentDto> map = new HashMap<>();
+        for (ArmorPiece armorPiece : armorPieces) {
+            ArmorSetComponentDto dto = toArmorSetComponentDto(armorPiece);
+            if (map.put(armorPiece.getArmorType(), dto) != null) {
+                throw new BadRepositoryApiRequestException(
+                    "An armor set cannot contain more than one armor piece with type " +
+                        armorPiece.getArmorType().getName());
+            }
+        }
+        return map;
+    }
+
+    private ArmorSetComponentDto toArmorSetComponentDto(ArmorPiece armorPiece) {
+        ArmorSetComponentDto dto = new ArmorSetComponentDto();
+        dto.setName(armorPiece.getName());
+        dto.setLevel1Slots(armorPiece.getLevel1Slots());
+        dto.setLevel2Slots(armorPiece.getLevel2Slots());
+        dto.setLevel3Slots(armorPiece.getLevel3Slots());
+        dto.setLevel4Slots(armorPiece.getLevel4Slots());
+        dto.setSkills(getArmorPieceSkillDtos(armorPiece.getSkills()));
+        return dto;
+    }
+
+    public List<ArmorPiece> fromArmorSetDto(ArmorSetDto dto) {
+        List<ArmorPiece> armorPieces = new ArrayList<>();
+        SetBonus setBonus = null;
+        if (dto.getSetBonusId() != null) {
+            setBonus = getArmorPieceSetBonus(dto.getSetBonusId());
+        }
+
+        if (dto.getHead() != null) {
+            armorPieces.add(fromArmorSetComponentDto(dto, dto.getHead(), ArmorType.HEAD, setBonus));
+        }
+
+        if (dto.getBody() != null) {
+            armorPieces.add(fromArmorSetComponentDto(dto, dto.getBody(), ArmorType.BODY, setBonus));
+        }
+
+        if (dto.getArms() != null) {
+            armorPieces.add(fromArmorSetComponentDto(dto, dto.getArms(), ArmorType.ARMS, setBonus));
+        }
+
+        if (dto.getWaist() != null) {
+            armorPieces.add(fromArmorSetComponentDto(dto, dto.getWaist(), ArmorType.WAIST, setBonus));
+        }
+
+        if (dto.getLegs() != null) {
+            armorPieces.add(fromArmorSetComponentDto(dto, dto.getLegs(), ArmorType.LEGS, setBonus));
+        }
+
+        if (dto.getCharm() != null) {
+            armorPieces.add(fromArmorSetComponentDto(dto, dto.getCharm(), ArmorType.CHARM, setBonus));
+        }
+
+        return armorPieces;
+    }
+
+    private ArmorPiece fromArmorSetComponentDto(ArmorSetDto setDto, ArmorSetComponentDto dto, ArmorType armorType,
+        SetBonus setBonus)
+    {
+        ArmorPiece armorPiece = new ArmorPiece();
+        armorPiece.setName(dto.getName());
+        armorPiece.setSetName(setDto.getSetName());
+        armorPiece.setArmorType(armorType);
+        armorPiece.setSetType(setDto.getSetType());
+        armorPiece.setLevel1Slots(dto.getLevel1Slots());
+        armorPiece.setLevel2Slots(dto.getLevel2Slots());
+        armorPiece.setLevel3Slots(dto.getLevel3Slots());
+        armorPiece.setLevel4Slots(dto.getLevel4Slots());
+        armorPiece.setSkills(getArmorPieceSkills(armorPiece, dto.getSkills()));
+        armorPiece.setSetBonus(setBonus);
+        return armorPiece;
     }
 }

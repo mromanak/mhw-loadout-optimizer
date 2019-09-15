@@ -18,23 +18,11 @@ import java.util.SortedSet;
 
 @Data
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
-@MaxTotalSlots(value = 3, message = "Armor piece must have at most 3 jewel slots")
-public class ArmorPieceDto {
-
-    @Setter(AccessLevel.NONE)
-    private String id;
+@MaxTotalSlots(value = 3, message = "Total number of jewel slots must be at most 3")
+public class ArmorSetComponentDto {
 
     @NotBlank(message = "Name must be non-blank")
     private String name;
-
-    @NotBlank(message = "Set name must be non-blank")
-    private String setName;
-
-    @NotNull(message = "Armor type must be non-null")
-    private ArmorType armorType;
-
-    @NotNull(message = "Set type must be non-null")
-    private SetType setType;
 
     @Min(value = 0, message = "Number of level 1 jewel slots must be at least 0")
     @Max(value = 3, message = "Number of level 1 jewel slots must be at most 3")
@@ -54,22 +42,4 @@ public class ArmorPieceDto {
 
     @Valid
     private SortedSet<ProvidedSkillDto> skills;
-
-    private String setBonusId;
-
-    // TODO Find a less-redundant, similarly-compact solution for deriving id from these properties
-    public void setSetName(String setName) {
-        this.id = NameUtils.toSlug(setName, armorType, setType);
-        this.setName = setName;
-    }
-
-    public void setArmorType(ArmorType armorType) {
-        this.id = NameUtils.toSlug(setName, armorType, setType);
-        this.armorType = armorType;
-    }
-
-    public void setSetType(SetType setType) {
-        this.id = NameUtils.toSlug(setName, armorType, setType);
-        this.setType = setType;
-    }
 }
