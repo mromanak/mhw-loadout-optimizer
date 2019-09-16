@@ -129,7 +129,6 @@ public class LoadoutOptimizerService {
 
         for(ThinSetBonusSkill setBonusSkill : setBonusSkills) {
             Set<ThinArmorPiece> armorPieces = setBonusSkill.getSetBonus().getArmorPieces().stream().
-                filter((ap) -> ap.getArmorType() == ArmorType.CHARM || ap.getSetType().getRank() == Rank.MASTER_RANK).
                 filter((ThinArmorPiece armorPiece) -> {
                     return excludePatterns.stream().noneMatch((Pattern pattern) -> {
                         return pattern.matcher(armorPiece.getName()).matches();
