@@ -3,6 +3,7 @@ package com.mromanak.loadoutoptimizer.model.jpa;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import javax.validation.constraints.Max;
@@ -15,6 +16,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@ToString(exclude = {"setBonus", "skill"})
 public class SetBonusSkill {
 
     @EmbeddedId

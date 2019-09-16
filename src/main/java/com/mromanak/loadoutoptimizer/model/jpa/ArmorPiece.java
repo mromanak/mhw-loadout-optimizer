@@ -5,6 +5,8 @@ import com.mromanak.loadoutoptimizer.utils.NameUtils;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.Setter;
+import lombok.ToString;
+import org.hibernate.proxy.HibernateProxy;
 
 import javax.persistence.*;
 import javax.validation.Valid;
@@ -23,6 +25,7 @@ import java.util.List;
     }
 )
 @MaxTotalSlots(value = 3, message = "Armor piece must have at most 3 jewel slots")
+@ToString(exclude = {"skills", "setBonus"})
 public class ArmorPiece {
 
     @Setter(AccessLevel.NONE)
@@ -96,5 +99,16 @@ public class ArmorPiece {
         if (skills != null) {
             this.skills.addAll(skills);
         }
+    }
+
+    public List<ArmorPieceSkill> getSkills() {
+        if (skills instanceof HibernateProxy) {
+            if (((HibernateProxy) skills).getHibernateLazyInitializer().isUninitialized()) {
+                System.err.println("Uninitialized skill list!");
+            } else {
+                System.out.println("Nicely Initialized skill list!");
+            }
+        }
+        return skills;
     }
 }

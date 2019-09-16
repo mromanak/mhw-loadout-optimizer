@@ -4,15 +4,20 @@ import com.mromanak.loadoutoptimizer.utils.NameUtils;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import javax.validation.Valid;
-import javax.validation.constraints.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
 
 @Data
 @Entity
+@ToString(exclude = {"skills"})
 public class Jewel {
 
     @Setter(AccessLevel.NONE)

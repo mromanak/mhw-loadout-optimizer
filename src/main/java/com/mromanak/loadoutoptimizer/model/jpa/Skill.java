@@ -4,6 +4,7 @@ import com.mromanak.loadoutoptimizer.utils.NameUtils;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import javax.validation.Valid;
@@ -14,6 +15,7 @@ import java.util.Map;
 
 @Data
 @Entity
+@ToString(exclude = {"effects", "setBonuses", "armorPieces", "jewels", "uncappingSkill"})
 public class Skill {
 
     @Setter(AccessLevel.NONE)
