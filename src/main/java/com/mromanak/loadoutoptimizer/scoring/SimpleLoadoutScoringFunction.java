@@ -120,7 +120,7 @@ public class SimpleLoadoutScoringFunction implements LoadoutScoringFunction {
         }
 
         public Builder withLevel4SlotWeight(double val) {
-            level3SlotWeight = val;
+            level4SlotWeight = val;
             return this;
         }
 
