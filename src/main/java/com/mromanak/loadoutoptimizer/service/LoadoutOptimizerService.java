@@ -6,9 +6,10 @@ import com.mromanak.loadoutoptimizer.impl.LoadoutOptimizer;
 import com.mromanak.loadoutoptimizer.model.Loadout;
 import com.mromanak.loadoutoptimizer.model.api.LoadoutRequest;
 import com.mromanak.loadoutoptimizer.model.api.SkillWeight;
-import com.mromanak.loadoutoptimizer.model.jpa.ArmorPiece;
+import com.mromanak.loadoutoptimizer.model.dto.optimizer.ThinArmorPiece;
+import com.mromanak.loadoutoptimizer.model.dto.optimizer.ThinSetBonusSkill;
 import com.mromanak.loadoutoptimizer.model.jpa.ArmorType;
-import com.mromanak.loadoutoptimizer.model.jpa.SetBonusSkill;
+import com.mromanak.loadoutoptimizer.model.jpa.Rank;
 import com.mromanak.loadoutoptimizer.scoring.SimpleLoadoutScoringFunction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -56,20 +57,23 @@ public class LoadoutOptimizerService {
 
         Set<String> desiredSkills = scoringFunction.getSkillWieghtFunctions().keySet();
         List<Pattern> excludePatterns = loadoutRequest.getExcludePatterns();
-        Predicate<ArmorPiece> filter = (ArmorPiece armorPiece) -> {
+        Predicate<ThinArmorPiece> filter = (ThinArmorPiece armorPiece) -> {
             boolean isIgnored = excludePatterns.stream().
                 anyMatch((excludePattern) -> excludePattern.matcher(armorPiece.getName()).matches());
             return !isIgnored;
         };
 
-        Set<ArmorPiece> armorPieces = armorPieceService.getArmorPiecesWithSkillsNamed(desiredSkills, filter);
+        Rank rank = loadoutRequest.getRank();
+        Set<ThinArmorPiece> armorPieces = armorPieceService.getArmorPiecesWithSkillsAndRank(desiredSkills, rank, filter);
 
+        List<Loadout> loadouts;
         if(loadoutRequest.getSetBonus() != null) {
-            List<Loadout> startingLoadouts = generateStartingLoadoutsForSetBonus(loadoutRequest.getSetBonus(), loadoutRequest.getExcludePatterns());
-            return LoadoutOptimizer.findBestLoadoutsGiven(startingLoadouts, armorPieces, scoringFunction);
+            List<Loadout> startingLoadouts = generateStartingLoadoutsForSetBonus(loadoutRequest);
+            loadouts = LoadoutOptimizer.findBestLoadoutsGiven(startingLoadouts, armorPieces, scoringFunction);
         } else {
-            return LoadoutOptimizer.findBestLoadouts(armorPieces, scoringFunction);
+            loadouts = LoadoutOptimizer.findBestLoadouts(armorPieces, scoringFunction);
         }
+        return loadouts;
     }
 
     private SimpleLoadoutScoringFunction scoringFunctionFor(LoadoutRequest loadoutRequest) {
@@ -110,30 +114,36 @@ public class LoadoutOptimizerService {
         }
     }
 
-    private List<Loadout> generateStartingLoadoutsForSetBonus(String bonusName, List<Pattern> excludePatterns) {
-        Set<SetBonusSkill> setBonusSkills = setBonusService.getSetBonusSkillsWithSkillsNamed(bonusName);
+    private List<Loadout> generateStartingLoadoutsForSetBonus(LoadoutRequest request) {
+
+        String bonusName = request.getSetBonus();
+        List<Pattern> excludePatterns = request.getExcludePatterns();
+        Rank rank = request.getRank();
+
+        Set<ThinSetBonusSkill> setBonusSkills = setBonusService.getSetBonusSkillsAndArmorRank(bonusName, rank);
         if(setBonusSkills.isEmpty()) {
             throw new IllegalArgumentException("Could not find a set bonus that provides skill " + bonusName);
         }
 
         List<Loadout> loadouts = new ArrayList<>();
 
-        for(SetBonusSkill setBonusSkill : setBonusSkills) {
-            Set<ArmorPiece> armorPieces = setBonusSkill.getSetBonus().getArmorPieces().stream().
-                filter((ArmorPiece armorPiece) -> {
+        for(ThinSetBonusSkill setBonusSkill : setBonusSkills) {
+            Set<ThinArmorPiece> armorPieces = setBonusSkill.getSetBonus().getArmorPieces().stream().
+                filter((ap) -> ap.getArmorType() == ArmorType.CHARM || ap.getSetType().getRank() == Rank.MASTER_RANK).
+                filter((ThinArmorPiece armorPiece) -> {
                     return excludePatterns.stream().noneMatch((Pattern pattern) -> {
                         return pattern.matcher(armorPiece.getName()).matches();
                     });
                 }).
                 collect(toSet());
             Set<String> armorPieceNames = armorPieces.stream().
-                map(ArmorPiece::getName).
+                map(ThinArmorPiece::getName).
                 collect(toSet());
             int minimumPieces = setBonusSkill.getRequiredPieces();
 
             if (armorPieceNames.size() != armorPieces.size()) {
                 Set<String> loadedArmorPieceNames = armorPieces.stream().
-                    map(ArmorPiece::getName).
+                    map(ThinArmorPiece::getName).
                     collect(toSet());
                 Set<String> missingArmorPieceNames = Sets.difference(armorPieceNames, loadedArmorPieceNames);
                 int missingPiecesCount = armorPieces.size() - missingArmorPieceNames.size();
@@ -147,12 +157,12 @@ public class LoadoutOptimizerService {
         return loadouts;
     }
 
-    private List<Loadout> generateCombinations(Set<ArmorPiece> armorPieces, int minimumPieces) {
-        Map<ArmorType, List<ArmorPiece>> armorPiecesMap = armorPieces.stream().
+    private List<Loadout> generateCombinations(Set<ThinArmorPiece> armorPieces, int minimumPieces) {
+        Map<ArmorType, List<ThinArmorPiece>> armorPiecesMap = armorPieces.stream().
             collect(toMap(
-                ArmorPiece::getArmorType,
+                ThinArmorPiece::getArmorType,
                 ImmutableList::of,
-                (l1, l2) -> ImmutableList.<ArmorPiece>builder().addAll(l1).addAll(l2).build()
+                (l1, l2) -> ImmutableList.<ThinArmorPiece>builder().addAll(l1).addAll(l2).build()
             ));
 
         return generateCombinations(Loadout.empty(), armorPiecesMap, nextArmorType(null)).stream().
@@ -160,11 +170,11 @@ public class LoadoutOptimizerService {
             collect(toList());
     }
 
-    private List<Loadout> generateCombinations(Loadout currentLoadout, Map<ArmorType, List<ArmorPiece>> armorPiecesMap,
+    private List<Loadout> generateCombinations(Loadout currentLoadout, Map<ArmorType, List<ThinArmorPiece>> armorPiecesMap,
         ArmorType armorType)
     {
         if(hasNextArmorType(armorType)) {
-            List<ArmorPiece> currentArmorPieces = armorPiecesMap.getOrDefault(armorType, emptyList());
+            List<ThinArmorPiece> currentArmorPieces = armorPiecesMap.getOrDefault(armorType, emptyList());
             if(currentArmorPieces.isEmpty()) {
                 return generateCombinations(currentLoadout, armorPiecesMap, nextArmorType(armorType));
             }
@@ -172,7 +182,7 @@ public class LoadoutOptimizerService {
             List<Loadout> loadoutsWithNextPiece = generateCombinations(currentLoadout, armorPiecesMap, nextArmorType(armorType));
             List<Loadout> loadoutsToReturn = new ArrayList<>(loadoutsWithNextPiece);
             for (Loadout loadoutWithNextPiece : loadoutsWithNextPiece) {
-                for (ArmorPiece armorPiece : currentArmorPieces) {
+                for (ThinArmorPiece armorPiece : currentArmorPieces) {
                     loadoutsToReturn.add(Loadout.builder(loadoutWithNextPiece).
                         withArmorPiece(armorPiece).
                         build());
@@ -180,10 +190,10 @@ public class LoadoutOptimizerService {
             }
             return loadoutsToReturn;
         } else {
-            List<ArmorPiece> currentArmorPieces = armorPiecesMap.getOrDefault(armorType, emptyList());
+            List<ThinArmorPiece> currentArmorPieces = armorPiecesMap.getOrDefault(armorType, emptyList());
             List<Loadout> loadoutsToReturn = new ArrayList<>();
             loadoutsToReturn.add(currentLoadout);
-            for (ArmorPiece armorPiece : currentArmorPieces) {
+            for (ThinArmorPiece armorPiece : currentArmorPieces) {
                 loadoutsToReturn.add(Loadout.builder().
                     withArmorPiece(armorPiece).
                     build());

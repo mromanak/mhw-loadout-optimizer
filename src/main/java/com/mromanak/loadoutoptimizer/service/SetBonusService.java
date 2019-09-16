@@ -1,45 +1,35 @@
 package com.mromanak.loadoutoptimizer.service;
 
+import com.google.common.collect.ImmutableSet;
+import com.mromanak.loadoutoptimizer.model.dto.optimizer.ThinSetBonusSkill;
+import com.mromanak.loadoutoptimizer.model.jpa.ArmorType;
+import com.mromanak.loadoutoptimizer.model.jpa.Rank;
 import com.mromanak.loadoutoptimizer.model.jpa.SetBonusSkill;
-import com.mromanak.loadoutoptimizer.model.jpa.Skill;
-import com.mromanak.loadoutoptimizer.repository.SkillRepository;
-import com.mromanak.loadoutoptimizer.utils.NameUtils;
+import com.mromanak.loadoutoptimizer.repository.SetBonusRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
 import java.util.Set;
-import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toSet;
 
 @Service
 public class SetBonusService {
 
-    private final SkillRepository skillRepository;
+    private final SetBonusRepository setBonusRepository;
 
-    public SetBonusService(SkillRepository skillRepository) {
-        this.skillRepository = skillRepository;
+    public SetBonusService(SetBonusRepository setBonusRepository) {
+        this.setBonusRepository = setBonusRepository;
     }
 
-    public Set<SetBonusSkill> getSetBonusSkillsWithSkillsNamed(String skillName) {
-        return streamArmorPiecesWithSkillNamed(skillName).
-            collect(toSet());
-    }
+    public Set<ThinSetBonusSkill> getSetBonusSkillsAndArmorRank(String skillName, Rank rank) {
 
-    private Stream<SetBonusSkill> streamArmorPiecesWithSkillNamed(String skillName) {
-        if (skillName == null) {
-            return Stream.of();
-        }
-
-        return Stream.of(skillName).
-            map(NameUtils::toSlug).
-            map(skillRepository::findById).
-            filter(Optional::isPresent).
-            map(Optional::get).
-            map(Skill::getSetBonuses).
-            filter(Objects::nonNull).
-            flatMap(List::stream);
+        return ImmutableSet.copyOf(setBonusRepository.eagerFindBySkillName(skillName).stream().
+            map((SetBonusSkill sbsk) -> {
+                sbsk.getSetBonus().getArmorPieces().
+                    removeIf((ap) -> ap.getArmorType() != ArmorType.CHARM && ap.getSetType().getRank() != rank);
+                return new ThinSetBonusSkill(sbsk);
+            }).
+            collect(toSet())
+        );
     }
 }

@@ -2,7 +2,7 @@ package com.mromanak.loadoutoptimizer.impl;
 
 import com.google.common.collect.ImmutableList;
 import com.mromanak.loadoutoptimizer.model.Loadout;
-import com.mromanak.loadoutoptimizer.model.jpa.ArmorPiece;
+import com.mromanak.loadoutoptimizer.model.dto.optimizer.ThinArmorPiece;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -32,17 +32,17 @@ class OptimizerResponse {
             map(List::size).
             min(Comparator.naturalOrder()).
             orElse(0);
-        List<List<ArmorPiece>> armorPiecesToAdd = concat(r1.armorPiecesToAdd.stream(), r2.armorPiecesToAdd.stream()).
+        List<List<ThinArmorPiece>> armorPiecesToAdd = concat(r1.armorPiecesToAdd.stream(), r2.armorPiecesToAdd.stream()).
             filter(l -> l.size() == minumumLength).
             collect(toList());
 
         return new OptimizerResponse(armorPiecesToAdd, r1.score);
     };
 
-    private final List<List<ArmorPiece>> armorPiecesToAdd;
+    private final List<List<ThinArmorPiece>> armorPiecesToAdd;
     private final double score;
 
-    public static OptimizerResponse of(List<List<ArmorPiece>> armorPiecesToAdd, double score) {
+    public static OptimizerResponse of(List<List<ThinArmorPiece>> armorPiecesToAdd, double score) {
         armorPiecesToAdd = (armorPiecesToAdd == null) ? ImmutableList.of() : ImmutableList.copyOf(armorPiecesToAdd);
         return new OptimizerResponse(armorPiecesToAdd, score);
     }
@@ -51,7 +51,7 @@ class OptimizerResponse {
         if(loadouts == null) {
             return of(ImmutableList.of(), score);
         }
-        List<List<ArmorPiece>> armorPiecesToAdd = loadouts.stream().
+        List<List<ThinArmorPiece>> armorPiecesToAdd = loadouts.stream().
             map(l -> l.getArmorPieces().values()).
             map(ArrayList::new).
             collect(toList());

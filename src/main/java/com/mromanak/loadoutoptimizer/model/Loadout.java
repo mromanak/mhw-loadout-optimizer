@@ -1,8 +1,8 @@
 package com.mromanak.loadoutoptimizer.model;
 
 import com.google.common.collect.ImmutableMap;
-import com.mromanak.loadoutoptimizer.model.jpa.ArmorPiece;
-import com.mromanak.loadoutoptimizer.model.jpa.ArmorPieceSkill;
+import com.mromanak.loadoutoptimizer.model.dto.optimizer.ThinArmorPiece;
+import com.mromanak.loadoutoptimizer.model.dto.optimizer.ThinArmorPieceSkill;
 import com.mromanak.loadoutoptimizer.model.jpa.ArmorType;
 import lombok.Data;
 
@@ -11,12 +11,13 @@ import java.util.TreeMap;
 
 @Data
 public class Loadout {
-    private final Map<ArmorType, ArmorPiece> armorPieces;
+    private final Map<ArmorType, ThinArmorPiece> armorPieces;
     private final Map<String, Integer> skills;
     private final int level1Slots;
     private final int level2Slots;
     private final int level3Slots;
     private final int level4Slots;
+    private final double score;
 
     private Loadout(Builder builder) {
         armorPieces = builder.armorPieces;
@@ -25,8 +26,8 @@ public class Loadout {
         int level2SlotsTmp = 0;
         int level3SlotsTmp = 0;
         int level4SlotsTmp = 0;
-        for(ArmorPiece armorPiece : armorPieces.values()) {
-            for(ArmorPieceSkill skillMapping : armorPiece.getSkills()) {
+        for(ThinArmorPiece armorPiece : armorPieces.values()) {
+            for(ThinArmorPieceSkill skillMapping : armorPiece.getSkills()) {
                 skillsTmp.merge(skillMapping.getSkill().getName(), skillMapping.getSkillLevel(), (x, y) -> x + y);
             }
             level1SlotsTmp += armorPiece.getLevel1Slots();
@@ -39,6 +40,7 @@ public class Loadout {
         level2Slots = level2SlotsTmp;
         level3Slots = level3SlotsTmp;
         level4Slots = level4SlotsTmp;
+        score = builder.score;
     }
 
     public static Loadout empty() {
@@ -56,12 +58,18 @@ public class Loadout {
     }
 
     public static final class Builder {
-        private Map<ArmorType, ArmorPiece> armorPieces = new TreeMap<>();
+        private double score = 0.0;
+        private Map<ArmorType, ThinArmorPiece> armorPieces = new TreeMap<>();
 
         private Builder() {
         }
 
-        public Builder withArmorPiece(ArmorPiece val) {
+        public Builder withScore(double score) {
+            this.score = score;
+            return this;
+        }
+
+        public Builder withArmorPiece(ThinArmorPiece val) {
             if(val == null) {
                 throw new NullPointerException("Armor piece must not be null");
             }
@@ -71,12 +79,12 @@ public class Loadout {
             return this;
         }
 
-        public Builder withArmorPieces(Iterable<ArmorPiece> val) {
+        public Builder withArmorPieces(Iterable<ThinArmorPiece> val) {
             if(val == null) {
                 throw new NullPointerException("Armor pieces must not be null");
             }
 
-            for(ArmorPiece armorPiece : val) {
+            for(ThinArmorPiece armorPiece : val) {
                 armorPieces.put(armorPiece.getArmorType(), armorPiece);
             }
 

@@ -1,5 +1,6 @@
 package com.mromanak.loadoutoptimizer.model.api;
 
+import com.mromanak.loadoutoptimizer.model.jpa.Rank;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -47,12 +48,22 @@ public class LoadoutRequest {
             "the final loadout.")
     private List<Pattern> excludePatterns = new ArrayList<>();
 
+    @ApiModelProperty(
+        notes = "The rank of the armor that should be included in the returned loadouts. Since charms do not have an " +
+            "easy-to-discover relationship to rank, all charms will be considered for inclusion, no matter how this " +
+            "property is set. Defaults to the highest available rank (currently Master Rank).")
+    private Rank rank = Rank.MASTER_RANK;
+
     public void setSkillWeights(Map<String, SkillWeight> skillWeights) {
         this.skillWeights = (skillWeights == null) ? new HashMap<>() : skillWeights;
     }
 
     public void setExcludePatterns(List<Pattern> excludePatterns) {
         this.excludePatterns = (excludePatterns == null) ? new ArrayList<>() : excludePatterns;
+    }
+
+    public void setRank(Rank rank) {
+        this.rank = (rank == null) ? Rank.MASTER_RANK : rank;
     }
 }
 

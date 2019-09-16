@@ -2,7 +2,7 @@ package com.mromanak.loadoutoptimizer.impl;
 
 import com.google.common.collect.ImmutableList;
 import com.mromanak.loadoutoptimizer.model.Loadout;
-import com.mromanak.loadoutoptimizer.model.jpa.ArmorPiece;
+import com.mromanak.loadoutoptimizer.model.dto.optimizer.ThinArmorPiece;
 import com.mromanak.loadoutoptimizer.model.jpa.ArmorType;
 import com.mromanak.loadoutoptimizer.scoring.LoadoutScoringFunction;
 import lombok.AccessLevel;
@@ -24,39 +24,42 @@ import static java.util.stream.Collectors.toMap;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class LoadoutOptimizer {
 
-    private final Map<ArmorType, List<ArmorPiece>> armorPieces;
+    private final Map<ArmorType, List<ThinArmorPiece>> armorPieces;
     private final LoadoutScoringFunction scoringFunction;
     private final Map<OptimizerRequest, OptimizerResponse> solutionCache = new HashMap<>();
 
-    public static List<Loadout> findBestLoadouts(Collection<ArmorPiece> armorPieces,
+    public static List<Loadout> findBestLoadouts(Collection<ThinArmorPiece> armorPieces,
         LoadoutScoringFunction scoringFunction)
     {
         return findBestLoadoutsGiven(Loadout.empty(), armorPieces, scoringFunction);
     }
 
-    private static List<Loadout> findBestLoadoutsGiven(Loadout startingLoadout, Collection<ArmorPiece> armorPieces,
+    private static List<Loadout> findBestLoadoutsGiven(Loadout startingLoadout, Collection<ThinArmorPiece> armorPieces,
         LoadoutScoringFunction scoringFunction)
     {
         if(armorPieces == null || armorPieces.isEmpty()) {
             return ImmutableList.of();
         }
 
-        Map<ArmorType, List<ArmorPiece>> armorPiecesMap = armorPieces.stream().
+        Map<ArmorType, List<ThinArmorPiece>> armorPiecesMap = armorPieces.stream().
             collect(toMap(
-                ArmorPiece::getArmorType,
+                ThinArmorPiece::getArmorType,
                 ImmutableList::of,
-                (l1, l2) -> ImmutableList.<ArmorPiece>builder().addAll(l1).addAll(l2).build()
+                (l1, l2) -> ImmutableList.<ThinArmorPiece>builder().addAll(l1).addAll(l2).build()
             ));
         LoadoutOptimizer optimizer = new LoadoutOptimizer(armorPiecesMap, scoringFunction);
         OptimizerResponse response = optimizer.findBestLoadoutsGiven(startingLoadout, nextArmorType(null));
         return response.getArmorPiecesToAdd().
             stream().
-            map(l -> Loadout.builder(startingLoadout).withArmorPieces(l).build()).
+            map((List<ThinArmorPiece> newArmorPieces) -> {
+                Loadout tmp = Loadout.builder(startingLoadout).withArmorPieces(newArmorPieces).build();
+                return Loadout.builder().withArmorPieces(armorPieces).withScore(scoringFunction.apply(tmp)).build();
+            }).
             collect(toList());
     }
 
     public static List<Loadout> findBestLoadoutsGiven(List<Loadout> startingLoadouts,
-        Collection<ArmorPiece> otherArmorPieces, LoadoutScoringFunction scoringFunction)
+        Collection<ThinArmorPiece> otherArmorPieces, LoadoutScoringFunction scoringFunction)
     {
         return startingLoadouts.stream().
             map(startingLoadout -> findBestLoadoutsGiven(startingLoadout, otherArmorPieces, scoringFunction)).
@@ -70,7 +73,10 @@ public class LoadoutOptimizer {
             reduce(OptimizerResponse.empty(), OptimizerResponse.merger()).
             getArmorPiecesToAdd().
             stream().
-            map(r -> Loadout.builder().withArmorPieces(r).build()).
+            map((List<ThinArmorPiece> armorPieces) -> {
+                Loadout tmp = Loadout.builder().withArmorPieces(armorPieces).build();
+                return Loadout.builder().withArmorPieces(armorPieces).withScore(scoringFunction.apply(tmp)).build();
+            }).
             collect(toList());
     }
 
@@ -89,7 +95,7 @@ public class LoadoutOptimizer {
         if(solutionCache.containsKey(request)) {
             return solutionCache.get(request);
         } else if(hasNextArmorType(armorType)) {
-            List<ArmorPiece> currentArmorPieces = armorPieces.getOrDefault(armorType, emptyList());
+            List<ThinArmorPiece> currentArmorPieces = armorPieces.getOrDefault(armorType, emptyList());
             if(currentArmorPieces.isEmpty()) {
                 OptimizerResponse response = findBestLoadoutsGiven(currentLoadout, nextArmorType(armorType));
                 solutionCache.put(request, response);
@@ -115,7 +121,7 @@ public class LoadoutOptimizer {
         }
     }
 
-    private OptimizerResponse optimizeNonTerminal(Loadout currentLoadout, ArmorType armorType, ArmorPiece armorPiece) {
+    private OptimizerResponse optimizeNonTerminal(Loadout currentLoadout, ArmorType armorType, ThinArmorPiece armorPiece) {
         Loadout nextLoadout = Loadout.builder(currentLoadout).withArmorPiece(armorPiece).build();
         OptimizerResponse nextResponse = findBestLoadoutsGiven(nextLoadout, nextArmorType(armorType));
 
@@ -127,8 +133,8 @@ public class LoadoutOptimizer {
         return findBestLoadoutsGiven(nextLoadout, nextArmorType(armorType)).
             getArmorPiecesToAdd().
             stream().
-            map((List<ArmorPiece> ps) -> {
-                List<ArmorPiece> nextPiecesToAdd = ImmutableList.<ArmorPiece> builder().add(armorPiece).addAll(ps).build();
+            map((List<ThinArmorPiece> ps) -> {
+                List<ThinArmorPiece> nextPiecesToAdd = ImmutableList.<ThinArmorPiece> builder().add(armorPiece).addAll(ps).build();
                 Loadout loadout = Loadout.builder(nextLoadout).withArmorPieces(nextPiecesToAdd).build();
                 double score = scoringFunction.apply(loadout);
                 return OptimizerResponse.of(ImmutableList.of(nextPiecesToAdd), score);
@@ -136,8 +142,8 @@ public class LoadoutOptimizer {
             reduce(OptimizerResponse.empty(), OptimizerResponse.merger());
     }
 
-    private OptimizerResponse optimizeTerminal(Loadout currentLoadout, ArmorPiece armorPiece) {
-        List<ArmorPiece> armorPiecesToAdd = ImmutableList.of(armorPiece);
+    private OptimizerResponse optimizeTerminal(Loadout currentLoadout, ThinArmorPiece armorPiece) {
+        List<ThinArmorPiece> armorPiecesToAdd = ImmutableList.of(armorPiece);
         Loadout resultingLoadout = Loadout.builder(currentLoadout).withArmorPiece(armorPiece).build();
         double score = scoringFunction.apply(resultingLoadout);
         return OptimizerResponse.of(ImmutableList.of(armorPiecesToAdd), score);

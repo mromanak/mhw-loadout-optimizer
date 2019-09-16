@@ -75,6 +75,7 @@ public class LoadoutController {
         loadoutResponse.setLevel2Slots(loadout.getLevel2Slots());
         loadoutResponse.setLevel3Slots(loadout.getLevel3Slots());
         loadoutResponse.setLevel4Slots(loadout.getLevel4Slots());
+        loadoutResponse.setScore(loadout.getScore());
         return loadoutResponse;
     }
 }

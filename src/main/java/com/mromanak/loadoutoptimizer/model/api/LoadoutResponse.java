@@ -28,4 +28,7 @@ public class LoadoutResponse {
 
     @ApiModelProperty(notes = "The number of unused level 3 decoration slots granted by the loadout")
     private int level4Slots;
+
+    @ApiModelProperty(notes = "The score of the loadout as determined by the scoring function described in the request")
+    private double score;
 }
