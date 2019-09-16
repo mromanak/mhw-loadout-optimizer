@@ -39,7 +39,7 @@ public enum ArmorType {
     }
 
     @JsonCreator
-    public ArmorType forName(String name) {
+    public static ArmorType forName(String name) {
         ArmorType armorType = nameToValueMap.get(name);
         if(armorType == null) {
             throw new IllegalArgumentException(
