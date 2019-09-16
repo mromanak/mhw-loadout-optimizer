@@ -1,6 +1,6 @@
 package com.mromanak.loadoutoptimizer.scoring;
 
-import com.mromanak.loadoutoptimizer.model.ArmorType;
+import com.mromanak.loadoutoptimizer.model.jpa.ArmorType;
 
 import java.util.function.Function;
 
