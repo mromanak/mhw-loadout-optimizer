@@ -53,7 +53,7 @@ public class LoadoutOptimizer {
             stream().
             map((List<ThinArmorPiece> newArmorPieces) -> {
                 Loadout tmp = Loadout.builder(startingLoadout).withArmorPieces(newArmorPieces).build();
-                return Loadout.builder().withArmorPieces(armorPieces).withScore(scoringFunction.apply(tmp)).build();
+                return Loadout.builder(tmp).withScore(scoringFunction.apply(tmp)).build();
             }).
             collect(toList());
     }
@@ -75,7 +75,7 @@ public class LoadoutOptimizer {
             stream().
             map((List<ThinArmorPiece> armorPieces) -> {
                 Loadout tmp = Loadout.builder().withArmorPieces(armorPieces).build();
-                return Loadout.builder().withArmorPieces(armorPieces).withScore(scoringFunction.apply(tmp)).build();
+                return Loadout.builder(tmp).withScore(scoringFunction.apply(tmp)).build();
             }).
             collect(toList());
     }
