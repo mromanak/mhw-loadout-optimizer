@@ -6,21 +6,21 @@ public class ArmorPieceDtoMaxTotalSlotsValidator extends MaxTotalSlotsValidator<
 
     @Override
     protected int extractLevel1Slots(ArmorPieceDto armorPieceDto) {
-        return armorPieceDto.getLevel1Slots();
+        return nullToZero(armorPieceDto.getLevel1Slots());
     }
 
     @Override
     protected int extractLevel2Slots(ArmorPieceDto armorPieceDto) {
-        return armorPieceDto.getLevel2Slots();
+        return nullToZero(armorPieceDto.getLevel2Slots());
     }
 
     @Override
     protected int extractLevel3Slots(ArmorPieceDto armorPieceDto) {
-        return armorPieceDto.getLevel3Slots();
+        return nullToZero(armorPieceDto.getLevel3Slots());
     }
 
     @Override
     protected int extractLevel4Slots(ArmorPieceDto armorPieceDto) {
-        return armorPieceDto.getLevel4Slots();
+        return nullToZero(armorPieceDto.getLevel4Slots());
     }
 }

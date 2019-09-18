@@ -30,4 +30,8 @@ public abstract class MaxTotalSlotsValidator<T> implements ConstraintValidator<M
     protected abstract int extractLevel3Slots(T t);
 
     protected abstract int extractLevel4Slots(T t);
+
+    protected int nullToZero(Integer integer) {
+        return integer == null ? 0 : integer;
+    }
 }
