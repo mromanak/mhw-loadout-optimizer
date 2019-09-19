@@ -17,7 +17,7 @@ CREATE CACHED TABLE "PUBLIC"."ARMOR_PIECE"(
     "SET_BONUS_ID" VARCHAR
 );     
 ALTER TABLE "PUBLIC"."ARMOR_PIECE" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_4" PRIMARY KEY("ID");   
--- 1495 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE;           
+-- 1505 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE;           
 INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('diablos-head-alpha-plus', 0, 0, 1, 0, 0, STRINGDECODE('Diablos Helm \u03b1 +'), 'Diablos', '4', 'diablos-ambition'),
 ('kestodon-arms-lr', 2, 0, 0, 0, 0, 'Kestodon Guards', 'Kestodon', '0', NULL),
@@ -1551,7 +1551,18 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('stun-charm-iii', 5, 0, 0, 0, 0, 'Stun Charm III', 'Stun', '9', NULL),
 ('thunder-charm-iii', 5, 0, 0, 0, 0, 'Thunder Charm III', 'Thunder', '9', NULL),
 ('water-charm-iii', 5, 0, 0, 0, 0, 'Water Charm III', 'Water', '9', NULL),
-('whetstone-charm-iii', 5, 0, 0, 0, 0, 'Whetstone Charm III', 'Whetstone', '9', NULL);     
+('whetstone-charm-iii', 5, 0, 0, 0, 0, 'Whetstone Charm III', 'Whetstone', '9', NULL),
+('nergigante-head-alpha-plus', 0, 1, 0, 1, 0, STRINGDECODE('Ruinous Helm \u03b1 +'), 'Nergigante', '4', 'nergigante-ambition'),
+('nergigante-body-alpha-plus', 1, 0, 2, 0, 0, STRINGDECODE('Ruinous Mail \u03b1 +'), 'Nergigante', '4', 'nergigante-ambition'),
+('nergigante-arms-alpha-plus', 2, 0, 0, 1, 0, STRINGDECODE('Ruinous Vambraces \u03b1 +'), 'Nergigante', '4', 'nergigante-ambition');
+INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
+('nergigante-waist-alpha-plus', 3, 1, 1, 0, 0, STRINGDECODE('Ruinous Coil \u03b1 +'), 'Nergigante', '4', 'nergigante-ambition'),
+('nergigante-legs-alpha-plus', 4, 0, 1, 0, 0, STRINGDECODE('Ruinous Greaves \u03b1 +'), 'Nergigante', '4', 'nergigante-ambition'),
+('nergigante-head-beta-plus', 0, 0, 1, 0, 1, STRINGDECODE('Ruinous Helm \u03b2 +'), 'Nergigante', '5', 'nergigante-ambition'),
+('nergigante-body-beta-plus', 1, 0, 1, 0, 1, STRINGDECODE('Ruinous Mail \u03b2 +'), 'Nergigante', '5', 'nergigante-ambition'),
+('nergigante-arms-beta-plus', 2, 1, 0, 0, 1, STRINGDECODE('Ruinous Vambraces \u03b2 +'), 'Nergigante', '5', 'nergigante-ambition'),
+('nergigante-waist-beta-plus', 3, 1, 0, 0, 1, STRINGDECODE('Ruinous Coil \u03b2 +'), 'Nergigante', '5', 'nergigante-ambition'),
+('nergigante-legs-beta-plus', 4, 1, 0, 0, 1, STRINGDECODE('Ruinous Greaves \u03b2 +'), 'Nergigante', '5', 'nergigante-ambition');              
 CREATE CACHED TABLE "PUBLIC"."ARMOR_PIECE_SKILL"(
     "SKILL_LEVEL" INTEGER NOT NULL CHECK (("SKILL_LEVEL" <= 7)
     AND ("SKILL_LEVEL" >= 1)),
@@ -1559,7 +1570,7 @@ CREATE CACHED TABLE "PUBLIC"."ARMOR_PIECE_SKILL"(
     "SKILL_ID" VARCHAR NOT NULL
 );      
 ALTER TABLE "PUBLIC"."ARMOR_PIECE_SKILL" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_F" PRIMARY KEY("ARMOR_PIECE_ID", "SKILL_ID");     
--- 2163 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE_SKILL;     
+-- 2180 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE_SKILL;     
 INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'diablos-head-alpha-plus', 'slugger'),
 (1, 'ko-charm-i', 'slugger'),
@@ -3747,7 +3758,25 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (3, 'stun-charm-iii', 'stun-resistance'),
 (3, 'thunder-charm-iii', 'thunder-resistance'),
 (3, 'water-charm-iii', 'water-resistance'),
-(3, 'whetstone-charm-iii', 'speed-sharpening');   
+(3, 'whetstone-charm-iii', 'speed-sharpening'),
+(1, 'nergigante-head-alpha-plus', 'stamina-surge'),
+(2, 'nergigante-head-alpha-plus', 'maximum-might'),
+(1, 'nergigante-body-alpha-plus', 'maximum-might'),
+(2, 'nergigante-body-alpha-plus', 'stamina-surge'),
+(2, 'nergigante-arms-alpha-plus', 'agitator'),
+(2, 'nergigante-arms-alpha-plus', 'attack-boost'),
+(1, 'nergigante-waist-alpha-plus', 'earplugs'),
+(3, 'nergigante-waist-alpha-plus', 'attack-boost'),
+(1, 'nergigante-legs-alpha-plus', 'agitator');              
+INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
+(2, 'nergigante-legs-alpha-plus', 'earplugs'),
+(2, 'nergigante-head-beta-plus', 'maximum-might'),
+(2, 'nergigante-body-beta-plus', 'stamina-surge'),
+(1, 'nergigante-arms-beta-plus', 'attack-boost'),
+(2, 'nergigante-arms-beta-plus', 'agitator'),
+(1, 'nergigante-waist-beta-plus', 'earplugs'),
+(2, 'nergigante-waist-beta-plus', 'attack-boost'),
+(2, 'nergigante-legs-beta-plus', 'earplugs');           
 CREATE CACHED TABLE "PUBLIC"."JEWEL"(
     "ID" VARCHAR NOT NULL,
     "JEWEL_LEVEL" INTEGER NOT NULL CHECK (("JEWEL_LEVEL" >= 1)
@@ -3773,7 +3802,7 @@ CREATE CACHED TABLE "PUBLIC"."SET_BONUS"(
     "NAME" VARCHAR NOT NULL
 );            
 ALTER TABLE "PUBLIC"."SET_BONUS" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_1" PRIMARY KEY("ID");     
--- 51 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS;               
+-- 52 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS;               
 INSERT INTO "PUBLIC"."SET_BONUS" VALUES
 ('diablos-ambition', 'Diablos Ambition'),
 ('anjanath-power', 'Anjanath Power'),
@@ -3825,7 +3854,8 @@ INSERT INTO "PUBLIC"."SET_BONUS" VALUES
 ('shara-ishvalda-divinity', 'Shara Ishvalda Divinity'),
 ('zorah-magdaros-essence', 'Zorah Magdaros Essence'),
 ('zinogre-essence', 'Zinogre Essence'),
-('lunastra-essence', 'Lunastra Essence');            
+('lunastra-essence', 'Lunastra Essence'),
+('nergigante-ambition', 'Nergigante Ambition');            
 CREATE CACHED TABLE "PUBLIC"."SET_BONUS_ARMOR_PIECES"(
     "SET_BONUS_ID" VARCHAR NOT NULL,
     "ARMOR_PIECES_ID" VARCHAR NOT NULL
@@ -3840,7 +3870,7 @@ CREATE CACHED TABLE "PUBLIC"."SET_BONUS_SKILL"(
     "SKILL_ID" VARCHAR NOT NULL
 );
 ALTER TABLE "PUBLIC"."SET_BONUS_SKILL" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_5" PRIMARY KEY("SET_BONUS_ID", "SKILL_ID");         
--- 59 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS_SKILL;         
+-- 60 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS_SKILL;         
 INSERT INTO "PUBLIC"."SET_BONUS_SKILL" VALUES
 (3, 1, 'diablos-ambition', 'slugger-secret'),
 (3, 1, 'anjanath-power', 'adrenaline'),
@@ -3900,7 +3930,8 @@ INSERT INTO "PUBLIC"."SET_BONUS_SKILL" VALUES
 (4, 1, 'shara-ishvalda-divinity', 'gaia-s-veil'),
 (3, 1, 'zorah-magdaros-essence', 'artillery-secret'),
 (3, 1, 'zinogre-essence', 'latent-power-secret'),
-(3, 1, 'lunastra-essence', 'tool-specialist-secret');         
+(3, 1, 'lunastra-essence', 'tool-specialist-secret'),
+(2, 1, 'nergigante-ambition', 'hasten-recovery');       
 CREATE CACHED TABLE "PUBLIC"."SKILL"(
     "ID" VARCHAR NOT NULL,
     "DESCRIPTION" VARCHAR NOT NULL,

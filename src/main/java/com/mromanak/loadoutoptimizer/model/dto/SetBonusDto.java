@@ -8,7 +8,6 @@ import lombok.Setter;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 import java.util.SortedSet;
 
 @Data
@@ -22,11 +21,9 @@ public class SetBonusDto {
     private String name;
 
     @Valid
-    @Size(min = 1, message = "Set bonus must provide at least one skill")
     SortedSet<SetBonusSkillDto> skills;
 
     @Valid
-    @Size(min = 1, message = "Set bonus must contain at least one armor piece")
     SortedSet<String> armorPieces;
 
     public void setName(String name) {
