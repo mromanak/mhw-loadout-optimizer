@@ -529,16 +529,6 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('rathian-arms-beta-plus', 2, 0, 0, 0, 1, STRINGDECODE('Rathian Vambraces \u03b2 +'), 'Rathian', '5', 'rathian-essence'),
 ('rathian-waist-beta-plus', 3, 1, 0, 0, 1, STRINGDECODE('Rathian Coil \u03b2 +'), 'Rathian', '5', 'rathian-essence'),
 ('rathian-legs-beta-plus', 4, 0, 0, 0, 1, STRINGDECODE('Rathian Greaves \u03b2 +'), 'Rathian', '5', 'rathian-essence'),
-('deviljho-head-alpha-plus', 0, 1, 0, 0, 0, STRINGDECODE('Esurient Helm \u03b1 +'), 'Deviljho', '4', 'deviljho-essence'),
-('deviljho-body-alpha-plus', 1, 0, 1, 0, 0, STRINGDECODE('Esurient Mail \u03b1 +'), 'Deviljho', '4', 'deviljho-essence'),
-('deviljho-arms-alpha-plus', 2, 0, 1, 0, 0, STRINGDECODE('Esurient Vambraces \u03b1 +'), 'Deviljho', '4', 'deviljho-essence'),
-('deviljho-waist-alpha-plus', 3, 1, 0, 0, 0, STRINGDECODE('Esurient Faulds \u03b1 +'), 'Deviljho', '4', 'deviljho-essence'),
-('deviljho-legs-alpha-plus', 4, 0, 2, 0, 0, STRINGDECODE('Esurient Greaves \u03b1 +'), 'Deviljho', '4', 'deviljho-essence'),
-('deviljho-head-beta-plus', 0, 0, 0, 1, 1, STRINGDECODE('Esurient Helm \u03b2 +'), 'Deviljho', '5', 'deviljho-essence'),
-('deviljho-body-beta-plus', 1, 0, 2, 0, 1, STRINGDECODE('Esurient Mail \u03b2 +'), 'Deviljho', '5', 'deviljho-essence'),
-('deviljho-arms-beta-plus', 2, 0, 0, 0, 1, STRINGDECODE('Esurient Vambraces \u03b2 +'), 'Deviljho', '5', 'deviljho-essence'),
-('deviljho-waist-beta-plus', 3, 1, 0, 0, 1, STRINGDECODE('Esurient Faulds \u03b2 +'), 'Deviljho', '5', 'deviljho-essence'),
-('deviljho-legs-beta-plus', 4, 0, 1, 0, 1, STRINGDECODE('Esurient Greaves \u03b2 +'), 'Deviljho', '5', 'deviljho-essence'),
 ('seething-bazelgeuse-head-alpha-plus', 0, 1, 1, 0, 0, STRINGDECODE('Pride Helm \u03b1 +'), 'Seething Bazelgeuse', '4', 'bazelgeuse-ambition'),
 ('seething-bazelgeuse-body-alpha-plus', 1, 2, 0, 0, 0, STRINGDECODE('Pride Mail \u03b1 +'), 'Seething Bazelgeuse', '4', 'bazelgeuse-ambition'),
 ('seething-bazelgeuse-arms-alpha-plus', 2, 0, 0, 1, 0, STRINGDECODE('Pride Vambraces \u03b1 +'), 'Seething Bazelgeuse', '4', 'bazelgeuse-ambition'),
@@ -549,8 +539,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('seething-bazelgeuse-arms-beta-plus', 2, 0, 0, 1, 1, STRINGDECODE('Pride Vambraces \u03b2 +'), 'Seething Bazelgeuse', '5', 'bazelgeuse-ambition'),
 ('seething-bazelgeuse-waist-beta-plus', 3, 0, 1, 0, 1, STRINGDECODE('Pride Coil \u03b2 +'), 'Seething Bazelgeuse', '5', 'bazelgeuse-ambition'),
 ('seething-bazelgeuse-legs-beta-plus', 4, 0, 1, 0, 1, STRINGDECODE('Pride Greaves \u03b2 +'), 'Seething Bazelgeuse', '5', 'bazelgeuse-ambition'),
-('shara-ishvalda-head-alpha-plus', 0, 0, 0, 0, 0, STRINGDECODE('Shara Ishvalda Helm \u03b1 + (TODO Add skills/jewel slots)'), 'Shara Ishvalda', '4', 'shara-ishvalda-divinity');          
-INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
+('shara-ishvalda-head-alpha-plus', 0, 0, 0, 0, 0, STRINGDECODE('Shara Ishvalda Helm \u03b1 + (TODO Add skills/jewel slots)'), 'Shara Ishvalda', '4', 'shara-ishvalda-divinity'),
 ('shara-ishvalda-body-alpha-plus', 1, 0, 1, 1, 0, STRINGDECODE('Shara Ishvalda Mail \u03b1 +'), 'Shara Ishvalda', '4', 'shara-ishvalda-divinity'),
 ('shara-ishvalda-arms-alpha-plus', 2, 1, 0, 0, 0, STRINGDECODE('Shara Ishvalda Braces \u03b1 +'), 'Shara Ishvalda', '4', 'shara-ishvalda-divinity'),
 ('shara-ishvalda-waist-alpha-plus', 3, 0, 1, 1, 0, STRINGDECODE('Shara Ishvalda Coil \u03b1 +'), 'Shara Ishvalda', '4', 'shara-ishvalda-divinity'),
@@ -559,7 +548,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('shara-ishvalda-body-beta-plus', 1, 0, 1, 0, 1, STRINGDECODE('Shara Ishvalda Mail \u03b2 +'), 'Shara Ishvalda', '5', 'shara-ishvalda-divinity'),
 ('shara-ishvalda-arms-beta-plus', 2, 0, 0, 0, 1, STRINGDECODE('Shara Ishvalda Braces \u03b2 +'), 'Shara Ishvalda', '5', 'shara-ishvalda-divinity'),
 ('shara-ishvalda-waist-beta-plus', 3, 0, 0, 1, 1, STRINGDECODE('Shara Ishvalda Coil \u03b2 +'), 'Shara Ishvalda', '5', 'shara-ishvalda-divinity'),
-('shara-ishvalda-legs-beta-plus', 4, 1, 1, 0, 1, STRINGDECODE('Shara Ishvalda Greaves \u03b2 +'), 'Shara Ishvalda', '5', 'shara-ishvalda-divinity'),
+('shara-ishvalda-legs-beta-plus', 4, 1, 1, 0, 1, STRINGDECODE('Shara Ishvalda Greaves \u03b2 +'), 'Shara Ishvalda', '5', 'shara-ishvalda-divinity');             
+INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('shrieking-legiana-head-alpha-plus', 0, 3, 0, 0, 0, STRINGDECODE('Hoarcry Helm \u03b1 +'), 'Shrieking Legiana', '4', 'legiana-ambition'),
 ('shrieking-legiana-body-alpha-plus', 1, 2, 0, 0, 0, STRINGDECODE('Hoarcry Mail \u03b1 +'), 'Shrieking Legiana', '4', 'legiana-ambition'),
 ('shrieking-legiana-arms-alpha-plus', 2, 2, 0, 0, 0, STRINGDECODE('Hoarcry Vambraces \u03b1 +'), 'Shrieking Legiana', '4', 'legiana-ambition'),
@@ -581,8 +571,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('teostra-waist-beta-plus', 3, 1, 1, 0, 1, STRINGDECODE('Kaiser Coil \u03b2 +'), 'Teostra', '5', 'teostra-technique'),
 ('teostra-legs-beta-plus', 4, 0, 0, 0, 1, STRINGDECODE('Kaiser Greaves \u03b2 +'), 'Teostra', '5', 'teostra-technique'),
 ('tigrex-head-alpha-plus', 0, 1, 0, 0, 0, STRINGDECODE('Tigrex Helm \u03b1 +'), 'Tigrex', '4', 'tigrex-essence'),
-('tigrex-body-alpha-plus', 1, 0, 1, 0, 0, STRINGDECODE('Tigrex Mail \u03b1 +'), 'Tigrex', '4', 'tigrex-essence');
-INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
+('tigrex-body-alpha-plus', 1, 0, 1, 0, 0, STRINGDECODE('Tigrex Mail \u03b1 +'), 'Tigrex', '4', 'tigrex-essence'),
 ('tigrex-arms-alpha-plus', 2, 1, 0, 0, 0, STRINGDECODE('Tigrex Braces \u03b1 +'), 'Tigrex', '4', 'tigrex-essence'),
 ('tigrex-waist-alpha-plus', 3, 1, 0, 1, 0, STRINGDECODE('Tigrex Tassets \u03b1 +'), 'Tigrex', '4', 'tigrex-essence'),
 ('tigrex-legs-alpha-plus', 4, 1, 0, 1, 0, STRINGDECODE('Tigrex Greaves \u03b1 +'), 'Tigrex', '4', 'tigrex-essence'),
@@ -593,7 +582,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('tigrex-legs-beta-plus', 4, 0, 1, 0, 1, STRINGDECODE('Tigrex Greaves \u03b2 +'), 'Tigrex', '5', 'tigrex-essence'),
 ('uragaan-head-alpha-plus', 0, 1, 1, 0, 0, STRINGDECODE('Uragaan Helm \u03b1 +'), 'Uragaan', '4', 'uragaan-ambition'),
 ('uragaan-body-alpha-plus', 1, 0, 0, 1, 0, STRINGDECODE('Uragaan Mail \u03b1 +'), 'Uragaan', '4', 'uragaan-ambition'),
-('uragaan-arms-alpha-plus', 2, 0, 1, 0, 0, STRINGDECODE('Uragaan Vambraces \u03b1 +'), 'Uragaan', '4', 'uragaan-ambition'),
+('uragaan-arms-alpha-plus', 2, 0, 1, 0, 0, STRINGDECODE('Uragaan Vambraces \u03b1 +'), 'Uragaan', '4', 'uragaan-ambition');           
+INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('uragaan-waist-alpha-plus', 3, 1, 1, 0, 0, STRINGDECODE('Uragaan Coil \u03b1 +'), 'Uragaan', '4', 'uragaan-ambition'),
 ('uragaan-legs-alpha-plus', 4, 1, 0, 0, 0, STRINGDECODE('Uragaan Greaves \u03b1 +'), 'Uragaan', '4', 'uragaan-ambition'),
 ('uragaan-head-beta-plus', 0, 0, 0, 1, 1, STRINGDECODE('Uragaan Helm \u03b2 +'), 'Uragaan', '5', 'uragaan-ambition'),
@@ -616,8 +606,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('viper-tobi-kadachi-arms-alpha-plus', 2, 0, 1, 0, 0, STRINGDECODE('Viper Kadachi Braces \u03b1 +'), 'Viper Tobi-Kadachi', '4', NULL),
 ('viper-tobi-kadachi-waist-alpha-plus', 3, 0, 1, 0, 0, STRINGDECODE('Viper Kadachi Coil \u03b1 +'), 'Viper Tobi-Kadachi', '4', NULL),
 ('viper-tobi-kadachi-legs-alpha-plus', 4, 0, 1, 0, 0, STRINGDECODE('Viper Kadachi Greaves \u03b1 +'), 'Viper Tobi-Kadachi', '4', NULL),
-('viper-tobi-kadachi-head-beta-plus', 0, 0, 0, 0, 1, STRINGDECODE('Viper Kadachi Hat \u03b2 +'), 'Viper Tobi-Kadachi', '5', NULL);
-INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
+('viper-tobi-kadachi-head-beta-plus', 0, 0, 0, 0, 1, STRINGDECODE('Viper Kadachi Hat \u03b2 +'), 'Viper Tobi-Kadachi', '5', NULL),
 ('viper-tobi-kadachi-body-beta-plus', 1, 1, 0, 0, 1, STRINGDECODE('Viper Kadachi Mail \u03b2 +'), 'Viper Tobi-Kadachi', '5', NULL),
 ('viper-tobi-kadachi-arms-beta-plus', 2, 0, 0, 0, 1, STRINGDECODE('Viper Kadachi Braces \u03b2 +'), 'Viper Tobi-Kadachi', '5', NULL),
 ('viper-tobi-kadachi-waist-beta-plus', 3, 1, 0, 0, 1, STRINGDECODE('Viper Kadachi Coil \u03b2 +'), 'Viper Tobi-Kadachi', '5', NULL),
@@ -627,7 +616,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('yian-garuga-arms-alpha-plus', 2, 1, 0, 0, 0, STRINGDECODE('Garuga Vambraces \u03b1 +'), 'Yian-Garuga', '4', NULL),
 ('yian-garuga-waist-alpha-plus', 3, 2, 0, 0, 0, STRINGDECODE('Garuga Tassets \u03b1 +'), 'Yian-Garuga', '4', NULL),
 ('yian-garuga-legs-alpha-plus', 4, 0, 0, 2, 0, STRINGDECODE('Garuga Greaves \u03b1 +'), 'Yian-Garuga', '4', NULL),
-('yian-garuga-head-beta-plus', 0, 0, 1, 0, 1, STRINGDECODE('Garuga Helm \u03b2 +'), 'Yian-Garuga', '5', NULL),
+('yian-garuga-head-beta-plus', 0, 0, 1, 0, 1, STRINGDECODE('Garuga Helm \u03b2 +'), 'Yian-Garuga', '5', NULL);      
+INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('yian-garuga-body-beta-plus', 1, 0, 0, 0, 1, STRINGDECODE('Garuga Mail \u03b2 +'), 'Yian-Garuga', '5', NULL),
 ('yian-garuga-arms-beta-plus', 2, 0, 0, 0, 1, STRINGDECODE('Garuga Vambraces \u03b2 +'), 'Yian-Garuga', '5', NULL),
 ('yian-garuga-waist-beta-plus', 3, 0, 0, 1, 1, STRINGDECODE('Garuga Tassets \u03b2 +'), 'Yian-Garuga', '5', NULL),
@@ -650,8 +640,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('zorah-magdaros-head-beta-plus', 0, 1, 1, 0, 1, STRINGDECODE('Zorah Headgear \u03b2 +'), 'Zorah Magdaros', '5', 'zorah-magdaros-essence'),
 ('zorah-magdaros-body-beta-plus', 1, 0, 1, 0, 1, STRINGDECODE('Zorah Hide \u03b2 +'), 'Zorah Magdaros', '5', 'zorah-magdaros-essence'),
 ('zorah-magdaros-arms-beta-plus', 2, 1, 0, 0, 1, STRINGDECODE('Zorah Claws \u03b2 +'), 'Zorah Magdaros', '5', 'zorah-magdaros-essence'),
-('zorah-magdaros-waist-beta-plus', 3, 0, 0, 1, 1, STRINGDECODE('Zorah Spine \u03b2 +'), 'Zorah Magdaros', '5', 'zorah-magdaros-essence');              
-INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
+('zorah-magdaros-waist-beta-plus', 3, 0, 0, 1, 1, STRINGDECODE('Zorah Spine \u03b2 +'), 'Zorah Magdaros', '5', 'zorah-magdaros-essence'),
 ('zorah-magdaros-legs-beta-plus', 4, 0, 0, 1, 1, STRINGDECODE('Zorah Spurs \u03b2 +'), 'Zorah Magdaros', '5', 'zorah-magdaros-essence'),
 ('kestodon-arms-alpha-plus', 2, 2, 0, 0, 0, STRINGDECODE('Kestodon Guards \u03b1 +'), 'Kestodon', '4', NULL),
 ('kestodon-arms-beta-plus', 2, 1, 0, 0, 1, STRINGDECODE('Kestodon Guards \u03b2 +'), 'Kestodon', '5', NULL),
@@ -663,7 +652,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('cortos-body-beta-plus', 1, 0, 0, 0, 1, STRINGDECODE('Cortos Cape \u03b2 +'), 'Cortos', '5', NULL),
 ('gajau-legs-alpha-plus', 4, 1, 1, 0, 0, STRINGDECODE('Gajau Boots \u03b1 +'), 'Gajau', '4', NULL),
 ('gajau-legs-beta-plus', 4, 1, 0, 0, 1, STRINGDECODE('Gajau Boots \u03b2 +'), 'Gajau', '5', NULL),
-('shamos-head-beta-plus', 0, 0, 1, 0, 1, STRINGDECODE('Shamos Goggles \u03b2 +'), 'Shamos', '5', NULL),
+('shamos-head-beta-plus', 0, 0, 1, 0, 1, STRINGDECODE('Shamos Goggles \u03b2 +'), 'Shamos', '5', NULL); 
+INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('shamos-head-alpha-plus', 0, 1, 1, 0, 0, STRINGDECODE('Shamos Goggles \u03b1 +'), 'Shamos', '4', NULL),
 ('gastodon-head-alpha-plus', 0, 1, 0, 0, 0, STRINGDECODE('Gastodon Horn \u03b1 +'), 'Gastodon', '4', NULL),
 ('gastodon-head-beta-plus', 0, 1, 0, 0, 1, STRINGDECODE('Gastodon Horn \u03b2 +'), 'Gastodon', '5', NULL),
@@ -691,8 +681,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('commission-head-beta', 0, 0, 1, 0, 0, STRINGDECODE('Commission Helm \u03b2'), 'Commission', '2', 'commission-guidance'),
 ('damascus-head-alpha', 0, 1, 0, 0, 0, STRINGDECODE('Damascus Helm \u03b1'), 'Damascus', '1', NULL),
 ('damascus-head-beta', 0, 0, 0, 1, 0, STRINGDECODE('Damascus Helm \u03b2'), 'Damascus', '2', NULL),
-('dante-head-alpha', 0, 1, 0, 0, 0, STRINGDECODE('Dante Helm \u03b1'), 'Dante', '1', NULL);    
-INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
+('dante-head-alpha', 0, 1, 0, 0, 0, STRINGDECODE('Dante Helm \u03b1'), 'Dante', '1', NULL),
 ('death-stench-head-alpha', 0, 0, 1, 0, 0, STRINGDECODE('Death Stench Helm \u03b1'), 'Death Stench', '1', NULL),
 ('death-stench-head-beta', 0, 0, 0, 1, 0, STRINGDECODE('Death Stench Helm \u03b2'), 'Death Stench', '2', NULL),
 ('diablos-head-alpha', 0, 0, 0, 0, 0, STRINGDECODE('Diablos Helm \u03b1'), 'Diablos', '1', 'diablos-mastery'),
@@ -704,7 +693,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('dober-head-beta', 0, 1, 0, 0, 0, STRINGDECODE('Dober Helm \u03b2'), 'Dober', '2', NULL),
 ('dodogama-head-alpha', 0, 0, 0, 0, 0, STRINGDECODE('Dodogama Helm \u03b1'), 'Dodogama', '1', NULL),
 ('dodogama-head-beta', 0, 1, 0, 0, 0, STRINGDECODE('Dodogama Helm \u03b2'), 'Dodogama', '2', NULL),
-('dragonking-head-alpha', 0, 0, 0, 1, 0, STRINGDECODE('Dragonking Helm \u03b1'), 'Dragonking', '1', NULL),
+('dragonking-head-alpha', 0, 0, 0, 1, 0, STRINGDECODE('Dragonking Helm \u03b1'), 'Dragonking', '1', NULL);  
+INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('dragonseal-head-alpha', 0, 0, 0, 0, 0, STRINGDECODE('Dragonseal Helm \u03b1'), 'Dragonseal', '1', NULL),
 ('faux-felyne-head-alpha', 0, 0, 0, 0, 0, STRINGDECODE('Faux Felyne Helm \u03b1'), 'Faux Felyne', '1', NULL),
 ('gala-head-alpha', 0, 2, 0, 1, 0, STRINGDECODE('Gala Helm \u03b1'), 'Gala', '1', 'astera-blessing'),
@@ -732,8 +722,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('kadachi-head-alpha', 0, 0, 0, 0, 0, STRINGDECODE('Kadachi Helm \u03b1'), 'Kadachi', '1', NULL),
 ('kadachi-head-beta', 0, 0, 1, 0, 0, STRINGDECODE('Kadachi Helm \u03b2'), 'Kadachi', '2', NULL),
 ('kirin-head-alpha', 0, 0, 0, 0, 0, STRINGDECODE('Kirin Horn \u03b1'), 'Kirin', '1', 'kirin-favor'),
-('kirin-head-beta', 0, 1, 0, 0, 0, STRINGDECODE('Kirin Horn \u03b2'), 'Kirin', '2', 'kirin-favor');               
-INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
+('kirin-head-beta', 0, 1, 0, 0, 0, STRINGDECODE('Kirin Horn \u03b2'), 'Kirin', '2', 'kirin-favor'),
 ('kirin-head-gamma', 0, 0, 1, 0, 0, STRINGDECODE('Kirin Horn \u03b3'), 'Kirin', '3', 'kirin-favor'),
 ('kulu-head-alpha', 0, 0, 0, 0, 0, STRINGDECODE('Kulu Helm \u03b1'), 'Kulu', '1', NULL),
 ('kulu-head-beta', 0, 2, 0, 0, 0, STRINGDECODE('Kulu Helm \u03b2'), 'Kulu', '2', NULL),
@@ -745,7 +734,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('kushala-head-gamma', 0, 0, 1, 0, 0, STRINGDECODE('Kushala Helm \u03b3'), 'Kushala', '3', 'kushala-daora-flight'),
 ('lavasioth-head-alpha', 0, 0, 0, 0, 0, STRINGDECODE('Lavasioth Helm \u03b1'), 'Lavasioth', '1', NULL),
 ('lavasioth-head-beta', 0, 2, 0, 0, 0, STRINGDECODE('Lavasioth Helm \u03b2'), 'Lavasioth', '2', NULL),
-('leather-head-alpha', 0, 0, 0, 0, 0, STRINGDECODE('Leather Helm \u03b1'), 'Leather', '1', NULL),
+('leather-head-alpha', 0, 0, 0, 0, 0, STRINGDECODE('Leather Helm \u03b1'), 'Leather', '1', NULL);  
+INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('leather-head-beta', 0, 1, 0, 0, 0, STRINGDECODE('Leather Helm \u03b2'), 'Leather', '2', NULL),
 ('legiana-head-alpha', 0, 0, 0, 0, 0, STRINGDECODE('Legiana Helm \u03b1'), 'Legiana', '1', 'legiana-favor'),
 ('legiana-head-beta', 0, 1, 0, 0, 0, STRINGDECODE('Legiana Helm \u03b2'), 'Legiana', '2', 'legiana-favor'),
@@ -772,8 +762,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('rathian-head-beta', 0, 1, 0, 0, 0, STRINGDECODE('Rathian Helm \u03b2'), 'Rathian', '2', NULL),
 ('sealed-head-alpha', 0, 1, 1, 0, 0, STRINGDECODE('Sealed Helm \u03b1'), 'Sealed', '1', NULL),
 ('shamos-head-alpha', 0, 0, 0, 0, 0, STRINGDECODE('Shamos Goggles \u03b1'), 'Shamos', '1', NULL),
-('shamos-head-beta', 0, 1, 0, 0, 0, STRINGDECODE('Shamos Goggles \u03b2'), 'Shamos', '2', NULL);              
-INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
+('shamos-head-beta', 0, 1, 0, 0, 0, STRINGDECODE('Shamos Goggles \u03b2'), 'Shamos', '2', NULL),
 ('skull-head-alpha', 0, 0, 1, 0, 0, STRINGDECODE('Skull Helm \u03b1'), 'Skull', '1', NULL),
 ('strategist-head-alpha', 0, 1, 0, 0, 0, STRINGDECODE('Strategist Helm \u03b1'), 'Strategist', '1', NULL),
 ('teostra-head-alpha', 0, 0, 0, 0, 0, STRINGDECODE('Kaiser Crown \u03b1'), 'Teostra', '1', 'teostra-technique'),
@@ -784,7 +773,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('uragaan-head-alpha', 0, 0, 0, 1, 0, STRINGDECODE('Uragaan Helm \u03b1'), 'Uragaan', '1', 'uragaan-protection'),
 ('uragaan-head-beta', 0, 1, 0, 1, 0, STRINGDECODE('Uragaan Helm \u03b2'), 'Uragaan', '2', 'uragaan-protection'),
 ('vaal-hazak-head-alpha', 0, 0, 0, 0, 0, STRINGDECODE('Vaal Hazak Helm \u03b1'), 'Vaal Hazak', '1', 'vaal-hazak-vitality'),
-('vaal-hazak-head-beta', 0, 1, 0, 0, 0, STRINGDECODE('Vaal Hazak Helm \u03b2'), 'Vaal Hazak', '2', 'vaal-hazak-vitality'),
+('vaal-hazak-head-beta', 0, 1, 0, 0, 0, STRINGDECODE('Vaal Hazak Helm \u03b2'), 'Vaal Hazak', '2', 'vaal-hazak-vitality');   
+INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('vaal-hazak-head-gamma', 0, 0, 0, 1, 0, STRINGDECODE('Vaal Hazak Helm \u03b3'), 'Vaal Hazak', '3', 'vaal-hazak-vitality'),
 ('vangis-head-alpha', 0, 1, 0, 0, 0, STRINGDECODE('Vangis Helm \u03b1'), 'Vangis', '1', NULL),
 ('vangis-head-beta', 0, 1, 0, 1, 0, STRINGDECODE('Vangis Helm \u03b2'), 'Vangis', '2', NULL),
@@ -812,8 +802,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('behemoth-body-alpha', 1, 0, 0, 1, 0, STRINGDECODE('Behemoth Mail \u03b1'), 'Behemoth', '1', 'soul-of-the-dragoon'),
 ('blossom-body-alpha', 1, 2, 0, 0, 0, STRINGDECODE('Blossom Mail \u03b1'), 'Blossom', '1', NULL),
 ('bone-body-alpha', 1, 0, 0, 0, 0, STRINGDECODE('Bone Mail \u03b1'), 'Bone', '1', NULL),
-('bone-body-beta', 1, 1, 0, 0, 0, STRINGDECODE('Bone Mail \u03b2'), 'Bone', '2', NULL);               
-INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
+('bone-body-beta', 1, 1, 0, 0, 0, STRINGDECODE('Bone Mail \u03b2'), 'Bone', '2', NULL),
 ('brigade-body-alpha', 1, 0, 1, 0, 0, STRINGDECODE('Brigade Mail \u03b1'), 'Brigade', '1', NULL),
 ('brigade-body-beta', 1, 0, 2, 0, 0, STRINGDECODE('Brigade Mail \u03b2'), 'Brigade', '2', NULL),
 ('chainmail-body-alpha', 1, 0, 0, 0, 0, STRINGDECODE('Chainmail Mail \u03b1'), 'Chainmail', '1', NULL),
@@ -825,7 +814,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('dante-body-alpha', 1, 0, 0, 1, 0, STRINGDECODE('Dante Mail \u03b1'), 'Dante', '1', NULL),
 ('death-stench-body-alpha', 1, 0, 0, 0, 0, STRINGDECODE('Death Stench Mail \u03b1'), 'Death Stench', '1', NULL),
 ('death-stench-body-beta', 1, 0, 0, 1, 0, STRINGDECODE('Death Stench Mail \u03b2'), 'Death Stench', '2', NULL),
-('diablos-body-alpha', 1, 0, 0, 0, 0, STRINGDECODE('Diablos Mail \u03b1'), 'Diablos', '1', 'diablos-mastery'),
+('diablos-body-alpha', 1, 0, 0, 0, 0, STRINGDECODE('Diablos Mail \u03b1'), 'Diablos', '1', 'diablos-mastery');         
+INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('diablos-body-beta', 1, 0, 1, 0, 0, STRINGDECODE('Diablos Mail \u03b2'), 'Diablos', '2', 'diablos-mastery'),
 ('diablos-nero-body-alpha', 1, 1, 0, 0, 0, STRINGDECODE('Diablos Nero Mail \u03b1'), 'Diablos Nero', '1', 'diablos-mastery'),
 ('diablos-nero-body-beta', 1, 1, 1, 0, 0, STRINGDECODE('Diablos Nero Mail \u03b2'), 'Diablos Nero', '2', 'diablos-mastery'),
@@ -853,8 +843,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('jagras-body-alpha', 1, 0, 0, 0, 0, STRINGDECODE('Jagras Mail \u03b1'), 'Jagras', '1', NULL),
 ('jagras-body-beta', 1, 1, 0, 0, 0, STRINGDECODE('Jagras Mail \u03b2'), 'Jagras', '2', NULL),
 ('jyura-body-alpha', 1, 0, 0, 0, 0, STRINGDECODE('Jyura Mail \u03b1'), 'Jyura', '1', NULL),
-('jyura-body-beta', 1, 1, 0, 0, 0, STRINGDECODE('Jyura Mail \u03b2'), 'Jyura', '2', NULL);  
-INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
+('jyura-body-beta', 1, 1, 0, 0, 0, STRINGDECODE('Jyura Mail \u03b2'), 'Jyura', '2', NULL),
 ('kadachi-body-alpha', 1, 0, 0, 0, 0, STRINGDECODE('Kadachi Mail \u03b1'), 'Kadachi', '1', NULL),
 ('kadachi-body-beta', 1, 0, 1, 0, 0, STRINGDECODE('Kadachi Mail \u03b2'), 'Kadachi', '2', NULL),
 ('kirin-body-alpha', 1, 0, 0, 0, 0, STRINGDECODE('Kirin Jacket \u03b1'), 'Kirin', '1', 'kirin-favor'),
@@ -866,7 +855,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('kulve-taroth-body-gamma', 1, 1, 0, 0, 0, STRINGDECODE('Kulve Taroth Mail \u03b3'), 'Kulve Taroth', '3', NULL),
 ('kushala-body-alpha', 1, 0, 0, 0, 0, STRINGDECODE('Kushala Mail \u03b1'), 'Kushala', '1', 'kushala-daora-flight'),
 ('kushala-body-beta', 1, 0, 1, 0, 0, STRINGDECODE('Kushala Mail \u03b2'), 'Kushala', '2', 'kushala-daora-flight'),
-('kushala-body-gamma', 1, 0, 1, 0, 0, STRINGDECODE('Kushala Mail \u03b3'), 'Kushala', '3', 'kushala-daora-flight'),
+('kushala-body-gamma', 1, 0, 1, 0, 0, STRINGDECODE('Kushala Mail \u03b3'), 'Kushala', '3', 'kushala-daora-flight');            
+INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('lavasioth-body-alpha', 1, 0, 0, 0, 0, STRINGDECODE('Lavasioth Mail \u03b1'), 'Lavasioth', '1', NULL),
 ('lavasioth-body-beta', 1, 2, 0, 0, 0, STRINGDECODE('Lavasioth Mail \u03b2'), 'Lavasioth', '2', NULL),
 ('leather-body-alpha', 1, 0, 0, 0, 0, STRINGDECODE('Leather Mail \u03b1'), 'Leather', '1', NULL),
@@ -893,8 +883,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('rathalos-body-beta', 1, 1, 0, 0, 0, STRINGDECODE('Rathalos Mail \u03b2'), 'Rathalos', '2', 'rathalos-mastery'),
 ('rathian-body-alpha', 1, 0, 0, 0, 0, STRINGDECODE('Rathian Mail \u03b1'), 'Rathian', '1', NULL),
 ('rathian-body-beta', 1, 1, 0, 0, 0, STRINGDECODE('Rathian Mail \u03b2'), 'Rathian', '2', NULL),
-('teostra-body-alpha', 1, 0, 0, 0, 0, STRINGDECODE('Kaiser Mail \u03b1'), 'Teostra', '1', 'teostra-technique');
-INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
+('teostra-body-alpha', 1, 0, 0, 0, 0, STRINGDECODE('Kaiser Mail \u03b1'), 'Teostra', '1', 'teostra-technique'),
 ('teostra-body-beta', 1, 2, 0, 0, 0, STRINGDECODE('Kaiser Mail \u03b2'), 'Teostra', '2', 'teostra-technique'),
 ('teostra-body-gamma', 1, 0, 1, 0, 0, STRINGDECODE('Kaiser Mail \u03b3'), 'Teostra', '3', 'teostra-technique'),
 ('tzitzi-body-alpha', 1, 0, 0, 0, 0, STRINGDECODE('Tzitzi Mail \u03b1'), 'Tzitzi', '1', NULL),
@@ -905,7 +894,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('vaal-hazak-body-beta', 1, 2, 0, 0, 0, STRINGDECODE('Vaal Hazak Mail \u03b2'), 'Vaal Hazak', '2', 'vaal-hazak-vitality'),
 ('vaal-hazak-body-gamma', 1, 0, 0, 1, 0, STRINGDECODE('Vaal Hazak Mail \u03b3'), 'Vaal Hazak', '3', 'vaal-hazak-vitality'),
 ('vangis-body-alpha', 1, 0, 1, 0, 0, STRINGDECODE('Vangis Mail \u03b1'), 'Vangis', '1', NULL),
-('vangis-body-beta', 1, 0, 0, 1, 0, STRINGDECODE('Vangis Mail \u03b2'), 'Vangis', '2', NULL),
+('vangis-body-beta', 1, 0, 0, 1, 0, STRINGDECODE('Vangis Mail \u03b2'), 'Vangis', '2', NULL);     
+INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('vespoid-body-alpha', 1, 0, 0, 0, 0, STRINGDECODE('Vespoid Mail \u03b1'), 'Vespoid', '1', NULL),
 ('vespoid-body-beta', 1, 1, 0, 0, 0, STRINGDECODE('Vespoid Mail \u03b2'), 'Vespoid', '2', NULL),
 ('xeno-jiiva-body-alpha', 1, 1, 0, 0, 0, STRINGDECODE('Xeno''Jiiva Mail \u03b1'), 'Xeno''Jiiva', '1', 'xeno-jiiva-divinity'),
@@ -932,8 +922,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('brigade-arms-beta', 2, 1, 0, 0, 0, STRINGDECODE('Brigade Vambraces \u03b2'), 'Brigade', '2', NULL),
 ('chainmail-arms-alpha', 2, 0, 0, 0, 0, STRINGDECODE('Chainmail Vambraces \u03b1'), 'Chainmail', '1', NULL),
 ('chainmail-arms-beta', 2, 1, 0, 0, 0, STRINGDECODE('Chainmail Vambraces \u03b2'), 'Chainmail', '2', NULL),
-('commission-arms-alpha', 2, 1, 0, 0, 0, STRINGDECODE('Commission Vambraces \u03b1'), 'Commission', '1', 'commission-guidance');       
-INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
+('commission-arms-alpha', 2, 1, 0, 0, 0, STRINGDECODE('Commission Vambraces \u03b1'), 'Commission', '1', 'commission-guidance'),
 ('commission-arms-beta', 2, 0, 1, 0, 0, STRINGDECODE('Commission Vambraces \u03b2'), 'Commission', '2', 'commission-guidance'),
 ('damascus-arms-alpha', 2, 0, 0, 0, 0, STRINGDECODE('Damascus Vambraces \u03b1'), 'Damascus', '1', NULL),
 ('damascus-arms-beta', 2, 1, 0, 0, 0, STRINGDECODE('Damascus Vambraces \u03b2'), 'Damascus', '2', NULL),
@@ -943,7 +932,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('diablos-arms-alpha', 2, 0, 0, 0, 0, STRINGDECODE('Diablos Vambraces \u03b1'), 'Diablos', '1', 'diablos-mastery'),
 ('diablos-arms-beta', 2, 0, 1, 0, 0, STRINGDECODE('Diablos Vambraces \u03b2'), 'Diablos', '2', 'diablos-mastery'),
 ('diablos-nero-arms-alpha', 2, 0, 0, 0, 0, STRINGDECODE('Diablos Nero Vambraces \u03b1'), 'Diablos Nero', '1', 'diablos-mastery'),
-('diablos-nero-arms-beta', 2, 1, 1, 0, 0, STRINGDECODE('Diablos Nero Vambraces \u03b2'), 'Diablos Nero', '2', 'diablos-mastery'),
+('diablos-nero-arms-beta', 2, 1, 1, 0, 0, STRINGDECODE('Diablos Nero Vambraces \u03b2'), 'Diablos Nero', '2', 'diablos-mastery');           
+INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('diver-arms-alpha', 2, 0, 1, 0, 0, STRINGDECODE('Diver Vambraces \u03b1'), 'Diver', '1', NULL),
 ('dober-arms-alpha', 2, 0, 0, 0, 0, STRINGDECODE('Dober Vambraces \u03b1'), 'Dober', '1', NULL),
 ('dober-arms-beta', 2, 2, 0, 0, 0, STRINGDECODE('Dober Vambraces \u03b2'), 'Dober', '2', NULL),
@@ -971,8 +961,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('jyura-arms-beta', 2, 1, 0, 0, 0, STRINGDECODE('Jyura Vambraces \u03b2'), 'Jyura', '2', NULL),
 ('kadachi-arms-alpha', 2, 0, 0, 0, 0, STRINGDECODE('Kadachi Vambraces \u03b1'), 'Kadachi', '1', NULL),
 ('kadachi-arms-beta', 2, 0, 1, 0, 0, STRINGDECODE('Kadachi Vambraces \u03b2'), 'Kadachi', '2', NULL),
-('kirin-arms-alpha', 2, 0, 0, 0, 0, STRINGDECODE('Kirin Longarms \u03b1'), 'Kirin', '1', 'kirin-favor'); 
-INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
+('kirin-arms-alpha', 2, 0, 0, 0, 0, STRINGDECODE('Kirin Longarms \u03b1'), 'Kirin', '1', 'kirin-favor'),
 ('kirin-arms-beta', 2, 2, 0, 0, 0, STRINGDECODE('Kirin Longarms \u03b2'), 'Kirin', '2', 'kirin-favor'),
 ('kirin-arms-gamma', 2, 0, 2, 0, 0, STRINGDECODE('Kirin Longarms \u03b3'), 'Kirin', '3', 'kirin-favor'),
 ('kulu-arms-alpha', 2, 0, 0, 0, 0, STRINGDECODE('Kulu Vambraces \u03b1'), 'Kulu', '1', NULL),
@@ -983,7 +972,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('kushala-arms-beta', 2, 0, 0, 1, 0, STRINGDECODE('Kushala Vambraces \u03b2'), 'Kushala', '2', 'kushala-daora-flight'),
 ('kushala-arms-gamma', 2, 3, 0, 0, 0, STRINGDECODE('Kushala Vambraces \u03b3'), 'Kushala', '3', 'kushala-daora-flight'),
 ('leather-arms-alpha', 2, 0, 0, 0, 0, STRINGDECODE('Leather Vambraces \u03b1'), 'Leather', '1', NULL),
-('leather-arms-beta', 2, 1, 0, 0, 0, STRINGDECODE('Leather Vambraces \u03b2'), 'Leather', '2', NULL),
+('leather-arms-beta', 2, 1, 0, 0, 0, STRINGDECODE('Leather Vambraces \u03b2'), 'Leather', '2', NULL);              
+INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('legiana-arms-alpha', 2, 0, 0, 0, 0, STRINGDECODE('Legiana Vambraces \u03b1'), 'Legiana', '1', 'legiana-favor'),
 ('legiana-arms-beta', 2, 0, 0, 1, 0, STRINGDECODE('Legiana Vambraces \u03b2'), 'Legiana', '2', 'legiana-favor'),
 ('lumu-arms-alpha', 2, 0, 0, 0, 0, STRINGDECODE('Lumu Vambraces \u03b1'), 'Lumu', '1', NULL),
@@ -1009,8 +999,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('teostra-arms-alpha', 2, 1, 0, 0, 0, STRINGDECODE('Kaiser Vambraces \u03b1'), 'Teostra', '1', 'teostra-technique'),
 ('teostra-arms-beta', 2, 0, 0, 1, 0, STRINGDECODE('Kaiser Vambraces \u03b2'), 'Teostra', '2', 'teostra-technique'),
 ('teostra-arms-gamma', 2, 0, 0, 1, 0, STRINGDECODE('Kaiser Vambraces \u03b3'), 'Teostra', '3', 'teostra-technique'),
-('tzitzi-arms-alpha', 2, 0, 0, 0, 0, STRINGDECODE('Tzitzi Vambraces \u03b1'), 'Tzitzi', '1', NULL);        
-INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
+('tzitzi-arms-alpha', 2, 0, 0, 0, 0, STRINGDECODE('Tzitzi Vambraces \u03b1'), 'Tzitzi', '1', NULL),
 ('tzitzi-arms-beta', 2, 1, 0, 0, 0, STRINGDECODE('Tzitzi Vambraces \u03b2'), 'Tzitzi', '2', NULL),
 ('uragaan-arms-alpha', 2, 1, 0, 0, 0, STRINGDECODE('Uragaan Vambraces \u03b1'), 'Uragaan', '1', 'uragaan-protection'),
 ('uragaan-arms-beta', 2, 0, 1, 0, 0, STRINGDECODE('Uragaan Vambraces \u03b2'), 'Uragaan', '2', 'uragaan-protection'),
@@ -1020,7 +1009,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('vangis-arms-alpha', 2, 0, 0, 0, 0, STRINGDECODE('Vangis Vambraces \u03b1'), 'Vangis', '1', NULL),
 ('vangis-arms-beta', 2, 0, 1, 0, 0, STRINGDECODE('Vangis Vambraces \u03b2'), 'Vangis', '2', NULL),
 ('vespoid-arms-alpha', 2, 0, 0, 0, 0, STRINGDECODE('Vespoid Vambraces \u03b1'), 'Vespoid', '1', NULL),
-('vespoid-arms-beta', 2, 1, 0, 0, 0, STRINGDECODE('Vespoid Vambraces \u03b2'), 'Vespoid', '2', NULL),
+('vespoid-arms-beta', 2, 1, 0, 0, 0, STRINGDECODE('Vespoid Vambraces \u03b2'), 'Vespoid', '2', NULL);
+INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('xeno-jiiva-arms-alpha', 2, 1, 0, 0, 0, STRINGDECODE('Xeno''Jiiva Vambraces \u03b1'), 'Xeno''Jiiva', '1', 'xeno-jiiva-divinity'),
 ('xeno-jiiva-arms-beta', 2, 0, 0, 1, 0, STRINGDECODE('Xeno''Jiiva Vambraces \u03b2'), 'Xeno''Jiiva', '2', 'xeno-jiiva-divinity'),
 ('xeno-jiiva-arms-gamma', 2, 1, 2, 0, 0, STRINGDECODE('Xeno''jiiva Vambraces \u03b3'), 'Xeno''jiiva', '3', 'xeno-jiiva-divinity'),
@@ -1048,8 +1038,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('commission-waist-alpha', 3, 1, 0, 0, 0, STRINGDECODE('Commission Coil \u03b1'), 'Commission', '1', 'commission-guidance'),
 ('commission-waist-beta', 3, 0, 1, 0, 0, STRINGDECODE('Commission Coil \u03b2'), 'Commission', '2', 'commission-guidance'),
 ('damascus-waist-alpha', 3, 1, 0, 0, 0, STRINGDECODE('Damascus Coil \u03b1'), 'Damascus', '1', NULL),
-('damascus-waist-beta', 3, 3, 0, 0, 0, STRINGDECODE('Damascus Coil \u03b2'), 'Damascus', '2', NULL);          
-INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
+('damascus-waist-beta', 3, 3, 0, 0, 0, STRINGDECODE('Damascus Coil \u03b2'), 'Damascus', '2', NULL),
 ('dante-waist-alpha', 3, 0, 0, 1, 0, STRINGDECODE('Dante Coil \u03b1'), 'Dante', '1', NULL),
 ('death-stench-waist-alpha', 3, 0, 0, 0, 0, STRINGDECODE('Death Stench Coil \u03b1'), 'Death Stench', '1', NULL),
 ('death-stench-waist-beta', 3, 2, 0, 0, 0, STRINGDECODE('Death Stench Coil \u03b2'), 'Death Stench', '2', NULL),
@@ -1060,7 +1049,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('diver-waist-alpha', 3, 0, 1, 0, 0, STRINGDECODE('Diver Coil \u03b1'), 'Diver', '1', NULL),
 ('dober-waist-alpha', 3, 0, 1, 0, 0, STRINGDECODE('Dober Coil \u03b1'), 'Dober', '1', NULL),
 ('dober-waist-beta', 3, 0, 0, 1, 0, STRINGDECODE('Dober Coil \u03b2'), 'Dober', '2', NULL),
-('dodogama-waist-alpha', 3, 0, 0, 0, 0, STRINGDECODE('Dodogama Coil \u03b1'), 'Dodogama', '1', NULL),
+('dodogama-waist-alpha', 3, 0, 0, 0, 0, STRINGDECODE('Dodogama Coil \u03b1'), 'Dodogama', '1', NULL);        
+INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('dodogama-waist-beta', 3, 1, 0, 0, 0, STRINGDECODE('Dodogama Coil \u03b2'), 'Dodogama', '2', NULL),
 ('gala-waist-alpha', 3, 2, 0, 1, 0, STRINGDECODE('Gala Coil \u03b1'), 'Gala', '1', 'astera-blessing'),
 ('girros-waist-alpha', 3, 0, 0, 0, 0, STRINGDECODE('Girros Coil \u03b1'), 'Girros', '1', NULL),
@@ -1089,8 +1079,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('kirin-waist-gamma', 3, 2, 0, 0, 0, STRINGDECODE('Kirin Hoop \u03b3'), 'Kirin', '3', 'kirin-favor'),
 ('kulu-waist-alpha', 3, 0, 0, 0, 0, STRINGDECODE('Kulu Coil \u03b1'), 'Kulu', '1', NULL),
 ('kulu-waist-beta', 3, 0, 1, 0, 0, STRINGDECODE('Kulu Coil \u03b2'), 'Kulu', '2', NULL),
-('kulve-taroth-waist-beta', 3, 1, 0, 1, 0, STRINGDECODE('Kulve Taroth Coil \u03b2'), 'Kulve Taroth', '2', NULL);          
-INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
+('kulve-taroth-waist-beta', 3, 1, 0, 1, 0, STRINGDECODE('Kulve Taroth Coil \u03b2'), 'Kulve Taroth', '2', NULL),
 ('kulve-taroth-waist-gamma', 3, 0, 0, 1, 0, STRINGDECODE('Kulve Taroth Coil \u03b3'), 'Kulve Taroth', '3', NULL),
 ('kushala-waist-alpha', 3, 0, 0, 0, 0, STRINGDECODE('Kushala Coil \u03b1'), 'Kushala', '1', 'kushala-daora-flight'),
 ('kushala-waist-beta', 3, 2, 0, 0, 0, STRINGDECODE('Kushala Coil \u03b2'), 'Kushala', '2', 'kushala-daora-flight'),
@@ -1101,7 +1090,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('leather-waist-beta', 3, 1, 0, 0, 0, STRINGDECODE('Leather Coil \u03b2'), 'Leather', '2', NULL),
 ('legiana-waist-alpha', 3, 0, 0, 0, 0, STRINGDECODE('Legiana Coil \u03b1'), 'Legiana', '1', 'legiana-favor'),
 ('legiana-waist-beta', 3, 0, 1, 0, 0, STRINGDECODE('Legiana Coil \u03b2'), 'Legiana', '2', 'legiana-favor'),
-('lumu-waist-alpha', 3, 0, 0, 0, 0, STRINGDECODE('Lumu Coil \u03b1'), 'Lumu', '1', NULL),
+('lumu-waist-alpha', 3, 0, 0, 0, 0, STRINGDECODE('Lumu Coil \u03b1'), 'Lumu', '1', NULL);       
+INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('lumu-waist-beta', 3, 1, 0, 0, 0, STRINGDECODE('Lumu Coil \u03b2'), 'Lumu', '2', NULL),
 ('lunastra-waist-alpha', 3, 1, 0, 1, 0, STRINGDECODE('Empress Coil \u03b1'), 'Lunastra', '1', 'lunastra-favor'),
 ('lunastra-waist-beta', 3, 0, 2, 0, 0, STRINGDECODE('Empress Coil \u03b2'), 'Lunastra', '2', 'lunastra-favor'),
@@ -1128,8 +1118,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('tzitzi-waist-beta', 3, 0, 1, 0, 0, STRINGDECODE('Tzitzi Coil \u03b2'), 'Tzitzi', '2', NULL),
 ('uragaan-waist-alpha', 3, 2, 0, 0, 0, STRINGDECODE('Uragaan Coil \u03b1'), 'Uragaan', '1', 'uragaan-protection'),
 ('uragaan-waist-beta', 3, 1, 1, 0, 0, STRINGDECODE('Uragaan Coil \u03b2'), 'Uragaan', '2', 'uragaan-protection'),
-('vaal-hazak-waist-alpha', 3, 1, 0, 0, 0, STRINGDECODE('Vaal Hazak Coil \u03b1'), 'Vaal Hazak', '1', 'vaal-hazak-vitality');       
-INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
+('vaal-hazak-waist-alpha', 3, 1, 0, 0, 0, STRINGDECODE('Vaal Hazak Coil \u03b1'), 'Vaal Hazak', '1', 'vaal-hazak-vitality'),
 ('vaal-hazak-waist-beta', 3, 2, 0, 0, 0, STRINGDECODE('Vaal Hazak Coil \u03b2'), 'Vaal Hazak', '2', 'vaal-hazak-vitality'),
 ('vaal-hazak-waist-gamma', 3, 2, 1, 0, 0, STRINGDECODE('Vaal Hazak Coil \u03b3'), 'Vaal Hazak', '3', 'vaal-hazak-vitality'),
 ('vangis-waist-alpha', 3, 1, 0, 0, 0, STRINGDECODE('Vangis Coil \u03b1'), 'Vangis', '1', NULL),
@@ -1139,7 +1128,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('xeno-jiiva-waist-alpha', 3, 0, 0, 1, 0, STRINGDECODE('Xeno''Jiiva Coil \u03b1'), 'Xeno''Jiiva', '1', 'xeno-jiiva-divinity'),
 ('xeno-jiiva-waist-beta', 3, 1, 1, 0, 0, STRINGDECODE('Xeno''Jiiva Coil \u03b2'), 'Xeno''Jiiva', '2', 'xeno-jiiva-divinity'),
 ('xeno-jiiva-waist-gamma', 3, 1, 0, 1, 0, STRINGDECODE('Xeno''jiiva Coil \u03b3'), 'Xeno''jiiva', '3', 'xeno-jiiva-divinity'),
-('zorah-waist-alpha', 3, 0, 0, 0, 0, STRINGDECODE('Zorah Coil \u03b1'), 'Zorah', '1', 'zorah-magdaros-mastery'),
+('zorah-waist-alpha', 3, 0, 0, 0, 0, STRINGDECODE('Zorah Coil \u03b1'), 'Zorah', '1', 'zorah-magdaros-mastery');        
+INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('zorah-waist-beta', 3, 0, 1, 0, 0, STRINGDECODE('Zorah Coil \u03b2'), 'Zorah', '2', 'zorah-magdaros-mastery'),
 ('zorah-waist-gamma', 3, 0, 1, 1, 0, STRINGDECODE('Zorah Coil \u03b3'), 'Zorah', '3', 'zorah-magdaros-mastery'),
 ('alloy-legs-alpha', 4, 0, 0, 0, 0, STRINGDECODE('Alloy Greaves \u03b1'), 'Alloy', '1', NULL),
@@ -1167,8 +1157,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('dante-legs-alpha', 4, 2, 0, 0, 0, STRINGDECODE('Dante Greaves \u03b1'), 'Dante', '1', NULL),
 ('death-stench-legs-alpha', 4, 0, 0, 0, 0, STRINGDECODE('Death Stench Greaves \u03b1'), 'Death Stench', '1', NULL),
 ('death-stench-legs-beta', 4, 2, 0, 0, 0, STRINGDECODE('Death Stench Greaves \u03b2'), 'Death Stench', '2', NULL),
-('diablos-legs-alpha', 4, 0, 0, 0, 0, STRINGDECODE('Diablos Greaves \u03b1'), 'Diablos', '1', 'diablos-mastery');           
-INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
+('diablos-legs-alpha', 4, 0, 0, 0, 0, STRINGDECODE('Diablos Greaves \u03b1'), 'Diablos', '1', 'diablos-mastery'),
 ('diablos-legs-beta', 4, 2, 0, 0, 0, STRINGDECODE('Diablos Greaves \u03b2'), 'Diablos', '2', 'diablos-mastery'),
 ('diablos-nero-legs-alpha', 4, 1, 0, 0, 0, STRINGDECODE('Diablos Nero Greaves \u03b1'), 'Diablos Nero', '1', 'diablos-mastery'),
 ('diablos-nero-legs-beta', 4, 0, 1, 0, 0, STRINGDECODE('Diablos Nero Greaves \u03b2'), 'Diablos Nero', '2', 'diablos-mastery'),
@@ -1179,7 +1168,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('dodogama-legs-beta', 4, 1, 0, 0, 0, STRINGDECODE('Dodogama Greaves \u03b2'), 'Dodogama', '2', NULL),
 ('gajau-legs-alpha', 4, 0, 0, 0, 0, STRINGDECODE('Gajau Boots \u03b1'), 'Gajau', '1', NULL),
 ('gajau-legs-beta', 4, 1, 0, 0, 0, STRINGDECODE('Gajau Boots \u03b2'), 'Gajau', '2', NULL),
-('gala-legs-alpha', 4, 2, 0, 1, 0, STRINGDECODE('Gala Greaves \u03b1'), 'Gala', '1', 'astera-blessing'),
+('gala-legs-alpha', 4, 2, 0, 1, 0, STRINGDECODE('Gala Greaves \u03b1'), 'Gala', '1', 'astera-blessing');      
+INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('girros-legs-alpha', 4, 0, 0, 0, 0, STRINGDECODE('Girros Greaves \u03b1'), 'Girros', '1', NULL),
 ('girros-legs-beta', 4, 1, 0, 0, 0, STRINGDECODE('Girros Greaves \u03b2'), 'Girros', '2', NULL),
 ('guild-cross-legs-alpha', 4, 0, 0, 0, 0, STRINGDECODE('Guild Cross Greaves \u03b1'), 'Guild Cross', '1', 'guild-guidance'),
@@ -1208,8 +1198,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('kulu-legs-beta', 4, 1, 0, 0, 0, STRINGDECODE('Kulu Greaves \u03b2'), 'Kulu', '2', NULL),
 ('kulve-taroth-legs-beta', 4, 1, 1, 0, 0, STRINGDECODE('Kulve Taroth Greaves \u03b2'), 'Kulve Taroth', '2', NULL),
 ('kulve-taroth-legs-gamma', 4, 1, 0, 1, 0, STRINGDECODE('Kulve Taroth Greaves \u03b3'), 'Kulve Taroth', '3', NULL),
-('kushala-legs-alpha', 4, 0, 0, 0, 0, STRINGDECODE('Kushala Greaves \u03b1'), 'Kushala', '1', 'kushala-daora-flight');     
-INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
+('kushala-legs-alpha', 4, 0, 0, 0, 0, STRINGDECODE('Kushala Greaves \u03b1'), 'Kushala', '1', 'kushala-daora-flight'),
 ('kushala-legs-beta', 4, 0, 0, 1, 0, STRINGDECODE('Kushala Greaves \u03b2'), 'Kushala', '2', 'kushala-daora-flight'),
 ('kushala-legs-gamma', 4, 0, 0, 1, 0, STRINGDECODE('Kushala Greaves \u03b3'), 'Kushala', '3', 'kushala-daora-flight'),
 ('lavasioth-legs-alpha', 4, 1, 0, 0, 0, STRINGDECODE('Lavasioth Greaves \u03b1'), 'Lavasioth', '1', NULL),
@@ -1219,7 +1208,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('legiana-legs-alpha', 4, 0, 0, 0, 0, STRINGDECODE('Legiana Greaves \u03b1'), 'Legiana', '1', 'legiana-favor'),
 ('legiana-legs-beta', 4, 0, 0, 1, 0, STRINGDECODE('Legiana Greaves \u03b2'), 'Legiana', '2', 'legiana-favor'),
 ('lumu-legs-alpha', 4, 0, 0, 0, 0, STRINGDECODE('Lumu Greaves \u03b1'), 'Lumu', '1', NULL),
-('lumu-legs-beta', 4, 2, 0, 0, 0, STRINGDECODE('Lumu Greaves \u03b2'), 'Lumu', '2', NULL),
+('lumu-legs-beta', 4, 2, 0, 0, 0, STRINGDECODE('Lumu Greaves \u03b2'), 'Lumu', '2', NULL);   
+INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('lunastra-legs-alpha', 4, 1, 1, 0, 0, STRINGDECODE('Empress Greaves \u03b1'), 'Lunastra', '1', 'lunastra-favor'),
 ('lunastra-legs-beta', 4, 0, 2, 0, 0, STRINGDECODE('Empress Greaves \u03b2'), 'Lunastra', '2', 'lunastra-favor'),
 ('lunastra-legs-gamma', 4, 0, 0, 1, 0, STRINGDECODE('Empress Greaves \u03b3'), 'Lunastra', '3', 'lunastra-favor'),
@@ -1246,8 +1236,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('uragaan-legs-alpha', 4, 1, 0, 0, 0, STRINGDECODE('Uragaan Greaves \u03b1'), 'Uragaan', '1', 'uragaan-protection'),
 ('uragaan-legs-beta', 4, 0, 0, 1, 0, STRINGDECODE('Uragaan Greaves \u03b2'), 'Uragaan', '2', 'uragaan-protection'),
 ('vaal-hazak-legs-alpha', 4, 1, 0, 0, 0, STRINGDECODE('Vaal Hazak Greaves \u03b1'), 'Vaal Hazak', '1', 'vaal-hazak-vitality'),
-('vaal-hazak-legs-beta', 4, 2, 0, 0, 0, STRINGDECODE('Vaal Hazak Greaves \u03b2'), 'Vaal Hazak', '2', 'vaal-hazak-vitality');        
-INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
+('vaal-hazak-legs-beta', 4, 2, 0, 0, 0, STRINGDECODE('Vaal Hazak Greaves \u03b2'), 'Vaal Hazak', '2', 'vaal-hazak-vitality'),
 ('vaal-hazak-legs-gamma', 4, 1, 0, 1, 0, STRINGDECODE('Vaal Hazak Greaves \u03b3'), 'Vaal Hazak', '3', 'vaal-hazak-vitality'),
 ('vangis-legs-alpha', 4, 0, 0, 0, 0, STRINGDECODE('Vangis Greaves \u03b1'), 'Vangis', '1', NULL),
 ('vangis-legs-beta', 4, 2, 0, 0, 0, STRINGDECODE('Vangis Greaves \u03b2'), 'Vangis', '2', NULL),
@@ -1256,7 +1245,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('xeno-jiiva-legs-alpha', 4, 1, 0, 0, 0, STRINGDECODE('Xeno''Jiiva Greaves \u03b1'), 'Xeno''Jiiva', '1', 'xeno-jiiva-divinity'),
 ('xeno-jiiva-legs-beta', 4, 2, 0, 0, 0, STRINGDECODE('Xeno''Jiiva Greaves \u03b2'), 'Xeno''Jiiva', '2', 'xeno-jiiva-divinity'),
 ('xeno-jiiva-legs-gamma', 4, 1, 0, 1, 0, STRINGDECODE('Xeno''jiiva Greaves \u03b3'), 'Xeno''jiiva', '3', 'xeno-jiiva-divinity'),
-('zorah-legs-alpha', 4, 0, 0, 0, 0, STRINGDECODE('Zorah Greaves \u03b1'), 'Zorah', '1', 'zorah-magdaros-mastery'),
+('zorah-legs-alpha', 4, 0, 0, 0, 0, STRINGDECODE('Zorah Greaves \u03b1'), 'Zorah', '1', 'zorah-magdaros-mastery');         
+INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('zorah-legs-beta', 4, 0, 1, 0, 0, STRINGDECODE('Zorah Greaves \u03b2'), 'Zorah', '2', 'zorah-magdaros-mastery'),
 ('zorah-legs-gamma', 4, 0, 1, 1, 0, STRINGDECODE('Zorah Greaves \u03b3'), 'Zorah', '3', 'zorah-magdaros-mastery'),
 ('artillery-charm-i', 5, 0, 0, 0, 0, 'Artillery Charm I', 'Artillery', '7', NULL),
@@ -1294,8 +1284,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('demolition-charm-ii', 5, 0, 0, 0, 0, 'Demolition Charm II', 'Demolition', '8', NULL),
 ('dispersal-charm-i', 5, 0, 0, 0, 0, 'Dispersal Charm', 'Dispersal', '7', NULL),
 ('dragon-charm-i', 5, 0, 0, 0, 0, 'Dragon Charm I', 'Dragon', '7', NULL),
-('dragon-charm-ii', 5, 0, 0, 0, 0, 'Dragon Charm II', 'Dragon', '8', NULL);             
-INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
+('dragon-charm-ii', 5, 0, 0, 0, 0, 'Dragon Charm II', 'Dragon', '8', NULL),
 ('draw-charm-i', 5, 0, 0, 0, 0, 'Draw Charm I', 'Draw', '7', NULL),
 ('draw-charm-ii', 5, 0, 0, 0, 0, 'Draw Charm II', 'Draw', '8', NULL),
 ('earplugs-charm-i', 5, 0, 0, 0, 0, 'Earplugs Charm I', 'Earplugs', '7', NULL),
@@ -1308,7 +1297,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('exploiter-charm-ii', 5, 0, 0, 0, 0, 'Exploiter Charm II', 'Exploiter', '8', NULL),
 ('extension-charm-i', 5, 0, 0, 0, 0, 'Extension Charm I', 'Extension', '7', NULL),
 ('extension-charm-ii', 5, 0, 0, 0, 0, 'Extension Charm II', 'Extension', '8', NULL),
-('fire-charm-i', 5, 0, 0, 0, 0, 'Fire Charm I', 'Fire', '7', NULL),
+('fire-charm-i', 5, 0, 0, 0, 0, 'Fire Charm I', 'Fire', '7', NULL);               
+INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('fire-charm-ii', 5, 0, 0, 0, 0, 'Fire Charm II', 'Fire', '8', NULL),
 ('fitness-charm-i', 5, 0, 0, 0, 0, 'Fitness Charm I', 'Fitness', '7', NULL),
 ('fitness-charm-ii', 5, 0, 0, 0, 0, 'Fitness Charm II', 'Fitness', '8', NULL),
@@ -1347,8 +1337,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('ice-charm-ii', 5, 0, 0, 0, 0, 'Ice Charm II', 'Ice', '8', NULL),
 ('immobilize-charm-i', 5, 0, 0, 0, 0, 'Immobilize Charm I', 'Immobilize', '7', NULL),
 ('immobilize-charm-ii', 5, 0, 0, 0, 0, 'Immobilize Charm II', 'Immobilize', '8', NULL),
-('impact-charm-i', 5, 0, 0, 0, 0, 'Impact Charm I', 'Impact', '7', NULL);              
-INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
+('impact-charm-i', 5, 0, 0, 0, 0, 'Impact Charm I', 'Impact', '7', NULL),
 ('impact-charm-ii', 5, 0, 0, 0, 0, 'Impact Charm II', 'Impact', '8', NULL),
 ('insect-charm-i', 5, 0, 0, 0, 0, 'Insect Charm I', 'Insect', '7', NULL),
 ('insect-charm-ii', 5, 0, 0, 0, 0, 'Insect Charm II', 'Insect', '8', NULL),
@@ -1361,7 +1350,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('ko-charm-ii', 5, 0, 0, 0, 0, 'KO Charm II', 'KO', '8', NULL),
 ('leaping-charm-i', 5, 0, 0, 0, 0, 'Leaping Charm I', 'Leaping', '7', NULL),
 ('leaping-charm-ii', 5, 0, 0, 0, 0, 'Leaping Charm II', 'Leaping', '8', NULL),
-('light-eater-s-charm-i', 5, 0, 0, 0, 0, 'Light Eater''s Charm', 'Light Eater''s', '7', NULL),
+('light-eater-s-charm-i', 5, 0, 0, 0, 0, 'Light Eater''s Charm', 'Light Eater''s', '7', NULL);           
+INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('maintenance-charm-i', 5, 0, 0, 0, 0, 'Maintenance Charm I', 'Maintenance', '7', NULL),
 ('maintenance-charm-ii', 5, 0, 0, 0, 0, 'Maintenance Charm II', 'Maintenance', '8', NULL),
 ('marathon-charm-i', 5, 0, 0, 0, 0, 'Marathon Charm I', 'Marathon', '7', NULL),
@@ -1399,8 +1389,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('shock-charm-i', 5, 0, 0, 0, 0, 'Shock Charm I', 'Shock', '7', NULL),
 ('shock-charm-ii', 5, 0, 0, 0, 0, 'Shock Charm II', 'Shock', '8', NULL),
 ('sleep-charm-i', 5, 0, 0, 0, 0, 'Sleep Charm I', 'Sleep', '7', NULL),
-('sleep-charm-ii', 5, 0, 0, 0, 0, 'Sleep Charm II', 'Sleep', '8', NULL);               
-INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
+('sleep-charm-ii', 5, 0, 0, 0, 0, 'Sleep Charm II', 'Sleep', '8', NULL),
 ('sleep-coating-charm-i', 5, 0, 0, 0, 0, 'Sleep Coating Charm', 'Sleep Coating', '7', NULL),
 ('slinger-charm-i', 5, 0, 0, 0, 0, 'Slinger Charm I', 'Slinger', '7', NULL),
 ('slinger-charm-ii', 5, 0, 0, 0, 0, 'Slinger Charm II', 'Slinger', '8', NULL),
@@ -1413,7 +1402,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('stealth-charm-i', 5, 0, 0, 0, 0, 'Stealth Charm I', 'Stealth', '7', NULL),
 ('stealth-charm-ii', 5, 0, 0, 0, 0, 'Stealth Charm II', 'Stealth', '8', NULL),
 ('stun-charm-i', 5, 0, 0, 0, 0, 'Stun Charm I', 'Stun', '7', NULL),
-('stun-charm-ii', 5, 0, 0, 0, 0, 'Stun Charm II', 'Stun', '8', NULL),
+('stun-charm-ii', 5, 0, 0, 0, 0, 'Stun Charm II', 'Stun', '8', NULL);         
+INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('surge-charm-i', 5, 0, 0, 0, 0, 'Surge Charm I', 'Surge', '7', NULL),
 ('surge-charm-ii', 5, 0, 0, 0, 0, 'Surge Charm II', 'Surge', '8', NULL),
 ('surveyor-s-charm-i', 5, 0, 0, 0, 0, 'Surveyor''s Charm', 'Surveyor''s', '7', NULL),
@@ -1451,8 +1441,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('fitness-charm-iv', 5, 0, 0, 0, 0, 'Fitness Charm IV', 'Fitness', '10', NULL),
 ('critical-charm-ii', 5, 0, 0, 0, 0, 'Critical Charm II', 'Critical', '8', NULL),
 ('master-s-charm-iii', 5, 0, 0, 0, 0, 'Master''s Charm III', 'Master''s', '9', NULL),
-('master-s-charm-iv', 5, 0, 0, 0, 0, 'Master''s Charm IV', 'Master''s', '10', NULL);
-INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
+('master-s-charm-iv', 5, 0, 0, 0, 0, 'Master''s Charm IV', 'Master''s', '10', NULL),
 ('defense-charm-iii', 5, 0, 0, 0, 0, 'Defense Charm III', 'Defense', '9', NULL),
 ('defense-charm-iv', 5, 0, 0, 0, 0, 'Defense Charm IV', 'Defense', '10', NULL),
 ('defense-charm-v', 5, 0, 0, 0, 0, 'Defense Charm V', 'Defense', '11', NULL),
@@ -1465,7 +1454,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('evasion-charm-iii', 5, 0, 0, 0, 0, 'Evasion Charm III', 'Evasion', '9', NULL),
 ('evasion-charm-iv', 5, 0, 0, 0, 0, 'Evasion Charm IV', 'Evasion', '10', NULL),
 ('blaze-charm-iii', 5, 0, 0, 0, 0, 'Blaze Charm III', 'Blaze', '9', NULL),
-('blaze-charm-iv', 5, 0, 0, 0, 0, 'Blaze Charm IV', 'Blaze', '10', NULL),
+('blaze-charm-iv', 5, 0, 0, 0, 0, 'Blaze Charm IV', 'Blaze', '10', NULL);         
+INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('blaze-charm-v', 5, 0, 0, 0, 0, 'Blaze Charm V', 'Blaze', '11', NULL),
 ('impact-charm-iii', 5, 0, 0, 0, 0, 'Impact Charm III', 'Impact', '9', NULL),
 ('focus-charm-iii', 5, 0, 0, 0, 0, 'Focus Charm III', 'Focus', '9', NULL),
@@ -1503,8 +1493,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('fury-charm-iv', 5, 0, 0, 0, 0, 'Fury Charm IV', 'Fury', '10', NULL),
 ('tranq-charm-iii', 5, 0, 0, 0, 0, 'Tranq Charm III', 'Tranq', '9', NULL),
 ('tranq-charm-iv', 5, 0, 0, 0, 0, 'Tranq Charm IV', 'Tranq', '10', NULL),
-('surge-charm-iii', 5, 0, 0, 0, 0, 'Surge Charm III', 'Surge', '9', NULL);      
-INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
+('surge-charm-iii', 5, 0, 0, 0, 0, 'Surge Charm III', 'Surge', '9', NULL),
 ('shock-charm-iii', 5, 0, 0, 0, 0, 'Shock Charm III', 'Shock', '9', NULL),
 ('shock-charm-iv', 5, 0, 0, 0, 0, 'Shock Charm IV', 'Shock', '10', NULL),
 ('shock-charm-v', 5, 0, 0, 0, 0, 'Shock Charm V', 'Shock', '11', NULL),
@@ -1517,7 +1506,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('friendship-charm-v', 5, 0, 0, 0, 0, 'Friendship Charm V', 'Friendship', '11', NULL),
 ('windproof-charm-iii', 5, 0, 0, 0, 0, 'Windproof Charm III', 'Windproof', '9', NULL),
 ('windproof-charm-iv', 5, 0, 0, 0, 0, 'Windproof Charm IV', 'Windproof', '10', NULL),
-('artillery-charm-iii', 5, 0, 0, 0, 0, 'Artillery Charm III', 'Artillery', '9', NULL),
+('artillery-charm-iii', 5, 0, 0, 0, 0, 'Artillery Charm III', 'Artillery', '9', NULL);              
+INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('blast-charm-iii', 5, 0, 0, 0, 0, 'Blast Charm III', 'Blast', '9', NULL),
 ('bleed-charm-iii', 5, 0, 0, 0, 0, 'Bleed Charm III', 'Bleed', '9', NULL),
 ('blessing-charm-iii', 5, 0, 0, 0, 0, 'Blessing Charm III', 'Blessing', '9', NULL),
@@ -1552,17 +1542,27 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('thunder-charm-iii', 5, 0, 0, 0, 0, 'Thunder Charm III', 'Thunder', '9', NULL),
 ('water-charm-iii', 5, 0, 0, 0, 0, 'Water Charm III', 'Water', '9', NULL),
 ('whetstone-charm-iii', 5, 0, 0, 0, 0, 'Whetstone Charm III', 'Whetstone', '9', NULL),
-('nergigante-head-alpha-plus', 0, 1, 0, 1, 0, STRINGDECODE('Ruinous Helm \u03b1 +'), 'Nergigante', '4', 'nergigante-ambition'),
-('nergigante-body-alpha-plus', 1, 0, 2, 0, 0, STRINGDECODE('Ruinous Mail \u03b1 +'), 'Nergigante', '4', 'nergigante-ambition'),
-('nergigante-arms-alpha-plus', 2, 0, 0, 1, 0, STRINGDECODE('Ruinous Vambraces \u03b1 +'), 'Nergigante', '4', 'nergigante-ambition');
+('savage-deviljho-head-alpha-plus', 0, 1, 0, 0, 0, STRINGDECODE('Esurient Helm \u03b1 +'), 'Savage Deviljho', '4', 'deviljho-essence'),
+('savage-deviljho-body-alpha-plus', 1, 0, 1, 0, 0, STRINGDECODE('Esurient Mail \u03b1 +'), 'Savage Deviljho', '4', 'deviljho-essence'),
+('savage-deviljho-arms-alpha-plus', 2, 0, 1, 0, 0, STRINGDECODE('Esurient Vambraces \u03b1 +'), 'Savage Deviljho', '4', 'deviljho-essence'),
+('savage-deviljho-waist-alpha-plus', 3, 1, 0, 0, 0, STRINGDECODE('Esurient Faulds \u03b1 +'), 'Savage Deviljho', '4', 'deviljho-essence'),
+('savage-deviljho-legs-alpha-plus', 4, 0, 2, 0, 0, STRINGDECODE('Esurient Greaves \u03b1 +'), 'Savage Deviljho', '4', 'deviljho-essence'),
+('savage-deviljho-head-beta-plus', 0, 0, 0, 1, 1, STRINGDECODE('Esurient Helm \u03b2 +'), 'Savage Deviljho', '5', 'deviljho-essence'),
+('savage-deviljho-body-beta-plus', 1, 0, 2, 0, 1, STRINGDECODE('Esurient Mail \u03b2 +'), 'Savage Deviljho', '5', 'deviljho-essence'),
+('savage-deviljho-arms-beta-plus', 2, 0, 0, 0, 1, STRINGDECODE('Esurient Vambraces \u03b2 +'), 'Savage Deviljho', '5', 'deviljho-essence'),
+('savage-deviljho-waist-beta-plus', 3, 1, 0, 0, 1, STRINGDECODE('Esurient Faulds \u03b2 +'), 'Savage Deviljho', '5', 'deviljho-essence'),
+('savage-deviljho-legs-beta-plus', 4, 0, 1, 0, 1, STRINGDECODE('Esurient Greaves \u03b2 +'), 'Savage Deviljho', '5', 'deviljho-essence');          
 INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
-('nergigante-waist-alpha-plus', 3, 1, 1, 0, 0, STRINGDECODE('Ruinous Coil \u03b1 +'), 'Nergigante', '4', 'nergigante-ambition'),
-('nergigante-legs-alpha-plus', 4, 0, 1, 0, 0, STRINGDECODE('Ruinous Greaves \u03b1 +'), 'Nergigante', '4', 'nergigante-ambition'),
-('nergigante-head-beta-plus', 0, 0, 1, 0, 1, STRINGDECODE('Ruinous Helm \u03b2 +'), 'Nergigante', '5', 'nergigante-ambition'),
-('nergigante-body-beta-plus', 1, 0, 1, 0, 1, STRINGDECODE('Ruinous Mail \u03b2 +'), 'Nergigante', '5', 'nergigante-ambition'),
-('nergigante-arms-beta-plus', 2, 1, 0, 0, 1, STRINGDECODE('Ruinous Vambraces \u03b2 +'), 'Nergigante', '5', 'nergigante-ambition'),
-('nergigante-waist-beta-plus', 3, 1, 0, 0, 1, STRINGDECODE('Ruinous Coil \u03b2 +'), 'Nergigante', '5', 'nergigante-ambition'),
-('nergigante-legs-beta-plus', 4, 1, 0, 0, 1, STRINGDECODE('Ruinous Greaves \u03b2 +'), 'Nergigante', '5', 'nergigante-ambition');              
+('ruiner-nergigante-head-alpha-plus', 0, 1, 0, 1, 0, STRINGDECODE('Ruinous Helm \u03b1 +'), 'Ruiner Nergigante', '4', 'nergigante-ambition'),
+('ruiner-nergigante-body-alpha-plus', 1, 0, 2, 0, 0, STRINGDECODE('Ruinous Mail \u03b1 +'), 'Ruiner Nergigante', '4', 'nergigante-ambition'),
+('ruiner-nergigante-arms-alpha-plus', 2, 0, 0, 1, 0, STRINGDECODE('Ruinous Vambraces \u03b1 +'), 'Ruiner Nergigante', '4', 'nergigante-ambition'),
+('ruiner-nergigante-waist-alpha-plus', 3, 1, 1, 0, 0, STRINGDECODE('Ruinous Coil \u03b1 +'), 'Ruiner Nergigante', '4', 'nergigante-ambition'),
+('ruiner-nergigante-legs-alpha-plus', 4, 0, 1, 0, 0, STRINGDECODE('Ruinous Greaves \u03b1 +'), 'Ruiner Nergigante', '4', 'nergigante-ambition'),
+('ruiner-nergigante-head-beta-plus', 0, 0, 1, 0, 1, STRINGDECODE('Ruinous Helm \u03b2 +'), 'Ruiner Nergigante', '5', 'nergigante-ambition'),
+('ruiner-nergigante-body-beta-plus', 1, 0, 1, 0, 1, STRINGDECODE('Ruinous Mail \u03b2 +'), 'Ruiner Nergigante', '5', 'nergigante-ambition'),
+('ruiner-nergigante-arms-beta-plus', 2, 1, 0, 0, 1, STRINGDECODE('Ruinous Vambraces \u03b2 +'), 'Ruiner Nergigante', '5', 'nergigante-ambition'),
+('ruiner-nergigante-waist-beta-plus', 3, 1, 0, 0, 1, STRINGDECODE('Ruinous Coil \u03b2 +'), 'Ruiner Nergigante', '5', 'nergigante-ambition'),
+('ruiner-nergigante-legs-beta-plus', 4, 1, 0, 0, 1, STRINGDECODE('Ruinous Greaves \u03b2 +'), 'Ruiner Nergigante', '5', 'nergigante-ambition');             
 CREATE CACHED TABLE "PUBLIC"."ARMOR_PIECE_SKILL"(
     "SKILL_LEVEL" INTEGER NOT NULL CHECK (("SKILL_LEVEL" <= 7)
     AND ("SKILL_LEVEL" >= 1)),
@@ -2423,22 +2423,6 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'rathian-waist-beta-plus', 'health-boost'),
 (1, 'rathian-waist-beta-plus', 'poison-resistance'),
 (2, 'rathian-legs-beta-plus', 'recovery-up'),
-(1, 'deviljho-head-alpha-plus', 'partbreaker'),
-(2, 'deviljho-head-alpha-plus', 'handicraft'),
-(1, 'deviljho-body-alpha-plus', 'speed-eating'),
-(2, 'deviljho-body-alpha-plus', 'handicraft'),
-(1, 'deviljho-arms-alpha-plus', 'partbreaker'),
-(2, 'deviljho-arms-alpha-plus', 'stamina-thief'),
-(1, 'deviljho-waist-alpha-plus', 'health-boost'),
-(2, 'deviljho-waist-alpha-plus', 'stamina-thief'),
-(1, 'deviljho-legs-alpha-plus', 'speed-eating'),
-(2, 'deviljho-legs-alpha-plus', 'stamina-thief'),
-(1, 'deviljho-head-beta-plus', 'partbreaker'),
-(1, 'deviljho-body-beta-plus', 'speed-eating'),
-(2, 'deviljho-arms-beta-plus', 'stamina-thief'),
-(2, 'deviljho-waist-beta-plus', 'stamina-thief'),
-(1, 'deviljho-legs-beta-plus', 'speed-eating'),
-(1, 'deviljho-legs-beta-plus', 'stamina-thief'),
 (2, 'seething-bazelgeuse-head-alpha-plus', 'blast-attack'),
 (2, 'seething-bazelgeuse-head-alpha-plus', 'earplugs'),
 (2, 'seething-bazelgeuse-body-alpha-plus', 'blast-resistance'),
@@ -2467,8 +2451,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (2, 'shara-ishvalda-legs-alpha-plus', 'partbreaker'),
 (2, 'shara-ishvalda-head-beta-plus', 'recovery-up'),
 (2, 'shara-ishvalda-body-beta-plus', 'coalescence'),
-(2, 'shara-ishvalda-arms-beta-plus', 'critical-boost');         
-INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
+(2, 'shara-ishvalda-arms-beta-plus', 'critical-boost'),
 (2, 'shara-ishvalda-waist-beta-plus', 'health-boost'),
 (1, 'shara-ishvalda-legs-beta-plus', 'defense-boost'),
 (1, 'shara-ishvalda-legs-beta-plus', 'partbreaker'),
@@ -2482,7 +2465,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (2, 'shrieking-legiana-waist-alpha-plus', 'evade-extender'),
 (1, 'shrieking-legiana-legs-alpha-plus', 'spread-power-shots'),
 (2, 'shrieking-legiana-legs-alpha-plus', 'marathon-runner'),
-(2, 'shrieking-legiana-head-beta-plus', 'hunger-resistance'),
+(2, 'shrieking-legiana-head-beta-plus', 'hunger-resistance'); 
+INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (2, 'shrieking-legiana-body-beta-plus', 'focus'),
 (2, 'shrieking-legiana-arms-beta-plus', 'critical-draw'),
 (2, 'shrieking-legiana-waist-beta-plus', 'evade-extender'),
@@ -2550,8 +2534,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (2, 'velkhana-legs-alpha-plus', 'critical-draw'),
 (2, 'velkhana-head-beta-plus', 'divine-blessing'),
 (2, 'velkhana-body-beta-plus', 'quick-sheath'),
-(1, 'velkhana-arms-beta-plus', 'flinch-free');         
-INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
+(1, 'velkhana-arms-beta-plus', 'flinch-free'),
 (1, 'velkhana-arms-beta-plus', 'quick-sheath'),
 (1, 'velkhana-waist-beta-plus', 'flinch-free'),
 (2, 'velkhana-legs-beta-plus', 'critical-draw'),
@@ -2566,7 +2549,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'viper-tobi-kadachi-legs-alpha-plus', 'constitution'),
 (1, 'viper-tobi-kadachi-legs-alpha-plus', 'evade-window'),
 (1, 'viper-tobi-kadachi-head-beta-plus', 'evade-extender'),
-(1, 'viper-tobi-kadachi-head-beta-plus', 'paralysis-attack'),
+(1, 'viper-tobi-kadachi-head-beta-plus', 'paralysis-attack');         
+INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'viper-tobi-kadachi-body-beta-plus', 'quick-sheath'),
 (1, 'viper-tobi-kadachi-arms-beta-plus', 'evade-window'),
 (1, 'viper-tobi-kadachi-arms-beta-plus', 'poison-attack'),
@@ -2629,8 +2613,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (2, 'barnos-body-alpha-plus', 'iron-skin'),
 (1, 'barnos-body-beta-plus', 'heat-guard'),
 (1, 'barnos-body-beta-plus', 'iron-skin'),
-(1, 'wulg-head-alpha-plus', 'master-mounter');
-INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
+(1, 'wulg-head-alpha-plus', 'master-mounter'),
 (2, 'wulg-head-alpha-plus', 'ice-resistance'),
 (1, 'wulg-head-beta-plus', 'ice-resistance'),
 (1, 'wulg-head-beta-plus', 'master-mounter'),
@@ -2648,7 +2631,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (2, 'shamos-head-alpha-plus', 'geologist'),
 (1, 'gastodon-head-alpha-plus', 'blast-resistance'),
 (2, 'gastodon-head-alpha-plus', 'flinch-free'),
-(1, 'gastodon-head-beta-plus', 'blast-resistance'),
+(1, 'gastodon-head-beta-plus', 'blast-resistance');        
+INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'gastodon-head-beta-plus', 'flinch-free'),
 (2, 'pearlspring-head-alpha-plus', 'recovery-up'),
 (1, 'alloy-head-alpha', 'defense-boost'),
@@ -2721,8 +2705,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'hunter-s-head-alpha', 'scholar'),
 (1, 'hunter-s-head-alpha', 'scoutfly-range-up'),
 (1, 'hunter-s-head-beta', 'scoutfly-range-up'),
-(2, 'ingot-head-alpha', 'thunder-attack');     
-INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
+(2, 'ingot-head-alpha', 'thunder-attack'),
 (1, 'ingot-head-beta', 'thunder-attack'),
 (1, 'insect-head-alpha', 'botanist'),
 (2, 'insect-head-alpha', 'evade-window'),
@@ -2742,7 +2725,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'kulu-head-alpha', 'weakness-exploit'),
 (1, 'kulu-head-beta', 'fire-resistance'),
 (1, 'kulu-ya-ku-head-alpha', 'pro-transporter'),
-(1, 'kulve-taroth-head-beta', 'agitator'),
+(1, 'kulve-taroth-head-beta', 'agitator');        
+INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'kulve-taroth-head-beta', 'free-elem-ammo-up'),
 (1, 'kulve-taroth-head-gamma', 'power-prolonger'),
 (1, 'kulve-taroth-head-gamma', 'stun-resistance'),
@@ -2814,8 +2798,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'vespoid-head-alpha', 'paralysis-attack'),
 (1, 'vespoid-head-alpha', 'quick-sheath'),
 (1, 'vespoid-head-beta', 'quick-sheath'),
-(2, 'wiggler-head-alpha', 'wide-range');
-INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
+(2, 'wiggler-head-alpha', 'wide-range'),
 (1, 'xeno-jiiva-head-alpha', 'flinch-free'),
 (1, 'xeno-jiiva-head-alpha', 'special-ammo-boost'),
 (1, 'xeno-jiiva-head-beta', 'flinch-free'),
@@ -2835,7 +2818,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'baan-body-alpha', 'sleep-attack'),
 (1, 'baan-body-beta', 'sleep-attack'),
 (1, 'barnos-body-alpha', 'heat-guard'),
-(1, 'barnos-body-alpha', 'iron-skin'),
+(1, 'barnos-body-alpha', 'iron-skin');          
+INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'barnos-body-beta', 'heat-guard'),
 (2, 'barroth-body-alpha', 'stamina-thief'),
 (1, 'barroth-body-beta', 'stamina-thief'),
@@ -2909,8 +2893,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'kulu-body-alpha', 'stamina-surge'),
 (1, 'kulu-body-beta', 'stamina-surge'),
 (1, 'kulve-taroth-body-beta', 'critical-boost'),
-(2, 'kulve-taroth-body-beta', 'stun-resistance');           
-INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
+(2, 'kulve-taroth-body-beta', 'stun-resistance'),
 (1, 'kulve-taroth-body-gamma', 'agitator'),
 (2, 'kulve-taroth-body-gamma', 'handicraft'),
 (1, 'kushala-body-alpha', 'focus'),
@@ -2931,7 +2914,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'lunastra-body-alpha', 'health-boost'),
 (2, 'lunastra-body-alpha', 'peak-performance'),
 (2, 'lunastra-body-beta', 'peak-performance'),
-(2, 'lunastra-body-gamma', 'earplugs'),
+(2, 'lunastra-body-gamma', 'earplugs');       
+INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'lunastra-body-gamma', 'tool-specialist'),
 (1, 'nergigante-body-alpha', 'agitator'),
 (2, 'nergigante-body-alpha', 'stamina-surge'),
@@ -3004,8 +2988,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'blossom-arms-alpha', 'paralysis-resistance'),
 (1, 'bone-arms-alpha', 'attack-boost'),
 (1, 'bone-arms-alpha', 'slugger'),
-(1, 'bone-arms-beta', 'slugger');             
-INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
+(1, 'bone-arms-beta', 'slugger'),
 (1, 'brigade-arms-alpha', 'divine-blessing'),
 (2, 'brigade-arms-alpha', 'heavy-artillery'),
 (2, 'brigade-arms-beta', 'heavy-artillery'),
@@ -3026,7 +3009,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (2, 'diablos-arms-beta', 'heroics'),
 (1, 'diablos-nero-arms-alpha', 'focus'),
 (1, 'diablos-nero-arms-alpha', 'marathon-runner'),
-(1, 'diablos-nero-arms-beta', 'focus'),
+(1, 'diablos-nero-arms-beta', 'focus');        
+INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'diver-arms-alpha', 'quick-sheath'),
 (1, 'dober-arms-alpha', 'mushroomancer'),
 (2, 'dober-arms-alpha', 'stamina-surge'),
@@ -3100,8 +3084,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'pukei-arms-alpha', 'poison-attack'),
 (2, 'pukei-arms-alpha', 'poison-resistance'),
 (1, 'pukei-arms-beta', 'poison-resistance'),
-(2, 'rath-heart-arms-alpha', 'windproof');        
-INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
+(2, 'rath-heart-arms-alpha', 'windproof'),
 (1, 'rath-heart-arms-beta', 'windproof'),
 (1, 'rath-soul-arms-alpha', 'focus'),
 (1, 'rath-soul-arms-alpha', 'windproof'),
@@ -3122,7 +3105,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'uragaan-arms-beta', 'guard'),
 (1, 'vaal-hazak-arms-alpha', 'peak-performance'),
 (1, 'vaal-hazak-arms-alpha', 'recovery-speed'),
-(1, 'vaal-hazak-arms-beta', 'peak-performance'),
+(1, 'vaal-hazak-arms-beta', 'peak-performance');  
+INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (3, 'vaal-hazak-arms-gamma', 'dragon-attack'),
 (2, 'vangis-arms-alpha', 'latent-power'),
 (1, 'vangis-arms-alpha', 'partbreaker'),
@@ -3194,8 +3178,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'guild-cross-waist-alpha', 'fortify'),
 (1, 'guild-cross-waist-beta', 'fortify'),
 (1, 'harvest-waist-alpha', 'constitution'),
-(1, 'high-metal-waist-alpha', 'capacity-boost'); 
-INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
+(1, 'high-metal-waist-alpha', 'capacity-boost'),
 (1, 'high-metal-waist-alpha', 'defense-boost'),
 (1, 'high-metal-waist-beta', 'capacity-boost'),
 (1, 'hornetaur-waist-alpha', 'carving-pro'),
@@ -3215,7 +3198,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (2, 'jyura-waist-alpha', 'ice-resistance'),
 (1, 'jyura-waist-beta', 'ice-resistance'),
 (2, 'kadachi-waist-alpha', 'thunder-attack'),
-(1, 'kadachi-waist-alpha', 'thunder-resistance'),
+(1, 'kadachi-waist-alpha', 'thunder-resistance');  
+INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'kadachi-waist-beta', 'thunder-attack'),
 (1, 'kirin-waist-alpha', 'blight-resistance'),
 (1, 'kirin-waist-alpha', 'free-elem-ammo-up'),
@@ -3286,8 +3270,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'vangis-waist-alpha', 'latent-power'),
 (1, 'vangis-waist-beta', 'latent-power'),
 (2, 'vespoid-waist-alpha', 'paralysis-resistance'),
-(1, 'vespoid-waist-beta', 'paralysis-resistance');
-INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
+(1, 'vespoid-waist-beta', 'paralysis-resistance'),
 (2, 'xeno-jiiva-waist-alpha', 'blight-resistance'),
 (1, 'xeno-jiiva-waist-alpha', 'special-ammo-boost'),
 (2, 'xeno-jiiva-waist-beta', 'blight-resistance'),
@@ -3306,7 +3289,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'barroth-legs-alpha', 'marathon-runner'),
 (2, 'barroth-legs-alpha', 'stun-resistance'),
 (1, 'barroth-legs-beta', 'stun-resistance'),
-(2, 'bazel-legs-alpha', 'bombardier'),
+(2, 'bazel-legs-alpha', 'bombardier');       
+INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'bazel-legs-alpha', 'critical-draw'),
 (2, 'bazel-legs-beta', 'bombardier'),
 (2, 'behemoth-legs-alpha', 'attack-boost'),
@@ -3380,8 +3364,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (2, 'kirin-legs-beta', 'free-elem-ammo-up'),
 (1, 'kirin-legs-gamma', 'blight-resistance'),
 (2, 'kirin-legs-gamma', 'thunder-attack'),
-(1, 'kulu-legs-alpha', 'critical-eye');    
-INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
+(1, 'kulu-legs-alpha', 'critical-eye'),
 (1, 'kulu-legs-alpha', 'item-prolonger'),
 (1, 'kulu-legs-beta', 'critical-eye'),
 (1, 'kulve-taroth-legs-beta', 'peak-performance'),
@@ -3400,7 +3383,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (2, 'legiana-legs-alpha', 'ice-resistance'),
 (2, 'legiana-legs-beta', 'ice-resistance'),
 (1, 'lumu-legs-alpha', 'stamina-surge'),
-(1, 'lumu-legs-alpha', 'windproof'),
+(1, 'lumu-legs-alpha', 'windproof');    
+INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'lumu-legs-beta', 'windproof'),
 (2, 'lunastra-legs-alpha', 'health-boost'),
 (2, 'lunastra-legs-alpha', 'wide-range'),
@@ -3475,8 +3459,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (2, 'blight-charm-ii', 'blight-resistance'),
 (1, 'bombardier-charm-i', 'bombardier'),
 (2, 'bombardier-charm-ii', 'bombardier'),
-(1, 'botany-charm-i', 'botanist');            
-INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
+(1, 'botany-charm-i', 'botanist'),
 (2, 'botany-charm-ii', 'botanist'),
 (1, 'breaker-charm-i', 'partbreaker'),
 (2, 'breaker-charm-ii', 'partbreaker'),
@@ -3497,7 +3480,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (2, 'dragon-charm-ii', 'dragon-resistance'),
 (1, 'draw-charm-i', 'critical-draw'),
 (2, 'draw-charm-ii', 'critical-draw'),
-(1, 'earplugs-charm-i', 'earplugs'),
+(1, 'earplugs-charm-i', 'earplugs');    
+INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (2, 'earplugs-charm-ii', 'earplugs'),
 (1, 'enervate-charm-i', 'stamina-thief'),
 (2, 'enervate-charm-ii', 'stamina-thief'),
@@ -3575,8 +3559,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'mighty-charm-i', 'maximum-might'),
 (2, 'mighty-charm-ii', 'maximum-might'),
 (1, 'mirewalker-charm-i', 'aquatic-polar-mobility'),
-(2, 'mirewalker-charm-ii', 'aquatic-polar-mobility');   
-INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
+(2, 'mirewalker-charm-ii', 'aquatic-polar-mobility'),
 (1, 'mud-puppy-charm-i', 'leap-of-faith'),
 (1, 'mud-puppy-charm-i', 'muck-resistance'),
 (1, 'mushroom-charm-i', 'mushroomancer'),
@@ -3595,7 +3578,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'procurer-s-charm-i', 'honey-hunter'),
 (1, 'procurer-s-charm-i', 'pro-transporter'),
 (1, 'rally-charm-i', 'palico-rally'),
-(2, 'rally-charm-ii', 'palico-rally'),
+(2, 'rally-charm-ii', 'palico-rally');  
+INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'recovery-charm-i', 'recovery-up'),
 (2, 'recovery-charm-ii', 'recovery-up'),
 (1, 'rider-s-charm-i', 'jump-master'),
@@ -3671,8 +3655,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (3, 'leaping-charm-iii', 'evade-extender'),
 (3, 'evasion-charm-iii', 'evade-window'),
 (4, 'evasion-charm-iv', 'evade-window'),
-(3, 'blaze-charm-iii', 'fire-attack');             
-INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
+(3, 'blaze-charm-iii', 'fire-attack'),
 (4, 'blaze-charm-iv', 'fire-attack'),
 (5, 'blaze-charm-v', 'fire-attack'),
 (3, 'impact-charm-iii', 'flinch-free'),
@@ -3694,7 +3677,8 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (3, 'mushroom-charm-iii', 'mushroomancer'),
 (2, 'normal-shots-charm-ii', 'normal-shots'),
 (2, 'penetration-charm-ii', 'piercing-shots'),
-(2, 'dispersal-charm-ii', 'spread-power-shots'),
+(2, 'dispersal-charm-ii', 'spread-power-shots');              
+INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'guardian-charm-i', 'offensive-guard'),
 (2, 'guardian-charm-ii', 'offensive-guard'),
 (3, 'guardian-charm-iii', 'offensive-guard'),
@@ -3759,24 +3743,40 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (3, 'thunder-charm-iii', 'thunder-resistance'),
 (3, 'water-charm-iii', 'water-resistance'),
 (3, 'whetstone-charm-iii', 'speed-sharpening'),
-(1, 'nergigante-head-alpha-plus', 'stamina-surge'),
-(2, 'nergigante-head-alpha-plus', 'maximum-might'),
-(1, 'nergigante-body-alpha-plus', 'maximum-might'),
-(2, 'nergigante-body-alpha-plus', 'stamina-surge'),
-(2, 'nergigante-arms-alpha-plus', 'agitator'),
-(2, 'nergigante-arms-alpha-plus', 'attack-boost'),
-(1, 'nergigante-waist-alpha-plus', 'earplugs'),
-(3, 'nergigante-waist-alpha-plus', 'attack-boost'),
-(1, 'nergigante-legs-alpha-plus', 'agitator');              
+(1, 'savage-deviljho-head-alpha-plus', 'partbreaker'),
+(2, 'savage-deviljho-head-alpha-plus', 'handicraft'),
+(1, 'savage-deviljho-body-alpha-plus', 'speed-eating'),
+(2, 'savage-deviljho-body-alpha-plus', 'handicraft'),
+(1, 'savage-deviljho-arms-alpha-plus', 'partbreaker'),
+(2, 'savage-deviljho-arms-alpha-plus', 'stamina-thief'),
+(1, 'savage-deviljho-waist-alpha-plus', 'health-boost'),
+(2, 'savage-deviljho-waist-alpha-plus', 'stamina-thief'),
+(1, 'savage-deviljho-legs-alpha-plus', 'speed-eating'),
+(2, 'savage-deviljho-legs-alpha-plus', 'stamina-thief'),
+(1, 'savage-deviljho-head-beta-plus', 'partbreaker'),
+(1, 'savage-deviljho-body-beta-plus', 'speed-eating'),
+(2, 'savage-deviljho-arms-beta-plus', 'stamina-thief'),
+(2, 'savage-deviljho-waist-beta-plus', 'stamina-thief'),
+(1, 'savage-deviljho-legs-beta-plus', 'speed-eating'),
+(1, 'savage-deviljho-legs-beta-plus', 'stamina-thief'),
+(1, 'ruiner-nergigante-head-alpha-plus', 'stamina-surge'),
+(2, 'ruiner-nergigante-head-alpha-plus', 'maximum-might'),
+(1, 'ruiner-nergigante-body-alpha-plus', 'maximum-might'),
+(2, 'ruiner-nergigante-body-alpha-plus', 'stamina-surge'),
+(2, 'ruiner-nergigante-arms-alpha-plus', 'agitator'),
+(2, 'ruiner-nergigante-arms-alpha-plus', 'attack-boost'),
+(1, 'ruiner-nergigante-waist-alpha-plus', 'earplugs'),
+(3, 'ruiner-nergigante-waist-alpha-plus', 'attack-boost');       
 INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
-(2, 'nergigante-legs-alpha-plus', 'earplugs'),
-(2, 'nergigante-head-beta-plus', 'maximum-might'),
-(2, 'nergigante-body-beta-plus', 'stamina-surge'),
-(1, 'nergigante-arms-beta-plus', 'attack-boost'),
-(2, 'nergigante-arms-beta-plus', 'agitator'),
-(1, 'nergigante-waist-beta-plus', 'earplugs'),
-(2, 'nergigante-waist-beta-plus', 'attack-boost'),
-(2, 'nergigante-legs-beta-plus', 'earplugs');           
+(1, 'ruiner-nergigante-legs-alpha-plus', 'agitator'),
+(2, 'ruiner-nergigante-legs-alpha-plus', 'earplugs'),
+(2, 'ruiner-nergigante-head-beta-plus', 'maximum-might'),
+(2, 'ruiner-nergigante-body-beta-plus', 'stamina-surge'),
+(1, 'ruiner-nergigante-arms-beta-plus', 'attack-boost'),
+(2, 'ruiner-nergigante-arms-beta-plus', 'agitator'),
+(1, 'ruiner-nergigante-waist-beta-plus', 'earplugs'),
+(2, 'ruiner-nergigante-waist-beta-plus', 'attack-boost'),
+(2, 'ruiner-nergigante-legs-beta-plus', 'earplugs');             
 CREATE CACHED TABLE "PUBLIC"."JEWEL"(
     "ID" VARCHAR NOT NULL,
     "JEWEL_LEVEL" INTEGER NOT NULL CHECK (("JEWEL_LEVEL" >= 1)
