@@ -52,21 +52,25 @@ public class ArmorPiece {
     @NotNull(message = "Number of level 1 slots must be non-null")
     @Min(value = 0, message = "Number of level 1 slots must be at least 0")
     @Max(value = 3, message = "Number of level 1 slots must be at most 3")
+    @Column(nullable = false, columnDefinition = "int default 0")
     private Integer level1Slots = 0;
 
     @NotNull(message = "Number of level 2 slots must be non-null")
     @Min(value = 0, message = "Number of level 2 slots must be at least 0")
     @Max(value = 3, message = "Number of level 2 slots must be at most 3")
+    @Column(nullable = false, columnDefinition = "int default 0")
     private Integer level2Slots = 0;
 
     @NotNull(message = "Number of level 3 slots must be non-null")
     @Min(value = 0, message = "Number of level 3 slots must be at least 0")
     @Max(value = 3, message = "Number of level 3 slots must be at most 3")
+    @Column(nullable = false, columnDefinition = "int default 0")
     private Integer level3Slots = 0;
 
     @NotNull(message = "Number of level 4 slots must be non-null")
     @Min(value = 0, message = "Number of level 4 slots must be at least 0")
     @Max(value = 3, message = "Number of level 4 slots must be at most 3")
+    @Column(nullable = false, columnDefinition = "int default 0")
     private Integer level4Slots = 0;
 
     @Valid
@@ -77,6 +81,35 @@ public class ArmorPiece {
     @ManyToOne(fetch = FetchType.LAZY)
     private SetBonus setBonus;
 
+    @NotNull(message = "Rarity must be non-null")
+    @Min(value = 1, message = "Rarity must be at least 1")
+    @Column(nullable = false, columnDefinition = "int default 1")
+    private Integer rarity = 1;
+
+    @NotNull(message = "Defense must be non-null")
+    @Min(value = 0, message = "Defense must be non-negative")
+    @Column(nullable = false, columnDefinition = "int default 0")
+    private Integer defense = 0;
+
+    @NotNull(message = "Fire resistance must be non-null")
+    @Column(nullable = false, columnDefinition = "int default 0")
+    private Integer fireResistance = 0;
+
+    @NotNull(message = "Water resistance must be non-null")
+    @Column(nullable = false, columnDefinition = "int default 0")
+    private Integer waterResistance = 0;
+
+    @NotNull(message = "Thunder resistance must be non-null")
+    @Column(nullable = false, columnDefinition = "int default 0")
+    private Integer thunderResistance = 0;
+
+    @NotNull(message = "Ice resistance must be non-null")
+    @Column(nullable = false, columnDefinition = "int default 0")
+    private Integer iceResistance = 0;
+
+    @NotNull(message = "Dragon resistance must be non-null")
+    @Column(nullable = false, columnDefinition = "int default 0")
+    private Integer dragonResistance = 0;
 
     // TODO Find a less-redundant, similarly-compact solution for deriving id from these properties
     public void setSetName(String setName) {

@@ -7,6 +7,7 @@ import com.mromanak.loadoutoptimizer.model.jpa.SetType;
 import lombok.Data;
 
 import javax.validation.Valid;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.*;
@@ -19,8 +20,9 @@ import static java.util.stream.Collectors.toMap;
 @Data
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 @JsonPropertyOrder(
-    {"setName", "setType", "setBonusId", "head", "body", "arms", "waist", "legs", "charm", "level1Slots", "level2Slots",
-        "level3Slots", "level4Slots", "skills"})
+    {"setName", "setType", "setBonusId", "level1Slots", "level2Slots", "level3Slots", "level4Slots", "rarity",
+        "defense", "fireResistance", "waterResistance", "thunderResistance", "iceResistance", "dragonResistance",
+        "skills", "head", "body", "arms", "waist", "legs", "charm"})
 public class ArmorSetDto {
 
     @NotBlank(message = "Set name must be non-null")
@@ -30,6 +32,29 @@ public class ArmorSetDto {
     private SetType setType;
 
     private String setBonusId;
+
+    @NotNull(message = "Rarity must be non-null")
+    @Min(value = 1, message = "Rarity must be at least 1")
+    private Integer rarity;
+
+    @NotNull(message = "Defense must be non-null")
+    @Min(value = 0, message = "Defense must be non-negative")
+    private Integer defense = 0;
+
+    @NotNull(message = "Fire resistance must be non-null")
+    private Integer fireResistance = 0;
+
+    @NotNull(message = "Water resistance must be non-null")
+    private Integer waterResistance = 0;
+
+    @NotNull(message = "Thunder resistance must be non-null")
+    private Integer thunderResistance = 0;
+
+    @NotNull(message = "Ice resistance must be non-null")
+    private Integer iceResistance = 0;
+
+    @NotNull(message = "Dragon resistance must be non-null")
+    private Integer dragonResistance = 0;
 
     @Valid
     private ArmorSetComponentDto head;

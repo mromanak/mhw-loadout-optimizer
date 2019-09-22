@@ -8,10 +8,7 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import javax.validation.Valid;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,15 +26,21 @@ public class Jewel {
     @Column(columnDefinition = "varchar", nullable = false)
     private String name;
 
-    @Min(value = 1, message = "Jewel requiredPieces must be at least 1")
-    @Max(value = 4, message = "Jewel requiredPieces must be at most 4")
-    @Column(nullable = false)
-    private Integer jewelLevel;
+    @NotNull(message = "Jewel level must be non-null")
+    @Min(value = 1, message = "Jewel level must be at least 1")
+    @Max(value = 4, message = "Jewel level must be at most 4")
+    @Column(nullable = false, columnDefinition = "int default 1")
+    private Integer jewelLevel = 1;
 
     @Valid
     @Size(min = 1, message = "Skills must contain at least 1 element")
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "jewel")
     private List<JewelSkill> skills = new ArrayList<>();
+
+    @NotNull(message = "Rarity must be non-null")
+    @Min(value = 1, message = "Rarity must be at least 1")
+    @Column(nullable = false, columnDefinition = "int default 1")
+    private Integer rarity = 1;
 
     public void setName(String name) {
         this.id = NameUtils.toSlug(name);

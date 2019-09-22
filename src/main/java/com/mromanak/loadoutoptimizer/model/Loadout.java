@@ -17,6 +17,12 @@ public class Loadout {
     private final int level2Slots;
     private final int level3Slots;
     private final int level4Slots;
+    private final int defense;
+    private final int fireResistance;
+    private final int waterResistance;
+    private final int thunderResistance;
+    private final int iceResistance;
+    private final int dragonResistance;
     private final double score;
 
     private Loadout(Builder builder) {
@@ -26,6 +32,12 @@ public class Loadout {
         int level2SlotsTmp = 0;
         int level3SlotsTmp = 0;
         int level4SlotsTmp = 0;
+        int defenseTmp = 0;
+        int fireResistanceTmp = 0;
+        int waterResistanceTmp = 0;
+        int thunderResistanceTmp = 0;
+        int iceResistanceTmp = 0;
+        int dragonResistanceTmp = 0;
         for(ThinArmorPiece armorPiece : armorPieces.values()) {
             for(ThinArmorPieceSkill skillMapping : armorPiece.getSkills()) {
                 skillsTmp.merge(skillMapping.getSkill().getName(), skillMapping.getSkillLevel(), (x, y) -> x + y);
@@ -34,12 +46,24 @@ public class Loadout {
             level2SlotsTmp += armorPiece.getLevel2Slots();
             level3SlotsTmp += armorPiece.getLevel3Slots();
             level4SlotsTmp += armorPiece.getLevel4Slots();
+            defenseTmp += armorPiece.getDefense();
+            fireResistanceTmp += armorPiece.getFireResistance();
+            waterResistanceTmp += armorPiece.getWaterResistance();
+            thunderResistanceTmp += armorPiece.getThunderResistance();
+            iceResistanceTmp += armorPiece.getIceResistance();
+            dragonResistanceTmp += armorPiece.getDragonResistance();
         }
         skills = ImmutableMap.copyOf(skillsTmp);
         level1Slots = level1SlotsTmp;
         level2Slots = level2SlotsTmp;
         level3Slots = level3SlotsTmp;
         level4Slots = level4SlotsTmp;
+        defense = defenseTmp;
+        fireResistance = fireResistanceTmp;
+        waterResistance = waterResistanceTmp;
+        thunderResistance = thunderResistanceTmp;
+        iceResistance = iceResistanceTmp;
+        dragonResistance = dragonResistanceTmp;
         score = builder.score;
     }
 

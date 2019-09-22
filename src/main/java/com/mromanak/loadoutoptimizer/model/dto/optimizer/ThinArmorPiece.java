@@ -22,6 +22,13 @@ public class ThinArmorPiece {
     private final Integer level3Slots;
     private final Integer level4Slots;
     private final List<ThinArmorPieceSkill> skills;
+    private Integer rarity;
+    private Integer defense;
+    private Integer fireResistance;
+    private Integer waterResistance;
+    private Integer thunderResistance;
+    private Integer iceResistance;
+    private Integer dragonResistance;
 
     public ThinArmorPiece(ArmorPiece armorPiece) {
         this.id = armorPiece.getId();
@@ -35,5 +42,12 @@ public class ThinArmorPiece {
         this.skills = ImmutableList.copyOf(armorPiece.getSkills().stream().
             map(ThinArmorPieceSkill::new).
             collect(toList()));
+        this.rarity = armorPiece.getRarity();
+        this.defense = armorPiece.getDefense();
+        this.fireResistance = armorPiece.getFireResistance();
+        this.waterResistance = armorPiece.getWaterResistance();
+        this.thunderResistance = armorPiece.getThunderResistance();
+        this.iceResistance = armorPiece.getIceResistance();
+        this.dragonResistance = armorPiece.getDragonResistance();
     }
 }

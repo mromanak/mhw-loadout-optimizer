@@ -29,6 +29,24 @@ public class LoadoutResponse {
     @ApiModelProperty(notes = "The number of unused level 3 decoration slots granted by the loadout")
     private int level4Slots;
 
+    @ApiModelProperty(notes = "The defense level granted by the loadout.")
+    private int defense;
+
+    @ApiModelProperty(notes = "The fire resistance level granted by the loadout.")
+    private int fireResistance;
+
+    @ApiModelProperty(notes = "The water resistance level granted by the loadout.")
+    private int waterResistance;
+
+    @ApiModelProperty(notes = "The thunder resistance level granted by the loadout.")
+    private int thunderResistance;
+
+    @ApiModelProperty(notes = "The ice resistance level granted by the loadout.")
+    private int iceResistance;
+
+    @ApiModelProperty(notes = "The dragon resistance level granted by the loadout.")
+    private int dragonResistance;
+
     @ApiModelProperty(notes = "The score of the loadout as determined by the scoring function described in the request")
     private double score;
 }

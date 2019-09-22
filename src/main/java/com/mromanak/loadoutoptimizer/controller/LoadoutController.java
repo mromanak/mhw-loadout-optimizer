@@ -75,6 +75,12 @@ public class LoadoutController {
         loadoutResponse.setLevel2Slots(loadout.getLevel2Slots());
         loadoutResponse.setLevel3Slots(loadout.getLevel3Slots());
         loadoutResponse.setLevel4Slots(loadout.getLevel4Slots());
+        loadoutResponse.setDefense(loadout.getDefense());
+        loadoutResponse.setFireResistance(loadout.getFireResistance());
+        loadoutResponse.setWaterResistance(loadout.getWaterResistance());
+        loadoutResponse.setThunderResistance(loadout.getThunderResistance());
+        loadoutResponse.setIceResistance(loadout.getIceResistance());
+        loadoutResponse.setDragonResistance(loadout.getFireResistance());
         loadoutResponse.setScore(loadout.getScore());
         return loadoutResponse;
     }

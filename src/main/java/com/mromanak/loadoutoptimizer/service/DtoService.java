@@ -197,6 +197,7 @@ public class DtoService {
         JewelDto dto = new JewelDto();
         dto.setName(jewel.getName());
         dto.setJewelLevel(jewel.getJewelLevel());
+        dto.setRarity(jewel.getRarity());
         dto.setSkills(this.getJewelSkillDtos(jewel.getSkills()));
         return dto;
     }
@@ -224,6 +225,7 @@ public class DtoService {
         }
         jewel.setName(dto.getName());
         jewel.setJewelLevel(dto.getJewelLevel());
+        jewel.setRarity(dto.getRarity());
 
         if (!preserveRelationships) {
             jewel.setSkills(getJewelSkills(jewel, dto.getSkills()));
@@ -260,6 +262,13 @@ public class DtoService {
         dto.setLevel3Slots(armorPiece.getLevel3Slots());
         dto.setLevel4Slots(armorPiece.getLevel4Slots());
         dto.setSkills(getArmorPieceSkillDtos(armorPiece.getSkills()));
+        dto.setRarity(armorPiece.getRarity());
+        dto.setDefense(armorPiece.getDefense());
+        dto.setFireResistance(armorPiece.getFireResistance());
+        dto.setWaterResistance(armorPiece.getWaterResistance());
+        dto.setThunderResistance(armorPiece.getThunderResistance());
+        dto.setIceResistance(armorPiece.getIceResistance());
+        dto.setDragonResistance(armorPiece.getDragonResistance());
         if (armorPiece.getSetBonus() != null) {
             dto.setSetBonusId(armorPiece.getSetBonus().getId());
         }
@@ -295,6 +304,13 @@ public class DtoService {
         armorPiece.setLevel2Slots(dto.getLevel2Slots());
         armorPiece.setLevel3Slots(dto.getLevel3Slots());
         armorPiece.setLevel4Slots(dto.getLevel4Slots());
+        armorPiece.setRarity(dto.getRarity());
+        armorPiece.setDefense(dto.getDefense());
+        armorPiece.setFireResistance(dto.getFireResistance());
+        armorPiece.setWaterResistance(dto.getWaterResistance());
+        armorPiece.setThunderResistance(dto.getThunderResistance());
+        armorPiece.setIceResistance(dto.getIceResistance());
+        armorPiece.setDragonResistance(dto.getDragonResistance());
 
         if (!preserveRelationships) {
             armorPiece.setSkills(getArmorPieceSkills(armorPiece, dto.getSkills()));
@@ -422,6 +438,13 @@ public class DtoService {
         String setName = null;
         SetType setType = null;
         String setBonusId = null;
+        Integer rarity = null;
+        Integer defense = null;
+        Integer fireResistance = null;
+        Integer waterResistance = null;
+        Integer thunderResistance = null;
+        Integer iceResistance = null;
+        Integer dragonResistance = null;
 
         for (ArmorPiece armorPiece : armorPieces) {
             if (usedArmorTypes.contains(armorPiece.getArmorType())) {
@@ -455,10 +478,87 @@ public class DtoService {
                         "An armor set must contain only armor pieces with the same set bonus.");
                 }
             }
+
+            if (armorPiece.getRarity() != null) {
+                Integer otherRarity = armorPiece.getRarity();
+                if (rarity == null) {
+                    rarity = otherRarity;
+                } else if (!Objects.equals(rarity, otherRarity)) {
+                    throw new BadRepositoryApiRequestException(
+                        "An armor set must contain only armor pieces with the same rarity.");
+                }
+            }
+
+            if (armorPiece.getDefense() != null) {
+                Integer otherDefense = armorPiece.getDefense();
+                if (defense == null) {
+                    defense = otherDefense;
+                } else if (!Objects.equals(defense, otherDefense)) {
+                    throw new BadRepositoryApiRequestException(
+                        "An armor set is assumed to contain only armor pieces with the same defense.");
+                }
+            }
+
+            if (armorPiece.getFireResistance() != null) {
+                Integer otherFireResistance = armorPiece.getFireResistance();
+                if (fireResistance == null) {
+                    fireResistance = otherFireResistance;
+                } else if (!Objects.equals(fireResistance, otherFireResistance)) {
+                    throw new BadRepositoryApiRequestException(
+                        "An armor set is assumed to contain only armor pieces with the same fire resistance.");
+                }
+            }
+
+            if (armorPiece.getWaterResistance() != null) {
+                Integer otherWaterResistance = armorPiece.getWaterResistance();
+                if (waterResistance == null) {
+                    waterResistance = otherWaterResistance;
+                } else if (!Objects.equals(waterResistance, otherWaterResistance)) {
+                    throw new BadRepositoryApiRequestException(
+                        "An armor set is assumed to contain only armor pieces with the same water resistance.");
+                }
+            }
+
+            if (armorPiece.getThunderResistance() != null) {
+                Integer otherThunderResistance = armorPiece.getThunderResistance();
+                if (thunderResistance == null) {
+                    thunderResistance = otherThunderResistance;
+                } else if (!Objects.equals(thunderResistance, otherThunderResistance)) {
+                    throw new BadRepositoryApiRequestException(
+                        "An armor set is assumed to contain only armor pieces with the same thunder resistance.");
+                }
+            }
+
+            if (armorPiece.getIceResistance() != null) {
+                Integer otherIceResistance = armorPiece.getIceResistance();
+                if (iceResistance == null) {
+                    iceResistance = otherIceResistance;
+                } else if (!Objects.equals(iceResistance, otherIceResistance)) {
+                    throw new BadRepositoryApiRequestException(
+                        "An armor set is assumed to contain only armor pieces with the same ice resistance.");
+                }
+            }
+
+            if (armorPiece.getDragonResistance() != null) {
+                Integer otherDragonResistance = armorPiece.getDragonResistance();
+                if (dragonResistance == null) {
+                    dragonResistance = otherDragonResistance;
+                } else if (!Objects.equals(dragonResistance, otherDragonResistance)) {
+                    throw new BadRepositoryApiRequestException(
+                        "An armor set is assumed to contain only armor pieces with the same dragon resistance.");
+                }
+            }
         }
         dto.setSetName(setName);
         dto.setSetType(setType);
         dto.setSetBonusId(setBonusId);
+        dto.setRarity(rarity);
+        dto.setDefense(defense);
+        dto.setFireResistance(fireResistance);
+        dto.setWaterResistance(waterResistance);
+        dto.setThunderResistance(thunderResistance);
+        dto.setIceResistance(iceResistance);
+        dto.setDragonResistance(dragonResistance);
 
         return dto;
     }
@@ -535,6 +635,13 @@ public class DtoService {
         armorPiece.setLevel4Slots(dto.getLevel4Slots());
         armorPiece.setSkills(getArmorPieceSkills(armorPiece, dto.getSkills()));
         armorPiece.setSetBonus(setBonus);
+        armorPiece.setRarity(setDto.getRarity());
+        armorPiece.setDefense(setDto.getDefense());
+        armorPiece.setFireResistance(setDto.getFireResistance());
+        armorPiece.setWaterResistance(setDto.getWaterResistance());
+        armorPiece.setThunderResistance(setDto.getThunderResistance());
+        armorPiece.setIceResistance(setDto.getIceResistance());
+        armorPiece.setDragonResistance(setDto.getDragonResistance());
         return armorPiece;
     }
 }
