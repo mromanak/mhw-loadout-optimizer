@@ -102,9 +102,13 @@ To manually request loadouts using the same criteria as the GET request POST the
 
 ## To Do
 * **Add a GUI**.
-* **Complete the data.** I haven't loaded Low Rank armor into the database because I don't think that would be a
-worthwhile time investment. For High Rank armor, the names may not match the ones displayed in-game, and the setName
-field may not align perfectly with the Master Rank equivalents.
+* **Complete the data.**
+	* I haven't loaded Low Rank armor into the database because I don't think that would be a worthwhile time
+	investment.
+	* For High Rank armor, the names may not match the ones displayed in-game, and the setName field may not align
+	perfectly with the Master Rank equivalents.
+	* I haven't added rarity to charms because the wiki is very incomplete in that respect, and there's no great way to
+	view the rarity of upgraded charms that you don't currently own in-game.
 * **Make the process for updating the embedded SQL file less cumbersome.** 
 * **Add the ability to request multiple set bonuses.**  The API currently supports requesting 1 skill via a set
 bonus, but I'd ultimately like to support the ability to request multiple and account for decorations that can provide
