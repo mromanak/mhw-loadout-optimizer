@@ -43,6 +43,13 @@ public class LoadoutRequest {
             "small, negative number to encourage the optimizer to use as few pieces of armor as possible.")
     private double loadoutSizeWeight = 0.0;
 
+    private double defenseWeight = 0.0;
+    private double fireResistanceWeight = 0.0;
+    private double waterResistanceWeight = 0.0;
+    private double thunderResistanceWeight = 0.0;
+    private double iceResistanceWeight = 0.0;
+    private double dragonResistanceWeight = 0.0;
+
     @ApiModelProperty(
         notes = "A list of regular expressions that match the names of armor pieces that should not be included in " +
             "the final loadout.")

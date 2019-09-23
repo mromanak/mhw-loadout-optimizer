@@ -19,6 +19,12 @@ public class SimpleLoadoutScoringFunction implements LoadoutScoringFunction {
     private final double level2SlotWeight;
     private final double level3SlotWeight;
     private final double level4SlotWeight;
+    private final double defenseWeight;
+    private final double fireResistanceWeight;
+    private final double waterResistanceWeight;
+    private final double thunderResistanceWeight;
+    private final double iceResistanceWeight;
+    private final double dragonResistanceWeight;
     private final Function<Integer, Double> loadoutSizeWeightFunction;
 
     private SimpleLoadoutScoringFunction(Builder builder) {
@@ -27,6 +33,12 @@ public class SimpleLoadoutScoringFunction implements LoadoutScoringFunction {
         level2SlotWeight = builder.level2SlotWeight;
         level3SlotWeight = builder.level3SlotWeight;
         level4SlotWeight = builder.level4SlotWeight;
+        defenseWeight = builder.defenseWeight;
+        fireResistanceWeight = builder.fireResistanceWeight;
+        waterResistanceWeight = builder.waterResistanceWeight;
+        thunderResistanceWeight = builder.thunderResistanceWeight;
+        iceResistanceWeight = builder.iceResistanceWeight;
+        dragonResistanceWeight = builder.dragonResistanceWeight;
         loadoutSizeWeightFunction = builder.loadoutSizeWeightFunction;
     }
 
@@ -68,6 +80,12 @@ public class SimpleLoadoutScoringFunction implements LoadoutScoringFunction {
         score += level2SlotWeight * loadout.getLevel2Slots();
         score += level3SlotWeight * loadout.getLevel3Slots();
         score += level4SlotWeight * loadout.getLevel4Slots();
+        score += defenseWeight * loadout.getDefense();
+        score += fireResistanceWeight * loadout.getFireResistance();
+        score += waterResistanceWeight * loadout.getWaterResistance();
+        score += thunderResistanceWeight * loadout.getThunderResistance();
+        score += iceResistanceWeight * loadout.getIceResistance();
+        score += dragonResistanceWeight * loadout.getDragonResistance();
 
         score += loadoutSizeWeightFunction.apply(loadout.getArmorPieces().size());
 
@@ -80,6 +98,12 @@ public class SimpleLoadoutScoringFunction implements LoadoutScoringFunction {
         private double level2SlotWeight = 0.0;
         private double level3SlotWeight = 0.0;
         private double level4SlotWeight = 0.0;
+        private double defenseWeight = 0.0;
+        private double fireResistanceWeight = 0.0;
+        private double waterResistanceWeight = 0.0;
+        private double thunderResistanceWeight = 0.0;
+        private double iceResistanceWeight = 0.0;
+        private double dragonResistanceWeight = 0.0;
         private Function<Integer, Double> loadoutSizeWeightFunction = zeroWeightFunction();
 
         private Builder() {
@@ -121,6 +145,36 @@ public class SimpleLoadoutScoringFunction implements LoadoutScoringFunction {
 
         public Builder withLevel4SlotWeight(double val) {
             level4SlotWeight = val;
+            return this;
+        }
+
+        public Builder withDefenseWeight(double val) {
+            defenseWeight = val;
+            return this;
+        }
+
+        public Builder withFireResistanceWeight(double val) {
+            fireResistanceWeight = val;
+            return this;
+        }
+
+        public Builder withWaterResistanceWeight(double val) {
+            waterResistanceWeight = val;
+            return this;
+        }
+
+        public Builder withThunderResistanceWeight(double val) {
+            thunderResistanceWeight = val;
+            return this;
+        }
+
+        public Builder withIceResistanceWeight(double val) {
+            iceResistanceWeight = val;
+            return this;
+        }
+
+        public Builder withDragonResistanceWeight(double val) {
+            dragonResistanceWeight = val;
             return this;
         }
 

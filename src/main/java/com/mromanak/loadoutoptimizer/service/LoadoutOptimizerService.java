@@ -94,6 +94,12 @@ public class LoadoutOptimizerService {
             withLevel2SlotWeight(loadoutRequest.getLevel2SlotWeight()).
             withLevel3SlotWeight(loadoutRequest.getLevel3SlotWeight()).
             withLevel4SlotWeight(loadoutRequest.getLevel4SlotWeight()).
+            withDefenseWeight(loadoutRequest.getDefenseWeight()).
+            withFireResistanceWeight(loadoutRequest.getFireResistanceWeight()).
+            withWaterResistanceWeight(loadoutRequest.getWaterResistanceWeight()).
+            withThunderResistanceWeight(loadoutRequest.getThunderResistanceWeight()).
+            withIceResistanceWeight(loadoutRequest.getIceResistanceWeight()).
+            withDragonResistanceWeight(loadoutRequest.getDragonResistanceWeight()).
             withLoadoutSizeWeightFunction(size -> loadoutSizeWeight * size).
             build();
     }
