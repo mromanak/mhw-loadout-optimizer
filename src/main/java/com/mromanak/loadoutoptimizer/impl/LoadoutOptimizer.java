@@ -91,6 +91,7 @@ public class LoadoutOptimizer {
 
         OptimizerRequest request = OptimizerRequest.builderForLoadout(currentLoadout, armorType).
             retainSkills(scoringFunction.getDesiredSkills()).
+            retainDefensiveStats(scoringFunction).
             build();
         if(solutionCache.containsKey(request)) {
             return solutionCache.get(request);

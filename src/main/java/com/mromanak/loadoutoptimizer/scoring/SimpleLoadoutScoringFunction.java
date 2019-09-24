@@ -3,6 +3,8 @@ package com.mromanak.loadoutoptimizer.scoring;
 import com.google.common.collect.ImmutableMap;
 import com.mromanak.loadoutoptimizer.model.Loadout;
 import lombok.Data;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,6 +15,8 @@ import static com.mromanak.loadoutoptimizer.scoring.LoadoutScoringUtils.zeroWeig
 
 @Data
 public class SimpleLoadoutScoringFunction implements LoadoutScoringFunction {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(SimpleLoadoutScoringFunction.class);
 
     private final Map<String, Function<Integer, Double>> skillWieghtFunctions;
     private final double level1SlotWeight;
@@ -90,6 +94,36 @@ public class SimpleLoadoutScoringFunction implements LoadoutScoringFunction {
         score += loadoutSizeWeightFunction.apply(loadout.getArmorPieces().size());
 
         return score;
+    }
+
+    @Override
+    public boolean needsDefense() {
+        return defenseWeight != 0.0;
+    }
+
+    @Override
+    public boolean needsFireResistance() {
+        return fireResistanceWeight != 0.0;
+    }
+
+    @Override
+    public boolean needsWaterResistance() {
+        return waterResistanceWeight != 0.0;
+    }
+
+    @Override
+    public boolean needsThunderResistance() {
+        return thunderResistanceWeight != 0.0;
+    }
+
+    @Override
+    public boolean needsIceResistance() {
+        return iceResistanceWeight != 0.0;
+    }
+
+    @Override
+    public boolean needsDragonResistance() {
+        return dragonResistanceWeight != 0.0;
     }
 
     public static final class Builder {

@@ -8,4 +8,16 @@ import java.util.function.Function;
 public interface LoadoutScoringFunction extends Function<Loadout, Double> {
 
     Set<String> getDesiredSkills();
+
+    boolean needsDefense();
+
+    boolean needsFireResistance();
+
+    boolean needsWaterResistance();
+
+    boolean needsThunderResistance();
+
+    boolean needsIceResistance();
+
+    boolean needsDragonResistance();
 }
