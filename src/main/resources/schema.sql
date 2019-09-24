@@ -2341,7 +2341,7 @@ CREATE CACHED TABLE "PUBLIC"."SET_BONUS_SKILL"(
     "SKILL_ID" VARCHAR NOT NULL
 );
 ALTER TABLE "PUBLIC"."SET_BONUS_SKILL" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_5" PRIMARY KEY("SET_BONUS_ID", "SKILL_ID");         
--- 65 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS_SKILL;         
+-- 66 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS_SKILL;         
 INSERT INTO "PUBLIC"."SET_BONUS_SKILL" VALUES
 (3, 1, 'diablos-ambition', 'slugger-secret'),
 (3, 1, 'anjanath-power', 'adrenaline'),
@@ -2407,7 +2407,8 @@ INSERT INTO "PUBLIC"."SET_BONUS_SKILL" VALUES
 (4, 1, 'gold-rathian-essence', 'true-critical-status'),
 (2, 1, 'silver-rathalos-essence', 'slinger-capacity-secret'),
 (4, 1, 'silver-rathalos-essence', 'true-critical-element'),
-(5, 1, 'shara-ishvalda-divinity', 'true-gaia-s-veil');    
+(5, 1, 'shara-ishvalda-divinity', 'true-gaia-s-veil'),
+(2, 1, 'velkhana-divinity', 'critical-element');   
 CREATE CACHED TABLE "PUBLIC"."SKILL"(
     "ID" VARCHAR NOT NULL,
     "DESCRIPTION" VARCHAR NOT NULL,
