@@ -41,6 +41,7 @@ public class ThinArmorPiece {
         this.level4Slots = armorPiece.getLevel4Slots();
         this.skills = ImmutableList.copyOf(armorPiece.getSkills().stream().
             map(ThinArmorPieceSkill::new).
+            distinct().
             collect(toList()));
         this.rarity = armorPiece.getRarity();
         this.defense = armorPiece.getDefense();
