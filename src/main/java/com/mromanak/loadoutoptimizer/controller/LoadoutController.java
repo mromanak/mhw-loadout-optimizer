@@ -80,7 +80,7 @@ public class LoadoutController {
         loadoutResponse.setWaterResistance(loadout.getWaterResistance());
         loadoutResponse.setThunderResistance(loadout.getThunderResistance());
         loadoutResponse.setIceResistance(loadout.getIceResistance());
-        loadoutResponse.setDragonResistance(loadout.getFireResistance());
+        loadoutResponse.setDragonResistance(loadout.getDragonResistance());
         loadoutResponse.setScore(loadout.getScore());
         return loadoutResponse;
     }
