@@ -1,7 +1,5 @@
 package com.mromanak.loadoutoptimizer.scoring;
 
-import com.mromanak.loadoutoptimizer.model.jpa.ArmorType;
-
 import java.util.function.Function;
 
 public abstract class LoadoutScoringUtils {
@@ -16,10 +14,6 @@ public abstract class LoadoutScoringUtils {
     }
 
     public static Function<Integer, Double> simpleSkillWeightFunction(double weight, int skillMaximum) {
-        return skillLevel -> (skillLevel > skillMaximum) ? 0.0 : weight * skillLevel;
-    }
-
-    public static Function<Integer, Double> preferSmallerLoadouts(double weight) {
-        return loadoutSize -> loadoutSize == 0 ? 0.0 : weight * (1.0 - (double) loadoutSize / ArmorType.values().length);
+        return skillLevel -> (skillLevel > skillMaximum) ? weight * skillMaximum : weight * skillLevel;
     }
 }
