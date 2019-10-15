@@ -1,8 +1,8 @@
 package com.mromanak.loadoutoptimizer.annotations;
 
-
-import com.mromanak.loadoutoptimizer.validator.ArmorPieceMaxTotalSlotsValidator;
+import com.mromanak.loadoutoptimizer.validator.AbstractWeaponMaxTotalSlotsValidator;
 import com.mromanak.loadoutoptimizer.validator.ArmorPieceDtoMaxTotalSlotsValidator;
+import com.mromanak.loadoutoptimizer.validator.ArmorPieceMaxTotalSlotsValidator;
 import com.mromanak.loadoutoptimizer.validator.ArmorSetComponentDtoMaxTotalSlotsValidator;
 
 import javax.validation.Constraint;
@@ -13,7 +13,8 @@ import java.lang.annotation.*;
 @Constraint(validatedBy = {
     ArmorPieceMaxTotalSlotsValidator.class,
     ArmorPieceDtoMaxTotalSlotsValidator.class,
-    ArmorSetComponentDtoMaxTotalSlotsValidator.class
+    ArmorSetComponentDtoMaxTotalSlotsValidator.class,
+    AbstractWeaponMaxTotalSlotsValidator.class
 })
 @Target( { ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)
