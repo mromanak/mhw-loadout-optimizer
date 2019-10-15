@@ -77,6 +77,7 @@ public class LoadoutOptimizer {
                 Loadout tmp = Loadout.builder().withArmorPieces(armorPieces).build();
                 return Loadout.builder(tmp).withScore(scoringFunction.apply(tmp)).build();
             }).
+            distinct().
             collect(toList());
     }
 
