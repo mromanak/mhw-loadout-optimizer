@@ -18,7 +18,7 @@ CREATE CACHED TABLE "PUBLIC"."ARMOR_PIECE_SKILL"(
     "SKILL_ID" VARCHAR NOT NULL
 );      
 ALTER TABLE "PUBLIC"."ARMOR_PIECE_SKILL" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_F" PRIMARY KEY("ARMOR_PIECE_ID", "SKILL_ID");     
--- 2211 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE_SKILL;     
+-- 2262 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE_SKILL;     
 INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'diablos-head-alpha-plus', 'slugger'),
 (1, 'ko-charm-i', 'slugger'),
@@ -2255,7 +2255,59 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (3, 'silver-rathalos-arms-beta-plus', 'slinger-capacity'),
 (1, 'silver-rathalos-waist-beta-plus', 'critical-boost'),
 (1, 'silver-rathalos-waist-beta-plus', 'windproof'),
-(2, 'silver-rathalos-legs-beta-plus', 'slinger-capacity');          
+(2, 'silver-rathalos-legs-beta-plus', 'slinger-capacity'),
+(1, 'guild-palace-head-alpha-plus', 'offensive-guard'),
+(2, 'guild-palace-head-alpha-plus', 'health-boost'),
+(1, 'guild-palace-body-alpha-plus', 'heroics'),
+(2, 'guild-palace-body-alpha-plus', 'agitator'),
+(1, 'guild-palace-arms-alpha-plus', 'heroics'),
+(2, 'guild-palace-arms-alpha-plus', 'offensive-guard'),
+(1, 'guild-palace-waist-alpha-plus', 'resuscitate'),
+(3, 'guild-palace-waist-alpha-plus', 'agitator'),
+(1, 'guild-palace-legs-alpha-plus', 'health-boost'),
+(3, 'guild-palace-legs-alpha-plus', 'heroics'),
+(2, 'guild-palace-head-beta-plus', 'health-boost'),
+(1, 'guild-palace-body-beta-plus', 'agitator'),
+(1, 'guild-palace-body-beta-plus', 'heroics'),
+(2, 'guild-palace-arms-beta-plus', 'offensive-guard'),
+(1, 'guild-palace-waist-beta-plus', 'resuscitate'),
+(2, 'guild-palace-waist-beta-plus', 'agitator'),
+(1, 'guild-palace-legs-beta-plus', 'health-boost'),
+(2, 'guild-palace-legs-beta-plus', 'heroics'),
+(1, 'guildwork-head-alpha-plus', 'honey-hunter'),
+(3, 'guildwork-head-alpha-plus', 'botanist'),
+(1, 'guildwork-body-alpha-plus', 'cliffhanger'),
+(1, 'guildwork-body-alpha-plus', 'flinch-free'),
+(1, 'guildwork-arms-alpha-plus', 'botanist'),
+(2, 'guildwork-arms-alpha-plus', 'geologist'),
+(1, 'guildwork-waist-alpha-plus', 'detector'),
+(1, 'guildwork-waist-alpha-plus', 'forager-s-luck'),
+(1, 'guildwork-legs-alpha-plus', 'geologist'),
+(2, 'guildwork-legs-alpha-plus', 'flinch-free'),
+(1, 'guildwork-head-beta-plus', 'botanist'),
+(1, 'guildwork-head-beta-plus', 'honey-hunter'),
+(1, 'guildwork-body-beta-plus', 'cliffhanger'),
+(1, 'guildwork-arms-beta-plus', 'botanist'),
+(1, 'guildwork-arms-beta-plus', 'geologist'),
+(1, 'guildwork-waist-beta-plus', 'forager-s-luck'),
+(2, 'guildwork-legs-beta-plus', 'flinch-free'),
+(2, 'rajang-head-alpha-plus', 'handicraft'),
+(2, 'rajang-head-alpha-plus', 'weakness-exploit'),
+(2, 'rajang-body-alpha-plus', 'resentment');         
+INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
+(2, 'rajang-body-alpha-plus', 'speed-sharpening'),
+(1, 'rajang-arms-alpha-plus', 'resentment'),
+(2, 'rajang-arms-alpha-plus', 'handicraft'),
+(1, 'rajang-waist-alpha-plus', 'handicraft'),
+(1, 'rajang-waist-alpha-plus', 'weakness-exploit'),
+(2, 'rajang-legs-alpha-plus', 'attack-boost'),
+(2, 'rajang-legs-alpha-plus', 'resentment'),
+(2, 'rajang-head-beta-plus', 'weakness-exploit'),
+(2, 'rajang-body-beta-plus', 'resentment'),
+(1, 'rajang-arms-beta-plus', 'resentment'),
+(1, 'rajang-waist-beta-plus', 'weakness-exploit'),
+(1, 'rajang-legs-beta-plus', 'attack-boost'),
+(2, 'rajang-legs-beta-plus', 'resentment');              
 CREATE CACHED TABLE "PUBLIC"."JEWEL_SKILL"(
     "SKILL_LEVEL" INTEGER NOT NULL CHECK (("SKILL_LEVEL" <= 7)
     AND ("SKILL_LEVEL" >= 1)),
@@ -2271,7 +2323,7 @@ CREATE CACHED TABLE "PUBLIC"."SET_BONUS"(
     "NAME" VARCHAR NOT NULL
 );            
 ALTER TABLE "PUBLIC"."SET_BONUS" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_1" PRIMARY KEY("ID");     
--- 54 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS;               
+-- 56 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS;               
 INSERT INTO "PUBLIC"."SET_BONUS" VALUES
 ('diablos-ambition', 'Diablos Ambition'),
 ('anjanath-power', 'Anjanath Power'),
@@ -2326,7 +2378,9 @@ INSERT INTO "PUBLIC"."SET_BONUS" VALUES
 ('lunastra-essence', 'Lunastra Essence'),
 ('nergigante-ambition', 'Nergigante Ambition'),
 ('gold-rathian-essence', 'Gold Rathian Essence'),
-('silver-rathalos-essence', 'Silver Rathalos Essence');  
+('silver-rathalos-essence', 'Silver Rathalos Essence'),
+('guild-pride', 'Guild Pride'),
+('rajang-s-rage', 'Rajang''s Rage');             
 CREATE CACHED TABLE "PUBLIC"."SET_BONUS_ARMOR_PIECES"(
     "SET_BONUS_ID" VARCHAR NOT NULL,
     "ARMOR_PIECES_ID" VARCHAR NOT NULL
@@ -2341,7 +2395,7 @@ CREATE CACHED TABLE "PUBLIC"."SET_BONUS_SKILL"(
     "SKILL_ID" VARCHAR NOT NULL
 );
 ALTER TABLE "PUBLIC"."SET_BONUS_SKILL" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_5" PRIMARY KEY("SET_BONUS_ID", "SKILL_ID");         
--- 66 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS_SKILL;         
+-- 70 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS_SKILL;         
 INSERT INTO "PUBLIC"."SET_BONUS_SKILL" VALUES
 (3, 1, 'diablos-ambition', 'slugger-secret'),
 (3, 1, 'anjanath-power', 'adrenaline'),
@@ -2408,7 +2462,11 @@ INSERT INTO "PUBLIC"."SET_BONUS_SKILL" VALUES
 (2, 1, 'silver-rathalos-essence', 'slinger-capacity-secret'),
 (4, 1, 'silver-rathalos-essence', 'true-critical-element'),
 (5, 1, 'shara-ishvalda-divinity', 'true-gaia-s-veil'),
-(2, 1, 'velkhana-divinity', 'critical-element');   
+(2, 1, 'velkhana-divinity', 'critical-element'),
+(2, 1, 'guild-pride', 'good-luck'),
+(4, 1, 'guild-pride', 'capture-master'),
+(2, 1, 'rajang-s-rage', 'mind-s-eye-ballistics'),
+(4, 1, 'rajang-s-rage', 'protective-polish');      
 CREATE CACHED TABLE "PUBLIC"."SKILL"(
     "ID" VARCHAR NOT NULL,
     "DESCRIPTION" VARCHAR NOT NULL,
@@ -3035,7 +3093,7 @@ CREATE CACHED TABLE "PUBLIC"."ARMOR_PIECE"(
     "WATER_RESISTANCE" INT DEFAULT 0 NOT NULL
 );  
 ALTER TABLE "PUBLIC"."ARMOR_PIECE" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_4" PRIMARY KEY("ID");   
--- 1525 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE;           
+-- 1555 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE;           
 INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('diablos-head-alpha-plus', 0, 0, 1, 0, 0, STRINGDECODE('Diablos Helm \u03b1 +'), 'Diablos', '4', 'diablos-ambition', 140, 2, 3, -3, 10, 0, -2),
 ('kestodon-arms-lr', 2, 0, 0, 0, 0, 'Kestodon Guards', 'Kestodon', '0', NULL, 12, 0, 4, 0, 1, 0, 0),
@@ -4609,7 +4667,38 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('silver-rathalos-body-beta-plus', 1, 0, 0, 0, 1, STRINGDECODE('Silver Solmail \u03b2 +'), 'Silver Rathalos', '5', 'silver-rathalos-essence', 164, 3, 4, -2, 12, -2, -3),
 ('silver-rathalos-arms-beta-plus', 2, 0, 1, 0, 1, STRINGDECODE('Silver Solbraces \u03b2 +'), 'Silver Rathalos', '5', 'silver-rathalos-essence', 164, 3, 4, -2, 12, -2, -3),
 ('silver-rathalos-waist-beta-plus', 3, 1, 0, 0, 1, STRINGDECODE('Silver Solcoil \u03b2 +'), 'Silver Rathalos', '5', 'silver-rathalos-essence', 164, 3, 4, -2, 12, -2, -3),
-('silver-rathalos-legs-beta-plus', 4, 1, 1, 0, 1, STRINGDECODE('Silver Solgreaves \u03b2 +'), 'Silver Rathalos', '5', 'silver-rathalos-essence', 164, 3, 4, -2, 12, -2, -3);              
+('silver-rathalos-legs-beta-plus', 4, 1, 1, 0, 1, STRINGDECODE('Silver Solgreaves \u03b2 +'), 'Silver Rathalos', '5', 'silver-rathalos-essence', 164, 3, 4, -2, 12, -2, -3),
+('guild-palace-head-alpha-plus', 0, 0, 0, 1, 0, STRINGDECODE('Guild Palace Helm \u03b1 +'), 'Guild Palace', '4', 'guild-pride', 154, 1, 1, 1, 11, 2, 2),
+('guild-palace-body-alpha-plus', 1, 2, 0, 0, 0, STRINGDECODE('Guild Palace Mail \u03b1 +'), 'Guild Palace', '4', 'guild-pride', 154, 1, 1, 1, 11, 2, 2),
+('guild-palace-arms-alpha-plus', 2, 0, 0, 1, 0, STRINGDECODE('Guild Palace Braces \u03b1 +'), 'Guild Palace', '4', 'guild-pride', 154, 1, 1, 1, 11, 2, 2),
+('guild-palace-waist-alpha-plus', 3, 2, 0, 0, 0, STRINGDECODE('Guild Palace Coil \u03b1 +'), 'Guild Palace', '4', 'guild-pride', 154, 1, 1, 1, 11, 2, 2),
+('guild-palace-legs-alpha-plus', 4, 0, 1, 0, 0, STRINGDECODE('Guild Palace Greaves \u03b1 +'), 'Guild Palace', '4', 'guild-pride', 154, 1, 1, 1, 11, 2, 2),
+('guild-palace-head-beta-plus', 0, 0, 1, 0, 1, STRINGDECODE('Guild Palace Helm \u03b2 +'), 'Guild Palace', '5', 'guild-pride', 154, 1, 1, 1, 11, 2, 2),
+('guild-palace-body-beta-plus', 1, 0, 1, 0, 1, STRINGDECODE('Guild Palace Mail \u03b2 +'), 'Guild Palace', '5', 'guild-pride', 154, 1, 1, 1, 11, 2, 2),
+('guild-palace-arms-beta-plus', 2, 1, 0, 0, 1, STRINGDECODE('Guild Palace Braces \u03b2 +'), 'Guild Palace', '5', 'guild-pride', 154, 1, 1, 1, 11, 2, 2); 
+INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
+('guild-palace-waist-beta-plus', 3, 1, 0, 0, 1, STRINGDECODE('Guild Palace Coil \u03b2 +'), 'Guild Palace', '5', 'guild-pride', 154, 1, 1, 1, 11, 2, 2),
+('guild-palace-legs-beta-plus', 4, 1, 0, 0, 1, STRINGDECODE('Guild Palace Greaves \u03b2 +'), 'Guild Palace', '5', 'guild-pride', 154, 1, 1, 1, 11, 2, 2),
+('guildwork-head-alpha-plus', 0, 0, 1, 1, 0, STRINGDECODE('Guildwork Helm \u03b1 +'), 'Guildwork', '4', 'guild-pride', 162, 2, 2, 2, 12, 1, 1),
+('guildwork-body-alpha-plus', 1, 1, 0, 1, 0, STRINGDECODE('Guildwork Mail \u03b1 +'), 'Guildwork', '4', 'guild-pride', 162, 2, 2, 2, 12, 1, 1),
+('guildwork-arms-alpha-plus', 2, 0, 1, 1, 0, STRINGDECODE('Guildwork Braces \u03b1 +'), 'Guildwork', '4', 'guild-pride', 162, 2, 2, 2, 12, 1, 1),
+('guildwork-waist-alpha-plus', 3, 0, 1, 1, 0, STRINGDECODE('Guildwork Coil \u03b1 +'), 'Guildwork', '4', 'guild-pride', 162, 2, 2, 2, 12, 1, 1),
+('guildwork-legs-alpha-plus', 4, 1, 0, 1, 0, STRINGDECODE('Guildwork Greaves \u03b1 +'), 'Guildwork', '4', 'guild-pride', 162, 2, 2, 2, 12, 1, 1),
+('guildwork-head-beta-plus', 0, 0, 0, 1, 1, STRINGDECODE('Guildwork Helm \u03b2 +'), 'Guildwork', '5', 'guild-pride', 162, 2, 2, 2, 12, 1, 1),
+('guildwork-body-beta-plus', 1, 0, 2, 0, 1, STRINGDECODE('Guildwork Mail \u03b2 +'), 'Guildwork', '5', 'guild-pride', 162, 2, 2, 2, 12, 1, 1),
+('guildwork-arms-beta-plus', 2, 0, 0, 1, 1, STRINGDECODE('Guildwork Braces \u03b2 +'), 'Guildwork', '5', 'guild-pride', 162, 2, 2, 2, 12, 1, 1),
+('guildwork-waist-beta-plus', 3, 0, 0, 1, 1, STRINGDECODE('Guildwork Coil \u03b2 +'), 'Guildwork', '5', 'guild-pride', 162, 2, 2, 2, 12, 1, 1),
+('guildwork-legs-beta-plus', 4, 1, 0, 0, 1, STRINGDECODE('Guildwork Greaves \u03b2 +'), 'Guildwork', '5', 'guild-pride', 162, 2, 2, 2, 12, 1, 1),
+('rajang-head-alpha-plus', 0, 0, 0, 0, 0, STRINGDECODE('Golden Headdress \u03b1 +'), 'Rajang', '4', 'rajang-s-rage', 158, 2, 2, -5, 11, 3, 0),
+('rajang-body-alpha-plus', 1, 1, 0, 1, 0, STRINGDECODE('Golden Haori \u03b1 +'), 'Rajang', '4', 'rajang-s-rage', 158, 2, 2, -5, 11, 3, 0),
+('rajang-arms-alpha-plus', 2, 0, 1, 0, 0, STRINGDECODE('Golden Kote \u03b1 +'), 'Rajang', '4', 'rajang-s-rage', 158, 2, 2, -5, 11, 3, 0),
+('rajang-waist-alpha-plus', 3, 1, 0, 1, 0, STRINGDECODE('Golden Obi \u03b1 +'), 'Rajang', '4', 'rajang-s-rage', 158, 2, 2, -5, 11, 3, 0),
+('rajang-legs-alpha-plus', 4, 0, 2, 0, 0, STRINGDECODE('Golden Hakama \u03b1 +'), 'Rajang', '4', 'rajang-s-rage', 158, 2, 2, -5, 11, 3, 0),
+('rajang-head-beta-plus', 0, 1, 0, 0, 1, STRINGDECODE('Golden Headdress \u03b2 +'), 'Rajang', '5', 'rajang-s-rage', 158, 2, 2, -5, 11, 3, 0),
+('rajang-body-beta-plus', 1, 2, 0, 0, 1, STRINGDECODE('Golden Haori \u03b2 +'), 'Rajang', '5', 'rajang-s-rage', 158, 2, 2, -5, 11, 3, 0),
+('rajang-arms-beta-plus', 2, 0, 0, 1, 1, STRINGDECODE('Golden Kote \u03b2 +'), 'Rajang', '5', 'rajang-s-rage', 158, 2, 2, -5, 11, 3, 0),
+('rajang-waist-beta-plus', 3, 0, 0, 1, 1, STRINGDECODE('Golden Obi \u03b2 +'), 'Rajang', '5', 'rajang-s-rage', 158, 2, 2, -5, 11, 3, 0),
+('rajang-legs-beta-plus', 4, 0, 1, 0, 1, STRINGDECODE('Golden Hakama \u03b2 +'), 'Rajang', '5', 'rajang-s-rage', 158, 2, 2, -5, 11, 3, 0);            
 ALTER TABLE "PUBLIC"."ARMOR_PIECE" ADD CONSTRAINT "PUBLIC"."UKP46L799PTS3CCBB1IR7HPH5EC" UNIQUE("SET_NAME", "ARMOR_TYPE", "SET_TYPE");         
 ALTER TABLE "PUBLIC"."SET_BONUS_ARMOR_PIECES" ADD CONSTRAINT "PUBLIC"."UK_RHY5M0B27L7Y049FJB2O3EH6D" UNIQUE("ARMOR_PIECES_ID");
 ALTER TABLE "PUBLIC"."SET_BONUS_SKILL" ADD CONSTRAINT "PUBLIC"."FK2FTO2XB77PFK9R8R4FK7U1VOK" FOREIGN KEY("SET_BONUS_ID") REFERENCES "PUBLIC"."SET_BONUS"("ID") NOCHECK;        
