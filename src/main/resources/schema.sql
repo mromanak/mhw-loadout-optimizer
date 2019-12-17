@@ -18,7 +18,7 @@ CREATE CACHED TABLE "PUBLIC"."ARMOR_PIECE_SKILL"(
     "SKILL_ID" VARCHAR NOT NULL
 );      
 ALTER TABLE "PUBLIC"."ARMOR_PIECE_SKILL" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_F" PRIMARY KEY("ARMOR_PIECE_ID", "SKILL_ID");     
--- 2262 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE_SKILL;     
+-- 2317 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE_SKILL;     
 INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'diablos-head-alpha-plus', 'slugger'),
 (1, 'ko-charm-i', 'slugger'),
@@ -2307,7 +2307,62 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'rajang-arms-beta-plus', 'resentment'),
 (1, 'rajang-waist-beta-plus', 'weakness-exploit'),
 (1, 'rajang-legs-beta-plus', 'attack-boost'),
-(2, 'rajang-legs-beta-plus', 'resentment');              
+(2, 'rajang-legs-beta-plus', 'resentment'),
+(1, 'brute-tigrex-head-alpha-plus', 'free-meal'),
+(3, 'brute-tigrex-head-alpha-plus', 'attack-boost'),
+(1, 'brute-tigrex-body-alpha-plus', 'weakness-exploit'),
+(3, 'brute-tigrex-body-alpha-plus', 'attack-boost'),
+(2, 'brute-tigrex-arms-alpha-plus', 'attack-boost'),
+(3, 'brute-tigrex-arms-alpha-plus', 'health-boost'),
+(1, 'brute-tigrex-waist-alpha-plus', 'weakness-exploit'),
+(3, 'brute-tigrex-waist-alpha-plus', 'recovery-up'),
+(1, 'brute-tigrex-legs-alpha-plus', 'weakness-exploit'),
+(3, 'brute-tigrex-legs-alpha-plus', 'agitator'),
+(1, 'brute-tigrex-head-beta-plus', 'free-meal'),
+(2, 'brute-tigrex-head-beta-plus', 'attack-boost'),
+(1, 'brute-tigrex-body-beta-plus', 'weakness-exploit'),
+(2, 'brute-tigrex-body-beta-plus', 'attack-boost'),
+(2, 'brute-tigrex-arms-beta-plus', 'attack-boost'),
+(2, 'brute-tigrex-arms-beta-plus', 'health-boost'),
+(1, 'brute-tigrex-waist-beta-plus', 'weakness-exploit'),
+(2, 'brute-tigrex-waist-beta-plus', 'recovery-up'),
+(1, 'brute-tigrex-legs-beta-plus', 'weakness-exploit'),
+(2, 'brute-tigrex-legs-beta-plus', 'agitator'),
+(2, 'stygian-zinogre-head-alpha-plus', 'tremor-resistance'),
+(3, 'stygian-zinogre-head-alpha-plus', 'latent-power'),
+(2, 'stygian-zinogre-body-alpha-plus', 'flinch-free'),
+(3, 'stygian-zinogre-body-alpha-plus', 'windproof'),
+(2, 'stygian-zinogre-arms-alpha-plus', 'partbreaker'),
+(3, 'stygian-zinogre-arms-alpha-plus', 'dragon-attack'),
+(2, 'stygian-zinogre-waist-alpha-plus', 'earplugs'),
+(3, 'stygian-zinogre-waist-alpha-plus', 'latent-power'),
+(1, 'stygian-zinogre-legs-alpha-plus', 'elderseal-boost'),
+(2, 'stygian-zinogre-legs-alpha-plus', 'focus'),
+(1, 'stygian-zinogre-head-beta-plus', 'tremor-resistance'),
+(3, 'stygian-zinogre-head-beta-plus', 'latent-power'),
+(1, 'stygian-zinogre-body-beta-plus', 'flinch-free'),
+(3, 'stygian-zinogre-body-beta-plus', 'windproof'),
+(2, 'stygian-zinogre-arms-beta-plus', 'partbreaker'),
+(1, 'stygian-zinogre-waist-beta-plus', 'earplugs'),
+(3, 'stygian-zinogre-waist-beta-plus', 'latent-power'),
+(2, 'stygian-zinogre-legs-beta-plus', 'focus'),
+(1, 'safi-jiiva-head-alpha-plus', 'critical-boost'),
+(2, 'safi-jiiva-head-alpha-plus', 'evade-window'),
+(1, 'safi-jiiva-body-alpha-plus', 'critical-boost'),
+(2, 'safi-jiiva-body-alpha-plus', 'blight-resistance'),
+(1, 'safi-jiiva-arms-alpha-plus', 'blight-resistance'),
+(1, 'safi-jiiva-arms-alpha-plus', 'maximum-might'),
+(1, 'safi-jiiva-waist-alpha-plus', 'maximum-might'),
+(2, 'safi-jiiva-waist-alpha-plus', 'evade-window'),
+(1, 'safi-jiiva-legs-alpha-plus', 'critical-boost'),
+(1, 'safi-jiiva-legs-alpha-plus', 'maximum-might'),
+(1, 'safi-jiiva-head-beta-plus', 'critical-boost'),
+(1, 'safi-jiiva-head-beta-plus', 'evade-window'),
+(1, 'safi-jiiva-body-beta-plus', 'blight-resistance'),
+(1, 'safi-jiiva-body-beta-plus', 'critical-boost'),
+(1, 'safi-jiiva-arms-beta-plus', 'blight-resistance'),
+(2, 'safi-jiiva-waist-beta-plus', 'evade-window'),
+(1, 'safi-jiiva-legs-beta-plus', 'critical-boost');            
 CREATE CACHED TABLE "PUBLIC"."JEWEL_SKILL"(
     "SKILL_LEVEL" INTEGER NOT NULL CHECK (("SKILL_LEVEL" <= 7)
     AND ("SKILL_LEVEL" >= 1)),
@@ -2323,7 +2378,7 @@ CREATE CACHED TABLE "PUBLIC"."SET_BONUS"(
     "NAME" VARCHAR NOT NULL
 );            
 ALTER TABLE "PUBLIC"."SET_BONUS" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_1" PRIMARY KEY("ID");     
--- 56 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS;               
+-- 57 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS;               
 INSERT INTO "PUBLIC"."SET_BONUS" VALUES
 ('diablos-ambition', 'Diablos Ambition'),
 ('anjanath-power', 'Anjanath Power'),
@@ -2380,7 +2435,8 @@ INSERT INTO "PUBLIC"."SET_BONUS" VALUES
 ('gold-rathian-essence', 'Gold Rathian Essence'),
 ('silver-rathalos-essence', 'Silver Rathalos Essence'),
 ('guild-pride', 'Guild Pride'),
-('rajang-s-rage', 'Rajang''s Rage');             
+('rajang-s-rage', 'Rajang''s Rage'),
+('safi-jiiva-seal', 'Safi''jiiva Seal');    
 CREATE CACHED TABLE "PUBLIC"."SET_BONUS_ARMOR_PIECES"(
     "SET_BONUS_ID" VARCHAR NOT NULL,
     "ARMOR_PIECES_ID" VARCHAR NOT NULL
@@ -2395,7 +2451,7 @@ CREATE CACHED TABLE "PUBLIC"."SET_BONUS_SKILL"(
     "SKILL_ID" VARCHAR NOT NULL
 );
 ALTER TABLE "PUBLIC"."SET_BONUS_SKILL" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_5" PRIMARY KEY("SET_BONUS_ID", "SKILL_ID");         
--- 70 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS_SKILL;         
+-- 72 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS_SKILL;         
 INSERT INTO "PUBLIC"."SET_BONUS_SKILL" VALUES
 (3, 1, 'diablos-ambition', 'slugger-secret'),
 (3, 1, 'anjanath-power', 'adrenaline'),
@@ -2466,7 +2522,9 @@ INSERT INTO "PUBLIC"."SET_BONUS_SKILL" VALUES
 (2, 1, 'guild-pride', 'good-luck'),
 (4, 1, 'guild-pride', 'capture-master'),
 (2, 1, 'rajang-s-rage', 'mind-s-eye-ballistics'),
-(4, 1, 'rajang-s-rage', 'protective-polish');      
+(4, 1, 'rajang-s-rage', 'protective-polish'),
+(3, 1, 'safi-jiiva-seal', 'dragonvein-awakening'),
+(5, 1, 'safi-jiiva-seal', 'true-dragonvein-awakening');           
 CREATE CACHED TABLE "PUBLIC"."SKILL"(
     "ID" VARCHAR NOT NULL,
     "DESCRIPTION" VARCHAR NOT NULL,
@@ -2477,7 +2535,7 @@ CREATE CACHED TABLE "PUBLIC"."SKILL"(
     "NAME" VARCHAR NOT NULL
 );          
 ALTER TABLE "PUBLIC"."SKILL" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_4B" PRIMARY KEY("ID");        
--- 158 +/- SELECT COUNT(*) FROM PUBLIC.SKILL;  
+-- 160 +/- SELECT COUNT(*) FROM PUBLIC.SKILL;  
 INSERT INTO "PUBLIC"."SKILL" VALUES
 ('slugger-secret', 'Raises the maximum level of the Slugger skill.', 1, NULL, 'Slugger Secret'),
 ('slugger', 'Makes it easier to stun monsters.', 3, 5, 'Slugger'),
@@ -2640,14 +2698,16 @@ INSERT INTO "PUBLIC"."SKILL" VALUES
 ('blast-functionality', 'Allows you to apply blast coatings', 1, NULL, 'Blast Functionality'),
 ('poison-functionality', 'Allows you to apply poison coatings', 1, NULL, 'Poison Functionality'),
 ('scoutfly-range-up', 'Expands your scoutflies'' detection range.', 1, NULL, 'Scoutfly Range Up'),
-('para-functionality', 'Allows you to apply paralysis coatings', 1, NULL, 'Para Functionality');   
+('para-functionality', 'Allows you to apply paralysis coatings', 1, NULL, 'Para Functionality'),
+('dragonvein-awakening', 'Elem., abnormal status, & affinity up with weapon drawn. Take damage when attacking, but can be recovered by continually attacking.', 1, 1, 'Dragonvein Awakening'),
+('true-dragonvein-awakening', 'Enhances attacks even more with weapon drawn. Take damage when attacking, but can be recovered by continually attacking.', 1, 1, 'True Dragonvein Awakening');      
 CREATE CACHED TABLE "PUBLIC"."SKILL_EFFECT"(
     "SKILL_ID" VARCHAR NOT NULL,
     "EFFECT" VARCHAR NOT NULL,
     "SKILL_LEVEL" INTEGER NOT NULL
 );             
 ALTER TABLE "PUBLIC"."SKILL_EFFECT" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_B" PRIMARY KEY("SKILL_ID", "SKILL_LEVEL");             
--- 396 +/- SELECT COUNT(*) FROM PUBLIC.SKILL_EFFECT;           
+-- 398 +/- SELECT COUNT(*) FROM PUBLIC.SKILL_EFFECT;           
 INSERT INTO "PUBLIC"."SKILL_EFFECT" VALUES
 ('slugger-secret', 'Raises the maximum level of the Slugger skill ', 1),
 ('slugger', 'Stun power +20%', 1),
@@ -3050,7 +3110,9 @@ INSERT INTO "PUBLIC"."SKILL_EFFECT" VALUES
 ('dragon-attack', '+20% Dragon Attack and +100 Dragon Attack', 6),
 ('fire-attack', '+20% Fire Attack and +100 Fire Attack', 6),
 ('thunder-attack', '+20% Thunder Attack and +100 Thunder Attack', 6),
-('water-attack', '+20% Water Attack and +100 Water Attack', 6);        
+('water-attack', '+20% Water Attack and +100 Water Attack', 6),
+('dragonvein-awakening', 'Elem., abnormal status, & affinity up with weapon drawn. Take damage when attacking, but can be recovered by continually attacking', 1),
+('true-dragonvein-awakening', 'Enhances attacks even more with weapon drawn. Take damage when attacking, but can be recovered by continually attacking', 1);        
 CREATE CACHED TABLE "PUBLIC"."UNCAPPING_SKILLS"(
     "UNCAPPING_SKILL_ID" VARCHAR,
     "ID" VARCHAR NOT NULL
@@ -3093,7 +3155,7 @@ CREATE CACHED TABLE "PUBLIC"."ARMOR_PIECE"(
     "WATER_RESISTANCE" INT DEFAULT 0 NOT NULL
 );  
 ALTER TABLE "PUBLIC"."ARMOR_PIECE" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_4" PRIMARY KEY("ID");   
--- 1555 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE;           
+-- 1585 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE;           
 INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('diablos-head-alpha-plus', 0, 0, 1, 0, 0, STRINGDECODE('Diablos Helm \u03b1 +'), 'Diablos', '4', 'diablos-ambition', 140, 2, 3, -3, 10, 0, -2),
 ('kestodon-arms-lr', 2, 0, 0, 0, 0, 'Kestodon Guards', 'Kestodon', '0', NULL, 12, 0, 4, 0, 1, 0, 0),
@@ -4698,7 +4760,38 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('rajang-body-beta-plus', 1, 2, 0, 0, 1, STRINGDECODE('Golden Haori \u03b2 +'), 'Rajang', '5', 'rajang-s-rage', 158, 2, 2, -5, 11, 3, 0),
 ('rajang-arms-beta-plus', 2, 0, 0, 1, 1, STRINGDECODE('Golden Kote \u03b2 +'), 'Rajang', '5', 'rajang-s-rage', 158, 2, 2, -5, 11, 3, 0),
 ('rajang-waist-beta-plus', 3, 0, 0, 1, 1, STRINGDECODE('Golden Obi \u03b2 +'), 'Rajang', '5', 'rajang-s-rage', 158, 2, 2, -5, 11, 3, 0),
-('rajang-legs-beta-plus', 4, 0, 1, 0, 1, STRINGDECODE('Golden Hakama \u03b2 +'), 'Rajang', '5', 'rajang-s-rage', 158, 2, 2, -5, 11, 3, 0);            
+('rajang-legs-beta-plus', 4, 0, 1, 0, 1, STRINGDECODE('Golden Hakama \u03b2 +'), 'Rajang', '5', 'rajang-s-rage', 158, 2, 2, -5, 11, 3, 0),
+('brute-tigrex-head-alpha-plus', 0, 0, 0, 1, 0, STRINGDECODE('Rex Roar Helm \u03b1 +'), 'Brute Tigrex', '4', 'tigrex-essence', 158, 0, 3, 0, 11, -2, -4),
+('brute-tigrex-body-alpha-plus', 1, 0, 0, 1, 0, STRINGDECODE('Rex Roar Mail \u03b1 +'), 'Brute Tigrex', '4', 'tigrex-essence', 158, 0, 3, 0, 11, -2, -4),
+('brute-tigrex-arms-alpha-plus', 2, 0, 0, 1, 0, STRINGDECODE('Rex Roar Braces \u03b1 +'), 'Brute Tigrex', '4', 'tigrex-essence', 158, 0, 3, 0, 11, -2, -4),
+('brute-tigrex-waist-alpha-plus', 3, 0, 1, 0, 0, STRINGDECODE('Rex Roar Coil \u03b1 +'), 'Brute Tigrex', '4', 'tigrex-essence', 158, 0, 3, 0, 11, -2, -4),
+('brute-tigrex-legs-alpha-plus', 4, 1, 0, 0, 0, STRINGDECODE('Rex Roar Greaves \u03b1 +'), 'Brute Tigrex', '4', 'tigrex-essence', 158, 0, 3, 0, 11, -2, -4),
+('brute-tigrex-head-beta-plus', 0, 0, 0, 0, 1, STRINGDECODE('Rex Roar Helm \u03b2 +'), 'Brute Tigrex', '5', 'tigrex-essence', 158, 0, 3, 0, 11, -2, -4);           
+INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
+('brute-tigrex-body-beta-plus', 1, 1, 0, 0, 1, STRINGDECODE('Rex Roar Mail \u03b2 +'), 'Brute Tigrex', '5', 'tigrex-essence', 158, 0, 3, 0, 11, -2, -4),
+('brute-tigrex-arms-beta-plus', 2, 1, 0, 0, 1, STRINGDECODE('Rex Roar Braces \u03b2 +'), 'Brute Tigrex', '5', 'tigrex-essence', 158, 0, 3, 0, 11, -2, -4),
+('brute-tigrex-waist-beta-plus', 3, 0, 0, 0, 1, STRINGDECODE('Rex Roar Coil \u03b2 +'), 'Brute Tigrex', '5', 'tigrex-essence', 158, 0, 3, 0, 11, -2, -4),
+('brute-tigrex-legs-beta-plus', 4, 0, 0, 0, 1, STRINGDECODE('Rex Roar Greaves \u03b2 +'), 'Brute Tigrex', '5', 'tigrex-essence', 158, 0, 3, 0, 11, -2, -4),
+('stygian-zinogre-head-alpha-plus', 0, 1, 1, 0, 0, STRINGDECODE('Stygian Zin Helm \u03b1 +'), 'Stygian Zinogre', '4', 'zinogre-essence', 160, 4, 2, 0, 11, -5, -4),
+('stygian-zinogre-body-alpha-plus', 1, 0, 1, 0, 0, STRINGDECODE('Stygian Zin Mail \u03b1 +'), 'Stygian Zinogre', '4', 'zinogre-essence', 160, 4, 2, 0, 11, -5, -4),
+('stygian-zinogre-arms-alpha-plus', 2, 0, 1, 0, 0, STRINGDECODE('Stygian Zin Vambraces \u03b1 +'), 'Stygian Zinogre', '4', 'zinogre-essence', 160, 4, 2, 0, 11, -5, -4),
+('stygian-zinogre-waist-alpha-plus', 3, 3, 0, 0, 0, STRINGDECODE('Stygian Zin Coil \u03b1 +'), 'Stygian Zinogre', '4', 'zinogre-essence', 160, 4, 2, 0, 11, -5, -4),
+('stygian-zinogre-legs-alpha-plus', 4, 2, 0, 0, 0, STRINGDECODE('Stygian Zin Greaves \u03b1 +'), 'Stygian Zinogre', '4', 'zinogre-essence', 160, 4, 2, 0, 11, -5, -4),
+('stygian-zinogre-head-beta-plus', 0, 1, 0, 0, 1, STRINGDECODE('Stygian Zin Helm \u03b2 +'), 'Stygian Zinogre', '5', 'zinogre-essence', 160, 4, 2, 0, 11, -5, -4),
+('stygian-zinogre-body-beta-plus', 1, 0, 0, 0, 1, STRINGDECODE('Stygian Zin Mail \u03b2 +'), 'Stygian Zinogre', '5', 'zinogre-essence', 160, 4, 2, 0, 11, -5, -4),
+('stygian-zinogre-arms-beta-plus', 2, 0, 0, 1, 1, STRINGDECODE('Stygian Zin Vambraces \u03b2 +'), 'Stygian Zinogre', '5', 'zinogre-essence', 160, 4, 2, 0, 11, -5, -4),
+('stygian-zinogre-waist-beta-plus', 3, 2, 0, 0, 1, STRINGDECODE('Stygian Zin Coil \u03b2 +'), 'Stygian Zinogre', '5', 'zinogre-essence', 160, 4, 2, 0, 11, -5, -4),
+('stygian-zinogre-legs-beta-plus', 4, 1, 0, 0, 1, STRINGDECODE('Stygian Zin Greaves \u03b2 +'), 'Stygian Zinogre', '5', 'zinogre-essence', 160, 4, 2, 0, 11, -5, -4),
+('safi-jiiva-head-alpha-plus', 0, 2, 1, 0, 0, STRINGDECODE('Safi Crested Crown \u03b1 +'), 'Safi''jiiva', '4', 'safi-jiiva-seal', 168, -1, 2, 1, 12, 1, 1),
+('safi-jiiva-body-alpha-plus', 1, 0, 1, 1, 0, STRINGDECODE('Safi Crested Chest \u03b1 +'), 'Safi''jiiva', '4', 'safi-jiiva-seal', 168, -1, 2, 1, 12, 1, 1),
+('safi-jiiva-arms-alpha-plus', 2, 0, 3, 0, 0, STRINGDECODE('Safi Crested Vambraces \u03b1 +'), 'Safi''jiiva', '4', 'safi-jiiva-seal', 168, -1, 2, 1, 12, 1, 1),
+('safi-jiiva-waist-alpha-plus', 3, 0, 0, 1, 0, STRINGDECODE('Safi Crested Belt \u03b1 +'), 'Safi''jiiva', '4', 'safi-jiiva-seal', 168, -1, 2, 1, 12, 1, 1),
+('safi-jiiva-legs-alpha-plus', 4, 1, 1, 1, 0, STRINGDECODE('Safi Crested Boots \u03b1 +'), 'Safi''jiiva', '4', 'safi-jiiva-seal', 168, -1, 2, 1, 12, 1, 1),
+('safi-jiiva-head-beta-plus', 0, 2, 0, 0, 1, STRINGDECODE('Safi Crested Crown \u03b2 +'), 'Safi''jiiva', '5', 'safi-jiiva-seal', 168, -1, 2, 1, 12, 1, 1),
+('safi-jiiva-body-beta-plus', 1, 0, 1, 0, 1, STRINGDECODE('Safi Crested Chest \u03b2 +'), 'Safi''jiiva', '5', 'safi-jiiva-seal', 168, -1, 2, 1, 12, 1, 1),
+('safi-jiiva-arms-beta-plus', 2, 0, 1, 0, 1, STRINGDECODE('Safi Crested Vambraces \u03b2 +'), 'Safi''jiiva', '5', 'safi-jiiva-seal', 168, -1, 2, 1, 12, 1, 1),
+('safi-jiiva-waist-beta-plus', 3, 1, 0, 0, 1, STRINGDECODE('Safi Crested Belt \u03b2 +'), 'Safi''jiiva', '5', 'safi-jiiva-seal', 168, -1, 2, 1, 12, 1, 1),
+('safi-jiiva-legs-beta-plus', 4, 1, 1, 0, 1, STRINGDECODE('Safi Crested Boots \u03b2 +'), 'Safi''jiiva', '5', 'safi-jiiva-seal', 168, -1, 2, 1, 12, 1, 1);            
 ALTER TABLE "PUBLIC"."ARMOR_PIECE" ADD CONSTRAINT "PUBLIC"."UKP46L799PTS3CCBB1IR7HPH5EC" UNIQUE("SET_NAME", "ARMOR_TYPE", "SET_TYPE");         
 ALTER TABLE "PUBLIC"."SET_BONUS_ARMOR_PIECES" ADD CONSTRAINT "PUBLIC"."UK_RHY5M0B27L7Y049FJB2O3EH6D" UNIQUE("ARMOR_PIECES_ID");
 ALTER TABLE "PUBLIC"."SET_BONUS_SKILL" ADD CONSTRAINT "PUBLIC"."FK2FTO2XB77PFK9R8R4FK7U1VOK" FOREIGN KEY("SET_BONUS_ID") REFERENCES "PUBLIC"."SET_BONUS"("ID") NOCHECK;        
