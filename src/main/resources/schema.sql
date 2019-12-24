@@ -18,7 +18,7 @@ CREATE CACHED TABLE "PUBLIC"."ARMOR_PIECE_SKILL"(
     "SKILL_ID" VARCHAR NOT NULL
 );      
 ALTER TABLE "PUBLIC"."ARMOR_PIECE_SKILL" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_F" PRIMARY KEY("ARMOR_PIECE_ID", "SKILL_ID");     
--- 2317 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE_SKILL;     
+-- 2332 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE_SKILL;     
 INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'diablos-head-alpha-plus', 'slugger'),
 (1, 'ko-charm-i', 'slugger'),
@@ -2362,7 +2362,23 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'safi-jiiva-body-beta-plus', 'critical-boost'),
 (1, 'safi-jiiva-arms-beta-plus', 'blight-resistance'),
 (2, 'safi-jiiva-waist-beta-plus', 'evade-window'),
-(1, 'safi-jiiva-legs-beta-plus', 'critical-boost');            
+(1, 'safi-jiiva-legs-beta-plus', 'critical-boost'),
+(3, 'oolong-head-alpha-plus', 'critical-eye'),
+(2, 'oolong-body-alpha-plus', 'stamina-surge'),
+(2, 'oolong-arms-alpha-plus', 'coalescence'),
+(3, 'oolong-waist-alpha-plus', 'constitution'),
+(2, 'oolong-legs-alpha-plus', 'health-boost'),
+(1, 'buff-body-body-alpha-plus', 'fortify'),
+(3, 'buff-body-body-alpha-plus', 'agitator'),
+(1, 'buff-body-arms-alpha-plus', 'resuscitate'),
+(3, 'buff-body-arms-alpha-plus', 'attack-boost'),
+(2, 'buff-body-waist-alpha-plus', 'agitator'),
+(3, 'buff-body-waist-alpha-plus', 'heroics');     
+INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
+(2, 'buff-body-legs-alpha-plus', 'heroics'),
+(3, 'buff-body-legs-alpha-plus', 'attack-boost'),
+(2, 'duffel-penguin-head-alpha-plus', 'evade-window'),
+(1, 'sealed-dragon-head-alpha-plus', 'resentment');      
 CREATE CACHED TABLE "PUBLIC"."JEWEL_SKILL"(
     "SKILL_LEVEL" INTEGER NOT NULL CHECK (("SKILL_LEVEL" <= 7)
     AND ("SKILL_LEVEL" >= 1)),
@@ -2378,7 +2394,7 @@ CREATE CACHED TABLE "PUBLIC"."SET_BONUS"(
     "NAME" VARCHAR NOT NULL
 );            
 ALTER TABLE "PUBLIC"."SET_BONUS" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_1" PRIMARY KEY("ID");     
--- 57 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS;               
+-- 58 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS;               
 INSERT INTO "PUBLIC"."SET_BONUS" VALUES
 ('diablos-ambition', 'Diablos Ambition'),
 ('anjanath-power', 'Anjanath Power'),
@@ -2436,7 +2452,8 @@ INSERT INTO "PUBLIC"."SET_BONUS" VALUES
 ('silver-rathalos-essence', 'Silver Rathalos Essence'),
 ('guild-pride', 'Guild Pride'),
 ('rajang-s-rage', 'Rajang''s Rage'),
-('safi-jiiva-seal', 'Safi''jiiva Seal');    
+('safi-jiiva-seal', 'Safi''jiiva Seal'),
+('joyful-blessing', 'Joyful Blessing');            
 CREATE CACHED TABLE "PUBLIC"."SET_BONUS_ARMOR_PIECES"(
     "SET_BONUS_ID" VARCHAR NOT NULL,
     "ARMOR_PIECES_ID" VARCHAR NOT NULL
@@ -2451,7 +2468,7 @@ CREATE CACHED TABLE "PUBLIC"."SET_BONUS_SKILL"(
     "SKILL_ID" VARCHAR NOT NULL
 );
 ALTER TABLE "PUBLIC"."SET_BONUS_SKILL" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_5" PRIMARY KEY("SET_BONUS_ID", "SKILL_ID");         
--- 72 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS_SKILL;         
+-- 74 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS_SKILL;         
 INSERT INTO "PUBLIC"."SET_BONUS_SKILL" VALUES
 (3, 1, 'diablos-ambition', 'slugger-secret'),
 (3, 1, 'anjanath-power', 'adrenaline'),
@@ -2524,7 +2541,9 @@ INSERT INTO "PUBLIC"."SET_BONUS_SKILL" VALUES
 (2, 1, 'rajang-s-rage', 'mind-s-eye-ballistics'),
 (4, 1, 'rajang-s-rage', 'protective-polish'),
 (3, 1, 'safi-jiiva-seal', 'dragonvein-awakening'),
-(5, 1, 'safi-jiiva-seal', 'true-dragonvein-awakening');           
+(5, 1, 'safi-jiiva-seal', 'true-dragonvein-awakening'),
+(3, 1, 'joyful-blessing', 'joy-s-gift'),
+(5, 1, 'joyful-blessing', 'joy-s-gratitude');    
 CREATE CACHED TABLE "PUBLIC"."SKILL"(
     "ID" VARCHAR NOT NULL,
     "DESCRIPTION" VARCHAR NOT NULL,
@@ -2535,7 +2554,7 @@ CREATE CACHED TABLE "PUBLIC"."SKILL"(
     "NAME" VARCHAR NOT NULL
 );          
 ALTER TABLE "PUBLIC"."SKILL" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_4B" PRIMARY KEY("ID");        
--- 160 +/- SELECT COUNT(*) FROM PUBLIC.SKILL;  
+-- 162 +/- SELECT COUNT(*) FROM PUBLIC.SKILL;  
 INSERT INTO "PUBLIC"."SKILL" VALUES
 ('slugger-secret', 'Raises the maximum level of the Slugger skill.', 1, NULL, 'Slugger Secret'),
 ('slugger', 'Makes it easier to stun monsters.', 3, 5, 'Slugger'),
@@ -2700,14 +2719,16 @@ INSERT INTO "PUBLIC"."SKILL" VALUES
 ('scoutfly-range-up', 'Expands your scoutflies'' detection range.', 1, NULL, 'Scoutfly Range Up'),
 ('para-functionality', 'Allows you to apply paralysis coatings', 1, NULL, 'Para Functionality'),
 ('dragonvein-awakening', 'Elem., abnormal status, & affinity up with weapon drawn. Take damage when attacking, but can be recovered by continually attacking.', 1, 1, 'Dragonvein Awakening'),
-('true-dragonvein-awakening', 'Enhances attacks even more with weapon drawn. Take damage when attacking, but can be recovered by continually attacking.', 1, 1, 'True Dragonvein Awakening');      
+('true-dragonvein-awakening', 'Enhances attacks even more with weapon drawn. Take damage when attacking, but can be recovered by continually attacking.', 1, 1, 'True Dragonvein Awakening'),
+('joy-s-gift', 'Increases odds of getting special Holiday Joy rewards. (No effect when joining mid-quest.)', 1, NULL, 'Joy''s Gift'),
+('joy-s-gratitude', 'Greatly increases odds of getting special Holiday Joy rewards. (No effect when joining mid-quest.)', 1, NULL, 'Joy''s Gratitude');        
 CREATE CACHED TABLE "PUBLIC"."SKILL_EFFECT"(
     "SKILL_ID" VARCHAR NOT NULL,
     "EFFECT" VARCHAR NOT NULL,
     "SKILL_LEVEL" INTEGER NOT NULL
 );             
 ALTER TABLE "PUBLIC"."SKILL_EFFECT" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_B" PRIMARY KEY("SKILL_ID", "SKILL_LEVEL");             
--- 398 +/- SELECT COUNT(*) FROM PUBLIC.SKILL_EFFECT;           
+-- 400 +/- SELECT COUNT(*) FROM PUBLIC.SKILL_EFFECT;           
 INSERT INTO "PUBLIC"."SKILL_EFFECT" VALUES
 ('slugger-secret', 'Raises the maximum level of the Slugger skill ', 1),
 ('slugger', 'Stun power +20%', 1),
@@ -3112,7 +3133,9 @@ INSERT INTO "PUBLIC"."SKILL_EFFECT" VALUES
 ('thunder-attack', '+20% Thunder Attack and +100 Thunder Attack', 6),
 ('water-attack', '+20% Water Attack and +100 Water Attack', 6),
 ('dragonvein-awakening', 'Elem., abnormal status, & affinity up with weapon drawn. Take damage when attacking, but can be recovered by continually attacking', 1),
-('true-dragonvein-awakening', 'Enhances attacks even more with weapon drawn. Take damage when attacking, but can be recovered by continually attacking', 1);        
+('true-dragonvein-awakening', 'Enhances attacks even more with weapon drawn. Take damage when attacking, but can be recovered by continually attacking', 1),
+('joy-s-gift', 'Increases odds of getting special Holiday Joy rewards. (No effect when joining mid-quest.)', 1),
+('joy-s-gratitude', 'Greatly increases odds of getting special Holiday Joy rewards. (No effect when joining mid-quest.)', 1);         
 CREATE CACHED TABLE "PUBLIC"."UNCAPPING_SKILLS"(
     "UNCAPPING_SKILL_ID" VARCHAR,
     "ID" VARCHAR NOT NULL
@@ -3155,7 +3178,7 @@ CREATE CACHED TABLE "PUBLIC"."ARMOR_PIECE"(
     "WATER_RESISTANCE" INT DEFAULT 0 NOT NULL
 );  
 ALTER TABLE "PUBLIC"."ARMOR_PIECE" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_4" PRIMARY KEY("ID");   
--- 1585 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE;           
+-- 1596 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE;           
 INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('diablos-head-alpha-plus', 0, 0, 1, 0, 0, STRINGDECODE('Diablos Helm \u03b1 +'), 'Diablos', '4', 'diablos-ambition', 140, 2, 3, -3, 10, 0, -2),
 ('kestodon-arms-lr', 2, 0, 0, 0, 0, 'Kestodon Guards', 'Kestodon', '0', NULL, 12, 0, 4, 0, 1, 0, 0),
@@ -4791,7 +4814,19 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('safi-jiiva-body-beta-plus', 1, 0, 1, 0, 1, STRINGDECODE('Safi Crested Chest \u03b2 +'), 'Safi''jiiva', '5', 'safi-jiiva-seal', 168, -1, 2, 1, 12, 1, 1),
 ('safi-jiiva-arms-beta-plus', 2, 0, 1, 0, 1, STRINGDECODE('Safi Crested Vambraces \u03b2 +'), 'Safi''jiiva', '5', 'safi-jiiva-seal', 168, -1, 2, 1, 12, 1, 1),
 ('safi-jiiva-waist-beta-plus', 3, 1, 0, 0, 1, STRINGDECODE('Safi Crested Belt \u03b2 +'), 'Safi''jiiva', '5', 'safi-jiiva-seal', 168, -1, 2, 1, 12, 1, 1),
-('safi-jiiva-legs-beta-plus', 4, 1, 1, 0, 1, STRINGDECODE('Safi Crested Boots \u03b2 +'), 'Safi''jiiva', '5', 'safi-jiiva-seal', 168, -1, 2, 1, 12, 1, 1);            
+('safi-jiiva-legs-beta-plus', 4, 1, 1, 0, 1, STRINGDECODE('Safi Crested Boots \u03b2 +'), 'Safi''jiiva', '5', 'safi-jiiva-seal', 168, -1, 2, 1, 12, 1, 1),
+('oolong-head-alpha-plus', 0, 0, 0, 0, 1, STRINGDECODE('Oolong Hair \u03b1 +'), 'Oolong', '4', 'joyful-blessing', 120, 1, 1, 4, 9, 1, 1),
+('oolong-body-alpha-plus', 1, 0, 0, 0, 1, STRINGDECODE('Oolong Vest \u03b1 +'), 'Oolong', '4', 'joyful-blessing', 120, 1, 1, 4, 9, 1, 1);        
+INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
+('oolong-arms-alpha-plus', 2, 0, 0, 0, 1, STRINGDECODE('Oolong Sleeves \u03b1 +'), 'Oolong', '4', 'joyful-blessing', 120, 1, 1, 4, 9, 1, 1),
+('oolong-waist-alpha-plus', 3, 2, 0, 0, 0, STRINGDECODE('Oolong Waist \u03b1 +'), 'Oolong', '4', 'joyful-blessing', 120, 1, 1, 4, 9, 1, 1),
+('oolong-legs-alpha-plus', 4, 0, 1, 0, 1, STRINGDECODE('Oolong Boots \u03b1 +'), 'Oolong', '4', 'joyful-blessing', 120, 1, 1, 4, 9, 1, 1),
+('buff-body-body-alpha-plus', 1, 3, 0, 0, 0, STRINGDECODE('Buff Chest \u03b1 +'), 'Buff Body', '4', NULL, 154, -3, 2, -1, 11, 0, -1),
+('buff-body-arms-alpha-plus', 2, 0, 0, 0, 1, STRINGDECODE('Buff Arms \u03b1 +'), 'Buff Body', '4', NULL, 154, -3, 2, -1, 11, 0, -1),
+('buff-body-waist-alpha-plus', 3, 0, 0, 0, 1, STRINGDECODE('Buff Waist \u03b1 +'), 'Buff Body', '4', NULL, 154, -3, 2, -1, 11, 0, -1),
+('buff-body-legs-alpha-plus', 4, 0, 0, 0, 1, STRINGDECODE('Buff Legs \u03b1 +'), 'Buff Body', '4', NULL, 154, -3, 2, -1, 11, 0, -1),
+('duffel-penguin-head-alpha-plus', 0, 0, 0, 0, 1, STRINGDECODE('Duffel Penguin Mask \u03b1 +'), 'Duffel Penguin', '4', NULL, 138, 0, -1, 4, 9, 0, 3),
+('sealed-dragon-head-alpha-plus', 0, 0, 0, 0, 2, STRINGDECODE('Sealed Dragon Cloth \u03b1 +'), 'Sealed Dragon', '4', NULL, 152, 5, -3, 1, 12, 0, 0);
 ALTER TABLE "PUBLIC"."ARMOR_PIECE" ADD CONSTRAINT "PUBLIC"."UKP46L799PTS3CCBB1IR7HPH5EC" UNIQUE("SET_NAME", "ARMOR_TYPE", "SET_TYPE");         
 ALTER TABLE "PUBLIC"."SET_BONUS_ARMOR_PIECES" ADD CONSTRAINT "PUBLIC"."UK_RHY5M0B27L7Y049FJB2O3EH6D" UNIQUE("ARMOR_PIECES_ID");
 ALTER TABLE "PUBLIC"."SET_BONUS_SKILL" ADD CONSTRAINT "PUBLIC"."FK2FTO2XB77PFK9R8R4FK7U1VOK" FOREIGN KEY("SET_BONUS_ID") REFERENCES "PUBLIC"."SET_BONUS"("ID") NOCHECK;        
