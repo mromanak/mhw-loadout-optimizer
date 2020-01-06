@@ -18,7 +18,7 @@ CREATE CACHED TABLE "PUBLIC"."ARMOR_PIECE_SKILL"(
     "SKILL_ID" VARCHAR NOT NULL
 );      
 ALTER TABLE "PUBLIC"."ARMOR_PIECE_SKILL" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_F" PRIMARY KEY("ARMOR_PIECE_ID", "SKILL_ID");     
--- 2332 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE_SKILL;     
+-- 2342 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE_SKILL;     
 INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'diablos-head-alpha-plus', 'slugger'),
 (1, 'ko-charm-i', 'slugger'),
@@ -2378,7 +2378,17 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (2, 'buff-body-legs-alpha-plus', 'heroics'),
 (3, 'buff-body-legs-alpha-plus', 'attack-boost'),
 (2, 'duffel-penguin-head-alpha-plus', 'evade-window'),
-(1, 'sealed-dragon-head-alpha-plus', 'resentment');      
+(1, 'sealed-dragon-head-alpha-plus', 'resentment'),
+(1, 'banuk-head-alpha-plus', 'aquatic-polar-mobility'),
+(2, 'banuk-head-alpha-plus', 'focus'),
+(1, 'banuk-body-alpha-plus', 'marathon-runner'),
+(1, 'banuk-body-alpha-plus', 'stamina-surge'),
+(1, 'banuk-arms-alpha-plus', 'focus'),
+(1, 'banuk-arms-alpha-plus', 'stamina-surge'),
+(1, 'banuk-waist-alpha-plus', 'aquatic-polar-mobility'),
+(2, 'banuk-waist-alpha-plus', 'marathon-runner'),
+(1, 'banuk-legs-alpha-plus', 'resuscitate'),
+(1, 'banuk-legs-alpha-plus', 'stamina-surge');          
 CREATE CACHED TABLE "PUBLIC"."JEWEL_SKILL"(
     "SKILL_LEVEL" INTEGER NOT NULL CHECK (("SKILL_LEVEL" <= 7)
     AND ("SKILL_LEVEL" >= 1)),
@@ -3178,7 +3188,7 @@ CREATE CACHED TABLE "PUBLIC"."ARMOR_PIECE"(
     "WATER_RESISTANCE" INT DEFAULT 0 NOT NULL
 );  
 ALTER TABLE "PUBLIC"."ARMOR_PIECE" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_4" PRIMARY KEY("ID");   
--- 1596 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE;           
+-- 1601 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE;           
 INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('diablos-head-alpha-plus', 0, 0, 1, 0, 0, STRINGDECODE('Diablos Helm \u03b1 +'), 'Diablos', '4', 'diablos-ambition', 140, 2, 3, -3, 10, 0, -2),
 ('kestodon-arms-lr', 2, 0, 0, 0, 0, 'Kestodon Guards', 'Kestodon', '0', NULL, 12, 0, 4, 0, 1, 0, 0),
@@ -4826,7 +4836,12 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('buff-body-waist-alpha-plus', 3, 0, 0, 0, 1, STRINGDECODE('Buff Waist \u03b1 +'), 'Buff Body', '4', NULL, 154, -3, 2, -1, 11, 0, -1),
 ('buff-body-legs-alpha-plus', 4, 0, 0, 0, 1, STRINGDECODE('Buff Legs \u03b1 +'), 'Buff Body', '4', NULL, 154, -3, 2, -1, 11, 0, -1),
 ('duffel-penguin-head-alpha-plus', 0, 0, 0, 0, 1, STRINGDECODE('Duffel Penguin Mask \u03b1 +'), 'Duffel Penguin', '4', NULL, 138, 0, -1, 4, 9, 0, 3),
-('sealed-dragon-head-alpha-plus', 0, 0, 0, 0, 2, STRINGDECODE('Sealed Dragon Cloth \u03b1 +'), 'Sealed Dragon', '4', NULL, 152, 5, -3, 1, 12, 0, 0);
+('sealed-dragon-head-alpha-plus', 0, 0, 0, 0, 2, STRINGDECODE('Sealed Dragon Cloth \u03b1 +'), 'Sealed Dragon', '4', NULL, 152, 5, -3, 1, 12, 0, 0),
+('banuk-head-alpha-plus', 0, 2, 0, 0, 1, STRINGDECODE('Banuk Helm \u03b1 +'), 'Banuk', '4', 'anjanath-dominance', 160, 2, 2, 2, 12, 2, 0),
+('banuk-body-alpha-plus', 1, 0, 0, 1, 1, STRINGDECODE('Banuk Mail \u03b1 +'), 'Banuk', '4', 'anjanath-dominance', 160, 2, 2, 2, 12, 2, 0),
+('banuk-arms-alpha-plus', 2, 0, 0, 1, 1, STRINGDECODE('Banuk Arms \u03b1 +'), 'Banuk', '4', 'anjanath-dominance', 160, 2, 2, 2, 12, 2, 0),
+('banuk-waist-alpha-plus', 3, 2, 0, 0, 1, STRINGDECODE('Banuk Coil \u03b1 +'), 'Banuk', '4', 'anjanath-dominance', 160, 2, 2, 2, 12, 2, 0),
+('banuk-legs-alpha-plus', 4, 0, 2, 0, 1, STRINGDECODE('Banuk Greaves \u03b1 +'), 'Banuk', '4', 'anjanath-dominance', 160, 2, 2, 2, 12, 2, 0);     
 ALTER TABLE "PUBLIC"."ARMOR_PIECE" ADD CONSTRAINT "PUBLIC"."UKP46L799PTS3CCBB1IR7HPH5EC" UNIQUE("SET_NAME", "ARMOR_TYPE", "SET_TYPE");         
 ALTER TABLE "PUBLIC"."SET_BONUS_ARMOR_PIECES" ADD CONSTRAINT "PUBLIC"."UK_RHY5M0B27L7Y049FJB2O3EH6D" UNIQUE("ARMOR_PIECES_ID");
 ALTER TABLE "PUBLIC"."SET_BONUS_SKILL" ADD CONSTRAINT "PUBLIC"."FK2FTO2XB77PFK9R8R4FK7U1VOK" FOREIGN KEY("SET_BONUS_ID") REFERENCES "PUBLIC"."SET_BONUS"("ID") NOCHECK;        
