@@ -24,11 +24,14 @@ public class SimpleLoadoutScoringFunction implements LoadoutScoringFunction {
     private final double level3SlotWeight;
     private final double level4SlotWeight;
     private final double defenseWeight;
+    private final int defenseBucketSize;
     private final double fireResistanceWeight;
     private final double waterResistanceWeight;
     private final double thunderResistanceWeight;
     private final double iceResistanceWeight;
     private final double dragonResistanceWeight;
+    private final int resistanceBucketSize;
+    private final double negativeResistanceWeightMultiplier;
     private final Function<Integer, Double> loadoutSizeWeightFunction;
 
     private SimpleLoadoutScoringFunction(Builder builder) {
@@ -38,11 +41,14 @@ public class SimpleLoadoutScoringFunction implements LoadoutScoringFunction {
         level3SlotWeight = builder.level3SlotWeight;
         level4SlotWeight = builder.level4SlotWeight;
         defenseWeight = builder.defenseWeight;
+        defenseBucketSize = builder.defenseBucketSize;
         fireResistanceWeight = builder.fireResistanceWeight;
         waterResistanceWeight = builder.waterResistanceWeight;
         thunderResistanceWeight = builder.thunderResistanceWeight;
         iceResistanceWeight = builder.iceResistanceWeight;
         dragonResistanceWeight = builder.dragonResistanceWeight;
+        resistanceBucketSize = builder.resistanceBucketSize;
+        negativeResistanceWeightMultiplier = builder.negativeResistanceWeightMultiplier;
         loadoutSizeWeightFunction = builder.loadoutSizeWeightFunction;
     }
 
@@ -84,16 +90,45 @@ public class SimpleLoadoutScoringFunction implements LoadoutScoringFunction {
         score += level2SlotWeight * loadout.getLevel2Slots();
         score += level3SlotWeight * loadout.getLevel3Slots();
         score += level4SlotWeight * loadout.getLevel4Slots();
-        score += defenseWeight * loadout.getDefense();
-        score += fireResistanceWeight * loadout.getFireResistance();
-        score += waterResistanceWeight * loadout.getWaterResistance();
-        score += thunderResistanceWeight * loadout.getThunderResistance();
-        score += iceResistanceWeight * loadout.getIceResistance();
-        score += dragonResistanceWeight * loadout.getDragonResistance();
-
+        score += scoreDefense(loadout.getDefense());
+        score += scoreResistance(fireResistanceWeight, loadout.getFireResistance());
+        score += scoreResistance(waterResistanceWeight, loadout.getWaterResistance());
+        score += scoreResistance(thunderResistanceWeight, loadout.getThunderResistance());
+        score += scoreResistance(iceResistanceWeight, loadout.getIceResistance());
+        score += scoreResistance(dragonResistanceWeight, loadout.getDragonResistance());
         score += loadoutSizeWeightFunction.apply(loadout.getArmorPieces().size());
 
         return score;
+    }
+
+    private double scoreDefense(int value) {
+        if (defenseWeight == 0.0) {
+            return 0.0;
+        }
+
+        int effectiveValue = value;
+        if (defenseBucketSize > 0) {
+            effectiveValue = defenseBucketSize * Math.floorDiv(value, defenseBucketSize);
+        }
+
+        return defenseWeight * effectiveValue;
+    }
+
+    private double scoreResistance(double weight, int value) {
+        if (weight == 0.0) {
+            return 0.0;
+        }
+
+        int effectiveValue = value;
+        if (resistanceBucketSize > 0) {
+            effectiveValue = resistanceBucketSize * Math.floorDiv(value, resistanceBucketSize);
+        }
+
+        if (effectiveValue < 0 && negativeResistanceWeightMultiplier != 1.0) {
+            return weight * negativeResistanceWeightMultiplier * effectiveValue;
+        } else {
+            return weight * effectiveValue;
+        }
     }
 
     @Override
@@ -133,11 +168,14 @@ public class SimpleLoadoutScoringFunction implements LoadoutScoringFunction {
         private double level3SlotWeight = 0.0;
         private double level4SlotWeight = 0.0;
         private double defenseWeight = 0.0;
+        private int defenseBucketSize = 0;
         private double fireResistanceWeight = 0.0;
         private double waterResistanceWeight = 0.0;
         private double thunderResistanceWeight = 0.0;
         private double iceResistanceWeight = 0.0;
         private double dragonResistanceWeight = 0.0;
+        private int resistanceBucketSize = 0;
+        private double negativeResistanceWeightMultiplier = 1.0;
         private Function<Integer, Double> loadoutSizeWeightFunction = zeroWeightFunction();
 
         private Builder() {
@@ -187,6 +225,11 @@ public class SimpleLoadoutScoringFunction implements LoadoutScoringFunction {
             return this;
         }
 
+        public Builder withDefenseBucketSize(int val) {
+            defenseBucketSize = (val < 0) ? 0 : val;
+            return this;
+        }
+
         public Builder withFireResistanceWeight(double val) {
             fireResistanceWeight = val;
             return this;
@@ -204,6 +247,16 @@ public class SimpleLoadoutScoringFunction implements LoadoutScoringFunction {
 
         public Builder withIceResistanceWeight(double val) {
             iceResistanceWeight = val;
+            return this;
+        }
+
+        public Builder withResistanceBucketSize(int val) {
+            resistanceBucketSize = (val < 0) ? 0 : val;
+            return this;
+        }
+
+        public Builder withNegativeResistanceWeightMultiplier(double val) {
+            negativeResistanceWeightMultiplier = val;
             return this;
         }
 
