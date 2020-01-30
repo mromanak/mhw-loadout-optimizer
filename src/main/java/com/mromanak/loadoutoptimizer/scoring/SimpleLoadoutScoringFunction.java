@@ -161,6 +161,34 @@ public class SimpleLoadoutScoringFunction implements LoadoutScoringFunction {
         return dragonResistanceWeight != 0.0;
     }
 
+    @Override
+    public boolean usesDefenseBuckets() {
+        return defenseBucketSize > 0;
+    }
+
+    @Override
+    public boolean usesResistanceBuckets() {
+        return resistanceBucketSize > 0;
+    }
+
+    @Override
+    public int getDefenseBucket(int defense) {
+        if (!usesDefenseBuckets()) {
+            return defense;
+        }
+
+        return defenseBucketSize * Math.floorDiv(defense, defenseBucketSize);
+    }
+
+    @Override
+    public int getResistanceBucket(int resistance) {
+        if (!usesResistanceBuckets()) {
+            return resistance;
+        }
+
+        return resistanceBucketSize * Math.floorDiv(resistance, resistanceBucketSize);
+    }
+
     public static final class Builder {
         private Map<String, Function<Integer, Double>> skillWieghtingFunctions = new HashMap<>();
         private double level1SlotWeight = 0.0;

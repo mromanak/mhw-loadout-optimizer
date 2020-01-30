@@ -84,26 +84,38 @@ class OptimizerRequest {
         public Builder retainDefensiveStats(LoadoutScoringFunction scoringFunction) {
             if (!scoringFunction.needsDefense()) {
                 defense = 0;
+            } else if (scoringFunction.usesDefenseBuckets()) {
+                defense = scoringFunction.getDefenseBucket((int) defense);
             }
             
             if (!scoringFunction.needsFireResistance()) {
                 fireResistance = 0;
+            } else if (scoringFunction.usesResistanceBuckets()) {
+                fireResistance = scoringFunction.getResistanceBucket((int) fireResistance);
             }
 
             if (!scoringFunction.needsWaterResistance()) {
                 waterResistance = 0;
+            } else if (scoringFunction.usesResistanceBuckets()) {
+                waterResistance = scoringFunction.getResistanceBucket((int) waterResistance);
             }
 
             if (!scoringFunction.needsThunderResistance()) {
                 thunderResistance = 0;
+            } else if (scoringFunction.usesResistanceBuckets()) {
+                thunderResistance = scoringFunction.getResistanceBucket((int) thunderResistance);
             }
 
             if (!scoringFunction.needsIceResistance()) {
                 iceResistance = 0;
+            } else if (scoringFunction.usesResistanceBuckets()) {
+                iceResistance = scoringFunction.getResistanceBucket((int) iceResistance);
             }
 
             if (!scoringFunction.needsDragonResistance()) {
                 dragonResistance = 0;
+            } else if (scoringFunction.usesResistanceBuckets()) {
+                dragonResistance = scoringFunction.getResistanceBucket((int) dragonResistance);
             }
             
             return this;

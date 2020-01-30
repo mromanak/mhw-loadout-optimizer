@@ -20,4 +20,12 @@ public interface LoadoutScoringFunction extends Function<Loadout, Double> {
     boolean needsIceResistance();
 
     boolean needsDragonResistance();
+
+    boolean usesDefenseBuckets();
+
+    int getDefenseBucket(int defense);
+
+    boolean usesResistanceBuckets();
+
+    int getResistanceBucket(int resistance);
 }
