@@ -18,7 +18,7 @@ CREATE CACHED TABLE "PUBLIC"."ARMOR_PIECE_SKILL"(
     "SKILL_ID" VARCHAR NOT NULL
 );      
 ALTER TABLE "PUBLIC"."ARMOR_PIECE_SKILL" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_F" PRIMARY KEY("ARMOR_PIECE_ID", "SKILL_ID");     
--- 2350 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE_SKILL;     
+-- 2377 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE_SKILL;     
 INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'diablos-head-alpha-plus', 'slugger'),
 (1, 'ko-charm-i', 'slugger'),
@@ -2396,7 +2396,34 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (2, 'astral-waist-alpha-plus', 'flinch-free'),
 (2, 'astral-legs-alpha-plus', 'weakness-exploit'),
 (1, 'wyverian-head-alpha-plus', 'survival-expert'),
-(2, 'wyverian-head-alpha-plus', 'mushroomancer');       
+(2, 'wyverian-head-alpha-plus', 'mushroomancer'),
+(3, 'furious-rajang-head-alpha-plus', 'earplugs'),
+(2, 'furious-rajang-body-alpha-plus', 'earplugs'),
+(3, 'furious-rajang-body-alpha-plus', 'maximum-might'),
+(2, 'furious-rajang-arms-alpha-plus', 'stamina-surge'),
+(3, 'furious-rajang-arms-alpha-plus', 'defense-boost'),
+(2, 'furious-rajang-waist-alpha-plus', 'maximum-might'),
+(3, 'furious-rajang-legs-alpha-plus', 'health-boost'),
+(3, 'furious-rajang-head-beta-plus', 'earplugs'),
+(3, 'furious-rajang-body-beta-plus', 'maximum-might'),
+(2, 'furious-rajang-arms-beta-plus', 'stamina-surge'),
+(2, 'furious-rajang-waist-beta-plus', 'maximum-might'),
+(3, 'furious-rajang-legs-beta-plus', 'health-boost'),
+(1, 'raging-brachydios-head-alpha-plus', 'weakness-exploit'),
+(2, 'raging-brachydios-head-alpha-plus', 'guard'),
+(2, 'raging-brachydios-body-alpha-plus', 'agitator'),
+(3, 'raging-brachydios-body-alpha-plus', 'blast-attack'),
+(2, 'raging-brachydios-arms-alpha-plus', 'agitator'),
+(3, 'raging-brachydios-arms-alpha-plus', 'artillery'),
+(2, 'raging-brachydios-waist-alpha-plus', 'artillery'),
+(3, 'raging-brachydios-waist-alpha-plus', 'agitator'),
+(2, 'raging-brachydios-legs-alpha-plus', 'weakness-exploit'),
+(3, 'raging-brachydios-legs-alpha-plus', 'speed-sharpening'),
+(1, 'raging-brachydios-head-beta-plus', 'weakness-exploit'),
+(2, 'raging-brachydios-body-beta-plus', 'agitator'),
+(2, 'raging-brachydios-arms-beta-plus', 'agitator'),
+(3, 'raging-brachydios-waist-beta-plus', 'agitator'),
+(2, 'raging-brachydios-legs-beta-plus', 'weakness-exploit');        
 CREATE CACHED TABLE "PUBLIC"."JEWEL_SKILL"(
     "SKILL_LEVEL" INTEGER NOT NULL CHECK (("SKILL_LEVEL" <= 7)
     AND ("SKILL_LEVEL" >= 1)),
@@ -2412,7 +2439,7 @@ CREATE CACHED TABLE "PUBLIC"."SET_BONUS"(
     "NAME" VARCHAR NOT NULL
 );            
 ALTER TABLE "PUBLIC"."SET_BONUS" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_1" PRIMARY KEY("ID");     
--- 59 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS;               
+-- 61 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS;               
 INSERT INTO "PUBLIC"."SET_BONUS" VALUES
 ('diablos-ambition', 'Diablos Ambition'),
 ('anjanath-power', 'Anjanath Power'),
@@ -2472,7 +2499,9 @@ INSERT INTO "PUBLIC"."SET_BONUS" VALUES
 ('rajang-s-rage', 'Rajang''s Rage'),
 ('safi-jiiva-seal', 'Safi''jiiva Seal'),
 ('joyful-blessing', 'Joyful Blessing'),
-('appreciation-blessing', 'Appreciation Blessing');        
+('appreciation-blessing', 'Appreciation Blessing'),
+('rajang-will', 'Rajang Will'),
+('brachydios-will', 'Brachydios Will');
 CREATE CACHED TABLE "PUBLIC"."SET_BONUS_ARMOR_PIECES"(
     "SET_BONUS_ID" VARCHAR NOT NULL,
     "ARMOR_PIECES_ID" VARCHAR NOT NULL
@@ -2487,7 +2516,7 @@ CREATE CACHED TABLE "PUBLIC"."SET_BONUS_SKILL"(
     "SKILL_ID" VARCHAR NOT NULL
 );
 ALTER TABLE "PUBLIC"."SET_BONUS_SKILL" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_5" PRIMARY KEY("SET_BONUS_ID", "SKILL_ID");         
--- 76 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS_SKILL;         
+-- 80 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS_SKILL;         
 INSERT INTO "PUBLIC"."SET_BONUS_SKILL" VALUES
 (3, 1, 'diablos-ambition', 'slugger-secret'),
 (3, 1, 'anjanath-power', 'adrenaline'),
@@ -2564,7 +2593,11 @@ INSERT INTO "PUBLIC"."SET_BONUS_SKILL" VALUES
 (3, 1, 'joyful-blessing', 'joy-s-gift'),
 (5, 1, 'joyful-blessing', 'joy-s-gratitude'),
 (3, 1, 'appreciation-blessing', 'gratitude-s-gift'),
-(5, 1, 'appreciation-blessing', 'gratitude-s-blessing');      
+(5, 1, 'appreciation-blessing', 'gratitude-s-blessing'),
+(2, 1, 'rajang-will', 'maximum-might-secret'),
+(4, 1, 'rajang-will', 'heroics-secret'),
+(2, 1, 'brachydios-will', 'agitator-secret'),
+(4, 1, 'brachydios-will', 'artillery-secret'); 
 CREATE CACHED TABLE "PUBLIC"."SKILL"(
     "ID" VARCHAR NOT NULL,
     "DESCRIPTION" VARCHAR NOT NULL,
@@ -2575,11 +2608,11 @@ CREATE CACHED TABLE "PUBLIC"."SKILL"(
     "NAME" VARCHAR NOT NULL
 );          
 ALTER TABLE "PUBLIC"."SKILL" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_4B" PRIMARY KEY("ID");        
--- 164 +/- SELECT COUNT(*) FROM PUBLIC.SKILL;  
+-- 165 +/- SELECT COUNT(*) FROM PUBLIC.SKILL;  
 INSERT INTO "PUBLIC"."SKILL" VALUES
 ('slugger-secret', 'Raises the maximum level of the Slugger skill.', 1, NULL, 'Slugger Secret'),
 ('slugger', 'Makes it easier to stun monsters.', 3, 5, 'Slugger'),
-('heroics', 'Increases attack power and defense when health drops to 35% or lower.', 5, NULL, 'Heroics'),
+('heroics', 'Increases attack power and defense when health drops to 35% or lower.', 5, 7, 'Heroics'),
 ('bombardier-secret', 'Raises the maximum level of the Bombardier skill.', 1, NULL, 'Bombardier Secret'),
 ('bombardier', 'Increases the damage of explosive items.', 3, 5, 'Bombardier'),
 ('maximum-might-secret', 'Raises the maximum level of the Maximum Might skill.', 1, NULL, 'Maximum Might Secret'),
@@ -2612,7 +2645,7 @@ INSERT INTO "PUBLIC"."SKILL" VALUES
 ('poison-duration-up', 'Extends the duration of your poison''s effect on monsters.', 1, NULL, 'Poison Duration Up'),
 ('critical-element', 'Increases elemental damage when landing critical hits.', 1, NULL, 'Critical Element'),
 ('elemental-airborne', 'Elemental damage increased for jumping attacks.', 1, NULL, 'Elemental Airborne'),
-('master-s-touch', 'Prevents your weapon from losing sharpness during critical hits.', 1, NULL, 'Master''s Touch');              
+('master-s-touch', 'Prevents your weapon from losing sharpness during critical hits.', 1, NULL, 'Master''s Touch'); 
 INSERT INTO "PUBLIC"."SKILL" VALUES
 ('guard-up', 'Allows you to guard against ordinarily unblockable attacks.', 1, NULL, 'Guard Up'),
 ('super-recovery', 'Allows recovery to exceed the red portion of the health gauge.', 1, NULL, 'Super Recovery'),
@@ -2744,14 +2777,15 @@ INSERT INTO "PUBLIC"."SKILL" VALUES
 ('joy-s-gift', 'Increases odds of getting special Holiday Joy rewards. (No effect when joining mid-quest.)', 1, NULL, 'Joy''s Gift'),
 ('joy-s-gratitude', 'Greatly increases odds of getting special Holiday Joy rewards. (No effect when joining mid-quest.)', 1, NULL, 'Joy''s Gratitude'),
 ('gratitude-s-gift', 'Increases odds of getting special Grand Appreciation rewards. (No effect when joining mid-quest.)', 1, NULL, 'Gratitude''s Gift'),
-('gratitude-s-blessing', 'Greatly increases odds of getting special Grand Appreciation rewards. (No effect when joining mid-quest.)', 1, NULL, 'Gratitude''s Blessing');      
+('gratitude-s-blessing', 'Greatly increases odds of getting special Grand Appreciation rewards. (No effect when joining mid-quest.)', 1, NULL, 'Gratitude''s Blessing'),
+('heroics-secret', 'Raises the maximum level of the Heroics skill.', 1, NULL, 'Heroics Secret');     
 CREATE CACHED TABLE "PUBLIC"."SKILL_EFFECT"(
     "SKILL_ID" VARCHAR NOT NULL,
     "EFFECT" VARCHAR NOT NULL,
     "SKILL_LEVEL" INTEGER NOT NULL
 );             
 ALTER TABLE "PUBLIC"."SKILL_EFFECT" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_B" PRIMARY KEY("SKILL_ID", "SKILL_LEVEL");             
--- 402 +/- SELECT COUNT(*) FROM PUBLIC.SKILL_EFFECT;           
+-- 405 +/- SELECT COUNT(*) FROM PUBLIC.SKILL_EFFECT;           
 INSERT INTO "PUBLIC"."SKILL_EFFECT" VALUES
 ('slugger-secret', 'Raises the maximum level of the Slugger skill ', 1),
 ('slugger', 'Stun power +20%', 1),
@@ -3161,6 +3195,10 @@ INSERT INTO "PUBLIC"."SKILL_EFFECT" VALUES
 ('joy-s-gratitude', 'Greatly increases odds of getting special Holiday Joy rewards. (No effect when joining mid-quest.)', 1),
 ('gratitude-s-gift', 'Increases odds of getting special Grand Appreciation rewards. (No effect when joining mid-quest.)', 1),
 ('gratitude-s-blessing', 'Greatly increases odds of getting special Grand Appreciation rewards. (No effect when joining mid-quest.)', 1); 
+INSERT INTO "PUBLIC"."SKILL_EFFECT" VALUES
+('heroics-secret', 'Raises the maximum level of the Heroics skill ', 1),
+('heroics', 'While active, increases attack power by 25% and increases defense by 150 points', 6),
+('heroics', 'While active, increases attack power by 40% and increases defense by 150 points', 7);      
 CREATE CACHED TABLE "PUBLIC"."UNCAPPING_SKILLS"(
     "UNCAPPING_SKILL_ID" VARCHAR,
     "ID" VARCHAR NOT NULL
@@ -3203,7 +3241,7 @@ CREATE CACHED TABLE "PUBLIC"."ARMOR_PIECE"(
     "WATER_RESISTANCE" INT DEFAULT 0 NOT NULL
 );  
 ALTER TABLE "PUBLIC"."ARMOR_PIECE" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_4" PRIMARY KEY("ID");   
--- 1608 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE;           
+-- 1628 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE;           
 INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('diablos-head-alpha-plus', 0, 0, 1, 0, 0, STRINGDECODE('Diablos Helm \u03b1 +'), 'Diablos', '4', 'diablos-ambition', 140, 2, 3, -3, 10, 0, -2),
 ('kestodon-arms-lr', 2, 0, 0, 0, 0, 'Kestodon Guards', 'Kestodon', '0', NULL, 12, 0, 4, 0, 1, 0, 0),
@@ -4863,7 +4901,28 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('astral-arms-alpha-plus', 2, 2, 0, 0, 1, STRINGDECODE('Astral Scarf \u03b1 +'), 'Astral', '4', 'appreciation-blessing', 140, 2, 2, 2, 9, 2, 2),
 ('astral-waist-alpha-plus', 3, 1, 0, 0, 1, STRINGDECODE('Astral Skirt \u03b1 +'), 'Astral', '4', 'appreciation-blessing', 140, 2, 2, 2, 9, 2, 2),
 ('astral-legs-alpha-plus', 4, 1, 0, 0, 0, STRINGDECODE('Astral Tights \u03b1 +'), 'Astral', '4', 'appreciation-blessing', 140, 2, 2, 2, 9, 2, 2),
-('wyverian-head-alpha-plus', 0, 0, 0, 0, 1, STRINGDECODE('Wyverian Ears \u03b1 +'), 'Wyverian', '4', NULL, 140, 5, 1, 1, 9, 1, 1);             
+('wyverian-head-alpha-plus', 0, 0, 0, 0, 1, STRINGDECODE('Wyverian Ears \u03b1 +'), 'Wyverian', '4', NULL, 140, 5, 1, 1, 9, 1, 1),
+('furious-rajang-head-alpha-plus', 0, 0, 0, 0, 0, STRINGDECODE('Grand God''s Peer Mask \u03b1 +'), 'Furious Rajang', '4', 'rajang-will', 170, 2, 2, -5, 12, 3, 0),
+('furious-rajang-body-alpha-plus', 1, 1, 0, 0, 0, STRINGDECODE('Grand God''s Peer Garbs \u03b1 +'), 'Furious Rajang', '4', 'rajang-will', 170, 2, 2, -5, 12, 3, 0),
+('furious-rajang-arms-alpha-plus', 2, 0, 2, 0, 0, STRINGDECODE('Grand God''s Peer Arms \u03b1 +'), 'Furious Rajang', '4', 'rajang-will', 170, 2, 2, -5, 12, 3, 0),
+('furious-rajang-waist-alpha-plus', 3, 3, 0, 0, 0, STRINGDECODE('Grand God''s Peer Belt \u03b1 +'), 'Furious Rajang', '4', 'rajang-will', 170, 2, 2, -5, 12, 3, 0),
+('furious-rajang-legs-alpha-plus', 4, 0, 2, 0, 0, STRINGDECODE('Grand God''s Peer Feet \u03b1 +'), 'Furious Rajang', '4', 'rajang-will', 170, 2, 2, -5, 12, 3, 0),
+('furious-rajang-head-beta-plus', 0, 0, 0, 0, 1, STRINGDECODE('Grand God''s Peer Mask \u03b2 +'), 'Furious Rajang', '5', 'rajang-will', 170, 2, 2, -5, 12, 3, 0),
+('furious-rajang-body-beta-plus', 1, 0, 1, 0, 1, STRINGDECODE('Grand God''s Peer Garbs \u03b2 +'), 'Furious Rajang', '5', 'rajang-will', 170, 2, 2, -5, 12, 3, 0);       
+INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
+('furious-rajang-arms-beta-plus', 2, 1, 1, 0, 1, STRINGDECODE('Grand God''s Peer Arms \u03b2 +'), 'Furious Rajang', '5', 'rajang-will', 170, 2, 2, -5, 12, 3, 0),
+('furious-rajang-waist-beta-plus', 3, 1, 1, 0, 1, STRINGDECODE('Grand God''s Peer Belt \u03b2 +'), 'Furious Rajang', '5', 'rajang-will', 170, 2, 2, -5, 12, 3, 0),
+('furious-rajang-legs-beta-plus', 4, 0, 0, 0, 2, STRINGDECODE('Grand God''s Peer Feet \u03b2 +'), 'Furious Rajang', '5', 'rajang-will', 170, 2, 2, -5, 12, 3, 0),
+('raging-brachydios-head-alpha-plus', 0, 1, 2, 0, 0, STRINGDECODE('Brachydium Helm \u03b1 +'), 'Raging Brachydios', '4', 'brachydios-will', 170, 1, 3, -3, 12, 1, -2),
+('raging-brachydios-body-alpha-plus', 1, 2, 1, 0, 0, STRINGDECODE('Brachydium Mail \u03b1 +'), 'Raging Brachydios', '4', 'brachydios-will', 170, 1, 3, -3, 12, 1, -2),
+('raging-brachydios-arms-alpha-plus', 2, 0, 2, 0, 0, STRINGDECODE('Brachydium Braces \u03b1 +'), 'Raging Brachydios', '4', 'brachydios-will', 170, 1, 3, -3, 12, 1, -2),
+('raging-brachydios-waist-alpha-plus', 3, 0, 0, 1, 0, STRINGDECODE('Brachydium Faulds \u03b1 +'), 'Raging Brachydios', '4', 'brachydios-will', 170, 1, 3, -3, 12, 1, -2),
+('raging-brachydios-legs-alpha-plus', 4, 1, 0, 1, 0, STRINGDECODE('Brachydium Greaves \u03b1 +'), 'Raging Brachydios', '4', 'brachydios-will', 170, 1, 3, -3, 12, 1, -2),
+('raging-brachydios-head-beta-plus', 0, 1, 0, 0, 2, STRINGDECODE('Brachydium Helm \u03b2 +'), 'Raging Brachydios', '5', 'brachydios-will', 170, 1, 3, -3, 12, 1, -2),
+('raging-brachydios-body-beta-plus', 1, 1, 1, 0, 1, STRINGDECODE('Brachydium Mail \u03b2 +'), 'Raging Brachydios', '5', 'brachydios-will', 170, 1, 3, -3, 12, 1, -2),
+('raging-brachydios-arms-beta-plus', 2, 0, 0, 0, 2, STRINGDECODE('Brachydium Braces \u03b2 +'), 'Raging Brachydios', '5', 'brachydios-will', 170, 1, 3, -3, 12, 1, -2),
+('raging-brachydios-waist-beta-plus', 3, 1, 0, 0, 1, STRINGDECODE('Brachydium Faulds \u03b2 +'), 'Raging Brachydios', '5', 'brachydios-will', 170, 1, 3, -3, 12, 1, -2),
+('raging-brachydios-legs-beta-plus', 4, 2, 0, 0, 1, STRINGDECODE('Brachydium Greaves \u03b2 +'), 'Raging Brachydios', '5', 'brachydios-will', 170, 1, 3, -3, 12, 1, -2);              
 ALTER TABLE "PUBLIC"."ARMOR_PIECE" ADD CONSTRAINT "PUBLIC"."UKP46L799PTS3CCBB1IR7HPH5EC" UNIQUE("SET_NAME", "ARMOR_TYPE", "SET_TYPE");         
 ALTER TABLE "PUBLIC"."SET_BONUS_ARMOR_PIECES" ADD CONSTRAINT "PUBLIC"."UK_RHY5M0B27L7Y049FJB2O3EH6D" UNIQUE("ARMOR_PIECES_ID");
 ALTER TABLE "PUBLIC"."SET_BONUS_SKILL" ADD CONSTRAINT "PUBLIC"."FK2FTO2XB77PFK9R8R4FK7U1VOK" FOREIGN KEY("SET_BONUS_ID") REFERENCES "PUBLIC"."SET_BONUS"("ID") NOCHECK;        
