@@ -4802,7 +4802,7 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('gold-rathian-waist-alpha-plus', 3, 0, 2, 0, 0, STRINGDECODE('Golden Lunecoil \u03b1 +'), 'Gold Rathian', '4', 'gold-rathian-essence', 162, 4, 3, 0, 12, -4, -2),
 ('gold-rathian-legs-alpha-plus', 4, 1, 0, 0, 0, STRINGDECODE('Golden Lunegreaves \u03b1 +'), 'Gold Rathian', '4', 'gold-rathian-essence', 162, 4, 3, 0, 12, -4, -2),
 ('gold-rathian-head-beta-plus', 0, 0, 1, 0, 1, STRINGDECODE('Golden Lunehelm \u03b2 +'), 'Gold Rathian', '5', 'gold-rathian-essence', 162, 4, 3, 0, 12, -4, -2),
-('gold-rathian-body-beta-plus', 1, 1, 0, 1, 1, STRINGDECODE('Golden Lunemail \u03b2 +'), 'Gold Rathian', '5', 'gold-rathian-essence', 162, 4, 3, 0, 12, -4, -2),
+('gold-rathian-body-beta-plus', 1, 1, 1, 0, 1, STRINGDECODE('Golden Lunemail \u03b2 +'), 'Gold Rathian', '5', 'gold-rathian-essence', 162, 4, 3, 0, 12, -4, -2),
 ('gold-rathian-arms-beta-plus', 2, 0, 1, 0, 1, STRINGDECODE('Golden Lunebraces \u03b2 +'), 'Gold Rathian', '5', 'gold-rathian-essence', 162, 4, 3, 0, 12, -4, -2),
 ('gold-rathian-waist-beta-plus', 3, 0, 1, 0, 1, STRINGDECODE('Golden Lunecoil \u03b2 +'), 'Gold Rathian', '5', 'gold-rathian-essence', 162, 4, 3, 0, 12, -4, -2),
 ('gold-rathian-legs-beta-plus', 4, 0, 0, 0, 1, STRINGDECODE('Golden Lunegreaves \u03b2 +'), 'Gold Rathian', '5', 'gold-rathian-essence', 162, 4, 3, 0, 12, -4, -2),
