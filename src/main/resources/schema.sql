@@ -18,7 +18,7 @@ CREATE CACHED TABLE "PUBLIC"."ARMOR_PIECE_SKILL"(
     "SKILL_ID" VARCHAR NOT NULL
 );      
 ALTER TABLE "PUBLIC"."ARMOR_PIECE_SKILL" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_F" PRIMARY KEY("ARMOR_PIECE_ID", "SKILL_ID");     
--- 2377 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE_SKILL;     
+-- 2397 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE_SKILL;     
 INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'diablos-head-alpha-plus', 'slugger'),
 (1, 'ko-charm-i', 'slugger'),
@@ -2423,7 +2423,27 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (2, 'raging-brachydios-body-beta-plus', 'agitator'),
 (2, 'raging-brachydios-arms-beta-plus', 'agitator'),
 (3, 'raging-brachydios-waist-beta-plus', 'agitator'),
-(2, 'raging-brachydios-legs-beta-plus', 'weakness-exploit');        
+(2, 'raging-brachydios-legs-beta-plus', 'weakness-exploit'),
+(1, 'kulve-taroth-head-alpha-plus', 'free-meal'),
+(3, 'kulve-taroth-head-alpha-plus', 'free-elem-ammo-up'),
+(1, 'kulve-taroth-body-alpha-plus', 'free-meal'),
+(3, 'kulve-taroth-body-alpha-plus', 'speed-eating'),
+(1, 'kulve-taroth-arms-alpha-plus', 'critical-boost'),
+(3, 'kulve-taroth-arms-alpha-plus', 'wide-range'),
+(1, 'kulve-taroth-waist-alpha-plus', 'free-meal'),
+(2, 'kulve-taroth-waist-alpha-plus', 'peak-performance'),
+(1, 'kulve-taroth-legs-alpha-plus', 'peak-performance'),
+(2, 'kulve-taroth-legs-alpha-plus', 'critical-boost'),
+(1, 'kulve-taroth-head-beta-plus', 'free-meal'),
+(3, 'kulve-taroth-body-beta-plus', 'speed-eating'),
+(1, 'kulve-taroth-arms-beta-plus', 'critical-boost'),
+(2, 'kulve-taroth-waist-beta-plus', 'peak-performance'),
+(2, 'kulve-taroth-legs-beta-plus', 'critical-boost'),
+(1, 'rose-head-alpha-plus', 'fortify'),
+(3, 'rose-body-alpha-plus', 'attack-boost'),
+(3, 'rose-arms-alpha-plus', 'tool-specialist'),
+(3, 'rose-waist-alpha-plus', 'resentment'),
+(2, 'rose-legs-alpha-plus', 'partbreaker');       
 CREATE CACHED TABLE "PUBLIC"."JEWEL_SKILL"(
     "SKILL_LEVEL" INTEGER NOT NULL CHECK (("SKILL_LEVEL" <= 7)
     AND ("SKILL_LEVEL" >= 1)),
@@ -2439,7 +2459,7 @@ CREATE CACHED TABLE "PUBLIC"."SET_BONUS"(
     "NAME" VARCHAR NOT NULL
 );            
 ALTER TABLE "PUBLIC"."SET_BONUS" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_1" PRIMARY KEY("ID");     
--- 61 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS;               
+-- 63 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS;               
 INSERT INTO "PUBLIC"."SET_BONUS" VALUES
 ('diablos-ambition', 'Diablos Ambition'),
 ('anjanath-power', 'Anjanath Power'),
@@ -2501,7 +2521,9 @@ INSERT INTO "PUBLIC"."SET_BONUS" VALUES
 ('joyful-blessing', 'Joyful Blessing'),
 ('appreciation-blessing', 'Appreciation Blessing'),
 ('rajang-will', 'Rajang Will'),
-('brachydios-will', 'Brachydios Will');
+('brachydios-will', 'Brachydios Will'),
+('kulve-taroth-essence', 'Kulve Taroth Essence'),
+('full-bloom-blessing', 'Full Bloom Blessing');              
 CREATE CACHED TABLE "PUBLIC"."SET_BONUS_ARMOR_PIECES"(
     "SET_BONUS_ID" VARCHAR NOT NULL,
     "ARMOR_PIECES_ID" VARCHAR NOT NULL
@@ -2516,7 +2538,7 @@ CREATE CACHED TABLE "PUBLIC"."SET_BONUS_SKILL"(
     "SKILL_ID" VARCHAR NOT NULL
 );
 ALTER TABLE "PUBLIC"."SET_BONUS_SKILL" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_5" PRIMARY KEY("SET_BONUS_ID", "SKILL_ID");         
--- 80 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS_SKILL;         
+-- 84 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS_SKILL;         
 INSERT INTO "PUBLIC"."SET_BONUS_SKILL" VALUES
 (3, 1, 'diablos-ambition', 'slugger-secret'),
 (3, 1, 'anjanath-power', 'adrenaline'),
@@ -2597,7 +2619,11 @@ INSERT INTO "PUBLIC"."SET_BONUS_SKILL" VALUES
 (2, 1, 'rajang-will', 'maximum-might-secret'),
 (4, 1, 'rajang-will', 'heroics-secret'),
 (2, 1, 'brachydios-will', 'agitator-secret'),
-(4, 1, 'brachydios-will', 'artillery-secret'); 
+(4, 1, 'brachydios-will', 'artillery-secret'),
+(2, 1, 'kulve-taroth-essence', 'guts'),
+(4, 1, 'kulve-taroth-essence', 'free-meal-secret'),
+(3, 1, 'full-bloom-blessing', 'full-bloom-s-gift'),
+(5, 1, 'full-bloom-blessing', 'full-bloom-s-gratitude');        
 CREATE CACHED TABLE "PUBLIC"."SKILL"(
     "ID" VARCHAR NOT NULL,
     "DESCRIPTION" VARCHAR NOT NULL,
@@ -2608,7 +2634,7 @@ CREATE CACHED TABLE "PUBLIC"."SKILL"(
     "NAME" VARCHAR NOT NULL
 );          
 ALTER TABLE "PUBLIC"."SKILL" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_4B" PRIMARY KEY("ID");        
--- 165 +/- SELECT COUNT(*) FROM PUBLIC.SKILL;  
+-- 167 +/- SELECT COUNT(*) FROM PUBLIC.SKILL;  
 INSERT INTO "PUBLIC"."SKILL" VALUES
 ('slugger-secret', 'Raises the maximum level of the Slugger skill.', 1, NULL, 'Slugger Secret'),
 ('slugger', 'Makes it easier to stun monsters.', 3, 5, 'Slugger'),
@@ -2778,14 +2804,16 @@ INSERT INTO "PUBLIC"."SKILL" VALUES
 ('joy-s-gratitude', 'Greatly increases odds of getting special Holiday Joy rewards. (No effect when joining mid-quest.)', 1, NULL, 'Joy''s Gratitude'),
 ('gratitude-s-gift', 'Increases odds of getting special Grand Appreciation rewards. (No effect when joining mid-quest.)', 1, NULL, 'Gratitude''s Gift'),
 ('gratitude-s-blessing', 'Greatly increases odds of getting special Grand Appreciation rewards. (No effect when joining mid-quest.)', 1, NULL, 'Gratitude''s Blessing'),
-('heroics-secret', 'Raises the maximum level of the Heroics skill.', 1, NULL, 'Heroics Secret');     
+('heroics-secret', 'Raises the maximum level of the Heroics skill.', 1, NULL, 'Heroics Secret'),
+('full-bloom-s-gift', 'Increases odds of getting special Holiday Full Bloom rewards. (No effect when joining mid-quest.)', 1, NULL, 'Full Bloom''s Gift'),
+('full-bloom-s-gratitude', 'Greatly increases odds of getting special Holiday Full Bloom rewards. (No effect when joining mid-quest.)', 1, NULL, 'Full Bloom''s Gratitude');             
 CREATE CACHED TABLE "PUBLIC"."SKILL_EFFECT"(
     "SKILL_ID" VARCHAR NOT NULL,
     "EFFECT" VARCHAR NOT NULL,
     "SKILL_LEVEL" INTEGER NOT NULL
 );             
 ALTER TABLE "PUBLIC"."SKILL_EFFECT" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_B" PRIMARY KEY("SKILL_ID", "SKILL_LEVEL");             
--- 405 +/- SELECT COUNT(*) FROM PUBLIC.SKILL_EFFECT;           
+-- 407 +/- SELECT COUNT(*) FROM PUBLIC.SKILL_EFFECT;           
 INSERT INTO "PUBLIC"."SKILL_EFFECT" VALUES
 ('slugger-secret', 'Raises the maximum level of the Slugger skill ', 1),
 ('slugger', 'Stun power +20%', 1),
@@ -3198,7 +3226,9 @@ INSERT INTO "PUBLIC"."SKILL_EFFECT" VALUES
 INSERT INTO "PUBLIC"."SKILL_EFFECT" VALUES
 ('heroics-secret', 'Raises the maximum level of the Heroics skill ', 1),
 ('heroics', 'While active, increases attack power by 25% and increases defense by 150 points', 6),
-('heroics', 'While active, increases attack power by 40% and increases defense by 150 points', 7);      
+('heroics', 'While active, increases attack power by 40% and increases defense by 150 points', 7),
+('full-bloom-s-gift', 'Increases odds of getting special Holiday Full Bloom rewards. (No effect when joining mid-quest.)', 1),
+('full-bloom-s-gratitude', 'Greatly increases odds of getting special Holiday Full Bloom rewards. (No effect when joining mid-quest.)', 1);           
 CREATE CACHED TABLE "PUBLIC"."UNCAPPING_SKILLS"(
     "UNCAPPING_SKILL_ID" VARCHAR,
     "ID" VARCHAR NOT NULL
@@ -3241,7 +3271,7 @@ CREATE CACHED TABLE "PUBLIC"."ARMOR_PIECE"(
     "WATER_RESISTANCE" INT DEFAULT 0 NOT NULL
 );  
 ALTER TABLE "PUBLIC"."ARMOR_PIECE" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_4" PRIMARY KEY("ID");   
--- 1628 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE;           
+-- 1643 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE;           
 INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('diablos-head-alpha-plus', 0, 0, 1, 0, 0, STRINGDECODE('Diablos Helm \u03b1 +'), 'Diablos', '4', 'diablos-ambition', 140, 2, 3, -3, 10, 0, -2),
 ('kestodon-arms-lr', 2, 0, 0, 0, 0, 'Kestodon Guards', 'Kestodon', '0', NULL, 12, 0, 4, 0, 1, 0, 0),
@@ -4922,7 +4952,23 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('raging-brachydios-body-beta-plus', 1, 1, 1, 0, 1, STRINGDECODE('Brachydium Mail \u03b2 +'), 'Raging Brachydios', '5', 'brachydios-will', 170, 1, 3, -3, 12, 1, -2),
 ('raging-brachydios-arms-beta-plus', 2, 0, 0, 0, 2, STRINGDECODE('Brachydium Braces \u03b2 +'), 'Raging Brachydios', '5', 'brachydios-will', 170, 1, 3, -3, 12, 1, -2),
 ('raging-brachydios-waist-beta-plus', 3, 1, 0, 0, 1, STRINGDECODE('Brachydium Faulds \u03b2 +'), 'Raging Brachydios', '5', 'brachydios-will', 170, 1, 3, -3, 12, 1, -2),
-('raging-brachydios-legs-beta-plus', 4, 2, 0, 0, 1, STRINGDECODE('Brachydium Greaves \u03b2 +'), 'Raging Brachydios', '5', 'brachydios-will', 170, 1, 3, -3, 12, 1, -2);              
+('raging-brachydios-legs-beta-plus', 4, 2, 0, 0, 1, STRINGDECODE('Brachydium Greaves \u03b2 +'), 'Raging Brachydios', '5', 'brachydios-will', 170, 1, 3, -3, 12, 1, -2),
+('kulve-taroth-head-alpha-plus', 0, 0, 0, 0, 0, STRINGDECODE('Kulve Taroth''s Fury \u03b1 +'), 'Kulve Taroth', '4', 'kulve-taroth-essence', 176, -4, 4, -2, 12, 3, -2),
+('kulve-taroth-body-alpha-plus', 1, 0, 0, 2, 0, STRINGDECODE('Kulve Taroth''s Ire \u03b1 +'), 'Kulve Taroth', '4', 'kulve-taroth-essence', 176, -4, 4, -2, 12, 3, -2),
+('kulve-taroth-arms-alpha-plus', 2, 0, 1, 1, 0, STRINGDECODE('Kulve Taroth''s Rage \u03b1 +'), 'Kulve Taroth', '4', 'kulve-taroth-essence', 176, -4, 4, -2, 12, 3, -2),
+('kulve-taroth-waist-alpha-plus', 3, 2, 1, 0, 0, STRINGDECODE('Kulve Taroth''s Malice \u03b1 +'), 'Kulve Taroth', '4', 'kulve-taroth-essence', 176, -4, 4, -2, 12, 3, -2),
+('kulve-taroth-legs-alpha-plus', 4, 2, 1, 0, 0, STRINGDECODE('Kulve Taroth''s Wrath \u03b1 +'), 'Kulve Taroth', '4', 'kulve-taroth-essence', 176, -4, 4, -2, 12, 3, -2),
+('kulve-taroth-head-beta-plus', 0, 1, 0, 0, 2, STRINGDECODE('Kulve Taroth''s Fury \u03b2 +'), 'Kulve Taroth', '5', 'kulve-taroth-essence', 176, -4, 4, -2, 12, 3, -2),
+('kulve-taroth-body-beta-plus', 1, 0, 0, 1, 1, STRINGDECODE('Kulve Taroth''s Ire \u03b2 +'), 'Kulve Taroth', '5', 'kulve-taroth-essence', 176, -4, 4, -2, 12, 3, -2),
+('kulve-taroth-arms-beta-plus', 2, 0, 0, 0, 2, STRINGDECODE('Kulve Taroth''s Rage \u03b2 +'), 'Kulve Taroth', '5', 'kulve-taroth-essence', 176, -4, 4, -2, 12, 3, -2),
+('kulve-taroth-waist-beta-plus', 3, 0, 1, 0, 1, STRINGDECODE('Kulve Taroth''s Malice \u03b2 +'), 'Kulve Taroth', '5', 'kulve-taroth-essence', 176, -4, 4, -2, 12, 3, -2),
+('kulve-taroth-legs-beta-plus', 4, 2, 0, 0, 1, STRINGDECODE('Kulve Taroth''s Wrath \u03b2 +'), 'Kulve Taroth', '5', 'kulve-taroth-essence', 176, -4, 4, -2, 12, 3, -2),
+('rose-head-alpha-plus', 0, 1, 1, 1, 0, STRINGDECODE('Rose Headpiece \u03b1 +'), 'Rose', '4', 'full-bloom-blessing', 150, 1, 4, 1, 12, 1, 1),
+('rose-body-alpha-plus', 1, 0, 0, 0, 1, STRINGDECODE('Rose Jacket \u03b1 +'), 'Rose', '4', 'full-bloom-blessing', 150, 1, 4, 1, 12, 1, 1);    
+INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
+('rose-arms-alpha-plus', 2, 0, 0, 0, 1, STRINGDECODE('Rose Arms \u03b1 +'), 'Rose', '4', 'full-bloom-blessing', 150, 1, 4, 1, 12, 1, 1),
+('rose-waist-alpha-plus', 3, 1, 0, 0, 1, STRINGDECODE('Rose Belt \u03b1 +'), 'Rose', '4', 'full-bloom-blessing', 150, 1, 4, 1, 12, 1, 1),
+('rose-legs-alpha-plus', 4, 1, 0, 0, 1, STRINGDECODE('Rose Boots \u03b1 +'), 'Rose', '4', 'full-bloom-blessing', 150, 1, 4, 1, 12, 1, 1);         
 ALTER TABLE "PUBLIC"."ARMOR_PIECE" ADD CONSTRAINT "PUBLIC"."UKP46L799PTS3CCBB1IR7HPH5EC" UNIQUE("SET_NAME", "ARMOR_TYPE", "SET_TYPE");         
 ALTER TABLE "PUBLIC"."SET_BONUS_ARMOR_PIECES" ADD CONSTRAINT "PUBLIC"."UK_RHY5M0B27L7Y049FJB2O3EH6D" UNIQUE("ARMOR_PIECES_ID");
 ALTER TABLE "PUBLIC"."SET_BONUS_SKILL" ADD CONSTRAINT "PUBLIC"."FK2FTO2XB77PFK9R8R4FK7U1VOK" FOREIGN KEY("SET_BONUS_ID") REFERENCES "PUBLIC"."SET_BONUS"("ID") NOCHECK;        
