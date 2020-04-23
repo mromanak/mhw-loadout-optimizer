@@ -4963,12 +4963,12 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('kulve-taroth-arms-beta-plus', 2, 0, 0, 0, 2, STRINGDECODE('Kulve Taroth''s Rage \u03b2 +'), 'Kulve Taroth', '5', 'kulve-taroth-essence', 176, -4, 4, -2, 12, 3, -2),
 ('kulve-taroth-waist-beta-plus', 3, 0, 1, 0, 1, STRINGDECODE('Kulve Taroth''s Malice \u03b2 +'), 'Kulve Taroth', '5', 'kulve-taroth-essence', 176, -4, 4, -2, 12, 3, -2),
 ('kulve-taroth-legs-beta-plus', 4, 2, 0, 0, 1, STRINGDECODE('Kulve Taroth''s Wrath \u03b2 +'), 'Kulve Taroth', '5', 'kulve-taroth-essence', 176, -4, 4, -2, 12, 3, -2),
-('rose-head-alpha-plus', 0, 1, 1, 1, 0, STRINGDECODE('Rose Headpiece \u03b1 +'), 'Rose', '4', 'full-bloom-blessing', 150, 1, 4, 1, 12, 1, 1),
-('rose-body-alpha-plus', 1, 0, 0, 0, 1, STRINGDECODE('Rose Jacket \u03b1 +'), 'Rose', '4', 'full-bloom-blessing', 150, 1, 4, 1, 12, 1, 1);    
+('rose-head-alpha-plus', 0, 1, 1, 1, 0, STRINGDECODE('Rose Headpiece \u03b1 +'), 'Rose', '4', 'full-bloom-blessing', 150, 1, 4, 1, 10, 1, 1),
+('rose-body-alpha-plus', 1, 0, 0, 0, 1, STRINGDECODE('Rose Jacket \u03b1 +'), 'Rose', '4', 'full-bloom-blessing', 150, 1, 4, 1, 10, 1, 1);    
 INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
-('rose-arms-alpha-plus', 2, 0, 0, 0, 1, STRINGDECODE('Rose Arms \u03b1 +'), 'Rose', '4', 'full-bloom-blessing', 150, 1, 4, 1, 12, 1, 1),
-('rose-waist-alpha-plus', 3, 1, 0, 0, 1, STRINGDECODE('Rose Belt \u03b1 +'), 'Rose', '4', 'full-bloom-blessing', 150, 1, 4, 1, 12, 1, 1),
-('rose-legs-alpha-plus', 4, 1, 0, 0, 1, STRINGDECODE('Rose Boots \u03b1 +'), 'Rose', '4', 'full-bloom-blessing', 150, 1, 4, 1, 12, 1, 1);         
+('rose-arms-alpha-plus', 2, 0, 0, 0, 1, STRINGDECODE('Rose Arms \u03b1 +'), 'Rose', '4', 'full-bloom-blessing', 150, 1, 4, 1, 10, 1, 1),
+('rose-waist-alpha-plus', 3, 1, 0, 0, 1, STRINGDECODE('Rose Belt \u03b1 +'), 'Rose', '4', 'full-bloom-blessing', 150, 1, 4, 1, 10, 1, 1),
+('rose-legs-alpha-plus', 4, 1, 0, 0, 1, STRINGDECODE('Rose Boots \u03b1 +'), 'Rose', '4', 'full-bloom-blessing', 150, 1, 4, 1, 10, 1, 1);         
 ALTER TABLE "PUBLIC"."ARMOR_PIECE" ADD CONSTRAINT "PUBLIC"."UKP46L799PTS3CCBB1IR7HPH5EC" UNIQUE("SET_NAME", "ARMOR_TYPE", "SET_TYPE");         
 ALTER TABLE "PUBLIC"."SET_BONUS_ARMOR_PIECES" ADD CONSTRAINT "PUBLIC"."UK_RHY5M0B27L7Y049FJB2O3EH6D" UNIQUE("ARMOR_PIECES_ID");
 ALTER TABLE "PUBLIC"."SET_BONUS_SKILL" ADD CONSTRAINT "PUBLIC"."FK2FTO2XB77PFK9R8R4FK7U1VOK" FOREIGN KEY("SET_BONUS_ID") REFERENCES "PUBLIC"."SET_BONUS"("ID") NOCHECK;        
