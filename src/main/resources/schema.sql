@@ -18,7 +18,7 @@ CREATE CACHED TABLE "PUBLIC"."ARMOR_PIECE_SKILL"(
     "SKILL_ID" VARCHAR NOT NULL
 );      
 ALTER TABLE "PUBLIC"."ARMOR_PIECE_SKILL" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_F" PRIMARY KEY("ARMOR_PIECE_ID", "SKILL_ID");     
--- 2397 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE_SKILL;     
+-- 2403 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE_SKILL;     
 INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'diablos-head-alpha-plus', 'slugger'),
 (1, 'ko-charm-i', 'slugger'),
@@ -2443,7 +2443,13 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (3, 'rose-body-alpha-plus', 'attack-boost'),
 (3, 'rose-arms-alpha-plus', 'tool-specialist'),
 (3, 'rose-waist-alpha-plus', 'resentment'),
-(2, 'rose-legs-alpha-plus', 'partbreaker');       
+(2, 'rose-legs-alpha-plus', 'partbreaker'),
+(5, 'attack-charm-v', 'attack-boost'),
+(5, 'evasion-charm-v', 'evade-window'),
+(5, 'fury-charm-v', 'resentment'),
+(5, 'power-charm-v', 'latent-power'),
+(5, 'challenger-charm-v', 'agitator'),
+(3, 'mighty-charm-iii', 'maximum-might');              
 CREATE CACHED TABLE "PUBLIC"."JEWEL_SKILL"(
     "SKILL_LEVEL" INTEGER NOT NULL CHECK (("SKILL_LEVEL" <= 7)
     AND ("SKILL_LEVEL" >= 1)),
@@ -3271,7 +3277,7 @@ CREATE CACHED TABLE "PUBLIC"."ARMOR_PIECE"(
     "WATER_RESISTANCE" INT DEFAULT 0 NOT NULL
 );  
 ALTER TABLE "PUBLIC"."ARMOR_PIECE" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_4" PRIMARY KEY("ID");   
--- 1643 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE;           
+-- 1649 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE;           
 INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('diablos-head-alpha-plus', 0, 0, 1, 0, 0, STRINGDECODE('Diablos Helm \u03b1 +'), 'Diablos', '4', 'diablos-ambition', 140, 2, 3, -3, 10, 0, -2),
 ('kestodon-arms-lr', 2, 0, 0, 0, 0, 'Kestodon Guards', 'Kestodon', '0', NULL, 12, 0, 4, 0, 1, 0, 0),
@@ -4968,7 +4974,13 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('rose-arms-alpha-plus', 2, 0, 0, 0, 1, STRINGDECODE('Rose Arms \u03b1 +'), 'Rose', '4', 'full-bloom-blessing', 150, 1, 4, 1, 10, 1, 1),
 ('rose-waist-alpha-plus', 3, 1, 0, 0, 1, STRINGDECODE('Rose Belt \u03b1 +'), 'Rose', '4', 'full-bloom-blessing', 150, 1, 4, 1, 10, 1, 1),
-('rose-legs-alpha-plus', 4, 1, 0, 0, 1, STRINGDECODE('Rose Boots \u03b1 +'), 'Rose', '4', 'full-bloom-blessing', 150, 1, 4, 1, 10, 1, 1);         
+('rose-legs-alpha-plus', 4, 1, 0, 0, 1, STRINGDECODE('Rose Boots \u03b1 +'), 'Rose', '4', 'full-bloom-blessing', 150, 1, 4, 1, 10, 1, 1),
+('attack-charm-v', 5, 0, 0, 0, 0, 'Attack Charm V', 'Attack', '11', NULL, 0, 0, 0, 0, 12, 0, 0),
+('evasion-charm-v', 5, 0, 0, 0, 0, 'Evasion Charm V', 'Evasion', '11', NULL, 0, 0, 0, 0, 12, 0, 0),
+('fury-charm-v', 5, 0, 0, 0, 0, 'Fury Charm V', 'Fury', '11', NULL, 0, 0, 0, 0, 12, 0, 0),
+('power-charm-v', 5, 0, 0, 0, 0, 'Power Charm V', 'Power', '11', NULL, 0, 0, 0, 0, 12, 0, 0),
+('challenger-charm-v', 5, 0, 0, 0, 0, 'Challenger Charm V', 'Challenger', '11', NULL, 0, 0, 0, 0, 12, 0, 0),
+('mighty-charm-iii', 5, 0, 0, 0, 0, 'Mighty Charm III', 'Mighty', '9', NULL, 0, 0, 0, 0, 12, 0, 0);          
 ALTER TABLE "PUBLIC"."ARMOR_PIECE" ADD CONSTRAINT "PUBLIC"."UKP46L799PTS3CCBB1IR7HPH5EC" UNIQUE("SET_NAME", "ARMOR_TYPE", "SET_TYPE");         
 ALTER TABLE "PUBLIC"."SET_BONUS_ARMOR_PIECES" ADD CONSTRAINT "PUBLIC"."UK_RHY5M0B27L7Y049FJB2O3EH6D" UNIQUE("ARMOR_PIECES_ID");
 ALTER TABLE "PUBLIC"."SET_BONUS_SKILL" ADD CONSTRAINT "PUBLIC"."FK2FTO2XB77PFK9R8R4FK7U1VOK" FOREIGN KEY("SET_BONUS_ID") REFERENCES "PUBLIC"."SET_BONUS"("ID") NOCHECK;        
