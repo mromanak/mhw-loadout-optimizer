@@ -18,7 +18,7 @@ CREATE CACHED TABLE "PUBLIC"."ARMOR_PIECE_SKILL"(
     "SKILL_ID" VARCHAR NOT NULL
 );      
 ALTER TABLE "PUBLIC"."ARMOR_PIECE_SKILL" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_F" PRIMARY KEY("ARMOR_PIECE_ID", "SKILL_ID");     
--- 2403 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE_SKILL;     
+-- 2413 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE_SKILL;     
 INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'diablos-head-alpha-plus', 'slugger'),
 (1, 'ko-charm-i', 'slugger'),
@@ -2449,7 +2449,18 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (5, 'fury-charm-v', 'resentment'),
 (5, 'power-charm-v', 'latent-power'),
 (5, 'challenger-charm-v', 'agitator'),
-(3, 'mighty-charm-iii', 'maximum-might');              
+(3, 'mighty-charm-iii', 'maximum-might'),
+(1, 'namielle-head-gamma-plus', 'tool-specialist'),
+(3, 'namielle-head-gamma-plus', 'stamina-surge'),
+(2, 'namielle-body-gamma-plus', 'water-attack'),
+(4, 'namielle-body-gamma-plus', 'evade-window'),
+(1, 'namielle-arms-gamma-plus', 'blight-resistance');
+INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
+(3, 'namielle-arms-gamma-plus', 'marathon-runner'),
+(2, 'namielle-waist-gamma-plus', 'recovery-speed'),
+(3, 'namielle-waist-gamma-plus', 'evade-extender'),
+(2, 'namielle-legs-gamma-plus', 'thunder-attack'),
+(4, 'namielle-legs-gamma-plus', 'constitution');
 CREATE CACHED TABLE "PUBLIC"."JEWEL_SKILL"(
     "SKILL_LEVEL" INTEGER NOT NULL CHECK (("SKILL_LEVEL" <= 7)
     AND ("SKILL_LEVEL" >= 1)),
@@ -3277,7 +3288,7 @@ CREATE CACHED TABLE "PUBLIC"."ARMOR_PIECE"(
     "WATER_RESISTANCE" INT DEFAULT 0 NOT NULL
 );  
 ALTER TABLE "PUBLIC"."ARMOR_PIECE" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_4" PRIMARY KEY("ID");   
--- 1649 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE;           
+-- 1654 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE;           
 INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('diablos-head-alpha-plus', 0, 0, 1, 0, 0, STRINGDECODE('Diablos Helm \u03b1 +'), 'Diablos', '4', 'diablos-ambition', 140, 2, 3, -3, 10, 0, -2),
 ('kestodon-arms-lr', 2, 0, 0, 0, 0, 'Kestodon Guards', 'Kestodon', '0', NULL, 12, 0, 4, 0, 1, 0, 0),
@@ -4980,7 +4991,12 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('fury-charm-v', 5, 0, 0, 0, 0, 'Fury Charm V', 'Fury', '11', NULL, 0, 0, 0, 0, 12, 0, 0),
 ('power-charm-v', 5, 0, 0, 0, 0, 'Power Charm V', 'Power', '11', NULL, 0, 0, 0, 0, 12, 0, 0),
 ('challenger-charm-v', 5, 0, 0, 0, 0, 'Challenger Charm V', 'Challenger', '11', NULL, 0, 0, 0, 0, 12, 0, 0),
-('mighty-charm-iii', 5, 0, 0, 0, 0, 'Mighty Charm III', 'Mighty', '9', NULL, 0, 0, 0, 0, 12, 0, 0);          
+('mighty-charm-iii', 5, 0, 0, 0, 0, 'Mighty Charm III', 'Mighty', '9', NULL, 0, 0, 0, 0, 12, 0, 0),
+('namielle-head-gamma-plus', 0, 0, 1, 0, 1, STRINGDECODE('Tentacle Cowl \u03b3 +'), 'Namielle', '6', 'namielle-divinity', 176, -2, -3, 0, 12, 3, 4),
+('namielle-body-gamma-plus', 1, 0, 1, 0, 1, STRINGDECODE('Tentacle Cloak \u03b3 +'), 'Namielle', '6', 'namielle-divinity', 176, -2, -3, 0, 12, 3, 4),
+('namielle-arms-gamma-plus', 2, 0, 1, 0, 1, STRINGDECODE('Tentacle Gloves \u03b3 +'), 'Namielle', '6', 'namielle-divinity', 176, -2, -3, 0, 12, 3, 4),
+('namielle-waist-gamma-plus', 3, 0, 0, 0, 1, STRINGDECODE('Tentacle Coil \u03b3 +'), 'Namielle', '6', 'namielle-divinity', 176, -2, -3, 0, 12, 3, 4),
+('namielle-legs-gamma-plus', 4, 0, 0, 0, 1, STRINGDECODE('Tentacle Greaves \u03b3 +'), 'Namielle', '6', 'namielle-divinity', 176, -2, -3, 0, 12, 3, 4);          
 ALTER TABLE "PUBLIC"."ARMOR_PIECE" ADD CONSTRAINT "PUBLIC"."UKP46L799PTS3CCBB1IR7HPH5EC" UNIQUE("SET_NAME", "ARMOR_TYPE", "SET_TYPE");         
 ALTER TABLE "PUBLIC"."SET_BONUS_ARMOR_PIECES" ADD CONSTRAINT "PUBLIC"."UK_RHY5M0B27L7Y049FJB2O3EH6D" UNIQUE("ARMOR_PIECES_ID");
 ALTER TABLE "PUBLIC"."SET_BONUS_SKILL" ADD CONSTRAINT "PUBLIC"."FK2FTO2XB77PFK9R8R4FK7U1VOK" FOREIGN KEY("SET_BONUS_ID") REFERENCES "PUBLIC"."SET_BONUS"("ID") NOCHECK;        
