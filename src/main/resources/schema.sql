@@ -18,7 +18,7 @@ CREATE CACHED TABLE "PUBLIC"."ARMOR_PIECE_SKILL"(
     "SKILL_ID" VARCHAR NOT NULL
 );      
 ALTER TABLE "PUBLIC"."ARMOR_PIECE_SKILL" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_F" PRIMARY KEY("ARMOR_PIECE_ID", "SKILL_ID");     
--- 2413 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE_SKILL;     
+-- 2449 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE_SKILL;     
 INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'diablos-head-alpha-plus', 'slugger'),
 (1, 'ko-charm-i', 'slugger'),
@@ -2460,7 +2460,43 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (2, 'namielle-waist-gamma-plus', 'recovery-speed'),
 (3, 'namielle-waist-gamma-plus', 'evade-extender'),
 (2, 'namielle-legs-gamma-plus', 'thunder-attack'),
-(4, 'namielle-legs-gamma-plus', 'constitution');
+(4, 'namielle-legs-gamma-plus', 'constitution'),
+(2, 'alatreon-head-alpha-plus', 'critical-eye'),
+(3, 'alatreon-head-alpha-plus', 'resentment'),
+(2, 'alatreon-body-alpha-plus', 'resentment'),
+(3, 'alatreon-body-alpha-plus', 'health-boost'),
+(3, 'alatreon-arms-alpha-plus', 'attack-boost'),
+(3, 'alatreon-arms-alpha-plus', 'power-prolonger'),
+(3, 'alatreon-waist-alpha-plus', 'dragon-resistance'),
+(4, 'alatreon-waist-alpha-plus', 'attack-boost'),
+(3, 'alatreon-legs-alpha-plus', 'defense-boost'),
+(4, 'alatreon-legs-alpha-plus', 'dragon-attack'),
+(1, 'alatreon-head-beta-plus', 'critical-eye'),
+(3, 'alatreon-head-beta-plus', 'resentment'),
+(1, 'alatreon-body-beta-plus', 'resentment'),
+(3, 'alatreon-body-beta-plus', 'health-boost'),
+(3, 'alatreon-arms-beta-plus', 'attack-boost'),
+(3, 'alatreon-waist-beta-plus', 'attack-boost'),
+(3, 'alatreon-waist-beta-plus', 'dragon-resistance'),
+(3, 'alatreon-legs-beta-plus', 'defense-boost'),
+(1, 'frostfang-barioth-head-alpha-plus', 'quick-sheath'),
+(2, 'frostfang-barioth-head-alpha-plus', 'critical-eye'),
+(1, 'frostfang-barioth-body-alpha-plus', 'critical-draw'),
+(3, 'frostfang-barioth-body-alpha-plus', 'attack-boost'),
+(2, 'frostfang-barioth-arms-alpha-plus', 'critical-eye'),
+(2, 'frostfang-barioth-arms-alpha-plus', 'slugger'),
+(1, 'frostfang-barioth-waist-alpha-plus', 'critical-draw'),
+(1, 'frostfang-barioth-waist-alpha-plus', 'quick-sheath'),
+(1, 'frostfang-barioth-legs-alpha-plus', 'attack-boost'),
+(3, 'frostfang-barioth-legs-alpha-plus', 'slugger'),
+(2, 'frostfang-barioth-head-beta-plus', 'critical-eye'),
+(1, 'frostfang-barioth-body-beta-plus', 'critical-draw'),
+(2, 'frostfang-barioth-arms-beta-plus', 'critical-eye'),
+(1, 'frostfang-barioth-waist-beta-plus', 'quick-sheath'),
+(1, 'frostfang-barioth-legs-beta-plus', 'attack-boost'),
+(3, 'draw-charm-iii', 'critical-draw'),
+(3, 'phoenix-charm-iii', 'coalescence'),
+(5, 'fitness-charm-v', 'constitution');    
 CREATE CACHED TABLE "PUBLIC"."JEWEL_SKILL"(
     "SKILL_LEVEL" INTEGER NOT NULL CHECK (("SKILL_LEVEL" <= 7)
     AND ("SKILL_LEVEL" >= 1)),
@@ -2476,7 +2512,7 @@ CREATE CACHED TABLE "PUBLIC"."SET_BONUS"(
     "NAME" VARCHAR NOT NULL
 );            
 ALTER TABLE "PUBLIC"."SET_BONUS" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_1" PRIMARY KEY("ID");     
--- 63 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS;               
+-- 65 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS;               
 INSERT INTO "PUBLIC"."SET_BONUS" VALUES
 ('diablos-ambition', 'Diablos Ambition'),
 ('anjanath-power', 'Anjanath Power'),
@@ -2540,7 +2576,9 @@ INSERT INTO "PUBLIC"."SET_BONUS" VALUES
 ('rajang-will', 'Rajang Will'),
 ('brachydios-will', 'Brachydios Will'),
 ('kulve-taroth-essence', 'Kulve Taroth Essence'),
-('full-bloom-blessing', 'Full Bloom Blessing');              
+('full-bloom-blessing', 'Full Bloom Blessing'),
+('alatreon-divinity', 'Alatreon Divinity'),
+('frostfang-absolute-art', 'Frostfang Absolute Art');            
 CREATE CACHED TABLE "PUBLIC"."SET_BONUS_ARMOR_PIECES"(
     "SET_BONUS_ID" VARCHAR NOT NULL,
     "ARMOR_PIECES_ID" VARCHAR NOT NULL
@@ -2555,7 +2593,7 @@ CREATE CACHED TABLE "PUBLIC"."SET_BONUS_SKILL"(
     "SKILL_ID" VARCHAR NOT NULL
 );
 ALTER TABLE "PUBLIC"."SET_BONUS_SKILL" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_5" PRIMARY KEY("SET_BONUS_ID", "SKILL_ID");         
--- 84 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS_SKILL;         
+-- 88 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS_SKILL;         
 INSERT INTO "PUBLIC"."SET_BONUS_SKILL" VALUES
 (3, 1, 'diablos-ambition', 'slugger-secret'),
 (3, 1, 'anjanath-power', 'adrenaline'),
@@ -2640,7 +2678,12 @@ INSERT INTO "PUBLIC"."SET_BONUS_SKILL" VALUES
 (2, 1, 'kulve-taroth-essence', 'guts'),
 (4, 1, 'kulve-taroth-essence', 'free-meal-secret'),
 (3, 1, 'full-bloom-blessing', 'full-bloom-s-gift'),
-(5, 1, 'full-bloom-blessing', 'full-bloom-s-gratitude');        
+(5, 1, 'full-bloom-blessing', 'full-bloom-s-gratitude'),
+(2, 1, 'alatreon-divinity', 'element-conversion');     
+INSERT INTO "PUBLIC"."SET_BONUS_SKILL" VALUES
+(3, 1, 'alatreon-divinity', 'all-elemental-resistance'),
+(1, 1, 'frostfang-absolute-art', 'punishing-draw'),
+(3, 1, 'frostfang-absolute-art', 'slugger-secret'); 
 CREATE CACHED TABLE "PUBLIC"."SKILL"(
     "ID" VARCHAR NOT NULL,
     "DESCRIPTION" VARCHAR NOT NULL,
@@ -2651,7 +2694,7 @@ CREATE CACHED TABLE "PUBLIC"."SKILL"(
     "NAME" VARCHAR NOT NULL
 );          
 ALTER TABLE "PUBLIC"."SKILL" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_4B" PRIMARY KEY("ID");        
--- 167 +/- SELECT COUNT(*) FROM PUBLIC.SKILL;  
+-- 169 +/- SELECT COUNT(*) FROM PUBLIC.SKILL;  
 INSERT INTO "PUBLIC"."SKILL" VALUES
 ('slugger-secret', 'Raises the maximum level of the Slugger skill.', 1, NULL, 'Slugger Secret'),
 ('slugger', 'Makes it easier to stun monsters.', 3, 5, 'Slugger'),
@@ -2823,14 +2866,16 @@ INSERT INTO "PUBLIC"."SKILL" VALUES
 ('gratitude-s-blessing', 'Greatly increases odds of getting special Grand Appreciation rewards. (No effect when joining mid-quest.)', 1, NULL, 'Gratitude''s Blessing'),
 ('heroics-secret', 'Raises the maximum level of the Heroics skill.', 1, NULL, 'Heroics Secret'),
 ('full-bloom-s-gift', 'Increases odds of getting special Holiday Full Bloom rewards. (No effect when joining mid-quest.)', 1, NULL, 'Full Bloom''s Gift'),
-('full-bloom-s-gratitude', 'Greatly increases odds of getting special Holiday Full Bloom rewards. (No effect when joining mid-quest.)', 1, NULL, 'Full Bloom''s Gratitude');             
+('full-bloom-s-gratitude', 'Greatly increases odds of getting special Holiday Full Bloom rewards. (No effect when joining mid-quest.)', 1, NULL, 'Full Bloom''s Gratitude'),
+('element-conversion', 'Equipped weapon''s elemental power increases as your armor''s elemental resistance increases.', 1, NULL, 'Element Conversion'),
+('all-elemental-resistance', 'Increases all elemental resistances +20%.', 1, NULL, 'All Elemental Resistance');     
 CREATE CACHED TABLE "PUBLIC"."SKILL_EFFECT"(
     "SKILL_ID" VARCHAR NOT NULL,
     "EFFECT" VARCHAR NOT NULL,
     "SKILL_LEVEL" INTEGER NOT NULL
 );             
 ALTER TABLE "PUBLIC"."SKILL_EFFECT" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_B" PRIMARY KEY("SKILL_ID", "SKILL_LEVEL");             
--- 407 +/- SELECT COUNT(*) FROM PUBLIC.SKILL_EFFECT;           
+-- 409 +/- SELECT COUNT(*) FROM PUBLIC.SKILL_EFFECT;           
 INSERT INTO "PUBLIC"."SKILL_EFFECT" VALUES
 ('slugger-secret', 'Raises the maximum level of the Slugger skill ', 1),
 ('slugger', 'Stun power +20%', 1),
@@ -3245,7 +3290,9 @@ INSERT INTO "PUBLIC"."SKILL_EFFECT" VALUES
 ('heroics', 'While active, increases attack power by 25% and increases defense by 150 points', 6),
 ('heroics', 'While active, increases attack power by 40% and increases defense by 150 points', 7),
 ('full-bloom-s-gift', 'Increases odds of getting special Holiday Full Bloom rewards. (No effect when joining mid-quest.)', 1),
-('full-bloom-s-gratitude', 'Greatly increases odds of getting special Holiday Full Bloom rewards. (No effect when joining mid-quest.)', 1);           
+('full-bloom-s-gratitude', 'Greatly increases odds of getting special Holiday Full Bloom rewards. (No effect when joining mid-quest.)', 1),
+('element-conversion', 'Equipped weapon''s elemental power increases as your armor''s elemental resistance increases', 1),
+('all-elemental-resistance', 'Increases all elemental resistances +20%', 1);   
 CREATE CACHED TABLE "PUBLIC"."UNCAPPING_SKILLS"(
     "UNCAPPING_SKILL_ID" VARCHAR,
     "ID" VARCHAR NOT NULL
@@ -3288,7 +3335,7 @@ CREATE CACHED TABLE "PUBLIC"."ARMOR_PIECE"(
     "WATER_RESISTANCE" INT DEFAULT 0 NOT NULL
 );  
 ALTER TABLE "PUBLIC"."ARMOR_PIECE" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_4" PRIMARY KEY("ID");   
--- 1654 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE;           
+-- 1677 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE;           
 INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('diablos-head-alpha-plus', 0, 0, 1, 0, 0, STRINGDECODE('Diablos Helm \u03b1 +'), 'Diablos', '4', 'diablos-ambition', 140, 2, 3, -3, 10, 0, -2),
 ('kestodon-arms-lr', 2, 0, 0, 0, 0, 'Kestodon Guards', 'Kestodon', '0', NULL, 12, 0, 4, 0, 1, 0, 0),
@@ -4996,7 +5043,31 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('namielle-body-gamma-plus', 1, 0, 1, 0, 1, STRINGDECODE('Tentacle Cloak \u03b3 +'), 'Namielle', '6', 'namielle-divinity', 176, -2, -3, 0, 12, 3, 4),
 ('namielle-arms-gamma-plus', 2, 0, 1, 0, 1, STRINGDECODE('Tentacle Gloves \u03b3 +'), 'Namielle', '6', 'namielle-divinity', 176, -2, -3, 0, 12, 3, 4),
 ('namielle-waist-gamma-plus', 3, 0, 0, 0, 1, STRINGDECODE('Tentacle Coil \u03b3 +'), 'Namielle', '6', 'namielle-divinity', 176, -2, -3, 0, 12, 3, 4),
-('namielle-legs-gamma-plus', 4, 0, 0, 0, 1, STRINGDECODE('Tentacle Greaves \u03b3 +'), 'Namielle', '6', 'namielle-divinity', 176, -2, -3, 0, 12, 3, 4);          
+('namielle-legs-gamma-plus', 4, 0, 0, 0, 1, STRINGDECODE('Tentacle Greaves \u03b3 +'), 'Namielle', '6', 'namielle-divinity', 176, -2, -3, 0, 12, 3, 4),
+('alatreon-head-alpha-plus', 0, 1, 0, 1, 0, STRINGDECODE('Escadora Wisdom \u03b1 +'), 'Alatreon', '4', 'alatreon-divinity', 160, 2, 3, 3, 12, 0, 0),
+('alatreon-body-alpha-plus', 1, 2, 1, 0, 0, STRINGDECODE('Escadora Soul \u03b1 +'), 'Alatreon', '4', 'alatreon-divinity', 160, 2, 3, 3, 12, 0, 0),
+('alatreon-arms-alpha-plus', 2, 1, 0, 1, 0, STRINGDECODE('Escadora Armguards \u03b1 +'), 'Alatreon', '4', 'alatreon-divinity', 160, 2, 3, 3, 12, 0, 0),
+('alatreon-waist-alpha-plus', 3, 1, 0, 1, 0, STRINGDECODE('Escadora Might \u03b1 +'), 'Alatreon', '4', 'alatreon-divinity', 160, 2, 3, 3, 12, 0, 0),
+('alatreon-legs-alpha-plus', 4, 0, 3, 0, 0, STRINGDECODE('Escadora Sheath \u03b1 +'), 'Alatreon', '4', 'alatreon-divinity', 160, 2, 3, 3, 12, 0, 0),
+('alatreon-head-beta-plus', 0, 1, 0, 0, 1, STRINGDECODE('Escadora Wisdom \u03b2 +'), 'Alatreon', '5', 'alatreon-divinity', 160, 2, 3, 3, 12, 0, 0),
+('alatreon-body-beta-plus', 1, 2, 0, 0, 1, STRINGDECODE('Escadora Soul \u03b2 +'), 'Alatreon', '5', 'alatreon-divinity', 160, 2, 3, 3, 12, 0, 0),
+('alatreon-arms-beta-plus', 2, 0, 0, 1, 1, STRINGDECODE('Escadora Armguards \u03b2 +'), 'Alatreon', '5', 'alatreon-divinity', 160, 2, 3, 3, 12, 0, 0),
+('alatreon-waist-beta-plus', 3, 1, 0, 0, 1, STRINGDECODE('Escadora Might \u03b2 +'), 'Alatreon', '5', 'alatreon-divinity', 160, 2, 3, 3, 12, 0, 0),
+('alatreon-legs-beta-plus', 4, 0, 1, 0, 2, STRINGDECODE('Escadora Sheath \u03b2 +'), 'Alatreon', '5', 'alatreon-divinity', 160, 2, 3, 3, 12, 0, 0),
+('frostfang-barioth-head-alpha-plus', 0, 1, 1, 1, 0, STRINGDECODE('Frostfang Helm \u03b1 +'), 'Frostfang Barioth', '4', 'frostfang-absolute-art', 162, 0, -3, 3, 11, -2, 2),
+('frostfang-barioth-body-alpha-plus', 1, 0, 1, 1, 0, STRINGDECODE('Frostfang Mail \u03b1 +'), 'Frostfang Barioth', '4', 'frostfang-absolute-art', 162, 0, -3, 3, 11, -2, 2),
+('frostfang-barioth-arms-alpha-plus', 2, 0, 2, 0, 0, STRINGDECODE('Frostfang Vambraces \u03b1 +'), 'Frostfang Barioth', '4', 'frostfang-absolute-art', 162, 0, -3, 3, 11, -2, 2),
+('frostfang-barioth-waist-alpha-plus', 3, 1, 0, 2, 0, STRINGDECODE('Frostfang Coil \u03b1 +'), 'Frostfang Barioth', '4', 'frostfang-absolute-art', 162, 0, -3, 3, 11, -2, 2),
+('frostfang-barioth-legs-alpha-plus', 4, 2, 0, 0, 0, STRINGDECODE('Frostfang Greaves \u03b1 +'), 'Frostfang Barioth', '4', 'frostfang-absolute-art', 162, 0, -3, 3, 11, -2, 2); 
+INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
+('frostfang-barioth-head-beta-plus', 0, 1, 1, 0, 1, STRINGDECODE('Frostfang Helm \u03b2 +'), 'Frostfang Barioth', '5', 'frostfang-absolute-art', 162, 0, -3, 3, 11, -2, 2),
+('frostfang-barioth-body-beta-plus', 1, 0, 1, 0, 1, STRINGDECODE('Frostfang Mail \u03b2 +'), 'Frostfang Barioth', '5', 'frostfang-absolute-art', 162, 0, -3, 3, 11, -2, 2),
+('frostfang-barioth-arms-beta-plus', 2, 0, 0, 0, 2, STRINGDECODE('Frostfang Vambraces \u03b2 +'), 'Frostfang Barioth', '5', 'frostfang-absolute-art', 162, 0, -3, 3, 11, -2, 2),
+('frostfang-barioth-waist-beta-plus', 3, 1, 0, 1, 1, STRINGDECODE('Frostfang Coil \u03b2 +'), 'Frostfang Barioth', '5', 'frostfang-absolute-art', 162, 0, -3, 3, 11, -2, 2),
+('frostfang-barioth-legs-beta-plus', 4, 0, 0, 0, 2, STRINGDECODE('Frostfang Greaves \u03b2 +'), 'Frostfang Barioth', '5', 'frostfang-absolute-art', 162, 0, -3, 3, 11, -2, 2),
+('draw-charm-iii', 5, 0, 0, 0, 0, 'Draw Charm III', 'Draw', '9', NULL, 0, 0, 0, 0, 1, 0, 0),
+('phoenix-charm-iii', 5, 0, 0, 0, 0, 'Phoenix Charm III', 'Phoenix', '9', NULL, 0, 0, 0, 0, 1, 0, 0),
+('fitness-charm-v', 5, 0, 0, 0, 0, 'Fitness Charm V', 'Fitness', '11', NULL, 0, 0, 0, 0, 1, 0, 0);           
 ALTER TABLE "PUBLIC"."ARMOR_PIECE" ADD CONSTRAINT "PUBLIC"."UKP46L799PTS3CCBB1IR7HPH5EC" UNIQUE("SET_NAME", "ARMOR_TYPE", "SET_TYPE");         
 ALTER TABLE "PUBLIC"."SET_BONUS_ARMOR_PIECES" ADD CONSTRAINT "PUBLIC"."UK_RHY5M0B27L7Y049FJB2O3EH6D" UNIQUE("ARMOR_PIECES_ID");
 ALTER TABLE "PUBLIC"."SET_BONUS_SKILL" ADD CONSTRAINT "PUBLIC"."FK2FTO2XB77PFK9R8R4FK7U1VOK" FOREIGN KEY("SET_BONUS_ID") REFERENCES "PUBLIC"."SET_BONUS"("ID") NOCHECK;        
