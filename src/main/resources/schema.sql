@@ -18,7 +18,7 @@ CREATE CACHED TABLE "PUBLIC"."ARMOR_PIECE_SKILL"(
     "SKILL_ID" VARCHAR NOT NULL
 );      
 ALTER TABLE "PUBLIC"."ARMOR_PIECE_SKILL" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_F" PRIMARY KEY("ARMOR_PIECE_ID", "SKILL_ID");     
--- 2449 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE_SKILL;     
+-- 2455 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE_SKILL;     
 INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'diablos-head-alpha-plus', 'slugger'),
 (1, 'ko-charm-i', 'slugger'),
@@ -2496,7 +2496,13 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'frostfang-barioth-legs-beta-plus', 'attack-boost'),
 (3, 'draw-charm-iii', 'critical-draw'),
 (3, 'phoenix-charm-iii', 'coalescence'),
-(5, 'fitness-charm-v', 'constitution');    
+(5, 'fitness-charm-v', 'constitution'),
+(3, 'passionate-head-alpha-plus', 'marathon-runner'),
+(1, 'passionate-body-alpha-plus', 'carving-pro'),
+(1, 'passionate-body-alpha-plus', 'master-gatherer'),
+(3, 'passionate-arms-alpha-plus', 'survival-expert'),
+(4, 'passionate-waist-alpha-plus', 'botanist'),
+(3, 'passionate-legs-alpha-plus', 'geologist');
 CREATE CACHED TABLE "PUBLIC"."JEWEL_SKILL"(
     "SKILL_LEVEL" INTEGER NOT NULL CHECK (("SKILL_LEVEL" <= 7)
     AND ("SKILL_LEVEL" >= 1)),
@@ -2512,7 +2518,7 @@ CREATE CACHED TABLE "PUBLIC"."SET_BONUS"(
     "NAME" VARCHAR NOT NULL
 );            
 ALTER TABLE "PUBLIC"."SET_BONUS" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_1" PRIMARY KEY("ID");     
--- 65 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS;               
+-- 66 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS;               
 INSERT INTO "PUBLIC"."SET_BONUS" VALUES
 ('diablos-ambition', 'Diablos Ambition'),
 ('anjanath-power', 'Anjanath Power'),
@@ -2578,7 +2584,8 @@ INSERT INTO "PUBLIC"."SET_BONUS" VALUES
 ('kulve-taroth-essence', 'Kulve Taroth Essence'),
 ('full-bloom-blessing', 'Full Bloom Blessing'),
 ('alatreon-divinity', 'Alatreon Divinity'),
-('frostfang-absolute-art', 'Frostfang Absolute Art');            
+('frostfang-absolute-art', 'Frostfang Absolute Art'),
+('sizzling-blessing', 'Sizzling Blessing');
 CREATE CACHED TABLE "PUBLIC"."SET_BONUS_ARMOR_PIECES"(
     "SET_BONUS_ID" VARCHAR NOT NULL,
     "ARMOR_PIECES_ID" VARCHAR NOT NULL
@@ -2593,7 +2600,7 @@ CREATE CACHED TABLE "PUBLIC"."SET_BONUS_SKILL"(
     "SKILL_ID" VARCHAR NOT NULL
 );
 ALTER TABLE "PUBLIC"."SET_BONUS_SKILL" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_5" PRIMARY KEY("SET_BONUS_ID", "SKILL_ID");         
--- 88 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS_SKILL;         
+-- 90 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS_SKILL;         
 INSERT INTO "PUBLIC"."SET_BONUS_SKILL" VALUES
 (3, 1, 'diablos-ambition', 'slugger-secret'),
 (3, 1, 'anjanath-power', 'adrenaline'),
@@ -2683,7 +2690,9 @@ INSERT INTO "PUBLIC"."SET_BONUS_SKILL" VALUES
 INSERT INTO "PUBLIC"."SET_BONUS_SKILL" VALUES
 (3, 1, 'alatreon-divinity', 'all-elemental-resistance'),
 (1, 1, 'frostfang-absolute-art', 'punishing-draw'),
-(3, 1, 'frostfang-absolute-art', 'slugger-secret'); 
+(3, 1, 'frostfang-absolute-art', 'slugger-secret'),
+(3, 1, 'sizzling-blessing', 'sizzling-gift'),
+(5, 1, 'sizzling-blessing', 'sizzling-gratitude');
 CREATE CACHED TABLE "PUBLIC"."SKILL"(
     "ID" VARCHAR NOT NULL,
     "DESCRIPTION" VARCHAR NOT NULL,
@@ -2694,7 +2703,7 @@ CREATE CACHED TABLE "PUBLIC"."SKILL"(
     "NAME" VARCHAR NOT NULL
 );          
 ALTER TABLE "PUBLIC"."SKILL" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_4B" PRIMARY KEY("ID");        
--- 169 +/- SELECT COUNT(*) FROM PUBLIC.SKILL;  
+-- 171 +/- SELECT COUNT(*) FROM PUBLIC.SKILL;  
 INSERT INTO "PUBLIC"."SKILL" VALUES
 ('slugger-secret', 'Raises the maximum level of the Slugger skill.', 1, NULL, 'Slugger Secret'),
 ('slugger', 'Makes it easier to stun monsters.', 3, 5, 'Slugger'),
@@ -2868,14 +2877,16 @@ INSERT INTO "PUBLIC"."SKILL" VALUES
 ('full-bloom-s-gift', 'Increases odds of getting special Holiday Full Bloom rewards. (No effect when joining mid-quest.)', 1, NULL, 'Full Bloom''s Gift'),
 ('full-bloom-s-gratitude', 'Greatly increases odds of getting special Holiday Full Bloom rewards. (No effect when joining mid-quest.)', 1, NULL, 'Full Bloom''s Gratitude'),
 ('element-conversion', 'Equipped weapon''s elemental power increases as your armor''s elemental resistance increases.', 1, NULL, 'Element Conversion'),
-('all-elemental-resistance', 'Increases all elemental resistances +20%.', 1, NULL, 'All Elemental Resistance');     
+('all-elemental-resistance', 'Increases all elemental resistances +20%.', 1, NULL, 'All Elemental Resistance'),
+('sizzling-gift', 'Increases odds of getting special Sizzling Spice rewards. (No effect when joining mid-quest.)', 1, NULL, 'Sizzling Gift'),
+('sizzling-gratitude', 'Greatly increases odds of getting special Sizzling Spice rewards. (No effect when joining mid-quest.)', 1, NULL, 'Sizzling Gratitude');       
 CREATE CACHED TABLE "PUBLIC"."SKILL_EFFECT"(
     "SKILL_ID" VARCHAR NOT NULL,
     "EFFECT" VARCHAR NOT NULL,
     "SKILL_LEVEL" INTEGER NOT NULL
 );             
 ALTER TABLE "PUBLIC"."SKILL_EFFECT" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_B" PRIMARY KEY("SKILL_ID", "SKILL_LEVEL");             
--- 409 +/- SELECT COUNT(*) FROM PUBLIC.SKILL_EFFECT;           
+-- 411 +/- SELECT COUNT(*) FROM PUBLIC.SKILL_EFFECT;           
 INSERT INTO "PUBLIC"."SKILL_EFFECT" VALUES
 ('slugger-secret', 'Raises the maximum level of the Slugger skill ', 1),
 ('slugger', 'Stun power +20%', 1),
@@ -3292,7 +3303,9 @@ INSERT INTO "PUBLIC"."SKILL_EFFECT" VALUES
 ('full-bloom-s-gift', 'Increases odds of getting special Holiday Full Bloom rewards. (No effect when joining mid-quest.)', 1),
 ('full-bloom-s-gratitude', 'Greatly increases odds of getting special Holiday Full Bloom rewards. (No effect when joining mid-quest.)', 1),
 ('element-conversion', 'Equipped weapon''s elemental power increases as your armor''s elemental resistance increases', 1),
-('all-elemental-resistance', 'Increases all elemental resistances +20%', 1);   
+('all-elemental-resistance', 'Increases all elemental resistances +20%', 1),
+('sizzling-gift', 'Increases odds of getting special Sizzling Spice rewards. (No effect when joining mid-quest.)', 1),
+('sizzling-gratitude', 'Greatly increases odds of getting special Sizzling Spice rewards. (No effect when joining mid-quest.)', 1);        
 CREATE CACHED TABLE "PUBLIC"."UNCAPPING_SKILLS"(
     "UNCAPPING_SKILL_ID" VARCHAR,
     "ID" VARCHAR NOT NULL
@@ -3335,7 +3348,7 @@ CREATE CACHED TABLE "PUBLIC"."ARMOR_PIECE"(
     "WATER_RESISTANCE" INT DEFAULT 0 NOT NULL
 );  
 ALTER TABLE "PUBLIC"."ARMOR_PIECE" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_4" PRIMARY KEY("ID");   
--- 1677 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE;           
+-- 1682 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE;           
 INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('diablos-head-alpha-plus', 0, 0, 1, 0, 0, STRINGDECODE('Diablos Helm \u03b1 +'), 'Diablos', '4', 'diablos-ambition', 140, 2, 3, -3, 10, 0, -2),
 ('kestodon-arms-lr', 2, 0, 0, 0, 0, 'Kestodon Guards', 'Kestodon', '0', NULL, 12, 0, 4, 0, 1, 0, 0),
@@ -5067,7 +5080,12 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('frostfang-barioth-legs-beta-plus', 4, 0, 0, 0, 2, STRINGDECODE('Frostfang Greaves \u03b2 +'), 'Frostfang Barioth', '5', 'frostfang-absolute-art', 162, 0, -3, 3, 11, -2, 2),
 ('draw-charm-iii', 5, 0, 0, 0, 0, 'Draw Charm III', 'Draw', '9', NULL, 0, 0, 0, 0, 1, 0, 0),
 ('phoenix-charm-iii', 5, 0, 0, 0, 0, 'Phoenix Charm III', 'Phoenix', '9', NULL, 0, 0, 0, 0, 1, 0, 0),
-('fitness-charm-v', 5, 0, 0, 0, 0, 'Fitness Charm V', 'Fitness', '11', NULL, 0, 0, 0, 0, 1, 0, 0);           
+('fitness-charm-v', 5, 0, 0, 0, 0, 'Fitness Charm V', 'Fitness', '11', NULL, 0, 0, 0, 0, 1, 0, 0),
+('passionate-head-alpha-plus', 0, 0, 0, 1, 0, STRINGDECODE('Passionate Headdress \u03b1 +'), 'Passionate', '4', 'sizzling-blessing', 156, 1, 1, 1, 10, 1, 4),
+('passionate-body-alpha-plus', 1, 1, 0, 0, 1, STRINGDECODE('Passionate Body \u03b1 +'), 'Passionate', '4', 'sizzling-blessing', 156, 1, 1, 1, 10, 1, 4),
+('passionate-arms-alpha-plus', 2, 0, 0, 1, 1, STRINGDECODE('Passionate Arms \u03b1 +'), 'Passionate', '4', 'sizzling-blessing', 156, 1, 1, 1, 10, 1, 4),
+('passionate-waist-alpha-plus', 3, 2, 0, 0, 0, STRINGDECODE('Passionate Belt \u03b1 +'), 'Passionate', '4', 'sizzling-blessing', 156, 1, 1, 1, 10, 1, 4),
+('passionate-legs-alpha-plus', 4, 2, 0, 0, 0, STRINGDECODE('Passionate Leggings \u03b1 +'), 'Passionate', '4', 'sizzling-blessing', 156, 1, 1, 1, 10, 1, 4);    
 ALTER TABLE "PUBLIC"."ARMOR_PIECE" ADD CONSTRAINT "PUBLIC"."UKP46L799PTS3CCBB1IR7HPH5EC" UNIQUE("SET_NAME", "ARMOR_TYPE", "SET_TYPE");         
 ALTER TABLE "PUBLIC"."SET_BONUS_ARMOR_PIECES" ADD CONSTRAINT "PUBLIC"."UK_RHY5M0B27L7Y049FJB2O3EH6D" UNIQUE("ARMOR_PIECES_ID");
 ALTER TABLE "PUBLIC"."SET_BONUS_SKILL" ADD CONSTRAINT "PUBLIC"."FK2FTO2XB77PFK9R8R4FK7U1VOK" FOREIGN KEY("SET_BONUS_ID") REFERENCES "PUBLIC"."SET_BONUS"("ID") NOCHECK;        
