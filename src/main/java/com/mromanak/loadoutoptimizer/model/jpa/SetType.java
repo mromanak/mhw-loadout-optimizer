@@ -56,7 +56,7 @@ public enum SetType {
         SetType setType = nameToValueMap.get(name);
         if(setType == null) {
             throw new IllegalArgumentException(
-                name + " is not a recognized set type. Recognized set types are: " + asList(values()));
+                name + " is not a recognized set type. Recognized set types are: " + nameToValueMap.keySet());
         }
         return setType;
     }

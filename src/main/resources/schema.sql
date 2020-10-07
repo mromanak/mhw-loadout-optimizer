@@ -18,7 +18,7 @@ CREATE CACHED TABLE "PUBLIC"."ARMOR_PIECE_SKILL"(
     "SKILL_ID" VARCHAR NOT NULL
 );      
 ALTER TABLE "PUBLIC"."ARMOR_PIECE_SKILL" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_F" PRIMARY KEY("ARMOR_PIECE_ID", "SKILL_ID");     
--- 2455 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE_SKILL;     
+-- 2493 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE_SKILL;     
 INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'diablos-head-alpha-plus', 'slugger'),
 (1, 'ko-charm-i', 'slugger'),
@@ -2502,7 +2502,46 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'passionate-body-alpha-plus', 'master-gatherer'),
 (3, 'passionate-arms-alpha-plus', 'survival-expert'),
 (4, 'passionate-waist-alpha-plus', 'botanist'),
-(3, 'passionate-legs-alpha-plus', 'geologist');
+(3, 'passionate-legs-alpha-plus', 'geologist'),
+(1, 'shaver-charm-i', 'cliffhanger'),
+(1, 'shaver-charm-i', 'clutch-claw-boost'),
+(5, 'earplugs-charm-v', 'earplugs'),
+(5, 'master-s-charm-v', 'critical-eye'),
+(3, 'critical-charm-iii', 'critical-boost'),
+(3, 'exploiter-charm-iii', 'weakness-exploit'),
+(5, 'handicraft-charm-v', 'handicraft'),
+(3, 'fatalis-head-alpha-plus', 'guard'),
+(3, 'fatalis-head-alpha-plus', 'stun-resistance'),
+(1, 'fatalis-body-alpha-plus', 'weakness-exploit'),
+(2, 'fatalis-body-alpha-plus', 'evade-window'),
+(1, 'fatalis-arms-alpha-plus', 'weakness-exploit'),
+(3, 'fatalis-arms-alpha-plus', 'handicraft'),
+(1, 'fatalis-waist-alpha-plus', 'weakness-exploit'),
+(3, 'fatalis-waist-alpha-plus', 'critical-eye'),
+(1, 'fatalis-legs-alpha-plus', 'evade-window'),
+(2, 'fatalis-legs-alpha-plus', 'handicraft'),
+(3, 'demonlord-head-alpha-plus', 'guard'),
+(3, 'demonlord-body-alpha-plus', 'blight-resistance'),
+(3, 'demonlord-arms-alpha-plus', 'handicraft'),
+(3, 'demonlord-waist-alpha-plus', 'free-elem-ammo-up'),
+(3, 'demonlord-legs-alpha-plus', 'offensive-guard'),
+(3, 'fatalis-head-beta-plus', 'stun-resistance'),
+(1, 'fatalis-body-beta-plus', 'evade-window'),
+(1, 'fatalis-body-beta-plus', 'weakness-exploit'),
+(1, 'fatalis-arms-beta-plus', 'weakness-exploit'),
+(2, 'fatalis-waist-beta-plus', 'critical-eye'),
+(1, 'fatalis-legs-beta-plus', 'evade-window'),
+(1, 'azure-age-head-alpha-plus', 'weakness-exploit'),
+(3, 'azure-age-head-alpha-plus', 'slinger-capacity'),
+(1, 'azure-age-body-alpha-plus', 'focus'),
+(2, 'azure-age-body-alpha-plus', 'constitution'),
+(1, 'azure-age-arms-alpha-plus', 'weakness-exploit'),
+(2, 'azure-age-arms-alpha-plus', 'focus');     
+INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
+(2, 'azure-age-waist-alpha-plus', 'slinger-capacity'),
+(3, 'azure-age-waist-alpha-plus', 'water-attack'),
+(1, 'azure-age-legs-alpha-plus', 'weakness-exploit'),
+(2, 'azure-age-legs-alpha-plus', 'constitution');              
 CREATE CACHED TABLE "PUBLIC"."JEWEL_SKILL"(
     "SKILL_LEVEL" INTEGER NOT NULL CHECK (("SKILL_LEVEL" <= 7)
     AND ("SKILL_LEVEL" >= 1)),
@@ -2518,7 +2557,7 @@ CREATE CACHED TABLE "PUBLIC"."SET_BONUS"(
     "NAME" VARCHAR NOT NULL
 );            
 ALTER TABLE "PUBLIC"."SET_BONUS" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_1" PRIMARY KEY("ID");     
--- 66 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS;               
+-- 68 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS;               
 INSERT INTO "PUBLIC"."SET_BONUS" VALUES
 ('diablos-ambition', 'Diablos Ambition'),
 ('anjanath-power', 'Anjanath Power'),
@@ -2585,7 +2624,9 @@ INSERT INTO "PUBLIC"."SET_BONUS" VALUES
 ('full-bloom-blessing', 'Full Bloom Blessing'),
 ('alatreon-divinity', 'Alatreon Divinity'),
 ('frostfang-absolute-art', 'Frostfang Absolute Art'),
-('sizzling-blessing', 'Sizzling Blessing');
+('sizzling-blessing', 'Sizzling Blessing'),
+('fun-fright-blessing', 'Fun Fright Blessing'),
+('fatalis-legend', 'Fatalis Legend');          
 CREATE CACHED TABLE "PUBLIC"."SET_BONUS_ARMOR_PIECES"(
     "SET_BONUS_ID" VARCHAR NOT NULL,
     "ARMOR_PIECES_ID" VARCHAR NOT NULL
@@ -2600,7 +2641,7 @@ CREATE CACHED TABLE "PUBLIC"."SET_BONUS_SKILL"(
     "SKILL_ID" VARCHAR NOT NULL
 );
 ALTER TABLE "PUBLIC"."SET_BONUS_SKILL" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_5" PRIMARY KEY("SET_BONUS_ID", "SKILL_ID");         
--- 90 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS_SKILL;         
+-- 94 +/- SELECT COUNT(*) FROM PUBLIC.SET_BONUS_SKILL;         
 INSERT INTO "PUBLIC"."SET_BONUS_SKILL" VALUES
 (3, 1, 'diablos-ambition', 'slugger-secret'),
 (3, 1, 'anjanath-power', 'adrenaline'),
@@ -2692,7 +2733,11 @@ INSERT INTO "PUBLIC"."SET_BONUS_SKILL" VALUES
 (1, 1, 'frostfang-absolute-art', 'punishing-draw'),
 (3, 1, 'frostfang-absolute-art', 'slugger-secret'),
 (3, 1, 'sizzling-blessing', 'sizzling-gift'),
-(5, 1, 'sizzling-blessing', 'sizzling-gratitude');
+(5, 1, 'sizzling-blessing', 'sizzling-gratitude'),
+(3, 1, 'fun-fright-blessing', 'fun-fright-s-gift'),
+(5, 1, 'fun-fright-blessing', 'fun-fright-s-gratitude'),
+(2, 1, 'fatalis-legend', 'inheritance'),
+(4, 1, 'fatalis-legend', 'transcendence');               
 CREATE CACHED TABLE "PUBLIC"."SKILL"(
     "ID" VARCHAR NOT NULL,
     "DESCRIPTION" VARCHAR NOT NULL,
@@ -2703,7 +2748,7 @@ CREATE CACHED TABLE "PUBLIC"."SKILL"(
     "NAME" VARCHAR NOT NULL
 );          
 ALTER TABLE "PUBLIC"."SKILL" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_4B" PRIMARY KEY("ID");        
--- 171 +/- SELECT COUNT(*) FROM PUBLIC.SKILL;  
+-- 176 +/- SELECT COUNT(*) FROM PUBLIC.SKILL;  
 INSERT INTO "PUBLIC"."SKILL" VALUES
 ('slugger-secret', 'Raises the maximum level of the Slugger skill.', 1, NULL, 'Slugger Secret'),
 ('slugger', 'Makes it easier to stun monsters.', 3, 5, 'Slugger'),
@@ -2879,14 +2924,19 @@ INSERT INTO "PUBLIC"."SKILL" VALUES
 ('element-conversion', 'Equipped weapon''s elemental power increases as your armor''s elemental resistance increases.', 1, NULL, 'Element Conversion'),
 ('all-elemental-resistance', 'Increases all elemental resistances +20%.', 1, NULL, 'All Elemental Resistance'),
 ('sizzling-gift', 'Increases odds of getting special Sizzling Spice rewards. (No effect when joining mid-quest.)', 1, NULL, 'Sizzling Gift'),
-('sizzling-gratitude', 'Greatly increases odds of getting special Sizzling Spice rewards. (No effect when joining mid-quest.)', 1, NULL, 'Sizzling Gratitude');       
+('sizzling-gratitude', 'Greatly increases odds of getting special Sizzling Spice rewards. (No effect when joining mid-quest.)', 1, NULL, 'Sizzling Gratitude'),
+('clutch-claw-boost', 'Clutch claw weapon attacks wound monsters easier, and have a better chance of dropping slinger ammo.', 1, NULL, 'Clutch Claw Boost'),
+('fun-fright-s-gift', ' Increases odds of getting special Fun Fright rewards. (No effect when joining mid-quest.)', 1, NULL, 'Fun Fright''s Gift'),
+('fun-fright-s-gratitude', 'Greatly increases odds of getting special Fun Fright rewards. (No effect when joining mid-quest.)', 1, NULL, 'Fun Fright''s Gratitude'),
+('inheritance', 'Removes the skill level cap for the skill secrets.', 1, NULL, 'Inheritance'),
+('transcendence', 'Grants True Razor Sharp/Spare Shot. Health/Stamina +100 at the start of a quest or after fainting. (Effect doesn''t stack.)', 1, NULL, 'Transcendence');      
 CREATE CACHED TABLE "PUBLIC"."SKILL_EFFECT"(
     "SKILL_ID" VARCHAR NOT NULL,
     "EFFECT" VARCHAR NOT NULL,
     "SKILL_LEVEL" INTEGER NOT NULL
 );             
 ALTER TABLE "PUBLIC"."SKILL_EFFECT" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_B" PRIMARY KEY("SKILL_ID", "SKILL_LEVEL");             
--- 411 +/- SELECT COUNT(*) FROM PUBLIC.SKILL_EFFECT;           
+-- 416 +/- SELECT COUNT(*) FROM PUBLIC.SKILL_EFFECT;           
 INSERT INTO "PUBLIC"."SKILL_EFFECT" VALUES
 ('slugger-secret', 'Raises the maximum level of the Slugger skill ', 1),
 ('slugger', 'Stun power +20%', 1),
@@ -3305,7 +3355,12 @@ INSERT INTO "PUBLIC"."SKILL_EFFECT" VALUES
 ('element-conversion', 'Equipped weapon''s elemental power increases as your armor''s elemental resistance increases', 1),
 ('all-elemental-resistance', 'Increases all elemental resistances +20%', 1),
 ('sizzling-gift', 'Increases odds of getting special Sizzling Spice rewards. (No effect when joining mid-quest.)', 1),
-('sizzling-gratitude', 'Greatly increases odds of getting special Sizzling Spice rewards. (No effect when joining mid-quest.)', 1);        
+('sizzling-gratitude', 'Greatly increases odds of getting special Sizzling Spice rewards. (No effect when joining mid-quest.)', 1),
+('clutch-claw-boost', 'Activates skill effect.', 1),
+('fun-fright-s-gift', ' Increases odds of getting special Fun Fright rewards. (No effect when joining mid-quest.)', 1),
+('fun-fright-s-gratitude', 'Greatly increases odds of getting special Fun Fright rewards. (No effect when joining mid-quest.)', 1),
+('inheritance', 'Removes the skill level cap for the skill secrets.', 1),
+('transcendence', 'Grants True Razor Sharp/Spare Shot. Health/Stamina +100 at the start of a quest or after fainting. (Effect doesn''t stack.)', 1);        
 CREATE CACHED TABLE "PUBLIC"."UNCAPPING_SKILLS"(
     "UNCAPPING_SKILL_ID" VARCHAR,
     "ID" VARCHAR NOT NULL
@@ -3348,7 +3403,7 @@ CREATE CACHED TABLE "PUBLIC"."ARMOR_PIECE"(
     "WATER_RESISTANCE" INT DEFAULT 0 NOT NULL
 );  
 ALTER TABLE "PUBLIC"."ARMOR_PIECE" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_4" PRIMARY KEY("ID");   
--- 1682 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE;           
+-- 1708 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE;           
 INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('diablos-head-alpha-plus', 0, 0, 1, 0, 0, STRINGDECODE('Diablos Helm \u03b1 +'), 'Diablos', '4', 'diablos-ambition', 140, 2, 3, -3, 10, 0, -2),
 ('kestodon-arms-lr', 2, 0, 0, 0, 0, 'Kestodon Guards', 'Kestodon', '0', NULL, 12, 0, 4, 0, 1, 0, 0),
@@ -5085,7 +5140,34 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('passionate-body-alpha-plus', 1, 1, 0, 0, 1, STRINGDECODE('Passionate Body \u03b1 +'), 'Passionate', '4', 'sizzling-blessing', 156, 1, 1, 1, 10, 1, 4),
 ('passionate-arms-alpha-plus', 2, 0, 0, 1, 1, STRINGDECODE('Passionate Arms \u03b1 +'), 'Passionate', '4', 'sizzling-blessing', 156, 1, 1, 1, 10, 1, 4),
 ('passionate-waist-alpha-plus', 3, 2, 0, 0, 0, STRINGDECODE('Passionate Belt \u03b1 +'), 'Passionate', '4', 'sizzling-blessing', 156, 1, 1, 1, 10, 1, 4),
-('passionate-legs-alpha-plus', 4, 2, 0, 0, 0, STRINGDECODE('Passionate Leggings \u03b1 +'), 'Passionate', '4', 'sizzling-blessing', 156, 1, 1, 1, 10, 1, 4);    
+('passionate-legs-alpha-plus', 4, 2, 0, 0, 0, STRINGDECODE('Passionate Leggings \u03b1 +'), 'Passionate', '4', 'sizzling-blessing', 156, 1, 1, 1, 10, 1, 4),
+('shaver-charm-i', 5, 0, 0, 0, 0, 'Shaver Charm', 'Shaver', '7', NULL, 0, 0, 0, 0, 1, 0, 0),
+('earplugs-charm-v', 5, 0, 0, 0, 0, 'Earplugs Charm V', 'Earplugs', '11', NULL, 0, 0, 0, 0, 1, 0, 0),
+('master-s-charm-v', 5, 0, 0, 0, 0, 'Master''s Charm V', 'Master''s', '11', NULL, 0, 0, 0, 0, 1, 0, 0),
+('critical-charm-iii', 5, 0, 0, 0, 0, 'Critical Charm III', 'Critical', '9', NULL, 0, 0, 0, 0, 1, 0, 0),
+('exploiter-charm-iii', 5, 0, 0, 0, 0, 'Exploiter Charm III', 'Exploiter', '9', NULL, 0, 0, 0, 0, 1, 0, 0),
+('handicraft-charm-v', 5, 0, 0, 0, 0, 'Handicraft Charm V', 'Handicraft', '11', NULL, 0, 0, 0, 0, 1, 0, 0),
+('fatalis-head-alpha-plus', 0, 0, 2, 1, 0, STRINGDECODE('Dragonhead \u03b1 +'), 'Fatalis', '4', 'fatalis-legend', 180, -4, -1, 0, 12, 2, 2),
+('fatalis-body-alpha-plus', 1, 0, 0, 1, 2, STRINGDECODE('Dragonhide \u03b1 +'), 'Fatalis', '4', 'fatalis-legend', 180, -4, -1, 0, 12, 2, 2),
+('fatalis-arms-alpha-plus', 2, 1, 0, 0, 1, STRINGDECODE('Dragonclaws \u03b1 +'), 'Fatalis', '4', 'fatalis-legend', 180, -4, -1, 0, 12, 2, 2),
+('fatalis-waist-alpha-plus', 3, 0, 0, 2, 1, STRINGDECODE('Dragonbarbs \u03b1 +'), 'Fatalis', '4', 'fatalis-legend', 180, -4, -1, 0, 12, 2, 2),
+('fatalis-legs-alpha-plus', 4, 0, 0, 0, 2, STRINGDECODE('Dragonfeet \u03b1 +'), 'Fatalis', '4', 'fatalis-legend', 180, -4, -1, 0, 12, 2, 2),
+('demonlord-head-alpha-plus', 0, 0, 0, 0, 1, STRINGDECODE('Demonlord Hair \u03b1+'), 'Demonlord', '4', 'fun-fright-blessing', 162, 1, 1, 1, 11, 4, 1),
+('demonlord-body-alpha-plus', 1, 0, 2, 0, 0, STRINGDECODE('Demonlord Cloak \u03b1+'), 'Demonlord', '4', 'fun-fright-blessing', 162, 1, 1, 1, 11, 4, 1),
+('demonlord-arms-alpha-plus', 2, 0, 0, 0, 1, STRINGDECODE('Demonlord Blackarm \u03b1+'), 'Demonlord', '4', 'fun-fright-blessing', 162, 1, 1, 1, 11, 4, 1),
+('demonlord-waist-alpha-plus', 3, 2, 0, 0, 0, STRINGDECODE('Demonlord Leather Belt \u03b1+'), 'Demonlord', '4', 'fun-fright-blessing', 162, 1, 1, 1, 11, 4, 1),
+('demonlord-legs-alpha-plus', 4, 0, 0, 0, 1, STRINGDECODE('Demonlord Boots \u03b1+'), 'Demonlord', '4', 'fun-fright-blessing', 162, 1, 1, 1, 11, 4, 1),
+('fatalis-head-beta-plus', 0, 0, 0, 0, 3, STRINGDECODE('Dragonhead \u03b2 +'), 'Fatalis', '5', 'fatalis-legend', 180, -4, -1, 0, 12, 2, 2);      
+INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
+('fatalis-body-beta-plus', 1, 0, 0, 0, 3, STRINGDECODE('Dragonhide \u03b2 +'), 'Fatalis', '5', 'fatalis-legend', 180, -4, -1, 0, 12, 2, 2),
+('fatalis-arms-beta-plus', 2, 0, 0, 0, 3, STRINGDECODE('Dragonclaws \u03b2 +'), 'Fatalis', '5', 'fatalis-legend', 180, -4, -1, 0, 12, 2, 2),
+('fatalis-waist-beta-plus', 3, 0, 0, 0, 3, STRINGDECODE('Dragonbarbs \u03b2 +'), 'Fatalis', '5', 'fatalis-legend', 180, -4, -1, 0, 12, 2, 2),
+('fatalis-legs-beta-plus', 4, 0, 0, 0, 3, STRINGDECODE('Dragonfeet \u03b2 +'), 'Fatalis', '5', 'fatalis-legend', 180, -4, -1, 0, 12, 2, 2),
+('azure-age-head-alpha-plus', 0, 0, 0, 0, 1, STRINGDECODE('Azure Age Hair \u03b1 +'), 'Azure Age', '4', 'silver-rathalos-essence', 170, 3, 2, 0, 12, 0, 2),
+('azure-age-body-alpha-plus', 1, 0, 0, 0, 1, STRINGDECODE('Azure Age Haori \u03b1 +'), 'Azure Age', '4', 'silver-rathalos-essence', 170, 3, 2, 0, 12, 0, 2),
+('azure-age-arms-alpha-plus', 2, 3, 0, 0, 0, STRINGDECODE('Azure Age Sleeve \u03b1 +'), 'Azure Age', '4', 'silver-rathalos-essence', 170, 3, 2, 0, 12, 0, 2),
+('azure-age-waist-alpha-plus', 3, 2, 0, 0, 1, STRINGDECODE('Azure Age Obi \u03b1 +'), 'Azure Age', '4', 'silver-rathalos-essence', 170, 3, 2, 0, 12, 0, 2),
+('azure-age-legs-alpha-plus', 4, 1, 0, 0, 1, STRINGDECODE('Azure Age Geta \u03b1 +'), 'Azure Age', '4', 'silver-rathalos-essence', 170, 3, 2, 0, 12, 0, 2);    
 ALTER TABLE "PUBLIC"."ARMOR_PIECE" ADD CONSTRAINT "PUBLIC"."UKP46L799PTS3CCBB1IR7HPH5EC" UNIQUE("SET_NAME", "ARMOR_TYPE", "SET_TYPE");         
 ALTER TABLE "PUBLIC"."SET_BONUS_ARMOR_PIECES" ADD CONSTRAINT "PUBLIC"."UK_RHY5M0B27L7Y049FJB2O3EH6D" UNIQUE("ARMOR_PIECES_ID");
 ALTER TABLE "PUBLIC"."SET_BONUS_SKILL" ADD CONSTRAINT "PUBLIC"."FK2FTO2XB77PFK9R8R4FK7U1VOK" FOREIGN KEY("SET_BONUS_ID") REFERENCES "PUBLIC"."SET_BONUS"("ID") NOCHECK;        
