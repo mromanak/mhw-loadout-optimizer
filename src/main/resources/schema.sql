@@ -18,7 +18,7 @@ CREATE CACHED TABLE "PUBLIC"."ARMOR_PIECE_SKILL"(
     "SKILL_ID" VARCHAR NOT NULL
 );      
 ALTER TABLE "PUBLIC"."ARMOR_PIECE_SKILL" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_F" PRIMARY KEY("ARMOR_PIECE_ID", "SKILL_ID");     
--- 2493 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE_SKILL;     
+-- 2503 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE_SKILL;     
 INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (1, 'diablos-head-alpha-plus', 'slugger'),
 (1, 'ko-charm-i', 'slugger'),
@@ -2541,7 +2541,17 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE_SKILL" VALUES
 (2, 'azure-age-waist-alpha-plus', 'slinger-capacity'),
 (3, 'azure-age-waist-alpha-plus', 'water-attack'),
 (1, 'azure-age-legs-alpha-plus', 'weakness-exploit'),
-(2, 'azure-age-legs-alpha-plus', 'constitution');              
+(2, 'azure-age-legs-alpha-plus', 'constitution'),
+(1, 'velkhana-head-gamma-plus', 'resuscitate'),
+(3, 'velkhana-head-gamma-plus', 'coalescence'),
+(3, 'velkhana-body-gamma-plus', 'critical-draw'),
+(3, 'velkhana-body-gamma-plus', 'ice-attack'),
+(3, 'velkhana-arms-gamma-plus', 'ice-attack'),
+(3, 'velkhana-arms-gamma-plus', 'recovery-up'),
+(1, 'velkhana-waist-gamma-plus', 'quick-sheath'),
+(3, 'velkhana-waist-gamma-plus', 'focus'),
+(2, 'velkhana-legs-gamma-plus', 'quick-sheath'),
+(3, 'velkhana-legs-gamma-plus', 'peak-performance');           
 CREATE CACHED TABLE "PUBLIC"."JEWEL_SKILL"(
     "SKILL_LEVEL" INTEGER NOT NULL CHECK (("SKILL_LEVEL" <= 7)
     AND ("SKILL_LEVEL" >= 1)),
@@ -3403,7 +3413,7 @@ CREATE CACHED TABLE "PUBLIC"."ARMOR_PIECE"(
     "WATER_RESISTANCE" INT DEFAULT 0 NOT NULL
 );  
 ALTER TABLE "PUBLIC"."ARMOR_PIECE" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_4" PRIMARY KEY("ID");   
--- 1708 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE;           
+-- 1713 +/- SELECT COUNT(*) FROM PUBLIC.ARMOR_PIECE;           
 INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('diablos-head-alpha-plus', 0, 0, 1, 0, 0, STRINGDECODE('Diablos Helm \u03b1 +'), 'Diablos', '4', 'diablos-ambition', 140, 2, 3, -3, 10, 0, -2),
 ('kestodon-arms-lr', 2, 0, 0, 0, 0, 'Kestodon Guards', 'Kestodon', '0', NULL, 12, 0, 4, 0, 1, 0, 0),
@@ -5167,7 +5177,12 @@ INSERT INTO "PUBLIC"."ARMOR_PIECE" VALUES
 ('azure-age-body-alpha-plus', 1, 0, 0, 0, 1, STRINGDECODE('Azure Age Haori \u03b1 +'), 'Azure Age', '4', 'silver-rathalos-essence', 170, 3, 2, 0, 12, 0, 2),
 ('azure-age-arms-alpha-plus', 2, 3, 0, 0, 0, STRINGDECODE('Azure Age Sleeve \u03b1 +'), 'Azure Age', '4', 'silver-rathalos-essence', 170, 3, 2, 0, 12, 0, 2),
 ('azure-age-waist-alpha-plus', 3, 2, 0, 0, 1, STRINGDECODE('Azure Age Obi \u03b1 +'), 'Azure Age', '4', 'silver-rathalos-essence', 170, 3, 2, 0, 12, 0, 2),
-('azure-age-legs-alpha-plus', 4, 1, 0, 0, 1, STRINGDECODE('Azure Age Geta \u03b1 +'), 'Azure Age', '4', 'silver-rathalos-essence', 170, 3, 2, 0, 12, 0, 2);    
+('azure-age-legs-alpha-plus', 4, 1, 0, 0, 1, STRINGDECODE('Azure Age Geta \u03b1 +'), 'Azure Age', '4', 'silver-rathalos-essence', 170, 3, 2, 0, 12, 0, 2),
+('velkhana-head-gamma-plus', 0, 1, 0, 0, 2, STRINGDECODE('Rimeguard Helm \u03b3 +'), 'Velkhana', '6', 'velkhana-divinity', 180, -1, -3, 4, 12, -1, 2),
+('velkhana-body-gamma-plus', 1, 1, 1, 0, 1, STRINGDECODE('Rimeguard Mail \u03b3 +'), 'Velkhana', '6', 'velkhana-divinity', 180, -1, -3, 4, 12, -1, 2),
+('velkhana-arms-gamma-plus', 2, 0, 0, 1, 1, STRINGDECODE('Rimeguard Vambraces \u03b3 +'), 'Velkhana', '6', 'velkhana-divinity', 180, -1, -3, 4, 12, -1, 2),
+('velkhana-waist-gamma-plus', 3, 1, 0, 0, 1, STRINGDECODE('Rimeguard Coil \u03b3 +'), 'Velkhana', '6', 'velkhana-divinity', 180, -1, -3, 4, 12, -1, 2),
+('velkhana-legs-gamma-plus', 4, 0, 1, 0, 1, STRINGDECODE('Rimeguard Greaves \u03b3 +'), 'Velkhana', '6', 'velkhana-divinity', 180, -1, -3, 4, 12, -1, 2);        
 ALTER TABLE "PUBLIC"."ARMOR_PIECE" ADD CONSTRAINT "PUBLIC"."UKP46L799PTS3CCBB1IR7HPH5EC" UNIQUE("SET_NAME", "ARMOR_TYPE", "SET_TYPE");         
 ALTER TABLE "PUBLIC"."SET_BONUS_ARMOR_PIECES" ADD CONSTRAINT "PUBLIC"."UK_RHY5M0B27L7Y049FJB2O3EH6D" UNIQUE("ARMOR_PIECES_ID");
 ALTER TABLE "PUBLIC"."SET_BONUS_SKILL" ADD CONSTRAINT "PUBLIC"."FK2FTO2XB77PFK9R8R4FK7U1VOK" FOREIGN KEY("SET_BONUS_ID") REFERENCES "PUBLIC"."SET_BONUS"("ID") NOCHECK;        
