@@ -410,9 +410,8 @@ public class DtoService {
 
         return armorPieces.stream().
             map((String armorPieceId) -> {
-                ArmorPiece armorPiece = armorPieceRepository.findById(armorPieceId).
+                return armorPieceRepository.findById(armorPieceId).
                     orElseThrow(() -> new EntityNotFoundException("No armor piece found with ID " + armorPieceId));
-                return armorPiece;
             }).
             collect(toList());
     }

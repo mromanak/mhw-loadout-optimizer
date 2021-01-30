@@ -7,7 +7,6 @@ import com.google.common.collect.ImmutableMap;
 import java.util.Map;
 
 import static com.mromanak.loadoutoptimizer.model.jpa.Rank.*;
-import static java.util.Arrays.asList;
 
 public enum SetType {
 
