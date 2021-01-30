@@ -47,6 +47,9 @@ public class LoadoutResponse {
     @ApiModelProperty(notes = "The dragon resistance level granted by the loadout.")
     private int dragonResistance;
 
+    @ApiModelProperty(notes = "Oh god, how do I explain this")
+    private String key;
+
     @ApiModelProperty(notes = "The score of the loadout as determined by the scoring function described in the request")
     private double score;
 }

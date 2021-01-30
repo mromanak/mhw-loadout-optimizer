@@ -21,7 +21,6 @@ public class ArmorPieceService {
         this.armorPieceRepository = armorPieceRepository;
     }
 
-
     public Set<ThinArmorPiece> getArmorPiecesWithSkillsAndRank(Set<String> skillNames, Rank rank) {
         return ImmutableSet.copyOf(armorPieceRepository.eagerFindBySkillNameIn(skillNames).
             stream().

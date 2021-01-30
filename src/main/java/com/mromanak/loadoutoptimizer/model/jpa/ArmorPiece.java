@@ -6,7 +6,6 @@ import lombok.AccessLevel;
 import lombok.Data;
 import lombok.Setter;
 import lombok.ToString;
-import org.hibernate.proxy.HibernateProxy;
 
 import javax.persistence.*;
 import javax.validation.Valid;
@@ -135,13 +134,6 @@ public class ArmorPiece {
     }
 
     public List<ArmorPieceSkill> getSkills() {
-        if (skills instanceof HibernateProxy) {
-            if (((HibernateProxy) skills).getHibernateLazyInitializer().isUninitialized()) {
-                System.err.println("Uninitialized skill list!");
-            } else {
-                System.out.println("Nicely Initialized skill list!");
-            }
-        }
         return skills;
     }
 }

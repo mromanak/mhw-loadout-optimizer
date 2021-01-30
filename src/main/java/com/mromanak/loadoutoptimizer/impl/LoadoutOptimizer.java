@@ -53,7 +53,7 @@ public class LoadoutOptimizer {
             stream().
             map((List<ThinArmorPiece> newArmorPieces) -> {
                 Loadout tmp = Loadout.builder(startingLoadout).withArmorPieces(newArmorPieces).build();
-                return Loadout.builder(tmp).withScore(scoringFunction.apply(tmp)).build();
+                return Loadout.builder(tmp).withScore(scoringFunction.scoreFor(tmp)).build();
             }).
             collect(toList());
     }
@@ -68,14 +68,14 @@ public class LoadoutOptimizer {
                     return OptimizerResponse.empty();
                 }
 
-                return OptimizerResponse.ofLoadouts(loadouts, scoringFunction.apply(loadouts.get(0)));
+                return OptimizerResponse.ofLoadouts(loadouts, scoringFunction.scoreFor(loadouts.get(0)));
             }).
             reduce(OptimizerResponse.empty(), OptimizerResponse.merger()).
             getArmorPiecesToAdd().
             stream().
             map((List<ThinArmorPiece> armorPieces) -> {
                 Loadout tmp = Loadout.builder().withArmorPieces(armorPieces).build();
-                return Loadout.builder(tmp).withScore(scoringFunction.apply(tmp)).build();
+                return Loadout.builder(tmp).withScore(scoringFunction.scoreFor(tmp)).build();
             }).
             distinct().
             collect(toList());
@@ -86,14 +86,14 @@ public class LoadoutOptimizer {
             if(hasNextArmorType(armorType)) {
                 return findBestLoadoutsGiven(currentLoadout, nextArmorType(armorType));
             } else {
-                return OptimizerResponse.of(emptyList(), scoringFunction.apply(currentLoadout));
+                return OptimizerResponse.of(emptyList(), scoringFunction.scoreFor(currentLoadout));
             }
         }
 
-        OptimizerRequest request = OptimizerRequest.builderForLoadout(currentLoadout, armorType).
-            retainSkills(scoringFunction.getDesiredSkills()).
-            retainDefensiveStats(scoringFunction).
-            build();
+        OptimizerRequest request = new OptimizerRequest(
+                armorType,
+                scoringFunction.keyFor(currentLoadout)
+        );
         if(solutionCache.containsKey(request)) {
             return solutionCache.get(request);
         } else if(hasNextArmorType(armorType)) {
@@ -116,7 +116,7 @@ public class LoadoutOptimizer {
                 stream().
                 map(armorPiece-> optimizeTerminal(currentLoadout, armorPiece)).
                 reduce(OptimizerResponse.empty(), OptimizerResponse.merger());
-            OptimizerResponse responseWithoutType = OptimizerResponse.of(emptyList(), scoringFunction.apply(currentLoadout));
+            OptimizerResponse responseWithoutType = OptimizerResponse.of(emptyList(), scoringFunction.scoreFor(currentLoadout));
             OptimizerResponse response = OptimizerResponse.merger().apply(responseWithType, responseWithoutType);
             solutionCache.put(request, response);
             return response;
@@ -128,7 +128,7 @@ public class LoadoutOptimizer {
         OptimizerResponse nextResponse = findBestLoadoutsGiven(nextLoadout, nextArmorType(armorType));
 
         if(nextResponse.getArmorPiecesToAdd().isEmpty()) {
-            double score = scoringFunction.apply(nextLoadout);
+            double score = scoringFunction.scoreFor(nextLoadout);
             return OptimizerResponse.of(ImmutableList.of(ImmutableList.of(armorPiece)), score);
         }
 
@@ -138,7 +138,7 @@ public class LoadoutOptimizer {
             map((List<ThinArmorPiece> ps) -> {
                 List<ThinArmorPiece> nextPiecesToAdd = ImmutableList.<ThinArmorPiece> builder().add(armorPiece).addAll(ps).build();
                 Loadout loadout = Loadout.builder(nextLoadout).withArmorPieces(nextPiecesToAdd).build();
-                double score = scoringFunction.apply(loadout);
+                double score = scoringFunction.scoreFor(loadout);
                 return OptimizerResponse.of(ImmutableList.of(nextPiecesToAdd), score);
             }).
             reduce(OptimizerResponse.empty(), OptimizerResponse.merger());
@@ -147,7 +147,7 @@ public class LoadoutOptimizer {
     private OptimizerResponse optimizeTerminal(Loadout currentLoadout, ThinArmorPiece armorPiece) {
         List<ThinArmorPiece> armorPiecesToAdd = ImmutableList.of(armorPiece);
         Loadout resultingLoadout = Loadout.builder(currentLoadout).withArmorPiece(armorPiece).build();
-        double score = scoringFunction.apply(resultingLoadout);
+        double score = scoringFunction.scoreFor(resultingLoadout);
         return OptimizerResponse.of(ImmutableList.of(armorPiecesToAdd), score);
     }
 }

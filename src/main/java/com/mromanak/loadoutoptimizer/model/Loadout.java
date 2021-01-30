@@ -1,16 +1,28 @@
 package com.mromanak.loadoutoptimizer.model;
 
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.mromanak.loadoutoptimizer.model.dto.optimizer.ThinArmorPiece;
 import com.mromanak.loadoutoptimizer.model.dto.optimizer.ThinArmorPieceSkill;
 import com.mromanak.loadoutoptimizer.model.jpa.ArmorType;
 import lombok.Data;
 
+import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.TreeMap;
 
 @Data
 public class Loadout {
+
+    private static final List<String> ELEMENTAL_RESISTANCE_SKILLS = ImmutableList.of(
+            "Fire Resistance",
+            "Water Resistance",
+            "Thunder Resistance",
+            "Ice Resistance",
+            "Dragon Resistance"
+    );
+
     private final Map<ArmorType, ThinArmorPiece> armorPieces;
     private final Map<String, Integer> skills;
     private final int level1Slots;
@@ -40,7 +52,7 @@ public class Loadout {
         int dragonResistanceTmp = 0;
         for(ThinArmorPiece armorPiece : armorPieces.values()) {
             for(ThinArmorPieceSkill skillMapping : armorPiece.getSkills()) {
-                skillsTmp.merge(skillMapping.getSkill().getName(), skillMapping.getSkillLevel(), (x, y) -> x + y);
+                skillsTmp.merge(skillMapping.getSkill().getName(), skillMapping.getSkillLevel(), Integer::sum);
             }
             level1SlotsTmp += armorPiece.getLevel1Slots();
             level2SlotsTmp += armorPiece.getLevel2Slots();
@@ -79,6 +91,141 @@ public class Loadout {
         Builder builder = new Builder();
         builder.armorPieces = new TreeMap<>(copy.getArmorPieces());
         return builder;
+    }
+
+    public Optional<Loadout> mergeWith(Loadout other) {
+        if (other == null) {
+            return Optional.of(builder(this).build());
+        }
+
+        if(this.armorPieces.size() + other.armorPieces.size() > 6) {
+            return Optional.empty();
+        }
+
+        for (ArmorType armorType : this.armorPieces.keySet()) {
+            if (other.armorPieces.containsKey(armorType)) {
+                return Optional.empty();
+            }
+        }
+
+        Builder builder = builder(this);
+        builder.armorPieces.putAll(other.armorPieces);
+        return Optional.of(builder.build());
+    }
+
+    public int getEffectiveDefense() {
+        int defenseTotal = (int) Math.floor((double) this.defense * defenseBonusMultiplier());
+        defenseTotal += defenseBonusAdd();
+        return defenseTotal;
+    }
+
+    private double defenseBonusMultiplier() {
+        int defenseBoostLevel = this.skills.getOrDefault("Defense Boost", 0);
+        if (defenseBoostLevel < 3) {
+            return 1.0;
+        }
+
+        switch (defenseBoostLevel) {
+            case 3:
+            case 4:
+                return 1.05;
+            case 5:
+            case 6:
+                return 1.08;
+            case 7:
+            default:
+                return 1.1;
+        }
+    }
+
+    private int defenseBonusAdd() {
+        int defenseBoostLevel = this.skills.getOrDefault("Defense Boost", 0);
+
+        int bonusAdd = 0;
+        if (defenseBoostLevel >= 1) {
+            switch (defenseBoostLevel) {
+                case 1:
+                    bonusAdd += 5;
+                    break;
+                case 2:
+                case 3:
+                    bonusAdd += 10;
+                    break;
+                case 4:
+                case 5:
+                    bonusAdd += 20;
+                    break;
+                case 6:
+                case 7:
+                default:
+                    bonusAdd += 35;
+                    break;
+            }
+        }
+
+        for (String resistanceSkill : ELEMENTAL_RESISTANCE_SKILLS) {
+            int resistanceSkillLevel = this.skills.getOrDefault(resistanceSkill, 0);
+            if (resistanceSkillLevel >= 3) {
+                bonusAdd += 10;
+            }
+        }
+
+        return bonusAdd;
+    }
+
+    public int getEffectiveFireResistance() {
+        return this.fireResistance + resistanceBonusAdd("Fire Resistance");
+    }
+
+    public int getEffectiveWaterResistance() {
+        return this.waterResistance + resistanceBonusAdd("Water Resistance");
+    }
+
+    public int getEffectiveThunderResistance() {
+        return this.thunderResistance + resistanceBonusAdd("Thunder Resistance");
+    }
+
+    public int getEffectiveIceResistance() {
+        return this.iceResistance + resistanceBonusAdd("Ice Resistance");
+    }
+
+    public int getEffectiveDragonResistance() {
+        return this.dragonResistance + resistanceBonusAdd("Dragon Resistance");
+    }
+
+    private int resistanceBonusAdd(String skillName) {
+        int bonusAdd = 0;
+        int defenseBoostLevel = this.skills.getOrDefault("Defense Boost", 0);
+        if (defenseBoostLevel > 3) {
+            switch (defenseBoostLevel) {
+                case 4:
+                case 5:
+                    bonusAdd += 3;
+                    break;
+                case 6:
+                case 7:
+                default:
+                    bonusAdd += 5;
+                    break;
+            }
+        }
+        int resistanceSkillLevel = this.skills.getOrDefault(skillName, 0);
+        if (resistanceSkillLevel > 0) {
+            switch (resistanceSkillLevel) {
+                case 1:
+                    bonusAdd += 6;
+                    break;
+                case 2:
+                    bonusAdd += 12;
+                    break;
+                case 3:
+                default:
+                    bonusAdd += 20;
+                    break;
+            }
+        }
+
+        return bonusAdd;
     }
 
     public static final class Builder {

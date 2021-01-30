@@ -44,7 +44,7 @@ public class LoadoutController {
         LoadoutRequest request = loadoutOptimizerService.getSampleRequest();
         List<LoadoutResponse> loadouts = loadoutOptimizerService.optimize(request).
             stream().
-            map(this::toDisplayLoadout).
+            map((loadout -> toDisplayLoadout(loadout, request.getCompositeScoringFunction().keyFor(loadout)))).
             collect(toList());
         return ResponseEntity.ok(loadouts);
     }
@@ -58,12 +58,12 @@ public class LoadoutController {
     {
         List<LoadoutResponse> loadouts = loadoutOptimizerService.optimize(request).
             stream().
-            map(this::toDisplayLoadout).
+            map((loadout -> toDisplayLoadout(loadout, request.getCompositeScoringFunction().keyFor(loadout)))).
             collect(toList());
         return ResponseEntity.ok(loadouts);
     }
 
-    private LoadoutResponse toDisplayLoadout(Loadout loadout) {
+    private LoadoutResponse toDisplayLoadout(Loadout loadout, String key) {
         LoadoutResponse loadoutResponse = new LoadoutResponse();
         Map<ArmorType, String> armor = new TreeMap<>(loadout.getArmorPieces().
             entrySet().
@@ -75,12 +75,13 @@ public class LoadoutController {
         loadoutResponse.setLevel2Slots(loadout.getLevel2Slots());
         loadoutResponse.setLevel3Slots(loadout.getLevel3Slots());
         loadoutResponse.setLevel4Slots(loadout.getLevel4Slots());
-        loadoutResponse.setDefense(loadout.getDefense());
-        loadoutResponse.setFireResistance(loadout.getFireResistance());
-        loadoutResponse.setWaterResistance(loadout.getWaterResistance());
-        loadoutResponse.setThunderResistance(loadout.getThunderResistance());
-        loadoutResponse.setIceResistance(loadout.getIceResistance());
-        loadoutResponse.setDragonResistance(loadout.getDragonResistance());
+        loadoutResponse.setDefense(loadout.getEffectiveDefense());
+        loadoutResponse.setFireResistance(loadout.getEffectiveFireResistance());
+        loadoutResponse.setWaterResistance(loadout.getEffectiveWaterResistance());
+        loadoutResponse.setThunderResistance(loadout.getEffectiveThunderResistance());
+        loadoutResponse.setIceResistance(loadout.getEffectiveIceResistance());
+        loadoutResponse.setDragonResistance(loadout.getEffectiveDragonResistance());
+        loadoutResponse.setKey(key);
         loadoutResponse.setScore(loadout.getScore());
         return loadoutResponse;
     }

@@ -15,6 +15,7 @@ public class ThinArmorPiece {
 
     private final String id;
     private final String name;
+    private final String setName;
     private final ArmorType armorType;
     private final SetType setType;
     private final Integer level1Slots;
@@ -22,17 +23,18 @@ public class ThinArmorPiece {
     private final Integer level3Slots;
     private final Integer level4Slots;
     private final List<ThinArmorPieceSkill> skills;
-    private Integer rarity;
-    private Integer defense;
-    private Integer fireResistance;
-    private Integer waterResistance;
-    private Integer thunderResistance;
-    private Integer iceResistance;
-    private Integer dragonResistance;
+    private final Integer rarity;
+    private final Integer defense;
+    private final Integer fireResistance;
+    private final Integer waterResistance;
+    private final Integer thunderResistance;
+    private final Integer iceResistance;
+    private final Integer dragonResistance;
 
     public ThinArmorPiece(ArmorPiece armorPiece) {
         this.id = armorPiece.getId();
         this.name = armorPiece.getName();
+        this.setName = armorPiece.getSetName();
         this.armorType = armorPiece.getArmorType();
         this.setType = armorPiece.getSetType();
         this.level1Slots = armorPiece.getLevel1Slots();
